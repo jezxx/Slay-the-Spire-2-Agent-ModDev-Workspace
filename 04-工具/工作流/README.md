@@ -2,6 +2,18 @@
 
 这里的脚本面向公开工作区，不假设用户使用作者的盘符、私人模组名称或本地框架。
 
+## 编译前环境预检
+
+按任务路线检查依赖：
+
+    .\check-environment.ps1
+
+原生 C# 模组需要 .NET 9 SDK 和游戏数据程序集。图片脚本需要时再用 -RequirePython 检查 Python 3、numpy 和 Pillow；Godot/PCK 或场景任务需要时再用 -RequireGodot 检查 Godot。脚本只检测，不安装、不升级、不删除软件。
+
+检查指定游戏目录：
+
+    .\check-environment.ps1 -GameDir "<杀戮尖塔2游戏目录>"
+
 ## 新建原生 C# 模组
 
 在公开工作区根目录打开 PowerShell：
