@@ -1,0 +1,425 @@
+===== <RemoveFromCombat>d__3.MoveNext()  [attrs=0x1E1] =====
+  maxStack=5 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B D3 72 00 04 0A 06 39 1C 03 00 00 06 17 3B 4C 03 00 00 02 7B D5 72 00 04 28 FD 08 00 2B 2D 05 DD 55 04 00 00 02 02 7B D5 72 00 04 28 7F 20 00 2B 6F BD 18 00 06 7D D7 72 00 04 02 02 7B D5 72 00 04 28 7F 20 00 2B 6F 64 18 00 06 6F 61 50 00 06 7D D8 72 00 04 73 A7 1C 00 0A 0B 02 73 83 2B 00 0A 7D D9 72 00 04 02 7B D5 72 00 04 6F BE 0E 00 0A 0C 38 86 00 00 00 08 6F BF 0E 00 0A 0D 09 6F 66 18 00 06 13 05 11 05 2C 09 11 05 6F 4E 52 00 06 2D 0B 72 7E 9A 07 70 73 F5 01 00 0A 7A 09 6F 66 18 00 06 6F 4B 52 00 06 1B 33 0B 09 6F 5F 18 00 06 19 FE 01 2B 01 16 13 04 11 04 2D 26 02 7B D6 72 00 04 2D 1E 09 12 07 FE 15 14 07 00 1B 11 07 28 5E 8C 00 06 13 06 11 06 2C 08 07 11 06 6F A9 1C 00 0A 02 7B D9 72 00 04 09 09 6F 66 18 00 06 6F 84 2B 00 0A 09 16 6F DC 18 00 06 08 6F 33 00 00 0A 3A 6F FF FF FF DE 0E 06 16 2F 09 08 2C 06 08 6F 32 00 00 0A DC 07 6F 4F 24 00 0A 39 2A 02 00 00 28 BB 7C 00 06 25 2D 04 26 14 2B 0A 28 C0 7C 00 06 6F E2 88 00 06 13 08 28 BB 7C 00 06 25 2D 04 26 14 2B 0A 28 C0 7C 00 06 6F E6 88 00 06 13 09 14 13 0A 16 13 0B 38 6A 01 00 00 73 56 B2 00 06 13 0C 11 0C 07 11 0B 6F 4E 24 00 0A 7D 3B 72 00 04 11 0C 7B 3B 72 00 04 6F E4 00 00 0A 13 0D 11 0C 7B 3B 72 00 04 6F 51 8C 00 06 13 0E 02 7B D9 72 00 04 11 0E 6F 85 2B 00 0A 13 0F 11 0C 11 09 2C 10 11 09 11 0C 7B 3B 72 00 04 6F B6 1C 00 0A 2B 01 16 7D 3C 72 00 04 11 0C 7B 3C 72 00 04 2C 0F 11 09 11 0C 7B 3B 72 00 04 16 6F 7F 88 00 06 11 08 2C 1B 11 08 11 0C 7B 3B 72 00 04 6F B6 1C 00 0A 2C 0B 11 08 11 0E 6F 28 8B 00 06 2B 1E 11 0C 7B 3B 72 00 04 6F 4F 16 00 0A 25 2D 03 26 2B 0C 11 0C 7B 3B 72 00 04 28 3B 4D 00 06 28 BB 7C 00 06 25 2D 03 26 2B 11 28 C0 7C 00 06 11 0C 7B 3B 72 00 04 28 37 4D 00 06 11 0C 7B 3B 72 00 04 11 0D 6F BC 1B 00 0A 11 0A 2D 20 28 BB 7C 00 06 25 2D 04 26 14 2B 05 28 8B 16 00 0A 13 0A 11 0A 2C 09 11 0A 17 28 AD 1C 00 0A 26 11 0E 6F 66 18 00 06 25 2D 03 26 2B 05 28 59 52 00 06 11 0F 6F 4B 52 00 06 18 2E 25 11 0F 6F 4B 52 00 06 1B 2E 1B 11 0A 11 0C 7B 3B 72 00 04 1B 11 0F 6F 4B 52 00 06 73 5A 15 00 0A 28 9E 55 00 06 11 0A 2C 1F 11 0A 28 B4 1C 00 0A 11 0C FE 06 57 B2 00 06 73 D3 00 00 0A 28 9D 14 00 0A 6F 3C 16 00 0A 26 11 0B 17 58 13 0B 11 0B 07 6F 4F 24 00 0A 3F 89 FE FF FF 11 0A 2C 74 11 0A 6F 3B 1F 00 0A 28 BB 7C 00 06 2C 66 11 0A 28 BB 7C 00 06 28 87 82 00 06 6F 2E 25 00 0A 13 11 12 11 28 2F 25 00 0A 2D 41 02 16 25 0A 7D D3 72 00 04 02 11 11 7D DA 72 00 04 02 7C D4 72 00 04 12 11 02 28 17 33 00 2B DD 7A 01 00 00 02 7B DA 72 00 04 13 11 02 7C DA 72 00 04 FE 15 1B 0C 00 1B 02 15 25 0A 7D D3 72 00 04 12 11 28 31 25 00 0A 13 10 02 02 7B D9 72 00 04 6F 86 2B 00 0A 7D DB 72 00 04 00 06 17 2E 7C 38 AD 00 00 00 02 7C DB 72 00 04 28 87 2B 00 0A 13 13 12 13 12 14 12 05 28 88 2B 00 0A 02 11 14 7D DC 72 00 04 11 05 13 12 02 7B D8 72 00 04 02 7B D7 72 00 04 02 7B DC 72 00 04 11 12 6F 4B 52 00 06 14 28 74 4C 00 06 6F AB 24 00 0A 13 15 12 15 28 AC 24 00 0A 2D 41 02 17 25 0A 7D D3 72 00 04 02 11 15 7D DD 72 00 04 02 7C D4 72 00 04 12 15 02 28 18 33 00 2B DD C2 00 00 00 02 7B DD 72 00 04 13 15 02 7C DD 72 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D D3 72 00 04 12 15 28 AE 24 00 0A 02 7B DC 72 00 04 6F DD 18 00 06 02 14 7D DC 72 00 04 02 7C DB 72 00 04 28 89 2B 00 0A 3A 43 FF FF FF DE 16 06 16 2F 11 02 7C DB 72 00 04 FE 16 56 0F 00 1B 6F 32 00 00 0A DC 02 7C DB 72 00 04 FE 15 56 0F 00 1B DE 2E 13 16 02 1F FE 7D D3 72 00 04 02 14 7D D7 72 00 04 02 14 7D D8 72 00 04 02 14 7D D9 72 00 04 02 7C D4 72 00 04 11 16 28 B1 24 00 0A DE 28 02 1F FE 7D D3 72 00 04 02 14 7D D7 72 00 04 02 14 7D D8 72 00 04 02 14 7D D9 72 00 04 02 7C D4 72 00 04 28 B2 24 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: brfalse        IL_0329
+    IL_000D: ldloc.0        
+    IL_000E: ldc.i4.1       
+    IL_000F: beq            IL_0360
+    IL_0014: ldarg.0        
+    IL_0015: ldfld          .<RemoveFromCombat>d__3::cards
+    IL_001A: call           System.Linq.Enumerable::Any<...>
+    IL_001F: brtrue.s       IL_0026
+    IL_0021: leave          IL_047B
+    IL_0026: ldarg.0        
+    IL_0027: ldarg.0        
+    IL_0028: ldfld          .<RemoveFromCombat>d__3::cards
+    IL_002D: call           System.Linq.Enumerable::First<...>
+    IL_0032: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_CombatState
+    IL_0037: stfld          .<RemoveFromCombat>d__3::<combatState>5__2
+    IL_003C: ldarg.0        
+    IL_003D: ldarg.0        
+    IL_003E: ldfld          .<RemoveFromCombat>d__3::cards
+    IL_0043: call           System.Linq.Enumerable::First<...>
+    IL_0048: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_004D: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_RunState
+    IL_0052: stfld          .<RemoveFromCombat>d__3::<runState>5__3
+    IL_0057: newobj         <typespec>::.ctor
+    IL_005C: stloc.1        
+    IL_005D: ldarg.0        
+    IL_005E: newobj         <typespec>::.ctor
+    IL_0063: stfld          .<RemoveFromCombat>d__3::<oldPiles>5__4
+    IL_0068: ldarg.0        
+    IL_0069: ldfld          .<RemoveFromCombat>d__3::cards
+    IL_006E: callvirt       <typespec>::GetEnumerator
+    IL_0073: stloc.2        
+    IL_0074: br             IL_00FF
+    IL_0079: ldloc.2        
+    IL_007A: callvirt       <typespec>::get_Current
+    IL_007F: stloc.3        
+    IL_0080: ldloc.3        
+    IL_0081: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pile
+    IL_0086: stloc.s        5
+    IL_0088: ldloc.s        5
+    IL_008A: brfalse.s      IL_0095
+    IL_008C: ldloc.s        5
+    IL_008E: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_IsCombatPile
+    IL_0093: brtrue.s       IL_00A0
+    IL_0095: ldstr          "Card must be in a combat pile for it to be removed"
+    IL_009A: newobj         System.InvalidOperationException::.ctor
+    IL_009F: throw          
+    IL_00A0: ldloc.3        
+    IL_00A1: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pile
+    IL_00A6: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Type
+    IL_00AB: ldc.i4.5       
+    IL_00AC: bne.un.s       IL_00B9
+    IL_00AE: ldloc.3        
+    IL_00AF: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Type
+    IL_00B4: ldc.i4.3       
+    IL_00B5: ceq            
+    IL_00B7: br.s           IL_00BA
+    IL_00B9: ldc.i4.0       
+    IL_00BA: stloc.s        4
+    IL_00BC: ldloc.s        4
+    IL_00BE: brtrue.s       IL_00E6
+    IL_00C0: ldarg.0        
+    IL_00C1: ldfld          .<RemoveFromCombat>d__3::skipVisuals
+    IL_00C6: brtrue.s       IL_00E6
+    IL_00C8: ldloc.3        
+    IL_00C9: ldloca.s       7
+    IL_00CB: initobj        <typespec>
+    IL_00D1: ldloc.s        7
+    IL_00D3: call           MegaCrit.Sts2.Core.Nodes.Cards.NCard::FindOnTable
+    IL_00D8: stloc.s        6
+    IL_00DA: ldloc.s        6
+    IL_00DC: brfalse.s      IL_00E6
+    IL_00DE: ldloc.1        
+    IL_00DF: ldloc.s        6
+    IL_00E1: callvirt       <typespec>::Add
+    IL_00E6: ldarg.0        
+    IL_00E7: ldfld          .<RemoveFromCombat>d__3::<oldPiles>5__4
+    IL_00EC: ldloc.3        
+    IL_00ED: ldloc.3        
+    IL_00EE: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pile
+    IL_00F3: callvirt       <typespec>::Add
+    IL_00F8: ldloc.3        
+    IL_00F9: ldc.i4.0       
+    IL_00FA: callvirt       MegaCrit.Sts2.Core.Models.CardModel::RemoveFromCurrentPile
+    IL_00FF: ldloc.2        
+    IL_0100: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_0105: brtrue         IL_0079
+    IL_010A: leave.s        IL_011A
+    IL_010C: ldloc.0        
+    IL_010D: ldc.i4.0       
+    IL_010E: bge.s          IL_0119
+    IL_0110: ldloc.2        
+    IL_0111: brfalse.s      IL_0119
+    IL_0113: ldloc.2        
+    IL_0114: callvirt       System.IDisposable::Dispose
+    IL_0119: endfinally     
+    IL_011A: ldloc.1        
+    IL_011B: callvirt       <typespec>::get_Count
+    IL_0120: brfalse        IL_034F
+    IL_0125: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Instance
+    IL_012A: dup            
+    IL_012B: brtrue.s       IL_0131
+    IL_012D: pop            
+    IL_012E: ldnull         
+    IL_012F: br.s           IL_013B
+    IL_0131: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Ui
+    IL_0136: callvirt       MegaCrit.Sts2.Core.Nodes.Combat.NCombatUi::get_Hand
+    IL_013B: stloc.s        8
+    IL_013D: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Instance
+    IL_0142: dup            
+    IL_0143: brtrue.s       IL_0149
+    IL_0145: pop            
+    IL_0146: ldnull         
+    IL_0147: br.s           IL_0153
+    IL_0149: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Ui
+    IL_014E: callvirt       MegaCrit.Sts2.Core.Nodes.Combat.NCombatUi::get_PlayQueue
+    IL_0153: stloc.s        9
+    IL_0155: ldnull         
+    IL_0156: stloc.s        10
+    IL_0158: ldc.i4.0       
+    IL_0159: stloc.s        11
+    IL_015B: br             IL_02CA
+    IL_0160: newobj         .<>c__DisplayClass3_0::.ctor
+    IL_0165: stloc.s        12
+    IL_0167: ldloc.s        12
+    IL_0169: ldloc.1        
+    IL_016A: ldloc.s        11
+    IL_016C: callvirt       <typespec>::get_Item
+    IL_0171: stfld          .<>c__DisplayClass3_0::node
+    IL_0176: ldloc.s        12
+    IL_0178: ldfld          .<>c__DisplayClass3_0::node
+    IL_017D: callvirt       Godot.Control::get_GlobalPosition
+    IL_0182: stloc.s        13
+    IL_0184: ldloc.s        12
+    IL_0186: ldfld          .<>c__DisplayClass3_0::node
+    IL_018B: callvirt       MegaCrit.Sts2.Core.Nodes.Cards.NCard::get_Model
+    IL_0190: stloc.s        14
+    IL_0192: ldarg.0        
+    IL_0193: ldfld          .<RemoveFromCombat>d__3::<oldPiles>5__4
+    IL_0198: ldloc.s        14
+    IL_019A: callvirt       <typespec>::get_Item
+    IL_019F: stloc.s        15
+    IL_01A1: ldloc.s        12
+    IL_01A3: ldloc.s        9
+    IL_01A5: brfalse.s      IL_01B7
+    IL_01A7: ldloc.s        9
+    IL_01A9: ldloc.s        12
+    IL_01AB: ldfld          .<>c__DisplayClass3_0::node
+    IL_01B0: callvirt       Godot.Node::IsAncestorOf
+    IL_01B5: br.s           IL_01B8
+    IL_01B7: ldc.i4.0       
+    IL_01B8: stfld          .<>c__DisplayClass3_0::isInPlayQueue
+    IL_01BD: ldloc.s        12
+    IL_01BF: ldfld          .<>c__DisplayClass3_0::isInPlayQueue
+    IL_01C4: brfalse.s      IL_01D5
+    IL_01C6: ldloc.s        9
+    IL_01C8: ldloc.s        12
+    IL_01CA: ldfld          .<>c__DisplayClass3_0::node
+    IL_01CF: ldc.i4.0       
+    IL_01D0: callvirt       MegaCrit.Sts2.Core.Nodes.Combat.NCardPlayQueue::RemoveCardFromQueueForCancellation
+    IL_01D5: ldloc.s        8
+    IL_01D7: brfalse.s      IL_01F4
+    IL_01D9: ldloc.s        8
+    IL_01DB: ldloc.s        12
+    IL_01DD: ldfld          .<>c__DisplayClass3_0::node
+    IL_01E2: callvirt       Godot.Node::IsAncestorOf
+    IL_01E7: brfalse.s      IL_01F4
+    IL_01E9: ldloc.s        8
+    IL_01EB: ldloc.s        14
+    IL_01ED: callvirt       MegaCrit.Sts2.Core.Nodes.Combat.NPlayerHand::Remove
+    IL_01F2: br.s           IL_0212
+    IL_01F4: ldloc.s        12
+    IL_01F6: ldfld          .<>c__DisplayClass3_0::node
+    IL_01FB: callvirt       Godot.Node::GetParent
+    IL_0200: dup            
+    IL_0201: brtrue.s       IL_0206
+    IL_0203: pop            
+    IL_0204: br.s           IL_0212
+    IL_0206: ldloc.s        12
+    IL_0208: ldfld          .<>c__DisplayClass3_0::node
+    IL_020D: call           MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions::RemoveChildSafely
+    IL_0212: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Instance
+    IL_0217: dup            
+    IL_0218: brtrue.s       IL_021D
+    IL_021A: pop            
+    IL_021B: br.s           IL_022E
+    IL_021D: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Ui
+    IL_0222: ldloc.s        12
+    IL_0224: ldfld          .<>c__DisplayClass3_0::node
+    IL_0229: call           MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions::AddChildSafely
+    IL_022E: ldloc.s        12
+    IL_0230: ldfld          .<>c__DisplayClass3_0::node
+    IL_0235: ldloc.s        13
+    IL_0237: callvirt       Godot.Control::set_GlobalPosition
+    IL_023C: ldloc.s        10
+    IL_023E: brtrue.s       IL_0260
+    IL_0240: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Instance
+    IL_0245: dup            
+    IL_0246: brtrue.s       IL_024C
+    IL_0248: pop            
+    IL_0249: ldnull         
+    IL_024A: br.s           IL_0251
+    IL_024C: call           Godot.Node::CreateTween
+    IL_0251: stloc.s        10
+    IL_0253: ldloc.s        10
+    IL_0255: brfalse.s      IL_0260
+    IL_0257: ldloc.s        10
+    IL_0259: ldc.i4.1       
+    IL_025A: call           Godot.Tween::SetParallel
+    IL_025F: pop            
+    IL_0260: ldloc.s        14
+    IL_0262: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pile
+    IL_0267: dup            
+    IL_0268: brtrue.s       IL_026D
+    IL_026A: pop            
+    IL_026B: br.s           IL_0272
+    IL_026D: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::InvokeCardAddFinished
+    IL_0272: ldloc.s        15
+    IL_0274: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Type
+    IL_0279: ldc.i4.2       
+    IL_027A: beq.s          IL_02A1
+    IL_027C: ldloc.s        15
+    IL_027E: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Type
+    IL_0283: ldc.i4.5       
+    IL_0284: beq.s          IL_02A1
+    IL_0286: ldloc.s        10
+    IL_0288: ldloc.s        12
+    IL_028A: ldfld          .<>c__DisplayClass3_0::node
+    IL_028F: ldc.i4.5       
+    IL_0290: ldloc.s        15
+    IL_0292: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Type
+    IL_0297: newobj         <typespec>::.ctor
+    IL_029C: call           MegaCrit.Sts2.Core.Commands.CardPileCmd::AppendPileLerpTween
+    IL_02A1: ldloc.s        10
+    IL_02A3: brfalse.s      IL_02C4
+    IL_02A5: ldloc.s        10
+    IL_02A7: call           Godot.Tween::Chain
+    IL_02AC: ldloc.s        12
+    IL_02AE: ldftn          .<>c__DisplayClass3_0::<RemoveFromCombat>b__0
+    IL_02B4: newobj         System.Action::.ctor
+    IL_02B9: call           Godot.Callable::From
+    IL_02BE: callvirt       Godot.Tween::TweenCallback
+    IL_02C3: pop            
+    IL_02C4: ldloc.s        11
+    IL_02C6: ldc.i4.1       
+    IL_02C7: add            
+    IL_02C8: stloc.s        11
+    IL_02CA: ldloc.s        11
+    IL_02CC: ldloc.1        
+    IL_02CD: callvirt       <typespec>::get_Count
+    IL_02D2: blt            IL_0160
+    IL_02D7: ldloc.s        10
+    IL_02D9: brfalse.s      IL_034F
+    IL_02DB: ldloc.s        10
+    IL_02DD: callvirt       Godot.Tween::Play
+    IL_02E2: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Instance
+    IL_02E7: brfalse.s      IL_034F
+    IL_02E9: ldloc.s        10
+    IL_02EB: call           MegaCrit.Sts2.Core.Nodes.Rooms.NCombatRoom::get_Instance
+    IL_02F0: call           MegaCrit.Sts2.Core.Nodes.GodotExtensions.TweenHelper::AwaitFinished
+    IL_02F5: callvirt       <typespec>::GetAwaiter
+    IL_02FA: stloc.s        17
+    IL_02FC: ldloca.s       17
+    IL_02FE: call           <typespec>::get_IsCompleted
+    IL_0303: brtrue.s       IL_0346
+    IL_0305: ldarg.0        
+    IL_0306: ldc.i4.0       
+    IL_0307: dup            
+    IL_0308: stloc.0        
+    IL_0309: stfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_030E: ldarg.0        
+    IL_030F: ldloc.s        17
+    IL_0311: stfld          .<RemoveFromCombat>d__3::<>u__1
+    IL_0316: ldarg.0        
+    IL_0317: ldflda         .<RemoveFromCombat>d__3::<>t__builder
+    IL_031C: ldloca.s       17
+    IL_031E: ldarg.0        
+    IL_031F: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_0324: leave          IL_04A3
+    IL_0329: ldarg.0        
+    IL_032A: ldfld          .<RemoveFromCombat>d__3::<>u__1
+    IL_032F: stloc.s        17
+    IL_0331: ldarg.0        
+    IL_0332: ldflda         .<RemoveFromCombat>d__3::<>u__1
+    IL_0337: initobj        <typespec>
+    IL_033D: ldarg.0        
+    IL_033E: ldc.i4.m1      
+    IL_033F: dup            
+    IL_0340: stloc.0        
+    IL_0341: stfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_0346: ldloca.s       17
+    IL_0348: call           <typespec>::GetResult
+    IL_034D: stloc.s        16
+    IL_034F: ldarg.0        
+    IL_0350: ldarg.0        
+    IL_0351: ldfld          .<RemoveFromCombat>d__3::<oldPiles>5__4
+    IL_0356: callvirt       <typespec>::GetEnumerator
+    IL_035B: stfld          .<RemoveFromCombat>d__3::<>7__wrap4
+    IL_0360: nop            
+    IL_0361: ldloc.0        
+    IL_0362: ldc.i4.1       
+    IL_0363: beq.s          IL_03E1
+    IL_0365: br             IL_0417
+    IL_036A: ldarg.0        
+    IL_036B: ldflda         .<RemoveFromCombat>d__3::<>7__wrap4
+    IL_0370: call           <typespec>::get_Current
+    IL_0375: stloc.s        19
+    IL_0377: ldloca.s       19
+    IL_0379: ldloca.s       20
+    IL_037B: ldloca.s       5
+    IL_037D: call           <typespec>::Deconstruct
+    IL_0382: ldarg.0        
+    IL_0383: ldloc.s        20
+    IL_0385: stfld          .<RemoveFromCombat>d__3::<oldCard>5__6
+    IL_038A: ldloc.s        5
+    IL_038C: stloc.s        18
+    IL_038E: ldarg.0        
+    IL_038F: ldfld          .<RemoveFromCombat>d__3::<runState>5__3
+    IL_0394: ldarg.0        
+    IL_0395: ldfld          .<RemoveFromCombat>d__3::<combatState>5__2
+    IL_039A: ldarg.0        
+    IL_039B: ldfld          .<RemoveFromCombat>d__3::<oldCard>5__6
+    IL_03A0: ldloc.s        18
+    IL_03A2: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Type
+    IL_03A7: ldnull         
+    IL_03A8: call           MegaCrit.Sts2.Core.Hooks.Hook::AfterCardChangedPiles
+    IL_03AD: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_03B2: stloc.s        21
+    IL_03B4: ldloca.s       21
+    IL_03B6: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_03BB: brtrue.s       IL_03FE
+    IL_03BD: ldarg.0        
+    IL_03BE: ldc.i4.1       
+    IL_03BF: dup            
+    IL_03C0: stloc.0        
+    IL_03C1: stfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_03C6: ldarg.0        
+    IL_03C7: ldloc.s        21
+    IL_03C9: stfld          .<RemoveFromCombat>d__3::<>u__2
+    IL_03CE: ldarg.0        
+    IL_03CF: ldflda         .<RemoveFromCombat>d__3::<>t__builder
+    IL_03D4: ldloca.s       21
+    IL_03D6: ldarg.0        
+    IL_03D7: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_03DC: leave          IL_04A3
+    IL_03E1: ldarg.0        
+    IL_03E2: ldfld          .<RemoveFromCombat>d__3::<>u__2
+    IL_03E7: stloc.s        21
+    IL_03E9: ldarg.0        
+    IL_03EA: ldflda         .<RemoveFromCombat>d__3::<>u__2
+    IL_03EF: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_03F5: ldarg.0        
+    IL_03F6: ldc.i4.m1      
+    IL_03F7: dup            
+    IL_03F8: stloc.0        
+    IL_03F9: stfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_03FE: ldloca.s       21
+    IL_0400: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_0405: ldarg.0        
+    IL_0406: ldfld          .<RemoveFromCombat>d__3::<oldCard>5__6
+    IL_040B: callvirt       MegaCrit.Sts2.Core.Models.CardModel::RemoveFromState
+    IL_0410: ldarg.0        
+    IL_0411: ldnull         
+    IL_0412: stfld          .<RemoveFromCombat>d__3::<oldCard>5__6
+    IL_0417: ldarg.0        
+    IL_0418: ldflda         .<RemoveFromCombat>d__3::<>7__wrap4
+    IL_041D: call           <typespec>::MoveNext
+    IL_0422: brtrue         IL_036A
+    IL_0427: leave.s        IL_043F
+    IL_0429: ldloc.0        
+    IL_042A: ldc.i4.0       
+    IL_042B: bge.s          IL_043E
+    IL_042D: ldarg.0        
+    IL_042E: ldflda         .<RemoveFromCombat>d__3::<>7__wrap4
+    IL_0433: constrained.   <typespec>
+    IL_0439: callvirt       System.IDisposable::Dispose
+    IL_043E: endfinally     
+    IL_043F: ldarg.0        
+    IL_0440: ldflda         .<RemoveFromCombat>d__3::<>7__wrap4
+    IL_0445: initobj        <typespec>
+    IL_044B: leave.s        IL_047B
+    IL_044D: stloc.s        22
+    IL_044F: ldarg.0        
+    IL_0450: ldc.i4.s       -2
+    IL_0452: stfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_0457: ldarg.0        
+    IL_0458: ldnull         
+    IL_0459: stfld          .<RemoveFromCombat>d__3::<combatState>5__2
+    IL_045E: ldarg.0        
+    IL_045F: ldnull         
+    IL_0460: stfld          .<RemoveFromCombat>d__3::<runState>5__3
+    IL_0465: ldarg.0        
+    IL_0466: ldnull         
+    IL_0467: stfld          .<RemoveFromCombat>d__3::<oldPiles>5__4
+    IL_046C: ldarg.0        
+    IL_046D: ldflda         .<RemoveFromCombat>d__3::<>t__builder
+    IL_0472: ldloc.s        22
+    IL_0474: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException
+    IL_0479: leave.s        IL_04A3
+    IL_047B: ldarg.0        
+    IL_047C: ldc.i4.s       -2
+    IL_047E: stfld          .<RemoveFromCombat>d__3::<>1__state
+    IL_0483: ldarg.0        
+    IL_0484: ldnull         
+    IL_0485: stfld          .<RemoveFromCombat>d__3::<combatState>5__2
+    IL_048A: ldarg.0        
+    IL_048B: ldnull         
+    IL_048C: stfld          .<RemoveFromCombat>d__3::<runState>5__3
+    IL_0491: ldarg.0        
+    IL_0492: ldnull         
+    IL_0493: stfld          .<RemoveFromCombat>d__3::<oldPiles>5__4
+    IL_0498: ldarg.0        
+    IL_0499: ldflda         .<RemoveFromCombat>d__3::<>t__builder
+    IL_049E: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult
+    IL_04A3: ret            
+
+

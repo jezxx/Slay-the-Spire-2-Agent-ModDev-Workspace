@@ -1,0 +1,41 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost
+    base: System.Object
+
+    field  internal readonly MegaCrit.Sts2.Core.Models.CardModel _card
+    field  internal int _base
+    field  internal int _capturedXValue
+    field  internal System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifier> _localModifiers
+    field  internal readonly int <Canonical>k__BackingField
+    field  internal readonly bool <CostsX>k__BackingField
+    field  internal bool <WasJustUpgraded>k__BackingField
+    prop   int Canonical { public get; }
+    prop   bool CostsX { public get; }
+    prop   bool WasJustUpgraded { public get; internal set; }
+    prop   bool HasLocalModifiers { public get; }
+    prop   int CapturedXValue { public get; public set; }
+    method public int get_Canonical()
+    method public bool get_CostsX()
+    method public bool get_WasJustUpgraded()
+    method internal void set_WasJustUpgraded(bool value)
+    method public bool get_HasLocalModifiers()
+    method public void .ctor(MegaCrit.Sts2.Core.Models.CardModel card, int canonicalCost, bool costsX)
+    method public int GetWithModifiers(MegaCrit.Sts2.Core.Entities.Cards.CostModifiers modifiers)
+    method public int get_CapturedXValue()
+    method public void set_CapturedXValue(int value)
+    method public int GetAmountToSpend()
+    method public int GetResolved()
+    method public void SetUntilPlayed(int cost, bool reduceOnly)
+    method public void SetThisTurnOrUntilPlayed(int cost, bool reduceOnly)
+    method public void SetThisTurn(int cost, bool reduceOnly)
+    method public void SetThisCombat(int cost, bool reduceOnly)
+    method public void AddUntilPlayed(int amount, bool reduceOnly)
+    method public void AddThisTurnOrUntilPlayed(int amount, bool reduceOnly)
+    method public void AddThisTurn(int amount, bool reduceOnly)
+    method public void AddThisCombat(int amount, bool reduceOnly)
+    method public bool EndOfTurnCleanup()
+    method public bool AfterCardPlayedCleanup()
+    method public void UpgradeBy(int addend)
+    method public void FinalizeUpgrade()
+    method public void ResetForDowngrade()
+    method public void SetCustomBaseCost(int newBaseCost)
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost Clone(MegaCrit.Sts2.Core.Models.CardModel newCard)

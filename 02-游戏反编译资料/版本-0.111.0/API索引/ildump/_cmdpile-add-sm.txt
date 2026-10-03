@@ -1,0 +1,102 @@
+===== <Add>d__7.MoveNext()  [attrs=0x1E1] =====
+  maxStack=5 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 4D 72 00 04 0A 06 39 AC 00 00 00 02 7B 4F 72 00 04 6F 64 18 00 06 2D 3B 1F 34 17 73 ED 00 00 0A 0C 12 02 72 89 98 07 70 28 F5 00 00 0A 12 02 02 7B 4F 72 00 04 28 11 05 00 2B 12 02 72 B7 98 07 70 28 F5 00 00 0A 12 02 28 EF 00 00 0A 73 F5 01 00 0A 7A 02 7B 4F 72 00 04 02 7B 50 72 00 04 02 7B 4F 72 00 04 6F 64 18 00 06 28 85 52 00 06 02 7B 51 72 00 04 02 7B 52 72 00 04 02 7B 53 72 00 04 28 95 55 00 06 6F 3F 25 00 0A 13 04 12 04 28 40 25 00 0A 2D 3E 02 16 25 0A 7D 4D 72 00 04 02 11 04 7D 54 72 00 04 02 7C 4E 72 00 04 12 04 02 28 FE 32 00 2B DE 56 02 7B 54 72 00 04 13 04 02 7C 54 72 00 04 FE 15 23 0C 00 1B 02 15 25 0A 7D 4D 72 00 04 12 04 28 41 25 00 0A 0D 09 0B DE 19 13 05 02 1F FE 7D 4D 72 00 04 02 7C 4E 72 00 04 11 05 28 5A 2B 00 0A DE 14 02 1F FE 7D 4D 72 00 04 02 7C 4E 72 00 04 07 28 5B 2B 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          .<Add>d__7::<>1__state
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: brfalse        IL_00B9
+    IL_000D: ldarg.0        
+    IL_000E: ldfld          .<Add>d__7::card
+    IL_0013: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_0018: brtrue.s       IL_0055
+    IL_001A: ldc.i4.s       52
+    IL_001C: ldc.i4.1       
+    IL_001D: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0022: stloc.2        
+    IL_0023: ldloca.s       2
+    IL_0025: ldstr          "Attempted to add card "
+    IL_002A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_002F: ldloca.s       2
+    IL_0031: ldarg.0        
+    IL_0032: ldfld          .<Add>d__7::card
+    IL_0037: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_003C: ldloca.s       2
+    IL_003E: ldstr          " to pile, but it has no owner!"
+    IL_0043: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0048: ldloca.s       2
+    IL_004A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_004F: newobj         System.InvalidOperationException::.ctor
+    IL_0054: throw          
+    IL_0055: ldarg.0        
+    IL_0056: ldfld          .<Add>d__7::card
+    IL_005B: ldarg.0        
+    IL_005C: ldfld          .<Add>d__7::newPileType
+    IL_0061: ldarg.0        
+    IL_0062: ldfld          .<Add>d__7::card
+    IL_0067: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_006C: call           MegaCrit.Sts2.Core.Entities.Cards.PileTypeExtensions::GetPile
+    IL_0071: ldarg.0        
+    IL_0072: ldfld          .<Add>d__7::position
+    IL_0077: ldarg.0        
+    IL_0078: ldfld          .<Add>d__7::clonedBy
+    IL_007D: ldarg.0        
+    IL_007E: ldfld          .<Add>d__7::skipVisuals
+    IL_0083: call           MegaCrit.Sts2.Core.Commands.CardPileCmd::Add
+    IL_0088: callvirt       <typespec>::GetAwaiter
+    IL_008D: stloc.s        4
+    IL_008F: ldloca.s       4
+    IL_0091: call           <typespec>::get_IsCompleted
+    IL_0096: brtrue.s       IL_00D6
+    IL_0098: ldarg.0        
+    IL_0099: ldc.i4.0       
+    IL_009A: dup            
+    IL_009B: stloc.0        
+    IL_009C: stfld          .<Add>d__7::<>1__state
+    IL_00A1: ldarg.0        
+    IL_00A2: ldloc.s        4
+    IL_00A4: stfld          .<Add>d__7::<>u__1
+    IL_00A9: ldarg.0        
+    IL_00AA: ldflda         .<Add>d__7::<>t__builder
+    IL_00AF: ldloca.s       4
+    IL_00B1: ldarg.0        
+    IL_00B2: call           <typespec>::AwaitUnsafeOnCompleted<...>
+    IL_00B7: leave.s        IL_010F
+    IL_00B9: ldarg.0        
+    IL_00BA: ldfld          .<Add>d__7::<>u__1
+    IL_00BF: stloc.s        4
+    IL_00C1: ldarg.0        
+    IL_00C2: ldflda         .<Add>d__7::<>u__1
+    IL_00C7: initobj        <typespec>
+    IL_00CD: ldarg.0        
+    IL_00CE: ldc.i4.m1      
+    IL_00CF: dup            
+    IL_00D0: stloc.0        
+    IL_00D1: stfld          .<Add>d__7::<>1__state
+    IL_00D6: ldloca.s       4
+    IL_00D8: call           <typespec>::GetResult
+    IL_00DD: stloc.3        
+    IL_00DE: ldloc.3        
+    IL_00DF: stloc.1        
+    IL_00E0: leave.s        IL_00FB
+    IL_00E2: stloc.s        5
+    IL_00E4: ldarg.0        
+    IL_00E5: ldc.i4.s       -2
+    IL_00E7: stfld          .<Add>d__7::<>1__state
+    IL_00EC: ldarg.0        
+    IL_00ED: ldflda         .<Add>d__7::<>t__builder
+    IL_00F2: ldloc.s        5
+    IL_00F4: call           <typespec>::SetException
+    IL_00F9: leave.s        IL_010F
+    IL_00FB: ldarg.0        
+    IL_00FC: ldc.i4.s       -2
+    IL_00FE: stfld          .<Add>d__7::<>1__state
+    IL_0103: ldarg.0        
+    IL_0104: ldflda         .<Add>d__7::<>t__builder
+    IL_0109: ldloc.1        
+    IL_010A: call           <typespec>::SetResult
+    IL_010F: ret            
+
+

@@ -1,0 +1,7 @@
+### public class MegaCrit.Sts2.Core.Commands.Cmd
+    base: System.Object
+
+    method public static System.Threading.Tasks.Task Wait(float seconds, bool ignoreCombatEnd)
+    method public static System.Threading.Tasks.Task Wait(float seconds, System.Threading.CancellationToken cancelToken, bool ignoreCombatEnd)
+    method internal static System.Threading.Tasks.Task WaitInternal(Godot.SceneTreeTimer timer, System.Threading.CancellationToken cancellationToken)
+    method public static System.Threading.Tasks.Task CustomScaledWait(float fastSeconds, float standardSeconds, bool ignoreCombatEnd, System.Threading.CancellationToken cancellationToken)

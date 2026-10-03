@@ -1,0 +1,281 @@
+===== MegaCrit.Sts2.Core.HoverTips.HoverTip..ctor(description, icon)  [attrs=0x1886] =====
+  maxStack=5 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 14 7D 2B 16 00 04 02 16 7D 2F 16 00 04 02 16 7D 30 16 00 04 02 16 7D 31 16 00 04 02 14 7D 32 16 00 04 02 16 7D 33 16 00 04 02 72 AB FC 02 70 03 6F C3 4A 00 06 72 CA 0E 00 70 03 6F C4 4A 00 06 28 4B 02 00 0A 28 2E 4C 00 06 02 03 6F C9 4A 00 06 28 2C 4C 00 06 02 04 28 2A 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldnull         
+    IL_0002: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<Title>k__BackingField
+    IL_0007: ldarg.0        
+    IL_0008: ldc.i4.0       
+    IL_0009: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsSmart>k__BackingField
+    IL_000E: ldarg.0        
+    IL_000F: ldc.i4.0       
+    IL_0010: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsDebuff>k__BackingField
+    IL_0015: ldarg.0        
+    IL_0016: ldc.i4.0       
+    IL_0017: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsInstanced>k__BackingField
+    IL_001C: ldarg.0        
+    IL_001D: ldnull         
+    IL_001E: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<CanonicalModel>k__BackingField
+    IL_0023: ldarg.0        
+    IL_0024: ldc.i4.0       
+    IL_0025: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<ShouldOverrideTextOverflow>k__BackingField
+    IL_002A: ldarg.0        
+    IL_002B: ldstr          "LocString with Description="
+    IL_0030: ldarg.1        
+    IL_0031: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocTable
+    IL_0036: ldstr          "."
+    IL_003B: ldarg.1        
+    IL_003C: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocEntryKey
+    IL_0041: call           System.String::Concat
+    IL_0046: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Id
+    IL_004B: ldarg.0        
+    IL_004C: ldarg.1        
+    IL_004D: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0052: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Description
+    IL_0057: ldarg.0        
+    IL_0058: ldarg.2        
+    IL_0059: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Icon
+    IL_005E: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTip..ctor(title, description, icon)  [attrs=0x1886] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 16 7D 2F 16 00 04 02 16 7D 30 16 00 04 02 16 7D 31 16 00 04 02 14 7D 32 16 00 04 02 16 7D 33 16 00 04 02 12 00 1F 28 1A 28 ED 00 00 0A 12 00 72 E3 FC 02 70 28 F5 00 00 0A 12 00 03 6F C3 4A 00 06 28 50 02 00 0A 12 00 72 CA 0E 00 70 28 F5 00 00 0A 12 00 03 6F C4 4A 00 06 28 50 02 00 0A 12 00 72 0F FD 02 70 28 F5 00 00 0A 12 00 04 6F C3 4A 00 06 28 50 02 00 0A 12 00 72 CA 0E 00 70 28 F5 00 00 0A 12 00 04 6F C4 4A 00 06 28 50 02 00 0A 12 00 28 EF 00 00 0A 28 2E 4C 00 06 02 03 6F C9 4A 00 06 28 28 4C 00 06 02 04 6F C9 4A 00 06 28 2C 4C 00 06 02 05 28 2A 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldc.i4.0       
+    IL_0002: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsSmart>k__BackingField
+    IL_0007: ldarg.0        
+    IL_0008: ldc.i4.0       
+    IL_0009: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsDebuff>k__BackingField
+    IL_000E: ldarg.0        
+    IL_000F: ldc.i4.0       
+    IL_0010: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsInstanced>k__BackingField
+    IL_0015: ldarg.0        
+    IL_0016: ldnull         
+    IL_0017: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<CanonicalModel>k__BackingField
+    IL_001C: ldarg.0        
+    IL_001D: ldc.i4.0       
+    IL_001E: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<ShouldOverrideTextOverflow>k__BackingField
+    IL_0023: ldarg.0        
+    IL_0024: ldloca.s       0
+    IL_0026: ldc.i4.s       40
+    IL_0028: ldc.i4.4       
+    IL_0029: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_002E: ldloca.s       0
+    IL_0030: ldstr          "LocString with Title="
+    IL_0035: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_003A: ldloca.s       0
+    IL_003C: ldarg.1        
+    IL_003D: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocTable
+    IL_0042: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0047: ldloca.s       0
+    IL_0049: ldstr          "."
+    IL_004E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0053: ldloca.s       0
+    IL_0055: ldarg.1        
+    IL_0056: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocEntryKey
+    IL_005B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0060: ldloca.s       0
+    IL_0062: ldstr          " and Description="
+    IL_0067: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_006C: ldloca.s       0
+    IL_006E: ldarg.2        
+    IL_006F: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocTable
+    IL_0074: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0079: ldloca.s       0
+    IL_007B: ldstr          "."
+    IL_0080: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0085: ldloca.s       0
+    IL_0087: ldarg.2        
+    IL_0088: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocEntryKey
+    IL_008D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0092: ldloca.s       0
+    IL_0094: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0099: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Id
+    IL_009E: ldarg.0        
+    IL_009F: ldarg.1        
+    IL_00A0: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_00A5: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Title
+    IL_00AA: ldarg.0        
+    IL_00AB: ldarg.2        
+    IL_00AC: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_00B1: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Description
+    IL_00B6: ldarg.0        
+    IL_00B7: ldarg.3        
+    IL_00B8: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Icon
+    IL_00BD: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTip..ctor(title, description, icon)  [attrs=0x1886] =====
+  maxStack=5 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 16 7D 2F 16 00 04 02 16 7D 30 16 00 04 02 16 7D 31 16 00 04 02 14 7D 32 16 00 04 02 16 7D 33 16 00 04 02 72 E3 FC 02 70 03 6F C3 4A 00 06 72 CA 0E 00 70 03 6F C4 4A 00 06 28 4B 02 00 0A 28 2E 4C 00 06 02 03 6F C9 4A 00 06 28 28 4C 00 06 02 04 28 2C 4C 00 06 02 05 28 2A 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldc.i4.0       
+    IL_0002: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsSmart>k__BackingField
+    IL_0007: ldarg.0        
+    IL_0008: ldc.i4.0       
+    IL_0009: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsDebuff>k__BackingField
+    IL_000E: ldarg.0        
+    IL_000F: ldc.i4.0       
+    IL_0010: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsInstanced>k__BackingField
+    IL_0015: ldarg.0        
+    IL_0016: ldnull         
+    IL_0017: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<CanonicalModel>k__BackingField
+    IL_001C: ldarg.0        
+    IL_001D: ldc.i4.0       
+    IL_001E: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<ShouldOverrideTextOverflow>k__BackingField
+    IL_0023: ldarg.0        
+    IL_0024: ldstr          "LocString with Title="
+    IL_0029: ldarg.1        
+    IL_002A: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocTable
+    IL_002F: ldstr          "."
+    IL_0034: ldarg.1        
+    IL_0035: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocEntryKey
+    IL_003A: call           System.String::Concat
+    IL_003F: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Id
+    IL_0044: ldarg.0        
+    IL_0045: ldarg.1        
+    IL_0046: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_004B: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Title
+    IL_0050: ldarg.0        
+    IL_0051: ldarg.2        
+    IL_0052: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Description
+    IL_0057: ldarg.0        
+    IL_0058: ldarg.3        
+    IL_0059: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Icon
+    IL_005E: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTip..ctor(affliction, description)  [attrs=0x1886] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 16 7D 2F 16 00 04 02 16 7D 31 16 00 04 02 14 7D 32 16 00 04 02 16 7D 33 16 00 04 02 03 6F BC 16 00 06 6F 8C 00 00 0A 28 2E 4C 00 06 02 03 6F D9 17 00 06 6F C9 4A 00 06 28 28 4C 00 06 02 04 6F C9 4A 00 06 28 2C 4C 00 06 02 14 28 2A 4C 00 06 02 17 28 32 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldc.i4.0       
+    IL_0002: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsSmart>k__BackingField
+    IL_0007: ldarg.0        
+    IL_0008: ldc.i4.0       
+    IL_0009: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsInstanced>k__BackingField
+    IL_000E: ldarg.0        
+    IL_000F: ldnull         
+    IL_0010: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<CanonicalModel>k__BackingField
+    IL_0015: ldarg.0        
+    IL_0016: ldc.i4.0       
+    IL_0017: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<ShouldOverrideTextOverflow>k__BackingField
+    IL_001C: ldarg.0        
+    IL_001D: ldarg.1        
+    IL_001E: callvirt       MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0023: callvirt       System.Object::ToString
+    IL_0028: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Id
+    IL_002D: ldarg.0        
+    IL_002E: ldarg.1        
+    IL_002F: callvirt       MegaCrit.Sts2.Core.Models.AfflictionModel::get_Title
+    IL_0034: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0039: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Title
+    IL_003E: ldarg.0        
+    IL_003F: ldarg.2        
+    IL_0040: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0045: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Description
+    IL_004A: ldarg.0        
+    IL_004B: ldnull         
+    IL_004C: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Icon
+    IL_0051: ldarg.0        
+    IL_0052: ldc.i4.1       
+    IL_0053: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_IsDebuff
+    IL_0058: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTip..ctor(orb, description)  [attrs=0x1886] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 16 7D 2F 16 00 04 02 16 7D 30 16 00 04 02 16 7D 31 16 00 04 02 14 7D 32 16 00 04 02 16 7D 33 16 00 04 02 03 6F BC 16 00 06 6F 8C 00 00 0A 28 2E 4C 00 06 02 03 6F E1 1A 00 06 6F C9 4A 00 06 28 28 4C 00 06 02 04 6F C9 4A 00 06 28 2C 4C 00 06 02 03 6F F5 1A 00 06 28 2A 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldc.i4.0       
+    IL_0002: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsSmart>k__BackingField
+    IL_0007: ldarg.0        
+    IL_0008: ldc.i4.0       
+    IL_0009: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsDebuff>k__BackingField
+    IL_000E: ldarg.0        
+    IL_000F: ldc.i4.0       
+    IL_0010: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<IsInstanced>k__BackingField
+    IL_0015: ldarg.0        
+    IL_0016: ldnull         
+    IL_0017: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<CanonicalModel>k__BackingField
+    IL_001C: ldarg.0        
+    IL_001D: ldc.i4.0       
+    IL_001E: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<ShouldOverrideTextOverflow>k__BackingField
+    IL_0023: ldarg.0        
+    IL_0024: ldarg.1        
+    IL_0025: callvirt       MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_002A: callvirt       System.Object::ToString
+    IL_002F: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Id
+    IL_0034: ldarg.0        
+    IL_0035: ldarg.1        
+    IL_0036: callvirt       MegaCrit.Sts2.Core.Models.OrbModel::get_Title
+    IL_003B: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0040: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Title
+    IL_0045: ldarg.0        
+    IL_0046: ldarg.2        
+    IL_0047: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_004C: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Description
+    IL_0051: ldarg.0        
+    IL_0052: ldarg.1        
+    IL_0053: callvirt       MegaCrit.Sts2.Core.Models.OrbModel::get_Icon
+    IL_0058: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Icon
+    IL_005D: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTip..ctor(power, description, isSmart)  [attrs=0x1886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 14 7D 32 16 00 04 02 16 7D 33 16 00 04 02 03 6F BC 16 00 06 6F 8C 00 00 0A 28 2E 4C 00 06 02 03 6F 49 1B 00 06 6F C9 4A 00 06 28 28 4C 00 06 02 04 28 2C 4C 00 06 02 03 6F 57 1B 00 06 28 2A 4C 00 06 02 03 6F 5A 1B 00 06 18 FE 01 28 32 4C 00 06 02 03 6F 5B 1B 00 06 16 FE 03 28 34 4C 00 06 02 05 28 30 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldnull         
+    IL_0002: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<CanonicalModel>k__BackingField
+    IL_0007: ldarg.0        
+    IL_0008: ldc.i4.0       
+    IL_0009: stfld          MegaCrit.Sts2.Core.HoverTips.HoverTip::<ShouldOverrideTextOverflow>k__BackingField
+    IL_000E: ldarg.0        
+    IL_000F: ldarg.1        
+    IL_0010: callvirt       MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0015: callvirt       System.Object::ToString
+    IL_001A: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Id
+    IL_001F: ldarg.0        
+    IL_0020: ldarg.1        
+    IL_0021: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_Title
+    IL_0026: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_002B: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Title
+    IL_0030: ldarg.0        
+    IL_0031: ldarg.2        
+    IL_0032: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Description
+    IL_0037: ldarg.0        
+    IL_0038: ldarg.1        
+    IL_0039: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_Icon
+    IL_003E: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_Icon
+    IL_0043: ldarg.0        
+    IL_0044: ldarg.1        
+    IL_0045: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_Type
+    IL_004A: ldc.i4.2       
+    IL_004B: ceq            
+    IL_004D: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_IsDebuff
+    IL_0052: ldarg.0        
+    IL_0053: ldarg.1        
+    IL_0054: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_InstanceType
+    IL_0059: ldc.i4.0       
+    IL_005A: cgt.un         
+    IL_005C: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_IsInstanced
+    IL_0061: ldarg.0        
+    IL_0062: ldarg.3        
+    IL_0063: call           MegaCrit.Sts2.Core.HoverTips.HoverTip::set_IsSmart
+    IL_0068: ret            
+
+

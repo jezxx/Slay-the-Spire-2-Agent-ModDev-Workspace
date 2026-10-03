@@ -1,0 +1,10 @@
+### public class MegaCrit.Sts2.Core.Commands.ForgeCmd
+    base: System.Object
+
+    field  internal static string _forgeInitialSfx
+    field  internal static string _forgeRefineSfx
+    method public static System.Threading.Tasks.Task`1<System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.Cards.SovereignBlade>> Forge(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Models.AbstractModel source)
+    method internal static void IncreaseSovereignBladeDamage(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.Cards.SovereignBlade> GetSovereignBlades(MegaCrit.Sts2.Core.Entities.Players.Player player, bool includeExhausted)
+    method internal static void PreviewSovereignBlade(System.Collections.Generic.IReadOnlyCollection`1<MegaCrit.Sts2.Core.Models.Cards.SovereignBlade> blades)
+    method public static void PlayCombatRoomForgeVfx(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Models.CardModel card)

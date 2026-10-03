@@ -1,0 +1,357 @@
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Count()  [attrs=0x9E6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 6F 30 19 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: callvirt       <typespec>::get_Count
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Item(key)  [attrs=0x9E6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 03 6F 33 19 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldarg.1        
+    IL_0007: callvirt       <typespec>::get_Item
+    IL_000C: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Keys()  [attrs=0x9E6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 6F 34 19 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: callvirt       <typespec>::get_Keys
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Values()  [attrs=0x9E6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 6F 35 19 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: callvirt       <typespec>::get_Values
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Block()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 AC F8 02 70 6F 33 19 00 0A 74 2E 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Block"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.BlockVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_CalculatedBlock()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 B8 F8 02 70 6F 33 19 00 0A 74 30 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "CalculatedBlock"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedBlockVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_CalculatedDamage()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 D8 F8 02 70 6F 33 19 00 0A 74 31 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "CalculatedDamage"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedDamageVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_CalculationBase()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 EA F9 02 70 6F 33 19 00 0A 74 33 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "CalculationBase"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.CalculationBaseVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_CalculationExtra()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 0A FA 02 70 6F 33 19 00 0A 74 34 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "CalculationExtra"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.CalculationExtraVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Cards()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 2C FA 02 70 6F 33 19 00 0A 74 35 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Cards"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.CardsVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Damage()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 2D 78 01 70 6F 33 19 00 0A 74 36 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Damage"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.DamageVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Dexterity()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 9C FA 02 70 6F 33 19 00 0A 74 57 07 00 1B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "DexterityPower"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      <typespec>
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Doom()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 BA FA 02 70 6F 33 19 00 0A 74 98 07 00 1B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "DoomPower"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      <typespec>
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Energy()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 8D 09 00 70 6F 33 19 00 0A 74 39 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Energy"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.EnergyVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_ExtraDamage()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 19 B2 01 70 6F 33 19 00 0A 74 3A 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "ExtraDamage"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.ExtraDamageVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Forge()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 CE FA 02 70 6F 33 19 00 0A 74 3B 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Forge"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.ForgeVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Gold()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 78 48 00 70 6F 33 19 00 0A 74 3C 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Gold"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.GoldVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Heal()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 D9 33 02 70 6F 33 19 00 0A 74 3D 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Heal"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.HealVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_HpLoss()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 BF 63 02 70 6F 33 19 00 0A 74 3E 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "HpLoss"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.HpLossVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_MaxHp()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 AA 33 00 70 6F 33 19 00 0A 74 41 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "MaxHp"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.MaxHpVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_OstyDamage()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 DA FA 02 70 6F 33 19 00 0A 74 42 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "OstyDamage"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.OstyDamageVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Poison()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 F0 FA 02 70 6F 33 19 00 0A 74 75 07 00 1B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "PoisonPower"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      <typespec>
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Repeat()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 3B 78 01 70 6F 33 19 00 0A 74 44 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Repeat"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.RepeatVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Stars()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 08 FB 02 70 6F 33 19 00 0A 74 45 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Stars"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.StarsVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Strength()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 57 B4 01 70 6F 33 19 00 0A 74 5B 07 00 1B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "StrengthPower"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      <typespec>
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Summon()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 46 E3 01 70 6F 33 19 00 0A 74 47 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "Summon"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      MegaCrit.Sts2.Core.Localization.DynamicVars.SummonVar
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Vulnerable()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 94 A0 02 70 6F 33 19 00 0A 74 55 07 00 1B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "VulnerablePower"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      <typespec>
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet.get_Weak()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0C 16 00 04 72 14 FB 02 70 6F 33 19 00 0A 74 73 07 00 1B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::_vars
+    IL_0006: ldstr          "WeakPower"
+    IL_000B: callvirt       <typespec>::get_Item
+    IL_0010: castclass      <typespec>
+    IL_0015: ret            
+
+

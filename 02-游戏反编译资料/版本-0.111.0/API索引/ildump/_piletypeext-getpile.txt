@@ -1,0 +1,35 @@
+===== MegaCrit.Sts2.Core.Entities.Cards.PileTypeExtensions.GetPile(pileType, player)  [attrs=0x96] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 72 4B 9C 03 70 28 B4 0C 00 0A 02 03 28 50 52 00 06 0A 06 2D 37 12 01 1F 27 17 28 ED 00 00 0A 12 01 72 59 9C 03 70 28 F5 00 00 0A 12 01 02 28 44 17 00 2B 12 01 72 75 9C 03 70 28 F5 00 00 0A 12 01 28 EF 00 00 0A 73 F5 01 00 0A 7A 06 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: ldstr          "player"
+    IL_0006: call           System.ArgumentNullException::ThrowIfNull
+    IL_000B: ldarg.0        
+    IL_000C: ldarg.1        
+    IL_000D: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::Get
+    IL_0012: stloc.0        
+    IL_0013: ldloc.0        
+    IL_0014: brtrue.s       IL_004D
+    IL_0016: ldloca.s       1
+    IL_0018: ldc.i4.s       39
+    IL_001A: ldc.i4.1       
+    IL_001B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0020: ldloca.s       1
+    IL_0022: ldstr          "Tried to get "
+    IL_0027: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_002C: ldloca.s       1
+    IL_002E: ldarg.0        
+    IL_002F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0034: ldloca.s       1
+    IL_0036: ldstr          " pile while out of combat."
+    IL_003B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0040: ldloca.s       1
+    IL_0042: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0047: newobj         System.InvalidOperationException::.ctor
+    IL_004C: throw          
+    IL_004D: ldloc.0        
+    IL_004E: ret            
+
+

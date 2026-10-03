@@ -1,0 +1,15 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardLocation
+    base: System.ValueType
+    implements: System.IEquatable`1<MegaCrit.Sts2.Core.Entities.Cards.CardLocation>
+
+    field  public MegaCrit.Sts2.Core.Entities.Players.Player player
+    field  public MegaCrit.Sts2.Core.Entities.Cards.PileType pileType
+    field  public MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition position
+    method public void .ctor(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition position)
+    method public string ToString()
+    method internal bool PrintMembers(System.Text.StringBuilder builder)
+    method public static bool op_Inequality(MegaCrit.Sts2.Core.Entities.Cards.CardLocation left, MegaCrit.Sts2.Core.Entities.Cards.CardLocation right)
+    method public static bool op_Equality(MegaCrit.Sts2.Core.Entities.Cards.CardLocation left, MegaCrit.Sts2.Core.Entities.Cards.CardLocation right)
+    method public int GetHashCode()
+    method public bool Equals(object obj)
+    method public bool Equals(MegaCrit.Sts2.Core.Entities.Cards.CardLocation other)

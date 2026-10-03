@@ -1,0 +1,161 @@
+### public class MegaCrit.Sts2.Core.Entities.Creatures.Creature
+    base: System.Object
+
+    field  internal System.Action`2<int, int> BlockChanged
+    field  internal System.Action`2<int, int> CurrentHpChanged
+    field  internal System.Action`2<int, int> MaxHpChanged
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> PowerApplied
+    field  internal System.Action`3<MegaCrit.Sts2.Core.Models.PowerModel, int, bool> PowerIncreased
+    field  internal System.Action`2<MegaCrit.Sts2.Core.Models.PowerModel, bool> PowerDecreased
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> PowerRemoved
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Died
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Revived
+    field  internal int _block
+    field  internal int _currentHp
+    field  internal int _maxHp
+    field  internal readonly System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.PowerModel> _powers
+    field  internal System.Nullable`1<int> <MonsterMaxHpBeforeModification>k__BackingField
+    field  internal System.Nullable`1<uint> <CombatId>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Models.MonsterModel <Monster>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Players.Player <Player>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Combat.CombatSide <Side>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Combat.ICombatState <CombatState>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.HpDisplay <HpDisplay>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Entities.Players.Player _petOwner
+    field  internal string <SlotName>k__BackingField
+    prop   int Block { public get; internal set; }
+    prop   int CurrentHp { public get; internal set; }
+    prop   int MaxHp { public get; internal set; }
+    prop   System.Nullable`1<int> MonsterMaxHpBeforeModification { public get; internal set; }
+    prop   System.Nullable`1<uint> CombatId { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Models.MonsterModel Monster { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.Player Player { public get; }
+    prop   MegaCrit.Sts2.Core.Models.ModelId ModelId { public get; }
+    prop   MegaCrit.Sts2.Core.Combat.CombatSide Side { public get; }
+    prop   MegaCrit.Sts2.Core.Combat.ICombatState CombatState { public get; public set; }
+    prop   string Name { public get; }
+    prop   string LogName { public get; }
+    prop   bool IsMonster { public get; }
+    prop   bool IsPlayer { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.HpDisplay HpDisplay { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.Player PetOwner { public get; public set; }
+    prop   bool IsPet { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Pets { public get; }
+    prop   bool IsAlive { public get; }
+    prop   bool IsDead { public get; }
+    prop   string SlotName { public get; public set; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    prop   bool IsEnemy { public get; }
+    prop   bool IsPrimaryEnemy { public get; }
+    prop   bool IsSecondaryEnemy { public get; }
+    prop   bool IsHittable { public get; }
+    prop   bool CanReceivePowers { public get; }
+    prop   bool IsStunned { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.PowerModel> Powers { public get; }
+    method public void add_BlockChanged(System.Action`2<int, int> value)
+    method public void remove_BlockChanged(System.Action`2<int, int> value)
+    method public void add_CurrentHpChanged(System.Action`2<int, int> value)
+    method public void remove_CurrentHpChanged(System.Action`2<int, int> value)
+    method public void add_MaxHpChanged(System.Action`2<int, int> value)
+    method public void remove_MaxHpChanged(System.Action`2<int, int> value)
+    method public void add_PowerApplied(System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> value)
+    method public void remove_PowerApplied(System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> value)
+    method public void add_PowerIncreased(System.Action`3<MegaCrit.Sts2.Core.Models.PowerModel, int, bool> value)
+    method public void remove_PowerIncreased(System.Action`3<MegaCrit.Sts2.Core.Models.PowerModel, int, bool> value)
+    method public void add_PowerDecreased(System.Action`2<MegaCrit.Sts2.Core.Models.PowerModel, bool> value)
+    method public void remove_PowerDecreased(System.Action`2<MegaCrit.Sts2.Core.Models.PowerModel, bool> value)
+    method public void add_PowerRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> value)
+    method public void remove_PowerRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> value)
+    method public void add_Died(System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> value)
+    method public void remove_Died(System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> value)
+    method public void add_Revived(System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> value)
+    method public void remove_Revived(System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> value)
+    method public int get_Block()
+    method internal void set_Block(int value)
+    method public int get_CurrentHp()
+    method internal void set_CurrentHp(int value)
+    method public int get_MaxHp()
+    method internal void set_MaxHp(int value)
+    method public System.Nullable`1<int> get_MonsterMaxHpBeforeModification()
+    method internal void set_MonsterMaxHpBeforeModification(System.Nullable`1<int> value)
+    method public System.Nullable`1<uint> get_CombatId()
+    method public void set_CombatId(System.Nullable`1<uint> value)
+    method public MegaCrit.Sts2.Core.Models.MonsterModel get_Monster()
+    method public MegaCrit.Sts2.Core.Entities.Players.Player get_Player()
+    method public MegaCrit.Sts2.Core.Models.ModelId get_ModelId()
+    method public MegaCrit.Sts2.Core.Combat.CombatSide get_Side()
+    method public MegaCrit.Sts2.Core.Combat.ICombatState get_CombatState()
+    method public void set_CombatState(MegaCrit.Sts2.Core.Combat.ICombatState value)
+    method public string get_Name()
+    method public string get_LogName()
+    method public bool get_IsMonster()
+    method public bool get_IsPlayer()
+    method public MegaCrit.Sts2.Core.Entities.Creatures.HpDisplay get_HpDisplay()
+    method public void set_HpDisplay(MegaCrit.Sts2.Core.Entities.Creatures.HpDisplay value)
+    method public MegaCrit.Sts2.Core.Entities.Players.Player get_PetOwner()
+    method public void set_PetOwner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    method public bool get_IsPet()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_Pets()
+    method public bool get_IsAlive()
+    method public bool get_IsDead()
+    method public string get_SlotName()
+    method public void set_SlotName(string value)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method public bool get_IsEnemy()
+    method public bool get_IsPrimaryEnemy()
+    method public bool get_IsSecondaryEnemy()
+    method public bool get_IsHittable()
+    method public bool get_CanReceivePowers()
+    method public bool get_IsStunned()
+    method public void .ctor(MegaCrit.Sts2.Core.Models.MonsterModel monster, MegaCrit.Sts2.Core.Combat.CombatSide side, string slotName)
+    method public void .ctor(MegaCrit.Sts2.Core.Entities.Players.Player player, int currentHp, int maxHp)
+    method public void SetUniqueMonsterHpValue(System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> creaturesOnSide, MegaCrit.Sts2.Core.Random.Rng rng)
+    method public void ScaleMonsterHpForMultiplayer(MegaCrit.Sts2.Core.Models.EncounterModel encounter, int playerCount, int actIndex)
+    method public MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals CreateVisuals()
+    method public System.Threading.Tasks.Task AfterAddedToRoom()
+    method public System.Decimal DamageBlockInternal(System.Decimal amount, MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public MegaCrit.Sts2.Core.Entities.Creatures.DamageResult LoseHpInternal(System.Decimal amount, MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public void GainBlockInternal(System.Decimal amount)
+    method public void LoseBlockInternal(System.Decimal amount)
+    method public void HealInternal(System.Decimal amount)
+    method public void SetCurrentHpInternal(System.Decimal amount)
+    method public void SetMaxHpInternal(System.Decimal amount)
+    method public void Reset()
+    method public void InvokeDiedEvent()
+    method public void StunInternal(System.Func`2<System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature>, System.Threading.Tasks.Task> stunMove, string nextMoveId)
+    method public void PrepareForNextTurn(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> targets, bool rollNewMove)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.PowerModel> get_Powers()
+    method public bool HasPower<T>()
+    method public bool HasPower(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public T GetPower<T>()
+    method public MegaCrit.Sts2.Core.Models.PowerModel GetPower(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public System.Collections.Generic.IEnumerable`1<T> GetPowerInstances<T>()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> GetPowerInstances(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public MegaCrit.Sts2.Core.Models.PowerModel GetPowerById(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public int GetPowerAmount<T>()
+    method public void ApplyPowerInternal(MegaCrit.Sts2.Core.Models.PowerModel power)
+    method public void InvokePowerModified(MegaCrit.Sts2.Core.Models.PowerModel power, int change, bool silent)
+    method public void RemovePowerInternal(MegaCrit.Sts2.Core.Models.PowerModel power)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> RemoveAllPowersInternalExcept(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> except)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> RemoveAllPowersAfterDeath()
+    method public void BeforeTurnStart(MegaCrit.Sts2.Core.Combat.CombatSide side)
+    method public System.Threading.Tasks.Task AfterTurnStart(MegaCrit.Sts2.Core.Combat.CombatSide side)
+    method public void OnSideSwitch()
+    method public System.Threading.Tasks.Task TakeTurn()
+    method internal System.Threading.Tasks.Task ClearBlock()
+    method public string ToString()
+    method public double GetHpPercentRemaining()
+    method public static System.Decimal ScaleHpForMultiplayer(System.Decimal hp, MegaCrit.Sts2.Core.Models.EncounterModel encounter, int playerCount, int actIndex)
+    method public MegaCrit.Sts2.Core.Nodes.Combat.NCreature GetCreatureNode()
+    method public void SetNodeVisible(bool visible)
+    method public Godot.Control GetVfxContainer()
+    method public Godot.Control GetBackVfxContainer()
+    event  System.Action`2<int, int> BlockChanged
+    event  System.Action`2<int, int> CurrentHpChanged
+    event  System.Action`2<int, int> MaxHpChanged
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> PowerApplied
+    event  System.Action`3<MegaCrit.Sts2.Core.Models.PowerModel, int, bool> PowerIncreased
+    event  System.Action`2<MegaCrit.Sts2.Core.Models.PowerModel, bool> PowerDecreased
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> PowerRemoved
+    event  System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Died
+    event  System.Action`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Revived

@@ -1,0 +1,1 @@
+### MegaCrit.Sts2.Core.HoverTips.StaticHoverTip

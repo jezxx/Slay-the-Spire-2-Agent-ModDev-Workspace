@@ -1,0 +1,27 @@
+MegaCrit.Sts2.Core.Models.AbstractModel  [abstract] : System.Object
+MegaCrit.Sts2.Core.Models.AbstractModelSubtypes  [static] : System.Object
+MegaCrit.Sts2.Core.Models.AchievementModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.ActModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.AfflictionModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.AncientEventModel  [abstract] : MegaCrit.Sts2.Core.Models.EventModel
+MegaCrit.Sts2.Core.Models.BadgeModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.BestiaryMonsterMove  [class] : System.ValueType
+MegaCrit.Sts2.Core.Models.CardModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.CardPoolModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.CharacterModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.EnchantmentModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.EncounterModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.EventModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.IPoolModel  [interface]
+MegaCrit.Sts2.Core.Models.ITemporaryPower  [interface]
+MegaCrit.Sts2.Core.Models.ModelDb  [static] : System.Object
+MegaCrit.Sts2.Core.Models.ModelId  [class] : System.Object
+MegaCrit.Sts2.Core.Models.ModifierModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.MonsterModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.OrbModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.PotionModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.PotionPoolModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.PowerModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.RelicModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.RelicPoolModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel
+MegaCrit.Sts2.Core.Models.SingletonModel  [abstract] : MegaCrit.Sts2.Core.Models.AbstractModel

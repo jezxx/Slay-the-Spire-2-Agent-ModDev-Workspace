@@ -1,0 +1,136 @@
+## 添加新卡牌关键词
+
+这里的关键词指的是`消耗`，`虚无`一类的卡牌属性，塔2并不需要你在卡牌描述里写这些，只需在`CanonicalKeywords`添加即可。
+
+* 使用`CustomEnum`可以为枚举添加新的值。新建一个类：
+
+```csharp
+public class MyKeywords
+{
+    // 自定义枚举的名字。最终会变成{前缀}-{枚举值大写}的形式，例如TEST-UNIQUE
+    [CustomEnum("UNIQUE")]
+    // 放在原版卡牌描述的位置，这里是卡牌描述的前面
+    [KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword Unique;
+}
+```
+
+* 添加一个本地化文件，`{modId}/localization/{Language}/card_keywords.json`。
+
+```json
+{
+    "TEST-UNIQUE.description": "卡组中只能有一张同名牌。",
+    "TEST-UNIQUE.title": "唯一"
+}
+```
+
+* 然后在你的卡牌类里添加这一行，或者添加keyword：
+
+```csharp
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [MyKeywords.Unique];
+```
+
+![alt text](../../images/image23.webp)
+
+判断是否有：`Keywords.Contains(MyKeywords.Unique)`
+
+可配合单例（`SingletonModel`）实现逻辑。参考对应文章。
+
+## 添加新动态变量
+
+动态变量是指`伤害`，`格挡`，`抽牌数`，`获得能量数`等这种动态数值。虽然可以通过`new DynamicPower("xxx", 1)`这种形式添加，但是写一个新的类比较规范也便于扩展功能。参考`变量与描述`这章。
+
+通过`baselib`的`WithTooltip`可以添加tooltip。<b>如果不需要添加本地化文本，就不添加这行。</b>
+
+如果你只是个简单的数值，这样就行：
+
+```csharp
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new DamageVar(12, ValueProp.Move),
+        new DynamicVar("Leech", 1m)
+        // .WithTooltip("TEST-LEECH") // 如果要加本地化
+    ];
+```
+
+（可选）然后添加一个新的本地化文件`{modId}/localization/{Language}/static_hover_tips.json`。
+
+```json
+{
+    "TEST-LEECH.description": "吸取等量生命。",
+    "TEST-LEECH.title": "汲取"
+}
+```
+
+然后在卡牌的描述写上`{Leech}`以使用：
+
+```json
+{
+    "TEST-TEST_CARD.title": "测试卡牌",
+    "TEST-TEST_CARD.description": "[gold]汲取[/gold]{Leech:diff()}。\n造成{Damage:diff()}点伤害。"
+}
+```
+
+`:diff()`表示这个值一旦和基础值不同，就会变红色或绿色（例如升级时增加数值，预览变成绿色）。
+
+
+简单来说效果可以在`OnPlay`这么写，或者写一个自己的Cmd方便执行效果：
+```csharp
+    // 使用DynamicVars["Leech"]获取数值，先让敌人失去生命（受到不可格挡不受能力影响的伤害）
+    await CreatureCmd.Damage(choiceContext, [cardPlay.Target!], DynamicVars["Leech"].BaseValue, ValueProp.Unblockable | ValueProp.Unpowered, cardPlay.Card.Owner.Creature);
+    // 再让玩家回复生命
+    await CreatureCmd.Heal(cardPlay.Card.Owner.Creature, DynamicVars["Leech"].BaseValue);
+```
+
+![alt text](../../images/image26.webp)
+
+## 添加卡牌提示文本
+
+指的是卡牌旁出现的提示方框，或预览卡牌。在描述里的关键词一般是添加提示文本和染色搭配，例如`易伤`，`激发`等。
+
+和塔1不同，关键词提示是通过描述染色（`[gold]易伤[/gold]`）然后添加卡牌提示文本实现的。
+
+例如，你给卡牌加上`消耗`就会自动给你加它的提示文本。但是如果你的卡牌没有`消耗`但是描述中是`“消耗一张牌”`，就通过这种方式添加提示文本。
+
+仅需在卡牌类中重载`ExtraHoverTips`即可：
+
+```csharp
+[Pool(typeof(TestCardPool))]
+public class TestCard : CustomCardModel
+{
+    // 其余省略
+
+    // 通过HoverTipFactory添加各种提示文本
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [
+        HoverTipFactory.FromCard<Shiv>(),
+        HoverTipFactory.FromPower<BlurPower>(),
+        HoverTipFactory.FromKeyword(MyKeywords.Unique)
+    ];
+}
+```
+
+## 添加卡牌tag
+
+tag是指`打击` `防御`这种。如果有打击tag会被打击木偶增伤。使用`CustomEnum`可以为枚举添加新的值。新建一个类：
+
+```csharp
+public class MyCardTags
+{
+    [CustomEnum]
+    public static CardTag Test;
+}
+```
+
+然后在卡牌类中重载`CanonicalTags`即可：
+
+```csharp
+[Pool(typeof(TestCardPool))]
+public class TestCard : CustomCardModel
+{
+    // 其余省略
+
+    // 添加tag
+    protected override HashSet<CardTag> CanonicalTags => [MyCardTags.Test];
+}
+```
+
+如果要判断，使用`if (Card.Tags.Contains(MyCardTags.Test)) {}`即可。`Card`需要是个`CardModel`类型。

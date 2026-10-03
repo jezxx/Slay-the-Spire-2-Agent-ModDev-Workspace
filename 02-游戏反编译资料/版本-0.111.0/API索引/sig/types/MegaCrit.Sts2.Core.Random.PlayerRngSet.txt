@@ -1,0 +1,19 @@
+### public class MegaCrit.Sts2.Core.Random.PlayerRngSet
+    base: System.Object
+
+    field  internal readonly System.Collections.Generic.Dictionary`2<MegaCrit.Sts2.Core.Entities.Rngs.PlayerRngType, MegaCrit.Sts2.Core.Random.Rng> _rngs
+    field  internal readonly ulong <Seed>k__BackingField
+    prop   MegaCrit.Sts2.Core.Random.Rng Rewards { public get; }
+    prop   MegaCrit.Sts2.Core.Random.Rng Shops { public get; }
+    prop   MegaCrit.Sts2.Core.Random.Rng Transformations { public get; }
+    prop   ulong Seed { public get; }
+    method public MegaCrit.Sts2.Core.Random.Rng get_Rewards()
+    method public MegaCrit.Sts2.Core.Random.Rng get_Shops()
+    method public MegaCrit.Sts2.Core.Random.Rng get_Transformations()
+    method public ulong get_Seed()
+    method public void .ctor(ulong seed)
+    method internal MegaCrit.Sts2.Core.Random.Rng CreateRng(MegaCrit.Sts2.Core.Entities.Rngs.PlayerRngType rngType)
+    method public MegaCrit.Sts2.Core.Saves.SerializablePlayerRngSet ToSerializable()
+    method public static MegaCrit.Sts2.Core.Random.PlayerRngSet FromSerializable(MegaCrit.Sts2.Core.Saves.SerializablePlayerRngSet save)
+    method public void LoadFromSerializable(MegaCrit.Sts2.Core.Saves.SerializablePlayerRngSet save)
+    method public MegaCrit.Sts2.Core.Random.Rng GetRng(MegaCrit.Sts2.Core.Entities.Rngs.PlayerRngType rngType)

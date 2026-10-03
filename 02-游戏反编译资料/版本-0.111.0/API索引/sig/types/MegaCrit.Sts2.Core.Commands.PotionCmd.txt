@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.Commands.PotionCmd
+    base: System.Object
+
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Entities.Potions.PotionProcureResult> TryToProcure<T>(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Entities.Potions.PotionProcureResult> TryToProcure(MegaCrit.Sts2.Core.Models.PotionModel potion, MegaCrit.Sts2.Core.Entities.Players.Player player, int slotIndex)
+    method public static System.Threading.Tasks.Task Discard(MegaCrit.Sts2.Core.Models.PotionModel potion)

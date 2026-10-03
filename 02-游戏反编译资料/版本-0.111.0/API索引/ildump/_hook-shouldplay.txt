@@ -1,0 +1,77 @@
+===== MegaCrit.Sts2.Core.Hooks.Hook.ShouldPlay(combatState, card, preventer, autoPlayType)  [attrs=0x96] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 6B 4C 00 06 6F 3D 00 00 0A 0A 2B 18 06 6F 3C 00 00 0A 0B 07 03 05 6F 7B 17 00 06 2D 07 04 07 51 16 0C DE 19 06 6F 33 00 00 0A 2D E0 DE 0A 06 2C 06 06 6F 32 00 00 0A DC 04 14 51 17 2A 08 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Hooks.Hook::IterateCombatHookListeners
+    IL_0006: callvirt       <typespec>::GetEnumerator
+    IL_000B: stloc.0        
+    IL_000C: br.s           IL_0026
+    IL_000E: ldloc.0        
+    IL_000F: callvirt       <typespec>::get_Current
+    IL_0014: stloc.1        
+    IL_0015: ldloc.1        
+    IL_0016: ldarg.1        
+    IL_0017: ldarg.3        
+    IL_0018: callvirt       MegaCrit.Sts2.Core.Models.AbstractModel::ShouldPlay
+    IL_001D: brtrue.s       IL_0026
+    IL_001F: ldarg.2        
+    IL_0020: ldloc.1        
+    IL_0021: stind.ref      
+    IL_0022: ldc.i4.0       
+    IL_0023: stloc.2        
+    IL_0024: leave.s        IL_003F
+    IL_0026: ldloc.0        
+    IL_0027: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_002C: brtrue.s       IL_000E
+    IL_002E: leave.s        IL_003A
+    IL_0030: ldloc.0        
+    IL_0031: brfalse.s      IL_0039
+    IL_0033: ldloc.0        
+    IL_0034: callvirt       System.IDisposable::Dispose
+    IL_0039: endfinally     
+    IL_003A: ldarg.2        
+    IL_003B: ldnull         
+    IL_003C: stind.ref      
+    IL_003D: ldc.i4.1       
+    IL_003E: ret            
+    IL_003F: ldloc.2        
+    IL_0040: ret            
+
+
+===== MegaCrit.Sts2.Core.Hooks.Hook.ShouldPlayerResetEnergy(combatState, player)  [attrs=0x96] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 6B 4C 00 06 6F 3D 00 00 0A 0A 2B 14 06 6F 3C 00 00 0A 0B 07 03 6F 7C 17 00 06 2D 04 16 0C DE 16 06 6F 33 00 00 0A 2D E4 DE 0A 06 2C 06 06 6F 32 00 00 0A DC 17 2A 08 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Hooks.Hook::IterateCombatHookListeners
+    IL_0006: callvirt       <typespec>::GetEnumerator
+    IL_000B: stloc.0        
+    IL_000C: br.s           IL_0022
+    IL_000E: ldloc.0        
+    IL_000F: callvirt       <typespec>::get_Current
+    IL_0014: stloc.1        
+    IL_0015: ldloc.1        
+    IL_0016: ldarg.1        
+    IL_0017: callvirt       MegaCrit.Sts2.Core.Models.AbstractModel::ShouldPlayerResetEnergy
+    IL_001C: brtrue.s       IL_0022
+    IL_001E: ldc.i4.0       
+    IL_001F: stloc.2        
+    IL_0020: leave.s        IL_0038
+    IL_0022: ldloc.0        
+    IL_0023: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_0028: brtrue.s       IL_000E
+    IL_002A: leave.s        IL_0036
+    IL_002C: ldloc.0        
+    IL_002D: brfalse.s      IL_0035
+    IL_002F: ldloc.0        
+    IL_0030: callvirt       System.IDisposable::Dispose
+    IL_0035: endfinally     
+    IL_0036: ldc.i4.1       
+    IL_0037: ret            
+    IL_0038: ldloc.2        
+    IL_0039: ret            
+
+

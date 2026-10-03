@@ -1,0 +1,73 @@
+===== <IterateCombatHookListeners>d__0.MoveNext()  [attrs=0x1E1] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 41 6E 00 04 0B 07 2C 0B 07 17 2E 68 16 0A DD 8E 00 00 00 02 15 7D 41 6E 00 04 28 7B 56 00 06 6F AB 56 00 06 2C 10 28 7B 56 00 06 6F A4 56 00 06 2D 04 16 0A DE 6B 02 02 7B 44 6E 00 04 6F 98 57 00 06 6F 3D 00 00 0A 7D 46 6E 00 04 02 1F FD 7D 41 6E 00 04 2B 26 02 7B 46 6E 00 04 6F 3C 00 00 0A 0C 02 08 7D 42 6E 00 04 02 17 7D 41 6E 00 04 17 0A DE 2D 02 1F FD 7D 41 6E 00 04 02 7B 46 6E 00 04 6F 33 00 00 0A 2D CD 02 28 9E AF 00 06 02 14 7D 46 6E 00 04 16 0A DE 07 02 28 9C AF 00 06 DC 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          .<IterateCombatHookListeners>d__0::<>1__state
+    IL_0006: stloc.1        
+    IL_0007: ldloc.1        
+    IL_0008: brfalse.s      IL_0015
+    IL_000A: ldloc.1        
+    IL_000B: ldc.i4.1       
+    IL_000C: beq.s          IL_0076
+    IL_000E: ldc.i4.0       
+    IL_000F: stloc.0        
+    IL_0010: leave          IL_00A3
+    IL_0015: ldarg.0        
+    IL_0016: ldc.i4.m1      
+    IL_0017: stfld          .<IterateCombatHookListeners>d__0::<>1__state
+    IL_001C: call           MegaCrit.Sts2.Core.Combat.CombatManager::get_Instance
+    IL_0021: callvirt       MegaCrit.Sts2.Core.Combat.CombatManager::get_IsOverOrEnding
+    IL_0026: brfalse.s      IL_0038
+    IL_0028: call           MegaCrit.Sts2.Core.Combat.CombatManager::get_Instance
+    IL_002D: callvirt       MegaCrit.Sts2.Core.Combat.CombatManager::get_IsStarting
+    IL_0032: brtrue.s       IL_0038
+    IL_0034: ldc.i4.0       
+    IL_0035: stloc.0        
+    IL_0036: leave.s        IL_00A3
+    IL_0038: ldarg.0        
+    IL_0039: ldarg.0        
+    IL_003A: ldfld          .<IterateCombatHookListeners>d__0::combatState
+    IL_003F: callvirt       MegaCrit.Sts2.Core.Combat.ICombatState::IterateHookListeners
+    IL_0044: callvirt       <typespec>::GetEnumerator
+    IL_0049: stfld          .<IterateCombatHookListeners>d__0::<>7__wrap1
+    IL_004E: ldarg.0        
+    IL_004F: ldc.i4.s       -3
+    IL_0051: stfld          .<IterateCombatHookListeners>d__0::<>1__state
+    IL_0056: br.s           IL_007E
+    IL_0058: ldarg.0        
+    IL_0059: ldfld          .<IterateCombatHookListeners>d__0::<>7__wrap1
+    IL_005E: callvirt       <typespec>::get_Current
+    IL_0063: stloc.2        
+    IL_0064: ldarg.0        
+    IL_0065: ldloc.2        
+    IL_0066: stfld          .<IterateCombatHookListeners>d__0::<>2__current
+    IL_006B: ldarg.0        
+    IL_006C: ldc.i4.1       
+    IL_006D: stfld          .<IterateCombatHookListeners>d__0::<>1__state
+    IL_0072: ldc.i4.1       
+    IL_0073: stloc.0        
+    IL_0074: leave.s        IL_00A3
+    IL_0076: ldarg.0        
+    IL_0077: ldc.i4.s       -3
+    IL_0079: stfld          .<IterateCombatHookListeners>d__0::<>1__state
+    IL_007E: ldarg.0        
+    IL_007F: ldfld          .<IterateCombatHookListeners>d__0::<>7__wrap1
+    IL_0084: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_0089: brtrue.s       IL_0058
+    IL_008B: ldarg.0        
+    IL_008C: call           .<IterateCombatHookListeners>d__0::<>m__Finally1
+    IL_0091: ldarg.0        
+    IL_0092: ldnull         
+    IL_0093: stfld          .<IterateCombatHookListeners>d__0::<>7__wrap1
+    IL_0098: ldc.i4.0       
+    IL_0099: stloc.0        
+    IL_009A: leave.s        IL_00A3
+    IL_009C: ldarg.0        
+    IL_009D: call           .<IterateCombatHookListeners>d__0::System.IDisposable.Dispose
+    IL_00A2: endfinally     
+    IL_00A3: ldloc.0        
+    IL_00A4: ret            
+
+

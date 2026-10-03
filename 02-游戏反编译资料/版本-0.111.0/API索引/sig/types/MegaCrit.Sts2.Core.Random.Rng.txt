@@ -1,0 +1,34 @@
+### public class MegaCrit.Sts2.Core.Random.Rng
+    base: System.Object
+
+    field  internal static readonly MegaCrit.Sts2.Core.Random.Rng <Chaotic>k__BackingField
+    field  internal int _counter
+    field  internal readonly MegaCrit.Sts2.Core.Random.MegaRandom _random
+    prop   MegaCrit.Sts2.Core.Random.Rng Chaotic { public get; }
+    method public static MegaCrit.Sts2.Core.Random.Rng get_Chaotic()
+    method public void .ctor(ulong seed)
+    method public void .ctor(MegaCrit.Sts2.Core.Saves.SerializableRng serializable)
+    method public void .ctor(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Models.ModelId id, ulong mixin)
+    method public void .ctor(ulong seed, string name)
+    method public void LoadFromSerializable(MegaCrit.Sts2.Core.Saves.SerializableRng serializable)
+    method public bool NextBool()
+    method public int NextInt(int maxExclusive)
+    method public int NextInt(int minInclusive, int maxExclusive)
+    method public uint NextUnsignedInt(uint maxExclusive)
+    method public uint NextUnsignedInt(uint minInclusive, uint maxExclusive)
+    method public ulong NextUnsignedLong()
+    method public ulong NextUnsignedLong(ulong maxExclusive)
+    method public ulong NextUnsignedLong(ulong minInclusive, ulong maxExclusive)
+    method public float NextFloat(float max)
+    method public float NextFloat(float min, float max)
+    method public double NextDouble()
+    method public double NextDouble(double min, double max)
+    method public float NextGaussianFloat(float mean, float stdDev, float min, float max)
+    method public double NextGaussianDouble(double mean, double stdDev, double min, double max)
+    method public int NextGaussianInt(int mean, int stdDev, int min, int max)
+    method public T NextItem<T>(System.Collections.Generic.IEnumerable`1<T> items)
+    method public T WeightedNextItem<T>(System.Collections.Generic.IEnumerable`1<T> items, System.Func`2<T, float> weightFetcher)
+    method public static T WeightedNextItem<T>(float randInput, System.Collections.Generic.IEnumerable`1<T> items, System.Func`2<T, float> weightFetcher, T fallback)
+    method public void Shuffle<T>(System.Collections.Generic.IList`1<T> list)
+    method public MegaCrit.Sts2.Core.Saves.SerializableRng ToSerializable()
+    method internal static void .cctor()

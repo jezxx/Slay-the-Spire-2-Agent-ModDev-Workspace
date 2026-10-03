@@ -1,0 +1,261 @@
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_IconBaseName()  [attrs=0x9C4] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_000B: callvirt       System.String::ToLowerInvariant
+    IL_0010: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_PackedIconPath()  [attrs=0x9C6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 5D AD 01 70 02 6F A5 1B 00 06 72 F4 0B 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "atlases/relic_atlas.sprites/"
+    IL_0005: ldarg.0        
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_IconBaseName
+    IL_000B: ldstr          ".tres"
+    IL_0010: call           System.String::Concat
+    IL_0015: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_001A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_PackedIconOutlinePath()  [attrs=0x9C4] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 97 AD 01 70 02 6F A5 1B 00 06 72 F4 0B 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "atlases/relic_outline_atlas.sprites/"
+    IL_0005: ldarg.0        
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_IconBaseName
+    IL_000B: ldstr          ".tres"
+    IL_0010: call           System.String::Concat
+    IL_0015: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_001A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_BigIconPath()  [attrs=0x9C4] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 E1 AD 01 70 02 6F A5 1B 00 06 72 34 0C 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "relics/"
+    IL_0005: ldarg.0        
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_IconBaseName
+    IL_000B: ldstr          ".png"
+    IL_0010: call           System.String::Concat
+    IL_0015: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_001A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_BigBetaIconPath()  [attrs=0x881] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 F1 AD 01 70 02 6F A5 1B 00 06 72 34 0C 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "relics/beta/"
+    IL_0005: ldarg.0        
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_IconBaseName
+    IL_000B: ldstr          ".png"
+    IL_0010: call           System.String::Concat
+    IL_0015: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_001A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_MissingIconPath()  [attrs=0x891] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 01 A5 01 70 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "powers/missing_power.png"
+    IL_0005: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_000A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_IconPath()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F A6 1B 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_PackedIconPath
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_Icon()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F A6 1B 00 06 14 17 6A 28 93 00 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_PackedIconPath
+    IL_0006: ldnull         
+    IL_0007: ldc.i4.1       
+    IL_0008: conv.i8        
+    IL_0009: call           Godot.ResourceLoader::Load<...>
+    IL_000E: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_IconOutline()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F A7 1B 00 06 14 17 6A 28 93 00 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_PackedIconOutlinePath
+    IL_0006: ldnull         
+    IL_0007: ldc.i4.1       
+    IL_0008: conv.i8        
+    IL_0009: call           Godot.ResourceLoader::Load<...>
+    IL_000E: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_BigIcon()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 D8 59 00 06 02 28 AF 1B 00 06 6F 93 59 00 06 2A
+  -- decoded --
+    IL_0000: call           MegaCrit.Sts2.Core.Assets.PreloadManager::get_Cache
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.RelicModel::get_ResolvedBigIconPath
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Assets.AssetCache::GetTexture2D
+    IL_0010: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.get_ResolvedBigIconPath()  [attrs=0x881] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 57 09 00 04 2C 07 02 7B 57 09 00 04 2A 02 6F A8 1B 00 06 72 05 01 00 70 28 35 02 00 0A 2C 0E 02 02 6F A8 1B 00 06 7D 57 09 00 04 2B 2B 02 28 A9 1B 00 06 72 05 01 00 70 28 35 02 00 0A 2C 0E 02 02 28 A9 1B 00 06 7D 57 09 00 04 2B 0B 02 28 AA 1B 00 06 7D 57 09 00 04 02 7B 57 09 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_0006: brfalse.s      IL_000F
+    IL_0008: ldarg.0        
+    IL_0009: ldfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_000E: ret            
+    IL_000F: ldarg.0        
+    IL_0010: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_BigIconPath
+    IL_0015: ldstr          ""
+    IL_001A: call           Godot.ResourceLoader::Exists
+    IL_001F: brfalse.s      IL_002F
+    IL_0021: ldarg.0        
+    IL_0022: ldarg.0        
+    IL_0023: callvirt       MegaCrit.Sts2.Core.Models.RelicModel::get_BigIconPath
+    IL_0028: stfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_002D: br.s           IL_005A
+    IL_002F: ldarg.0        
+    IL_0030: call           MegaCrit.Sts2.Core.Models.RelicModel::get_BigBetaIconPath
+    IL_0035: ldstr          ""
+    IL_003A: call           Godot.ResourceLoader::Exists
+    IL_003F: brfalse.s      IL_004F
+    IL_0041: ldarg.0        
+    IL_0042: ldarg.0        
+    IL_0043: call           MegaCrit.Sts2.Core.Models.RelicModel::get_BigBetaIconPath
+    IL_0048: stfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_004D: br.s           IL_005A
+    IL_004F: ldarg.0        
+    IL_0050: call           MegaCrit.Sts2.Core.Models.RelicModel::get_MissingIconPath
+    IL_0055: stfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_005A: ldarg.0        
+    IL_005B: ldfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_0060: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.UpdateTexture(texture)  [attrs=0x86] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 6F DD 00 00 0A 74 43 00 00 01 0A 06 7E 55 09 00 04 02 28 BA 1B 00 06 16 FE 03 28 DF 15 00 0A 6F E3 00 00 0A 02 28 BC 1B 00 06 2C 0B 03 28 E0 15 00 0A 6F E1 15 00 0A 28 DF 0B 00 06 6F E6 0B 00 06 2C 08 02 28 BC 1B 00 06 2C 23 06 7E 54 09 00 04 16 28 DF 15 00 0A 6F E3 00 00 0A 06 7E 53 09 00 04 16 28 DF 15 00 0A 6F E3 00 00 0A 2A 02 28 C9 1B 00 06 0B 07 45 03 00 00 00 02 00 00 00 25 00 00 00 48 00 00 00 2B 69 06 7E 54 09 00 04 16 28 DF 15 00 0A 6F E3 00 00 0A 06 7E 53 09 00 04 16 28 DF 15 00 0A 6F E3 00 00 0A 2A 06 7E 54 09 00 04 17 28 DF 15 00 0A 6F E3 00 00 0A 06 7E 53 09 00 04 16 28 DF 15 00 0A 6F E3 00 00 0A 2A 06 7E 54 09 00 04 16 28 DF 15 00 0A 6F E3 00 00 0A 06 7E 53 09 00 04 17 28 DF 15 00 0A 6F E3 00 00 0A 2A 73 F9 00 00 0A 7A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: callvirt       Godot.CanvasItem::get_Material
+    IL_0006: castclass      Godot.ShaderMaterial
+    IL_000B: stloc.0        
+    IL_000C: ldloc.0        
+    IL_000D: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_isWaxStr
+    IL_0012: ldarg.0        
+    IL_0013: call           MegaCrit.Sts2.Core.Models.RelicModel::get_IsWax
+    IL_0018: ldc.i4.0       
+    IL_0019: cgt.un         
+    IL_001B: call           Godot.Variant::op_Implicit
+    IL_0020: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_0025: ldarg.0        
+    IL_0026: call           MegaCrit.Sts2.Core.Models.RelicModel::get_IsMelted
+    IL_002B: brfalse.s      IL_0038
+    IL_002D: ldarg.1        
+    IL_002E: call           Godot.Colors::get_DarkRed
+    IL_0033: callvirt       Godot.CanvasItem::set_SelfModulate
+    IL_0038: call           MegaCrit.Sts2.Core.Runs.RunManager::get_Instance
+    IL_003D: callvirt       MegaCrit.Sts2.Core.Runs.RunManager::get_IsInProgress
+    IL_0042: brfalse.s      IL_004C
+    IL_0044: ldarg.0        
+    IL_0045: call           MegaCrit.Sts2.Core.Models.RelicModel::get_IsMelted
+    IL_004A: brfalse.s      IL_006F
+    IL_004C: ldloc.0        
+    IL_004D: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_pulse
+    IL_0052: ldc.i4.0       
+    IL_0053: call           Godot.Variant::op_Implicit
+    IL_0058: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_005D: ldloc.0        
+    IL_005E: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_isUsed
+    IL_0063: ldc.i4.0       
+    IL_0064: call           Godot.Variant::op_Implicit
+    IL_0069: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_006E: ret            
+    IL_006F: ldarg.0        
+    IL_0070: call           MegaCrit.Sts2.Core.Models.RelicModel::get_Status
+    IL_0075: stloc.1        
+    IL_0076: ldloc.1        
+    IL_0077: switch         (3) -> 2, 37, 72
+    IL_0088: br.s           IL_00F3
+    IL_008A: ldloc.0        
+    IL_008B: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_pulse
+    IL_0090: ldc.i4.0       
+    IL_0091: call           Godot.Variant::op_Implicit
+    IL_0096: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_009B: ldloc.0        
+    IL_009C: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_isUsed
+    IL_00A1: ldc.i4.0       
+    IL_00A2: call           Godot.Variant::op_Implicit
+    IL_00A7: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_00AC: ret            
+    IL_00AD: ldloc.0        
+    IL_00AE: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_pulse
+    IL_00B3: ldc.i4.1       
+    IL_00B4: call           Godot.Variant::op_Implicit
+    IL_00B9: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_00BE: ldloc.0        
+    IL_00BF: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_isUsed
+    IL_00C4: ldc.i4.0       
+    IL_00C5: call           Godot.Variant::op_Implicit
+    IL_00CA: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_00CF: ret            
+    IL_00D0: ldloc.0        
+    IL_00D1: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_pulse
+    IL_00D6: ldc.i4.0       
+    IL_00D7: call           Godot.Variant::op_Implicit
+    IL_00DC: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_00E1: ldloc.0        
+    IL_00E2: ldsfld         MegaCrit.Sts2.Core.Models.RelicModel::_isUsed
+    IL_00E7: ldc.i4.1       
+    IL_00E8: call           Godot.Variant::op_Implicit
+    IL_00ED: callvirt       Godot.ShaderMaterial::SetShaderParameter
+    IL_00F2: ret            
+    IL_00F3: newobj         System.ArgumentOutOfRangeException::.ctor
+    IL_00F8: throw          
+
+
+===== MegaCrit.Sts2.Core.Models.RelicModel.RelicIconChanged()  [attrs=0x84] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 14 7D 57 09 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldnull         
+    IL_0002: stfld          MegaCrit.Sts2.Core.Models.RelicModel::_resolvedBigIconPath
+    IL_0007: ret            
+
+

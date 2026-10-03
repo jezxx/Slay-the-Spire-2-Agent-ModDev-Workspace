@@ -1,0 +1,902 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
+using Godot;
+using Godot.Bridge;
+using Godot.NativeInterop;
+using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Logging;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Multiplayer.Game;
+using MegaCrit.Sts2.Core.Multiplayer.Game.Lobby;
+using MegaCrit.Sts2.Core.Multiplayer.Messages.Lobby;
+using MegaCrit.Sts2.Core.Nodes.Audio;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using MegaCrit.Sts2.Core.Nodes.Multiplayer;
+using MegaCrit.Sts2.Core.Nodes.Screens.MainMenu;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Ui;
+using MegaCrit.Sts2.Core.Platform;
+using MegaCrit.Sts2.Core.Runs;
+using MegaCrit.Sts2.Core.Saves;
+using MegaCrit.Sts2.Core.Saves.Runs;
+using MegaCrit.Sts2.Core.TestSupport;
+using MegaCrit.Sts2.addons.mega_text;
+
+namespace MegaCrit.Sts2.Core.Nodes.Screens.DailyRun;
+
+/// <summary>
+/// Screen that displays when loading a multiplayer daily run, allowing other players to join the game before it starts.
+/// </summary>
+[ScriptPath("res://src/Core/Nodes/Screens/DailyRun/NDailyRunLoadScreen.cs")]
+public class NDailyRunLoadScreen : NSubmenu, ILoadRunLobbyListener
+{
+	/// <summary>
+	/// Cached StringNames for the methods contained in this class, for fast lookup.
+	/// </summary>
+	public new class MethodName : NSubmenu.MethodName
+	{
+		/// <summary>
+		/// Cached name for the 'Create' method.
+		/// </summary>
+		public static readonly StringName Create = "Create";
+
+		/// <summary>
+		/// Cached name for the '_Ready' method.
+		/// </summary>
+		public new static readonly StringName _Ready = "_Ready";
+
+		/// <summary>
+		/// Cached name for the 'OnSubmenuOpened' method.
+		/// </summary>
+		public new static readonly StringName OnSubmenuOpened = "OnSubmenuOpened";
+
+		/// <summary>
+		/// Cached name for the 'OnSubmenuClosed' method.
+		/// </summary>
+		public new static readonly StringName OnSubmenuClosed = "OnSubmenuClosed";
+
+		/// <summary>
+		/// Cached name for the 'InitializeDisplay' method.
+		/// </summary>
+		public static readonly StringName InitializeDisplay = "InitializeDisplay";
+
+		/// <summary>
+		/// Cached name for the 'OnEmbarkPressed' method.
+		/// </summary>
+		public static readonly StringName OnEmbarkPressed = "OnEmbarkPressed";
+
+		/// <summary>
+		/// Cached name for the 'OnUnreadyPressed' method.
+		/// </summary>
+		public static readonly StringName OnUnreadyPressed = "OnUnreadyPressed";
+
+		/// <summary>
+		/// Cached name for the 'UpdateRichPresence' method.
+		/// </summary>
+		public static readonly StringName UpdateRichPresence = "UpdateRichPresence";
+
+		/// <summary>
+		/// Cached name for the '_Process' method.
+		/// </summary>
+		public new static readonly StringName _Process = "_Process";
+
+		/// <summary>
+		/// Cached name for the 'CleanUpLobby' method.
+		/// </summary>
+		public static readonly StringName CleanUpLobby = "CleanUpLobby";
+
+		/// <summary>
+		/// Cached name for the 'PlayerReadyChanged' method.
+		/// </summary>
+		public static readonly StringName PlayerReadyChanged = "PlayerReadyChanged";
+
+		/// <summary>
+		/// Cached name for the 'RemotePlayerDisconnected' method.
+		/// </summary>
+		public static readonly StringName RemotePlayerDisconnected = "RemotePlayerDisconnected";
+
+		/// <summary>
+		/// Cached name for the 'BeginRun' method.
+		/// </summary>
+		public static readonly StringName BeginRun = "BeginRun";
+
+		/// <summary>
+		/// Cached name for the 'AfterMultiplayerStarted' method.
+		/// </summary>
+		public static readonly StringName AfterMultiplayerStarted = "AfterMultiplayerStarted";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the properties and fields contained in this class, for fast lookup.
+	/// </summary>
+	public new class PropertyName : NSubmenu.PropertyName
+	{
+		/// <summary>
+		/// Cached name for the 'InitialFocusedControl' property.
+		/// </summary>
+		public new static readonly StringName InitialFocusedControl = "InitialFocusedControl";
+
+		/// <summary>
+		/// Cached name for the '_dateLabel' field.
+		/// </summary>
+		public static readonly StringName _dateLabel = "_dateLabel";
+
+		/// <summary>
+		/// Cached name for the '_embarkButton' field.
+		/// </summary>
+		public static readonly StringName _embarkButton = "_embarkButton";
+
+		/// <summary>
+		/// Cached name for the '_backButton' field.
+		/// </summary>
+		public new static readonly StringName _backButton = "_backButton";
+
+		/// <summary>
+		/// Cached name for the '_unreadyButton' field.
+		/// </summary>
+		public static readonly StringName _unreadyButton = "_unreadyButton";
+
+		/// <summary>
+		/// Cached name for the '_characterContainer' field.
+		/// </summary>
+		public static readonly StringName _characterContainer = "_characterContainer";
+
+		/// <summary>
+		/// Cached name for the '_leaderboard' field.
+		/// </summary>
+		public static readonly StringName _leaderboard = "_leaderboard";
+
+		/// <summary>
+		/// Cached name for the '_modifiersTitleLabel' field.
+		/// </summary>
+		public static readonly StringName _modifiersTitleLabel = "_modifiersTitleLabel";
+
+		/// <summary>
+		/// Cached name for the '_modifiersContainer' field.
+		/// </summary>
+		public static readonly StringName _modifiersContainer = "_modifiersContainer";
+
+		/// <summary>
+		/// Cached name for the '_remotePlayerContainer' field.
+		/// </summary>
+		public static readonly StringName _remotePlayerContainer = "_remotePlayerContainer";
+
+		/// <summary>
+		/// Cached name for the '_readyAndWaitingContainer' field.
+		/// </summary>
+		public static readonly StringName _readyAndWaitingContainer = "_readyAndWaitingContainer";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the signals contained in this class, for fast lookup.
+	/// </summary>
+	public new class SignalName : NSubmenu.SignalName
+	{
+	}
+
+	private static readonly string _scenePath = SceneHelper.GetScenePath("screens/daily_run/daily_run_load_screen");
+
+	private static readonly LocString _ascensionLoc = new LocString("main_menu_ui", "DAILY_RUN_MENU.ASCENSION");
+
+	public static readonly string dateFormat = LocManager.Instance.GetTable("main_menu_ui").GetRawText("DAILY_RUN_MENU.DATE_FORMAT");
+
+	private MegaRichTextLabel _dateLabel;
+
+	private NConfirmButton _embarkButton;
+
+	private NBackButton _backButton;
+
+	private NBackButton _unreadyButton;
+
+	private NDailyRunCharacterContainer _characterContainer;
+
+	private NDailyRunLeaderboard _leaderboard;
+
+	private MegaLabel _modifiersTitleLabel;
+
+	private Control _modifiersContainer;
+
+	private readonly List<NDailyRunScreenModifier> _modifierContainers = new List<NDailyRunScreenModifier>();
+
+	private NRemoteLoadLobbyPlayerContainer _remotePlayerContainer;
+
+	private Control _readyAndWaitingContainer;
+
+	private LoadRunLobby? _lobby;
+
+	public static string[] AssetPaths => new string[1] { _scenePath };
+
+	protected override Control? InitialFocusedControl => null;
+
+	public static NDailyRunLoadScreen? Create()
+	{
+		if (TestMode.IsOn)
+		{
+			return null;
+		}
+		return PreloadManager.Cache.GetScene(_scenePath).Instantiate<NDailyRunLoadScreen>(PackedScene.GenEditState.Disabled);
+	}
+
+	public override void _Ready()
+	{
+		ConnectSignals();
+		_embarkButton = GetNode<NConfirmButton>("%ConfirmButton");
+		_backButton = GetNode<NBackButton>("%BackButton");
+		_unreadyButton = GetNode<NBackButton>("%UnreadyButton");
+		_dateLabel = GetNode<MegaRichTextLabel>("%Date");
+		_leaderboard = GetNode<NDailyRunLeaderboard>("%Leaderboards");
+		_modifiersTitleLabel = GetNode<MegaLabel>("%ModifiersLabel");
+		_modifiersContainer = GetNode<Control>("%ModifiersContainer");
+		_characterContainer = GetNode<NDailyRunCharacterContainer>("ChallengeContainer/CenterContainer/HBoxContainer/CharacterContainer");
+		_remotePlayerContainer = GetNode<NRemoteLoadLobbyPlayerContainer>("%RemotePlayerLoadContainer");
+		_readyAndWaitingContainer = GetNode<Control>("%ReadyAndWaitingPanel");
+		foreach (NDailyRunScreenModifier item in _modifiersContainer.GetChildren().OfType<NDailyRunScreenModifier>())
+		{
+			_modifierContainers.Add(item);
+		}
+		_readyAndWaitingContainer.Visible = false;
+		_embarkButton.Connect(NClickableControl.SignalName.Released, Callable.From<NButton>(OnEmbarkPressed));
+		_unreadyButton.Connect(NClickableControl.SignalName.Released, Callable.From<NButton>(OnUnreadyPressed));
+		_unreadyButton.Disable();
+		_leaderboard.Cleanup();
+	}
+
+	public void InitializeAsHost(INetGameService gameService, SerializableRun run)
+	{
+		if (gameService.Type != NetGameType.Host)
+		{
+			throw new InvalidOperationException($"Initialized daily run load screen with net service of type {gameService.Type} when hosting!");
+		}
+		_lobby = new LoadRunLobby(gameService, this, run);
+		try
+		{
+			_lobby.AddLocalHostPlayer();
+			AfterMultiplayerStarted();
+		}
+		catch
+		{
+			CleanUpLobby(disconnectSession: true, NetError.InternalError);
+			throw;
+		}
+	}
+
+	public void InitializeAsClient(INetGameService gameService, ClientLoadJoinResponseMessage message)
+	{
+		if (gameService.Type != NetGameType.Client)
+		{
+			throw new InvalidOperationException($"Initialized daily run load screen with net service of type {gameService.Type} when joining!");
+		}
+		_lobby = new LoadRunLobby(gameService, this, message);
+		AfterMultiplayerStarted();
+	}
+
+	public override void OnSubmenuOpened()
+	{
+		base.OnSubmenuOpened();
+		_leaderboard.Initialize(_lobby.Run.DailyTime.Value, _lobby.Run.Players.Select((SerializablePlayer p) => p.NetId), allowPagination: true);
+		_embarkButton.Enable();
+		_remotePlayerContainer.Initialize(_lobby, displayLocalPlayer: false);
+	}
+
+	public override void OnSubmenuClosed()
+	{
+		_embarkButton.Disable();
+		_remotePlayerContainer.Cleanup();
+		_leaderboard.Cleanup();
+		LoadRunLobby? lobby = _lobby;
+		if (lobby != null && lobby.NetService.Type.IsMultiplayer())
+		{
+			PlatformUtil.SetRichPresence("MAIN_MENU", null, null);
+		}
+		CleanUpLobby(disconnectSession: true);
+	}
+
+	private void InitializeDisplay()
+	{
+		if (_lobby == null)
+		{
+			throw new InvalidOperationException("Tried to initialize daily run display before lobby was initialized!");
+		}
+		_ascensionLoc.Add("ascension", _lobby.Run.Ascension);
+		DateTimeOffset value = _lobby.Run.DailyTime.Value;
+		SerializablePlayer serializablePlayer = _lobby.Run.Players.First((SerializablePlayer p) => p.NetId == _lobby.NetService.NetId);
+		CharacterModel byId = ModelDb.GetById<CharacterModel>(serializablePlayer.CharacterId);
+		_characterContainer.Fill(byId, serializablePlayer.NetId, _lobby.Run.Ascension, _lobby.NetService);
+		_dateLabel.SetTextAutoSize(value.ToString(dateFormat));
+		_embarkButton.Enable();
+		for (int i = 0; i < _lobby.Run.Modifiers.Count; i++)
+		{
+			ModifierModel modifier = ModifierModel.FromSerializable(_lobby.Run.Modifiers[i]);
+			_modifierContainers[i].Fill(modifier);
+		}
+	}
+
+	private void OnEmbarkPressed(NButton _)
+	{
+		_embarkButton.Disable();
+		_backButton.Disable();
+		_lobby.SetReady(ready: true);
+		if (!_lobby.IsAboutToBeginGame())
+		{
+			_readyAndWaitingContainer.Visible = true;
+			_unreadyButton.Enable();
+		}
+	}
+
+	private void OnUnreadyPressed(NButton _)
+	{
+		_embarkButton.Enable();
+		_unreadyButton.Disable();
+		_backButton.Enable();
+		_lobby.SetReady(ready: false);
+		_readyAndWaitingContainer.Visible = false;
+	}
+
+	private void UpdateRichPresence()
+	{
+		LoadRunLobby? lobby = _lobby;
+		if (lobby != null && lobby.NetService.Type.IsMultiplayer())
+		{
+			PlatformUtil.SetRichPresence("LOADING_MP_LOBBY", _lobby.NetService.GetRawLobbyIdentifier(), _lobby.PlayerCount);
+		}
+	}
+
+	public override void _Process(double delta)
+	{
+		LoadRunLobby? lobby = _lobby;
+		if (lobby != null && lobby.NetService.IsConnected)
+		{
+			_lobby.NetService.Update();
+		}
+	}
+
+	private void CleanUpLobby(bool disconnectSession, NetError error = NetError.Quit)
+	{
+		if (_lobby != null)
+		{
+			_lobby.PlayerFailedToConnect -= RemoteClientFailedToConnectToLocalHost;
+			_lobby.CleanUp(disconnectSession, error);
+			_lobby = null;
+		}
+	}
+
+	public async Task<bool> ShouldAllowRunToBegin()
+	{
+		if (_lobby.PlayerCount >= _lobby.Run.Players.Count)
+		{
+			return true;
+		}
+		LocString locString = new LocString("gameplay_ui", "CONFIRM_LOAD_SAVE.body");
+		locString.Add("MissingCount", _lobby.Run.Players.Count - _lobby.PlayerCount);
+		NGenericPopup nGenericPopup = NGenericPopup.Create();
+		NModalContainer.Instance.Add(nGenericPopup);
+		return await nGenericPopup.WaitForConfirmation(locString, new LocString("gameplay_ui", "CONFIRM_LOAD_SAVE.header"), new LocString("gameplay_ui", "CONFIRM_LOAD_SAVE.cancel"), new LocString("gameplay_ui", "CONFIRM_LOAD_SAVE.confirm"));
+	}
+
+	private async Task StartRun()
+	{
+		try
+		{
+			Log.Info("Loading a multiplayer run. Players: " + string.Join(",", _lobby.PlayerIds) + ".");
+			SerializablePlayer serializablePlayer = _lobby.Run.Players.First((SerializablePlayer p) => p.NetId == _lobby.NetService.NetId);
+			SfxCmd.Play(ModelDb.GetById<CharacterModel>(serializablePlayer.CharacterId).CharacterTransitionSfx);
+			await NGame.Instance.Transition.FadeOut(0.8f, ModelDb.GetById<CharacterModel>(serializablePlayer.CharacterId).CharacterSelectTransitionPath);
+			RunState runState = RunState.FromSerializable(_lobby.Run);
+			await RunManager.Instance.SetUpSavedMultiplayer(runState, _lobby);
+			await NGame.Instance.LoadRun(runState, _lobby.Run.PreFinishedRoom);
+		}
+		catch (Exception ex)
+		{
+			Log.Error($"Exception loading daily multiplayer run : {ex}");
+			CleanUpLobby(disconnectSession: true, NetError.InternalError);
+			await NGame.Instance.ReturnToMainMenuWithInternalError(ex);
+			return;
+		}
+		CleanUpLobby(disconnectSession: false);
+		await NGame.Instance.Transition.FadeIn();
+	}
+
+	public void PlayerConnected(LoadRunLobbyPlayer player)
+	{
+		Log.Info($"Player connected: {player.id}");
+		_remotePlayerContainer.OnPlayerConnected(player.id);
+		UpdateRichPresence();
+	}
+
+	public void PlayerReadyChanged(ulong playerId)
+	{
+		Log.Info($"Player ready changed: {playerId}");
+		_remotePlayerContainer.OnPlayerChanged(playerId);
+		if (playerId == _lobby.NetService.NetId && !_lobby.IsPlayerReady(playerId))
+		{
+			_embarkButton.Enable();
+		}
+		if (playerId == _lobby.NetService.NetId && _lobby.NetService.Type.IsMultiplayer())
+		{
+			_characterContainer.SetIsReady(_lobby.IsPlayerReady(playerId));
+		}
+	}
+
+	public void RemotePlayerDisconnected(ulong playerId)
+	{
+		Log.Info($"Player disconnected: {playerId}");
+		_remotePlayerContainer.OnPlayerDisconnected(playerId);
+		UpdateRichPresence();
+	}
+
+	public void BeginRun()
+	{
+		NAudioManager.Instance?.StopMusic();
+		_embarkButton.Disable();
+		_unreadyButton.Disable();
+		TaskHelper.RunSafely(StartRun());
+	}
+
+	public void LocalPlayerDisconnected(NetErrorInfo info)
+	{
+		if ((info.SelfInitiated && info.GetReason() == NetError.Quit) || !this.IsValid() || _stack == null)
+		{
+			return;
+		}
+		if (_stack.Peek() == this)
+		{
+			_stack.Pop();
+		}
+		if (TestMode.IsOff)
+		{
+			NErrorPopup nErrorPopup = NErrorPopup.Create(info);
+			if (nErrorPopup != null)
+			{
+				NModalContainer.Instance.Add(nErrorPopup);
+			}
+		}
+	}
+
+	private void RemoteClientFailedToConnectToLocalHost(ulong sender, NetErrorInfo info)
+	{
+		bool showReportBugButton;
+		string formattedText = NErrorPopup.LocStringFromNetError(info, out showReportBugButton).GetFormattedText();
+		LocString locString = new LocString("main_menu_ui", "NETWORK_ERROR.HOST.PREFIX.body");
+		locString.Add("playerName", PlatformUtil.GetPlayerName(_lobby.NetService.Platform, sender));
+		locString.Add("info", formattedText);
+		this.AddChildSafely(NFailedJoinVfx.Create(locString.GetFormattedText()));
+	}
+
+	private void AfterMultiplayerStarted()
+	{
+		NGame.Instance.RemoteCursorContainer.Initialize(_lobby.InputSynchronizer, _lobby.PlayerIds);
+		NGame.Instance.ReactionContainer.InitializeNetworking(_lobby.NetService);
+		_lobby.PlayerFailedToConnect += RemoteClientFailedToConnectToLocalHost;
+		InitializeDisplay();
+		UpdateRichPresence();
+		MegaCrit.Sts2.Core.Logging.Logger.logLevelTypeMap[LogType.Network] = LogLevel.Debug;
+		MegaCrit.Sts2.Core.Logging.Logger.logLevelTypeMap[LogType.Actions] = LogLevel.VeryDebug;
+		MegaCrit.Sts2.Core.Logging.Logger.logLevelTypeMap[LogType.GameSync] = LogLevel.VeryDebug;
+	}
+
+	/// <summary>
+	/// Get the method information for all the methods declared in this class.
+	/// This method is used by Godot to register the available methods in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<MethodInfo> GetGodotMethodList()
+	{
+		List<MethodInfo> list = new List<MethodInfo>(14);
+		list.Add(new MethodInfo(MethodName.Create, new PropertyInfo(Variant.Type.Object, "", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false), MethodFlags.Normal | MethodFlags.Static, null, null));
+		list.Add(new MethodInfo(MethodName._Ready, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnSubmenuOpened, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnSubmenuClosed, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.InitializeDisplay, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnEmbarkPressed, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "_", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.OnUnreadyPressed, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "_", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.UpdateRichPresence, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName._Process, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Float, "delta", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.CleanUpLobby, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Bool, "disconnectSession", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false),
+			new PropertyInfo(Variant.Type.Int, "error", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.PlayerReadyChanged, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Int, "playerId", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.RemotePlayerDisconnected, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Int, "playerId", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.BeginRun, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.AfterMultiplayerStarted, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool InvokeGodotClassMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName.Create && args.Count == 0)
+		{
+			NDailyRunLoadScreen from = Create();
+			ret = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		if (method == MethodName._Ready && args.Count == 0)
+		{
+			_Ready();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnSubmenuOpened && args.Count == 0)
+		{
+			OnSubmenuOpened();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnSubmenuClosed && args.Count == 0)
+		{
+			OnSubmenuClosed();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.InitializeDisplay && args.Count == 0)
+		{
+			InitializeDisplay();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnEmbarkPressed && args.Count == 1)
+		{
+			OnEmbarkPressed(VariantUtils.ConvertTo<NButton>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnUnreadyPressed && args.Count == 1)
+		{
+			OnUnreadyPressed(VariantUtils.ConvertTo<NButton>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.UpdateRichPresence && args.Count == 0)
+		{
+			UpdateRichPresence();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName._Process && args.Count == 1)
+		{
+			_Process(VariantUtils.ConvertTo<double>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.CleanUpLobby && args.Count == 2)
+		{
+			CleanUpLobby(VariantUtils.ConvertTo<bool>(in args[0]), VariantUtils.ConvertTo<NetError>(in args[1]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.PlayerReadyChanged && args.Count == 1)
+		{
+			PlayerReadyChanged(VariantUtils.ConvertTo<ulong>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.RemotePlayerDisconnected && args.Count == 1)
+		{
+			RemotePlayerDisconnected(VariantUtils.ConvertTo<ulong>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.BeginRun && args.Count == 0)
+		{
+			BeginRun();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.AfterMultiplayerStarted && args.Count == 0)
+		{
+			AfterMultiplayerStarted();
+			ret = default(godot_variant);
+			return true;
+		}
+		return base.InvokeGodotClassMethod(in method, args, out ret);
+	}
+
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal static bool InvokeGodotClassStaticMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName.Create && args.Count == 0)
+		{
+			NDailyRunLoadScreen from = Create();
+			ret = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		ret = default(godot_variant);
+		return false;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool HasGodotClassMethod(in godot_string_name method)
+	{
+		if (method == MethodName.Create)
+		{
+			return true;
+		}
+		if (method == MethodName._Ready)
+		{
+			return true;
+		}
+		if (method == MethodName.OnSubmenuOpened)
+		{
+			return true;
+		}
+		if (method == MethodName.OnSubmenuClosed)
+		{
+			return true;
+		}
+		if (method == MethodName.InitializeDisplay)
+		{
+			return true;
+		}
+		if (method == MethodName.OnEmbarkPressed)
+		{
+			return true;
+		}
+		if (method == MethodName.OnUnreadyPressed)
+		{
+			return true;
+		}
+		if (method == MethodName.UpdateRichPresence)
+		{
+			return true;
+		}
+		if (method == MethodName._Process)
+		{
+			return true;
+		}
+		if (method == MethodName.CleanUpLobby)
+		{
+			return true;
+		}
+		if (method == MethodName.PlayerReadyChanged)
+		{
+			return true;
+		}
+		if (method == MethodName.RemotePlayerDisconnected)
+		{
+			return true;
+		}
+		if (method == MethodName.BeginRun)
+		{
+			return true;
+		}
+		if (method == MethodName.AfterMultiplayerStarted)
+		{
+			return true;
+		}
+		return base.HasGodotClassMethod(in method);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool SetGodotClassPropertyValue(in godot_string_name name, in godot_variant value)
+	{
+		if (name == PropertyName._dateLabel)
+		{
+			_dateLabel = VariantUtils.ConvertTo<MegaRichTextLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._embarkButton)
+		{
+			_embarkButton = VariantUtils.ConvertTo<NConfirmButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._backButton)
+		{
+			_backButton = VariantUtils.ConvertTo<NBackButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._unreadyButton)
+		{
+			_unreadyButton = VariantUtils.ConvertTo<NBackButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._characterContainer)
+		{
+			_characterContainer = VariantUtils.ConvertTo<NDailyRunCharacterContainer>(in value);
+			return true;
+		}
+		if (name == PropertyName._leaderboard)
+		{
+			_leaderboard = VariantUtils.ConvertTo<NDailyRunLeaderboard>(in value);
+			return true;
+		}
+		if (name == PropertyName._modifiersTitleLabel)
+		{
+			_modifiersTitleLabel = VariantUtils.ConvertTo<MegaLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._modifiersContainer)
+		{
+			_modifiersContainer = VariantUtils.ConvertTo<Control>(in value);
+			return true;
+		}
+		if (name == PropertyName._remotePlayerContainer)
+		{
+			_remotePlayerContainer = VariantUtils.ConvertTo<NRemoteLoadLobbyPlayerContainer>(in value);
+			return true;
+		}
+		if (name == PropertyName._readyAndWaitingContainer)
+		{
+			_readyAndWaitingContainer = VariantUtils.ConvertTo<Control>(in value);
+			return true;
+		}
+		return base.SetGodotClassPropertyValue(in name, in value);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
+	{
+		if (name == PropertyName.InitialFocusedControl)
+		{
+			Control from = InitialFocusedControl;
+			value = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		if (name == PropertyName._dateLabel)
+		{
+			value = VariantUtils.CreateFrom(in _dateLabel);
+			return true;
+		}
+		if (name == PropertyName._embarkButton)
+		{
+			value = VariantUtils.CreateFrom(in _embarkButton);
+			return true;
+		}
+		if (name == PropertyName._backButton)
+		{
+			value = VariantUtils.CreateFrom(in _backButton);
+			return true;
+		}
+		if (name == PropertyName._unreadyButton)
+		{
+			value = VariantUtils.CreateFrom(in _unreadyButton);
+			return true;
+		}
+		if (name == PropertyName._characterContainer)
+		{
+			value = VariantUtils.CreateFrom(in _characterContainer);
+			return true;
+		}
+		if (name == PropertyName._leaderboard)
+		{
+			value = VariantUtils.CreateFrom(in _leaderboard);
+			return true;
+		}
+		if (name == PropertyName._modifiersTitleLabel)
+		{
+			value = VariantUtils.CreateFrom(in _modifiersTitleLabel);
+			return true;
+		}
+		if (name == PropertyName._modifiersContainer)
+		{
+			value = VariantUtils.CreateFrom(in _modifiersContainer);
+			return true;
+		}
+		if (name == PropertyName._remotePlayerContainer)
+		{
+			value = VariantUtils.CreateFrom(in _remotePlayerContainer);
+			return true;
+		}
+		if (name == PropertyName._readyAndWaitingContainer)
+		{
+			value = VariantUtils.CreateFrom(in _readyAndWaitingContainer);
+			return true;
+		}
+		return base.GetGodotClassPropertyValue(in name, out value);
+	}
+
+	/// <summary>
+	/// Get the property information for all the properties declared in this class.
+	/// This method is used by Godot to register the available properties in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<PropertyInfo> GetGodotPropertyList()
+	{
+		List<PropertyInfo> list = new List<PropertyInfo>();
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName.InitialFocusedControl, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._dateLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._embarkButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._backButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._unreadyButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._characterContainer, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._leaderboard, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._modifiersTitleLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._modifiersContainer, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._remotePlayerContainer, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._readyAndWaitingContainer, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void SaveGodotObjectData(GodotSerializationInfo info)
+	{
+		base.SaveGodotObjectData(info);
+		info.AddProperty(PropertyName._dateLabel, Variant.From(in _dateLabel));
+		info.AddProperty(PropertyName._embarkButton, Variant.From(in _embarkButton));
+		info.AddProperty(PropertyName._backButton, Variant.From(in _backButton));
+		info.AddProperty(PropertyName._unreadyButton, Variant.From(in _unreadyButton));
+		info.AddProperty(PropertyName._characterContainer, Variant.From(in _characterContainer));
+		info.AddProperty(PropertyName._leaderboard, Variant.From(in _leaderboard));
+		info.AddProperty(PropertyName._modifiersTitleLabel, Variant.From(in _modifiersTitleLabel));
+		info.AddProperty(PropertyName._modifiersContainer, Variant.From(in _modifiersContainer));
+		info.AddProperty(PropertyName._remotePlayerContainer, Variant.From(in _remotePlayerContainer));
+		info.AddProperty(PropertyName._readyAndWaitingContainer, Variant.From(in _readyAndWaitingContainer));
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void RestoreGodotObjectData(GodotSerializationInfo info)
+	{
+		base.RestoreGodotObjectData(info);
+		if (info.TryGetProperty(PropertyName._dateLabel, out var value))
+		{
+			_dateLabel = value.As<MegaRichTextLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._embarkButton, out var value2))
+		{
+			_embarkButton = value2.As<NConfirmButton>();
+		}
+		if (info.TryGetProperty(PropertyName._backButton, out var value3))
+		{
+			_backButton = value3.As<NBackButton>();
+		}
+		if (info.TryGetProperty(PropertyName._unreadyButton, out var value4))
+		{
+			_unreadyButton = value4.As<NBackButton>();
+		}
+		if (info.TryGetProperty(PropertyName._characterContainer, out var value5))
+		{
+			_characterContainer = value5.As<NDailyRunCharacterContainer>();
+		}
+		if (info.TryGetProperty(PropertyName._leaderboard, out var value6))
+		{
+			_leaderboard = value6.As<NDailyRunLeaderboard>();
+		}
+		if (info.TryGetProperty(PropertyName._modifiersTitleLabel, out var value7))
+		{
+			_modifiersTitleLabel = value7.As<MegaLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._modifiersContainer, out var value8))
+		{
+			_modifiersContainer = value8.As<Control>();
+		}
+		if (info.TryGetProperty(PropertyName._remotePlayerContainer, out var value9))
+		{
+			_remotePlayerContainer = value9.As<NRemoteLoadLobbyPlayerContainer>();
+		}
+		if (info.TryGetProperty(PropertyName._readyAndWaitingContainer, out var value10))
+		{
+			_readyAndWaitingContainer = value10.As<Control>();
+		}
+	}
+}

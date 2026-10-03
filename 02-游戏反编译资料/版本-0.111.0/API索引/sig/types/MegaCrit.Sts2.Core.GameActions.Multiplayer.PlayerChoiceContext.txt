@@ -1,0 +1,15 @@
+### public class MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext
+    base: System.Object
+
+    field  internal System.Collections.Generic.Stack`1<MegaCrit.Sts2.Core.Models.AbstractModel> _modelStack
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> ModelStack { public get; }
+    prop   MegaCrit.Sts2.Core.Models.AbstractModel LastInvolvedModel { public get; }
+    prop   System.Nullable`1<ulong> OwnerId { public get; }
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> get_ModelStack()
+    method public MegaCrit.Sts2.Core.Models.AbstractModel get_LastInvolvedModel()
+    method public System.Nullable`1<ulong> get_OwnerId()
+    method public void PushModel(MegaCrit.Sts2.Core.Models.AbstractModel model)
+    method public void PopModel(MegaCrit.Sts2.Core.Models.AbstractModel model)
+    method public System.Threading.Tasks.Task SignalPlayerChoiceBegun(MegaCrit.Sts2.Core.Entities.Players.Player chooser, MegaCrit.Sts2.Core.Entities.Multiplayer.PlayerChoiceOptions options)
+    method public System.Threading.Tasks.Task SignalPlayerChoiceEnded()
+    method public void .ctor()

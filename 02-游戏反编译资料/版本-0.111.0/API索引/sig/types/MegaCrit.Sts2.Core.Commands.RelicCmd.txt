@@ -1,0 +1,8 @@
+### public class MegaCrit.Sts2.Core.Commands.RelicCmd
+    base: System.Object
+
+    method public static System.Threading.Tasks.Task`1<T> Obtain<T>(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Models.RelicModel> Obtain(MegaCrit.Sts2.Core.Models.RelicModel relic, MegaCrit.Sts2.Core.Entities.Players.Player player, int index)
+    method public static System.Threading.Tasks.Task Remove(MegaCrit.Sts2.Core.Models.RelicModel relic)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Models.RelicModel> Replace(MegaCrit.Sts2.Core.Models.RelicModel original, MegaCrit.Sts2.Core.Models.RelicModel replace)
+    method public static System.Threading.Tasks.Task Melt(MegaCrit.Sts2.Core.Models.RelicModel relic)

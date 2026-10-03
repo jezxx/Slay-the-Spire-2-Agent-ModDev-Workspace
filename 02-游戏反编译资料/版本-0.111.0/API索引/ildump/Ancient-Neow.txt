@@ -1,0 +1,378 @@
+===== MegaCrit.Sts2.Core.Models.Events.Neow.DefineDialogues()  [attrs=0xC4] =====
+  maxStack=10 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 D3 52 00 06 0A 06 17 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 73 BE 52 00 06 6F CA 52 00 06 06 73 AA 16 00 0A 0B 28 92 0E 00 2B 0C 07 08 19 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 B3 51 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 19 8D 0B 02 00 01 25 16 72 F7 51 02 70 A2 25 17 72 F7 51 02 70 A2 25 18 72 F7 51 02 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 93 0E 00 2B 0D 07 09 19 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 B3 51 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 F7 51 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 19 8D 0B 02 00 01 25 16 72 F7 51 02 70 A2 25 17 72 05 01 00 70 A2 25 18 72 05 01 00 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 94 0E 00 2B 13 04 07 11 04 19 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 B3 51 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 F7 51 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 19 8D 0B 02 00 01 25 16 72 F7 51 02 70 A2 25 17 72 05 01 00 70 A2 25 18 72 F7 51 02 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 95 0E 00 2B 13 05 07 11 05 19 8D 28 0A 00 02 25 16 19 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 25 17 72 05 01 00 70 A2 25 18 72 F7 51 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 F7 51 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 18 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 25 17 72 F7 51 02 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 96 0E 00 2B 13 06 07 11 06 19 8D 28 0A 00 02 25 16 18 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 25 17 72 F7 51 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 B3 51 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 19 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 25 17 72 F7 51 02 70 A2 25 18 72 05 01 00 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 07 6F CC 52 00 06 06 1B 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 73 BE 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 73 BE 52 00 06 A2 25 18 17 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 73 BE 52 00 06 A2 25 19 17 8D 0B 02 00 01 25 16 72 6F 51 02 70 A2 73 BE 52 00 06 A2 25 1A 17 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 73 BE 52 00 06 A2 73 AB 16 00 0A 6F CE 52 00 06 06 2A
+  -- decoded --
+    IL_0000: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::.ctor
+    IL_0005: stloc.0        
+    IL_0006: ldloc.0        
+    IL_0007: ldc.i4.1       
+    IL_0008: newarr         System.String
+    IL_000D: dup            
+    IL_000E: ldc.i4.0       
+    IL_000F: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_0014: stelem.ref     
+    IL_0015: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_001A: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::set_FirstVisitEverDialogue
+    IL_001F: ldloc.0        
+    IL_0020: newobj         <typespec>::.ctor
+    IL_0025: stloc.1        
+    IL_0026: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_002B: stloc.2        
+    IL_002C: ldloc.1        
+    IL_002D: ldloc.2        
+    IL_002E: ldc.i4.3       
+    IL_002F: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_0034: dup            
+    IL_0035: ldc.i4.0       
+    IL_0036: ldc.i4.1       
+    IL_0037: newarr         System.String
+    IL_003C: dup            
+    IL_003D: ldc.i4.0       
+    IL_003E: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_0043: stelem.ref     
+    IL_0044: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0049: dup            
+    IL_004A: ldc.i4.0       
+    IL_004B: newobj         <typespec>::.ctor
+    IL_0050: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0055: stelem.ref     
+    IL_0056: dup            
+    IL_0057: ldc.i4.1       
+    IL_0058: ldc.i4.1       
+    IL_0059: newarr         System.String
+    IL_005E: dup            
+    IL_005F: ldc.i4.0       
+    IL_0060: ldstr          "event:/sfx/npcs/neow/neow_curious"
+    IL_0065: stelem.ref     
+    IL_0066: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_006B: dup            
+    IL_006C: ldc.i4.1       
+    IL_006D: newobj         <typespec>::.ctor
+    IL_0072: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0077: stelem.ref     
+    IL_0078: dup            
+    IL_0079: ldc.i4.2       
+    IL_007A: ldc.i4.3       
+    IL_007B: newarr         System.String
+    IL_0080: dup            
+    IL_0081: ldc.i4.0       
+    IL_0082: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0087: stelem.ref     
+    IL_0088: dup            
+    IL_0089: ldc.i4.1       
+    IL_008A: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_008F: stelem.ref     
+    IL_0090: dup            
+    IL_0091: ldc.i4.2       
+    IL_0092: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0097: stelem.ref     
+    IL_0098: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_009D: dup            
+    IL_009E: ldc.i4.4       
+    IL_009F: newobj         <typespec>::.ctor
+    IL_00A4: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_00A9: stelem.ref     
+    IL_00AA: newobj         <typespec>::.ctor
+    IL_00AF: callvirt       <typespec>::set_Item
+    IL_00B4: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_00B9: stloc.3        
+    IL_00BA: ldloc.1        
+    IL_00BB: ldloc.3        
+    IL_00BC: ldc.i4.3       
+    IL_00BD: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_00C2: dup            
+    IL_00C3: ldc.i4.0       
+    IL_00C4: ldc.i4.1       
+    IL_00C5: newarr         System.String
+    IL_00CA: dup            
+    IL_00CB: ldc.i4.0       
+    IL_00CC: ldstr          "event:/sfx/npcs/neow/neow_curious"
+    IL_00D1: stelem.ref     
+    IL_00D2: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_00D7: dup            
+    IL_00D8: ldc.i4.0       
+    IL_00D9: newobj         <typespec>::.ctor
+    IL_00DE: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_00E3: stelem.ref     
+    IL_00E4: dup            
+    IL_00E5: ldc.i4.1       
+    IL_00E6: ldc.i4.1       
+    IL_00E7: newarr         System.String
+    IL_00EC: dup            
+    IL_00ED: ldc.i4.0       
+    IL_00EE: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_00F3: stelem.ref     
+    IL_00F4: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_00F9: dup            
+    IL_00FA: ldc.i4.1       
+    IL_00FB: newobj         <typespec>::.ctor
+    IL_0100: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0105: stelem.ref     
+    IL_0106: dup            
+    IL_0107: ldc.i4.2       
+    IL_0108: ldc.i4.3       
+    IL_0109: newarr         System.String
+    IL_010E: dup            
+    IL_010F: ldc.i4.0       
+    IL_0110: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0115: stelem.ref     
+    IL_0116: dup            
+    IL_0117: ldc.i4.1       
+    IL_0118: ldstr          ""
+    IL_011D: stelem.ref     
+    IL_011E: dup            
+    IL_011F: ldc.i4.2       
+    IL_0120: ldstr          ""
+    IL_0125: stelem.ref     
+    IL_0126: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_012B: dup            
+    IL_012C: ldc.i4.4       
+    IL_012D: newobj         <typespec>::.ctor
+    IL_0132: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0137: stelem.ref     
+    IL_0138: newobj         <typespec>::.ctor
+    IL_013D: callvirt       <typespec>::set_Item
+    IL_0142: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_0147: stloc.s        4
+    IL_0149: ldloc.1        
+    IL_014A: ldloc.s        4
+    IL_014C: ldc.i4.3       
+    IL_014D: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_0152: dup            
+    IL_0153: ldc.i4.0       
+    IL_0154: ldc.i4.1       
+    IL_0155: newarr         System.String
+    IL_015A: dup            
+    IL_015B: ldc.i4.0       
+    IL_015C: ldstr          "event:/sfx/npcs/neow/neow_curious"
+    IL_0161: stelem.ref     
+    IL_0162: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0167: dup            
+    IL_0168: ldc.i4.0       
+    IL_0169: newobj         <typespec>::.ctor
+    IL_016E: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0173: stelem.ref     
+    IL_0174: dup            
+    IL_0175: ldc.i4.1       
+    IL_0176: ldc.i4.1       
+    IL_0177: newarr         System.String
+    IL_017C: dup            
+    IL_017D: ldc.i4.0       
+    IL_017E: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0183: stelem.ref     
+    IL_0184: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0189: dup            
+    IL_018A: ldc.i4.1       
+    IL_018B: newobj         <typespec>::.ctor
+    IL_0190: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0195: stelem.ref     
+    IL_0196: dup            
+    IL_0197: ldc.i4.2       
+    IL_0198: ldc.i4.3       
+    IL_0199: newarr         System.String
+    IL_019E: dup            
+    IL_019F: ldc.i4.0       
+    IL_01A0: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_01A5: stelem.ref     
+    IL_01A6: dup            
+    IL_01A7: ldc.i4.1       
+    IL_01A8: ldstr          ""
+    IL_01AD: stelem.ref     
+    IL_01AE: dup            
+    IL_01AF: ldc.i4.2       
+    IL_01B0: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_01B5: stelem.ref     
+    IL_01B6: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_01BB: dup            
+    IL_01BC: ldc.i4.4       
+    IL_01BD: newobj         <typespec>::.ctor
+    IL_01C2: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_01C7: stelem.ref     
+    IL_01C8: newobj         <typespec>::.ctor
+    IL_01CD: callvirt       <typespec>::set_Item
+    IL_01D2: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_01D7: stloc.s        5
+    IL_01D9: ldloc.1        
+    IL_01DA: ldloc.s        5
+    IL_01DC: ldc.i4.3       
+    IL_01DD: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_01E2: dup            
+    IL_01E3: ldc.i4.0       
+    IL_01E4: ldc.i4.3       
+    IL_01E5: newarr         System.String
+    IL_01EA: dup            
+    IL_01EB: ldc.i4.0       
+    IL_01EC: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_01F1: stelem.ref     
+    IL_01F2: dup            
+    IL_01F3: ldc.i4.1       
+    IL_01F4: ldstr          ""
+    IL_01F9: stelem.ref     
+    IL_01FA: dup            
+    IL_01FB: ldc.i4.2       
+    IL_01FC: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0201: stelem.ref     
+    IL_0202: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0207: dup            
+    IL_0208: ldc.i4.0       
+    IL_0209: newobj         <typespec>::.ctor
+    IL_020E: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0213: stelem.ref     
+    IL_0214: dup            
+    IL_0215: ldc.i4.1       
+    IL_0216: ldc.i4.1       
+    IL_0217: newarr         System.String
+    IL_021C: dup            
+    IL_021D: ldc.i4.0       
+    IL_021E: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0223: stelem.ref     
+    IL_0224: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0229: dup            
+    IL_022A: ldc.i4.1       
+    IL_022B: newobj         <typespec>::.ctor
+    IL_0230: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0235: stelem.ref     
+    IL_0236: dup            
+    IL_0237: ldc.i4.2       
+    IL_0238: ldc.i4.2       
+    IL_0239: newarr         System.String
+    IL_023E: dup            
+    IL_023F: ldc.i4.0       
+    IL_0240: ldstr          ""
+    IL_0245: stelem.ref     
+    IL_0246: dup            
+    IL_0247: ldc.i4.1       
+    IL_0248: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_024D: stelem.ref     
+    IL_024E: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0253: dup            
+    IL_0254: ldc.i4.4       
+    IL_0255: newobj         <typespec>::.ctor
+    IL_025A: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_025F: stelem.ref     
+    IL_0260: newobj         <typespec>::.ctor
+    IL_0265: callvirt       <typespec>::set_Item
+    IL_026A: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_026F: stloc.s        6
+    IL_0271: ldloc.1        
+    IL_0272: ldloc.s        6
+    IL_0274: ldc.i4.3       
+    IL_0275: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_027A: dup            
+    IL_027B: ldc.i4.0       
+    IL_027C: ldc.i4.2       
+    IL_027D: newarr         System.String
+    IL_0282: dup            
+    IL_0283: ldc.i4.0       
+    IL_0284: ldstr          ""
+    IL_0289: stelem.ref     
+    IL_028A: dup            
+    IL_028B: ldc.i4.1       
+    IL_028C: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_0291: stelem.ref     
+    IL_0292: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0297: dup            
+    IL_0298: ldc.i4.0       
+    IL_0299: newobj         <typespec>::.ctor
+    IL_029E: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_02A3: stelem.ref     
+    IL_02A4: dup            
+    IL_02A5: ldc.i4.1       
+    IL_02A6: ldc.i4.1       
+    IL_02A7: newarr         System.String
+    IL_02AC: dup            
+    IL_02AD: ldc.i4.0       
+    IL_02AE: ldstr          "event:/sfx/npcs/neow/neow_curious"
+    IL_02B3: stelem.ref     
+    IL_02B4: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_02B9: dup            
+    IL_02BA: ldc.i4.1       
+    IL_02BB: newobj         <typespec>::.ctor
+    IL_02C0: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_02C5: stelem.ref     
+    IL_02C6: dup            
+    IL_02C7: ldc.i4.2       
+    IL_02C8: ldc.i4.3       
+    IL_02C9: newarr         System.String
+    IL_02CE: dup            
+    IL_02CF: ldc.i4.0       
+    IL_02D0: ldstr          ""
+    IL_02D5: stelem.ref     
+    IL_02D6: dup            
+    IL_02D7: ldc.i4.1       
+    IL_02D8: ldstr          "event:/sfx/npcs/neow/neow_sleepy"
+    IL_02DD: stelem.ref     
+    IL_02DE: dup            
+    IL_02DF: ldc.i4.2       
+    IL_02E0: ldstr          ""
+    IL_02E5: stelem.ref     
+    IL_02E6: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_02EB: dup            
+    IL_02EC: ldc.i4.4       
+    IL_02ED: newobj         <typespec>::.ctor
+    IL_02F2: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_02F7: stelem.ref     
+    IL_02F8: newobj         <typespec>::.ctor
+    IL_02FD: callvirt       <typespec>::set_Item
+    IL_0302: ldloc.1        
+    IL_0303: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::set_CharacterDialogues
+    IL_0308: ldloc.0        
+    IL_0309: ldc.i4.5       
+    IL_030A: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_030F: dup            
+    IL_0310: ldc.i4.0       
+    IL_0311: ldc.i4.1       
+    IL_0312: newarr         System.String
+    IL_0317: dup            
+    IL_0318: ldc.i4.0       
+    IL_0319: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_031E: stelem.ref     
+    IL_031F: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0324: stelem.ref     
+    IL_0325: dup            
+    IL_0326: ldc.i4.1       
+    IL_0327: ldc.i4.1       
+    IL_0328: newarr         System.String
+    IL_032D: dup            
+    IL_032E: ldc.i4.0       
+    IL_032F: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_0334: stelem.ref     
+    IL_0335: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_033A: stelem.ref     
+    IL_033B: dup            
+    IL_033C: ldc.i4.2       
+    IL_033D: ldc.i4.1       
+    IL_033E: newarr         System.String
+    IL_0343: dup            
+    IL_0344: ldc.i4.0       
+    IL_0345: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_034A: stelem.ref     
+    IL_034B: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0350: stelem.ref     
+    IL_0351: dup            
+    IL_0352: ldc.i4.3       
+    IL_0353: ldc.i4.1       
+    IL_0354: newarr         System.String
+    IL_0359: dup            
+    IL_035A: ldc.i4.0       
+    IL_035B: ldstr          "event:/sfx/npcs/neow/neow_welcome"
+    IL_0360: stelem.ref     
+    IL_0361: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0366: stelem.ref     
+    IL_0367: dup            
+    IL_0368: ldc.i4.4       
+    IL_0369: ldc.i4.1       
+    IL_036A: newarr         System.String
+    IL_036F: dup            
+    IL_0370: ldc.i4.0       
+    IL_0371: ldstr          ""
+    IL_0376: stelem.ref     
+    IL_0377: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_037C: stelem.ref     
+    IL_037D: newobj         <typespec>::.ctor
+    IL_0382: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::set_AgnosticDialogues
+    IL_0387: ldloc.0        
+    IL_0388: ret            
+
+

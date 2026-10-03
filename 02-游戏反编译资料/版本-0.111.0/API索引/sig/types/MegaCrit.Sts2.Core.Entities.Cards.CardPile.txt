@@ -1,0 +1,50 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardPile
+    base: System.Object
+
+    field  internal readonly System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.CardModel> _cards
+    field  internal System.Action ContentsChanged
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> CardAdded
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> CardRemoved
+    field  internal System.Action CardAddFinished
+    field  internal System.Action CardRemoveFinished
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.PileType <Type>k__BackingField
+    prop   int MaxCardsInHand { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.PileType Type { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.CardModel> Cards { public get; }
+    prop   bool IsEmpty { public get; }
+    prop   bool IsCombatPile { public get; }
+    prop   int UpgradableCardCount { public get; }
+    method public void .ctor(MegaCrit.Sts2.Core.Entities.Cards.PileType type)
+    method public static int get_MaxCardsInHand()
+    method public void add_ContentsChanged(System.Action value)
+    method public void remove_ContentsChanged(System.Action value)
+    method public void add_CardAdded(System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> value)
+    method public void remove_CardAdded(System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> value)
+    method public void add_CardRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> value)
+    method public void remove_CardRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> value)
+    method public void add_CardAddFinished(System.Action value)
+    method public void remove_CardAddFinished(System.Action value)
+    method public void add_CardRemoveFinished(System.Action value)
+    method public void remove_CardRemoveFinished(System.Action value)
+    method public MegaCrit.Sts2.Core.Entities.Cards.PileType get_Type()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.CardModel> get_Cards()
+    method public bool get_IsEmpty()
+    method public bool get_IsCombatPile()
+    method public int get_UpgradableCardCount()
+    method public static MegaCrit.Sts2.Core.Entities.Cards.CardPile Get(MegaCrit.Sts2.Core.Entities.Cards.PileType type, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> GetCards(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Entities.Cards.PileType[] piles)
+    method public void RandomizeOrderInternal(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Random.Rng rng, MegaCrit.Sts2.Core.Combat.CombatState state)
+    method public void AddInternal(MegaCrit.Sts2.Core.Models.CardModel card, int index, bool silent)
+    method public void RemoveInternal(MegaCrit.Sts2.Core.Models.CardModel card, bool silent)
+    method public void MoveToBottomInternal(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public void MoveToTopInternal(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public void Clear(bool silent)
+    method public void InvokeCardRemoved(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public void InvokeCardAddFinished()
+    method public void InvokeCardRemoveFinished()
+    method public void InvokeContentsChanged()
+    event  System.Action ContentsChanged
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> CardAdded
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.CardModel> CardRemoved
+    event  System.Action CardAddFinished
+    event  System.Action CardRemoveFinished

@@ -1,0 +1,7 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CostModifiers
+    base: System.Enum
+
+    enum None = 0
+    enum Local = 2
+    enum Global = 4
+    enum All = -1

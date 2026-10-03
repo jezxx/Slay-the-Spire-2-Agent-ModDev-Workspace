@@ -1,0 +1,19 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo
+    base: System.ValueType
+
+    field  internal readonly int <EnergySpent>k__BackingField
+    field  internal readonly int <EnergyValue>k__BackingField
+    field  internal readonly int <StarsSpent>k__BackingField
+    field  internal readonly int <StarValue>k__BackingField
+    prop   int EnergySpent { public get; public set; }
+    prop   int EnergyValue { public get; public set; }
+    prop   int StarsSpent { public get; public set; }
+    prop   int StarValue { public get; public set; }
+    method public int get_EnergySpent()
+    method public void set_EnergySpent(int value)
+    method public int get_EnergyValue()
+    method public void set_EnergyValue(int value)
+    method public int get_StarsSpent()
+    method public void set_StarsSpent(int value)
+    method public int get_StarValue()
+    method public void set_StarValue(int value)

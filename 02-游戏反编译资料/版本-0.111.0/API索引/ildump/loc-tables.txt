@@ -1,0 +1,16 @@
+===== MegaCrit.Sts2.Core.Modding.ModManager.GetModdedLocTables(language, file)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  1F FE 73 5E AE 00 06 25 02 7D 1F 6B 00 04 25 03 7D 21 6B 00 04 2A
+  -- decoded --
+    IL_0000: ldc.i4.s       -2
+    IL_0002: newobj         .<GetModdedLocTables>d__43::.ctor
+    IL_0007: dup            
+    IL_0008: ldarg.0        
+    IL_0009: stfld          .<GetModdedLocTables>d__43::<>3__language
+    IL_000E: dup            
+    IL_000F: ldarg.1        
+    IL_0010: stfld          .<GetModdedLocTables>d__43::<>3__file
+    IL_0015: ret            
+
+

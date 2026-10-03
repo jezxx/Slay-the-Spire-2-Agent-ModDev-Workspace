@@ -1,0 +1,20 @@
+===== MegaCrit.Sts2.Core.Commands.DamageCmd.Attack(damagePerHit)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 73 51 56 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: newobj         MegaCrit.Sts2.Core.Commands.Builders.AttackCommand::.ctor
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Commands.DamageCmd.Attack(calculatedDamageVar)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 73 52 56 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: newobj         MegaCrit.Sts2.Core.Commands.Builders.AttackCommand::.ctor
+    IL_0006: ret            
+
+

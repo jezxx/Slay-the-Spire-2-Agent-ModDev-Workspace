@@ -1,0 +1,51 @@
+===== MegaCrit.Sts2.Core.Entities.Cards.CardPile.RemoveInternal(card, silent)  [attrs=0x86] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 4C 52 00 06 03 28 A8 07 00 2B 2D 37 12 00 1F 1C 17 28 ED 00 00 0A 12 00 72 E9 98 03 70 28 F5 00 00 0A 12 00 03 28 11 05 00 2B 12 00 72 CA 0E 00 70 28 F5 00 00 0A 12 00 28 EF 00 00 0A 73 F5 01 00 0A 7A 02 7B 76 19 00 04 03 6F A7 0F 00 0A 26 02 28 4E 52 00 06 2C 10 28 7B 56 00 06 6F 9E 56 00 06 03 6F 21 57 00 06 04 2D 13 02 03 28 58 52 00 06 02 28 5B 52 00 06 02 28 5A 52 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Cards
+    IL_0006: ldarg.1        
+    IL_0007: call           System.Linq.Enumerable::Contains<...>
+    IL_000C: brtrue.s       IL_0045
+    IL_000E: ldloca.s       0
+    IL_0010: ldc.i4.s       28
+    IL_0012: ldc.i4.1       
+    IL_0013: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0018: ldloca.s       0
+    IL_001A: ldstr          "Card pile does not contain "
+    IL_001F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0024: ldloca.s       0
+    IL_0026: ldarg.1        
+    IL_0027: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_002C: ldloca.s       0
+    IL_002E: ldstr          "."
+    IL_0033: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0038: ldloca.s       0
+    IL_003A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_003F: newobj         System.InvalidOperationException::.ctor
+    IL_0044: throw          
+    IL_0045: ldarg.0        
+    IL_0046: ldfld          MegaCrit.Sts2.Core.Entities.Cards.CardPile::_cards
+    IL_004B: ldarg.1        
+    IL_004C: callvirt       <typespec>::Remove
+    IL_0051: pop            
+    IL_0052: ldarg.0        
+    IL_0053: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_IsCombatPile
+    IL_0058: brfalse.s      IL_006A
+    IL_005A: call           MegaCrit.Sts2.Core.Combat.CombatManager::get_Instance
+    IL_005F: callvirt       MegaCrit.Sts2.Core.Combat.CombatManager::get_StateTracker
+    IL_0064: ldarg.1        
+    IL_0065: callvirt       MegaCrit.Sts2.Core.Combat.CombatStateTracker::Unsubscribe
+    IL_006A: ldarg.2        
+    IL_006B: brtrue.s       IL_0080
+    IL_006D: ldarg.0        
+    IL_006E: ldarg.1        
+    IL_006F: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::InvokeCardRemoved
+    IL_0074: ldarg.0        
+    IL_0075: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::InvokeContentsChanged
+    IL_007A: ldarg.0        
+    IL_007B: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::InvokeCardRemoveFinished
+    IL_0080: ret            
+
+

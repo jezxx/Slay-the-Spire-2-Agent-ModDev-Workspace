@@ -1,0 +1,154 @@
+### public class MegaCrit.Sts2.Core.Models.RelicModel
+    base: MegaCrit.Sts2.Core.Models.AbstractModel
+
+    field  internal static readonly Godot.StringName _isUsed
+    field  internal static readonly Godot.StringName _pulse
+    field  internal static readonly Godot.StringName _isWaxStr
+    field  public static string _locTable
+    field  internal string _resolvedBigIconPath
+    field  internal MegaCrit.Sts2.Core.Entities.Players.Player _owner
+    field  internal bool _isWax
+    field  internal bool _isMelted
+    field  internal int <StackCount>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    field  internal int _floorAddedToDeck
+    field  internal MegaCrit.Sts2.Core.Entities.Relics.RelicStatus _status
+    field  internal System.Action`2<MegaCrit.Sts2.Core.Models.RelicModel, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature>> Flashed
+    field  internal System.Action DisplayAmountChanged
+    field  internal System.Action StatusChanged
+    field  internal MegaCrit.Sts2.Core.Models.RelicModel _canonicalInstance
+    field  internal bool <HasBeenRemovedFromState>k__BackingField
+    prop   MegaCrit.Sts2.Core.Localization.LocString Title { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Flavor { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString EventDescription { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Description { internal get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicEventDescription { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicDescription { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString AdditionalRestSiteHealText { public get; }
+    prop   string IconBaseName { public get; }
+    prop   string PackedIconPath { public get; }
+    prop   string PackedIconOutlinePath { public get; }
+    prop   string BigIconPath { public get; }
+    prop   string BigBetaIconPath { internal get; }
+    prop   string MissingIconPath { internal get; }
+    prop   string IconPath { public get; }
+    prop   Godot.Texture2D Icon { public get; }
+    prop   Godot.Texture2D IconOutline { public get; }
+    prop   Godot.Texture2D BigIcon { public get; }
+    prop   string ResolvedBigIconPath { internal get; }
+    prop   MegaCrit.Sts2.Core.Entities.Relics.RelicRarity Rarity { public get; }
+    prop   MegaCrit.Sts2.Core.Models.RelicPoolModel Pool { public get; }
+    prop   bool IsTradable { public get; }
+    prop   bool IsAllowedInShops { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.Player Owner { public get; public set; }
+    prop   bool IsUsedUp { public get; }
+    prop   bool HasUponPickupEffect { public get; }
+    prop   bool SpawnsPets { public get; }
+    prop   bool IsStackable { public get; }
+    prop   bool IsWax { public get; public set; }
+    prop   bool IsMelted { public get; public set; }
+    prop   bool AddsPet { public get; }
+    prop   int StackCount { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { public get; }
+    prop   int MerchantCost { public get; }
+    prop   int FloorAddedToDeck { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Relics.RelicStatus Status { public get; public set; }
+    prop   bool ShowCounter { public get; }
+    prop   int DisplayAmount { public get; }
+    prop   string FlashSfx { public get; }
+    prop   bool ShouldFlashOnPlayer { public get; }
+    prop   MegaCrit.Sts2.Core.HoverTips.HoverTip HoverTip { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTipsExcludingRelic { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    prop   MegaCrit.Sts2.Core.Models.RelicModel CanonicalInstance { public get; internal set; }
+    prop   bool HasBeenRemovedFromState { public get; internal set; }
+    prop   bool ShouldReceiveCombatHooks { public get; }
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Flavor()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_EventDescription()
+    method internal MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicEventDescription()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicDescription()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_AdditionalRestSiteHealText()
+    method public string get_IconBaseName()
+    method public string get_PackedIconPath()
+    method public string get_PackedIconOutlinePath()
+    method public string get_BigIconPath()
+    method internal string get_BigBetaIconPath()
+    method internal static string get_MissingIconPath()
+    method public string get_IconPath()
+    method public Godot.Texture2D get_Icon()
+    method public Godot.Texture2D get_IconOutline()
+    method public Godot.Texture2D get_BigIcon()
+    method internal string get_ResolvedBigIconPath()
+    method public MegaCrit.Sts2.Core.Entities.Relics.RelicRarity get_Rarity()
+    method public MegaCrit.Sts2.Core.Models.RelicPoolModel get_Pool()
+    method public bool get_IsTradable()
+    method public bool get_IsAllowedInShops()
+    method public MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    method public void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    method public bool get_IsUsedUp()
+    method public bool get_HasUponPickupEffect()
+    method public bool get_SpawnsPets()
+    method public bool get_IsStackable()
+    method public bool get_IsWax()
+    method public void set_IsWax(bool value)
+    method public bool get_IsMelted()
+    method public void set_IsMelted(bool value)
+    method public bool get_AddsPet()
+    method public int get_StackCount()
+    method internal void set_StackCount(int value)
+    method public MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    method public int get_MerchantCost()
+    method public bool IsAllowed(MegaCrit.Sts2.Core.Runs.IRunState runState)
+    method public bool IsAllowedAtNeow(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static bool IsBeforeAct3TreasureChest(MegaCrit.Sts2.Core.Runs.IRunState runState)
+    method public int get_FloorAddedToDeck()
+    method public void set_FloorAddedToDeck(int value)
+    method public MegaCrit.Sts2.Core.Entities.Relics.RelicStatus get_Status()
+    method public void set_Status(MegaCrit.Sts2.Core.Entities.Relics.RelicStatus value)
+    method public bool get_ShowCounter()
+    method public int get_DisplayAmount()
+    method public void Flash()
+    method public void Flash(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> targets)
+    method public string get_FlashSfx()
+    method public void add_Flashed(System.Action`2<MegaCrit.Sts2.Core.Models.RelicModel, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature>> value)
+    method public void remove_Flashed(System.Action`2<MegaCrit.Sts2.Core.Models.RelicModel, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature>> value)
+    method public bool get_ShouldFlashOnPlayer()
+    method public void InvokeDisplayAmountChanged()
+    method public void add_DisplayAmountChanged(System.Action value)
+    method public void remove_DisplayAmountChanged(System.Action value)
+    method public void add_StatusChanged(System.Action value)
+    method public void remove_StatusChanged(System.Action value)
+    method public void UpdateTexture(Godot.TextureRect texture)
+    method public MegaCrit.Sts2.Core.HoverTips.HoverTip get_HoverTip()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTipsExcludingRelic()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method public MegaCrit.Sts2.Core.Models.RelicModel get_CanonicalInstance()
+    method internal void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.RelicModel value)
+    method public bool get_HasBeenRemovedFromState()
+    method internal void set_HasBeenRemovedFromState(bool value)
+    method public MegaCrit.Sts2.Core.Models.RelicModel ToMutable()
+    method public void DeepCloneFields()
+    method public void AfterCloned()
+    method public void RemoveInternal()
+    method public void IncrementStackCount()
+    method public System.Threading.Tasks.Task AfterObtained()
+    method public System.Threading.Tasks.Task AfterRemoved()
+    method public MegaCrit.Sts2.Core.Saves.Runs.SerializableRelic ToSerializable()
+    method public static MegaCrit.Sts2.Core.Models.RelicModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableRelic save)
+    method public void RelicIconChanged()
+    method public bool get_ShouldReceiveCombatHooks()
+    method public static MegaCrit.Sts2.Core.Localization.LocString L10NLookup(string entryName)
+    method public void .ctor()
+    method internal static void .cctor()
+    method internal bool <get_Pool>b__46_0(MegaCrit.Sts2.Core.Models.RelicPoolModel p)
+    event  System.Action`2<MegaCrit.Sts2.Core.Models.RelicModel, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature>> Flashed
+    event  System.Action DisplayAmountChanged
+    event  System.Action StatusChanged

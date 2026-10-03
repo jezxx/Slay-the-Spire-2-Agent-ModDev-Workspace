@@ -1,0 +1,6 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CardMultiplayerConstraint
+    base: System.Enum
+
+    enum None = 0
+    enum MultiplayerOnly = 1
+    enum SingleplayerOnly = 2

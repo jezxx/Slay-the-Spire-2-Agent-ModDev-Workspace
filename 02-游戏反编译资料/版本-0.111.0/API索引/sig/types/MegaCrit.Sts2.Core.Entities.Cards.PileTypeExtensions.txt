@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.PileTypeExtensions
+    base: System.Object
+
+    method public static MegaCrit.Sts2.Core.Entities.Cards.CardPile GetPile(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static bool IsCombatPile(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType)
+    method public static Godot.Vector2 GetTargetPosition(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Nodes.Cards.NCard node)

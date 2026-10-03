@@ -1,0 +1,96 @@
+### public class MegaCrit.Sts2.Core.Commands.Builders.AttackCommand
+    base: System.Object
+
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature <Attacker>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Models.AbstractModel <ModelSource>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Entities.Cards.CardPlay <CardPlay>k__BackingField
+    field  internal readonly System.Decimal _damagePerHit
+    field  internal readonly MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedDamageVar _calculatedDamageVar
+    field  internal int _hitCount
+    field  internal MegaCrit.Sts2.Core.Commands.Builders.AttackCommand+SourceType _sourceType
+    field  internal MegaCrit.Sts2.Core.Combat.ICombatState _combatState
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature _singleTarget
+    field  internal MegaCrit.Sts2.Core.Combat.CombatSide <TargetSide>k__BackingField
+    field  internal MegaCrit.Sts2.Core.ValueProps.ValueProp <DamageProps>k__BackingField
+    field  internal bool <IsRandomlyTargeted>k__BackingField
+    field  internal bool _spawnVfxOnEachCreature
+    field  internal bool _spawnVfxOnCreatureCenter
+    field  internal bool _doesRandomTargetingAllowDuplicates
+    field  internal bool _shouldPlayAnimation
+    field  internal readonly System.Collections.Generic.List`1<System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Creatures.DamageResult>> _results
+    field  internal string _attackerAnimName
+    field  internal float _attackerAnimDelay
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature _visualAttacker
+    field  internal bool _playOnEveryHit
+    field  internal string _attackerVfx
+    field  internal string _attackerSfx
+    field  internal string _tmpAttackerSfx
+    field  internal readonly float[] _waitBeforeHit
+    field  internal string <HitSfx>k__BackingField
+    field  internal string <TmpHitSfx>k__BackingField
+    field  internal string <HitVfx>k__BackingField
+    field  internal readonly System.Collections.Generic.List`1<System.Func`1<Godot.Node2D>> _customAttackerVfxNodes
+    field  internal readonly System.Collections.Generic.List`1<System.Func`2<MegaCrit.Sts2.Core.Entities.Creatures.Creature, Godot.Node2D>> _customHitVfxNodes
+    field  internal System.Func`1<System.Threading.Tasks.Task> _afterAttackerAnim
+    field  internal System.Func`1<System.Threading.Tasks.Task> _beforeDamage
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Attacker { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Models.AbstractModel ModelSource { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardPlay CardPlay { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Combat.CombatSide TargetSide { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.ValueProps.ValueProp DamageProps { public get; internal set; }
+    prop   bool IsSingleTargeted { public get; }
+    prop   bool IsMultiTargeted { public get; }
+    prop   bool IsRandomlyTargeted { public get; internal set; }
+    prop   System.Collections.Generic.IEnumerable`1<System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Creatures.DamageResult>> Results { public get; }
+    prop   string HitSfx { public get; internal set; }
+    prop   string TmpHitSfx { public get; internal set; }
+    prop   string HitVfx { public get; internal set; }
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Attacker()
+    method internal void set_Attacker(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    method public MegaCrit.Sts2.Core.Models.AbstractModel get_ModelSource()
+    method internal void set_ModelSource(MegaCrit.Sts2.Core.Models.AbstractModel value)
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardPlay get_CardPlay()
+    method internal void set_CardPlay(MegaCrit.Sts2.Core.Entities.Cards.CardPlay value)
+    method internal System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> GetPossibleTargets()
+    method public MegaCrit.Sts2.Core.Combat.CombatSide get_TargetSide()
+    method internal void set_TargetSide(MegaCrit.Sts2.Core.Combat.CombatSide value)
+    method public MegaCrit.Sts2.Core.ValueProps.ValueProp get_DamageProps()
+    method internal void set_DamageProps(MegaCrit.Sts2.Core.ValueProps.ValueProp value)
+    method public bool get_IsSingleTargeted()
+    method public bool get_IsMultiTargeted()
+    method public bool get_IsRandomlyTargeted()
+    method internal void set_IsRandomlyTargeted(bool value)
+    method public System.Collections.Generic.IEnumerable`1<System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Creatures.DamageResult>> get_Results()
+    method public string get_HitSfx()
+    method internal void set_HitSfx(string value)
+    method public string get_TmpHitSfx()
+    method internal void set_TmpHitSfx(string value)
+    method public string get_HitVfx()
+    method internal void set_HitVfx(string value)
+    method public void .ctor(System.Decimal damagePerHit)
+    method public void .ctor(MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedDamageVar calculatedDamageVar)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand FromCard(MegaCrit.Sts2.Core.Models.CardModel card, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand FromOsty(MegaCrit.Sts2.Core.Entities.Creatures.Creature osty, MegaCrit.Sts2.Core.Models.CardModel card, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand FromMonster(MegaCrit.Sts2.Core.Models.MonsterModel monster)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand Targeting(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand TargetingAllOpponents(MegaCrit.Sts2.Core.Combat.ICombatState combatState)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand TargetingRandomOpponents(MegaCrit.Sts2.Core.Combat.ICombatState combatState, bool allowDuplicates)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand Unpowered()
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithAttackerAnim(string animName, float delay, MegaCrit.Sts2.Core.Entities.Creatures.Creature visualAttacker)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithNoAttackerAnim()
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand AfterAttackerAnim(System.Func`1<System.Threading.Tasks.Task> afterAttackerAnim)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithAttackerFx(string vfx, string sfx, string tmpSfx)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithAttackerFx(System.Func`1<Godot.Node2D> createAttackerVfx)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithWaitBeforeHit(float fastSeconds, float standardSeconds)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithHitFx(string vfx, string sfx, string tmpSfx)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand SpawningHitVfxOnEachCreature()
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithHitVfxSpawnedAtBase()
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithHitVfxNode(System.Func`2<MegaCrit.Sts2.Core.Entities.Creatures.Creature, Godot.Node2D> createHitVfxNode)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand OnlyPlayAnimOnce()
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand WithHitCount(int hitCount)
+    method public MegaCrit.Sts2.Core.Commands.Builders.AttackCommand BeforeDamage(System.Func`1<System.Threading.Tasks.Task> beforeDamage)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Commands.Builders.AttackContext> CreateContextAsync(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Commands.Builders.AttackCommand> Execute(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    method public void IncrementHitsInternal()
+    method public void AddResultsInternal(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.DamageResult> results)
+    method internal bool <Execute>b__90_3(MegaCrit.Sts2.Core.Entities.Creatures.Creature c)

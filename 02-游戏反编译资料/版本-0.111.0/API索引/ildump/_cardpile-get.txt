@@ -1,0 +1,106 @@
+===== MegaCrit.Sts2.Core.Entities.Cards.CardPile.Get(, type, player)  [attrs=0x96] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 45 07 00 00 00 02 00 00 00 09 00 00 00 1E 00 00 00 33 00 00 00 48 00 00 00 5D 00 00 00 72 00 00 00 2B 79 14 0A 38 84 00 00 00 03 6F 65 50 00 06 25 2D 04 26 14 2B 05 28 BB 50 00 06 0A 2B 6F 03 6F 65 50 00 06 25 2D 04 26 14 2B 05 28 BA 50 00 06 0A 2B 5A 03 6F 65 50 00 06 25 2D 04 26 14 2B 05 28 BC 50 00 06 0A 2B 45 03 6F 65 50 00 06 25 2D 04 26 14 2B 05 28 BD 50 00 06 0A 2B 30 03 6F 65 50 00 06 25 2D 04 26 14 2B 05 28 BE 50 00 06 0A 2B 1B 03 6F 79 50 00 06 0A 2B 12 72 55 09 00 70 02 8C 1C 0A 00 02 14 73 DE 0E 00 0A 7A 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: switch         (7) -> 2, 9, 30, 51, 72, 93, 114
+    IL_0022: br.s           IL_009D
+    IL_0024: ldnull         
+    IL_0025: stloc.0        
+    IL_0026: br             IL_00AF
+    IL_002B: ldarg.1        
+    IL_002C: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_PlayerCombatState
+    IL_0031: dup            
+    IL_0032: brtrue.s       IL_0038
+    IL_0034: pop            
+    IL_0035: ldnull         
+    IL_0036: br.s           IL_003D
+    IL_0038: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_DrawPile
+    IL_003D: stloc.0        
+    IL_003E: br.s           IL_00AF
+    IL_0040: ldarg.1        
+    IL_0041: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_PlayerCombatState
+    IL_0046: dup            
+    IL_0047: brtrue.s       IL_004D
+    IL_0049: pop            
+    IL_004A: ldnull         
+    IL_004B: br.s           IL_0052
+    IL_004D: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_Hand
+    IL_0052: stloc.0        
+    IL_0053: br.s           IL_00AF
+    IL_0055: ldarg.1        
+    IL_0056: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_PlayerCombatState
+    IL_005B: dup            
+    IL_005C: brtrue.s       IL_0062
+    IL_005E: pop            
+    IL_005F: ldnull         
+    IL_0060: br.s           IL_0067
+    IL_0062: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_DiscardPile
+    IL_0067: stloc.0        
+    IL_0068: br.s           IL_00AF
+    IL_006A: ldarg.1        
+    IL_006B: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_PlayerCombatState
+    IL_0070: dup            
+    IL_0071: brtrue.s       IL_0077
+    IL_0073: pop            
+    IL_0074: ldnull         
+    IL_0075: br.s           IL_007C
+    IL_0077: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_ExhaustPile
+    IL_007C: stloc.0        
+    IL_007D: br.s           IL_00AF
+    IL_007F: ldarg.1        
+    IL_0080: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_PlayerCombatState
+    IL_0085: dup            
+    IL_0086: brtrue.s       IL_008C
+    IL_0088: pop            
+    IL_0089: ldnull         
+    IL_008A: br.s           IL_0091
+    IL_008C: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_PlayPile
+    IL_0091: stloc.0        
+    IL_0092: br.s           IL_00AF
+    IL_0094: ldarg.1        
+    IL_0095: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Deck
+    IL_009A: stloc.0        
+    IL_009B: br.s           IL_00AF
+    IL_009D: ldstr          "type"
+    IL_00A2: ldarg.0        
+    IL_00A3: box            MegaCrit.Sts2.Core.Entities.Cards.PileType
+    IL_00A8: ldnull         
+    IL_00A9: newobj         System.ArgumentOutOfRangeException::.ctor
+    IL_00AE: throw          
+    IL_00AF: ldloc.0        
+    IL_00B0: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Cards.CardPile.GetCards(player, piles)  [attrs=0x96] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 D1 B0 00 06 0A 06 02 7D 43 70 00 04 03 06 FE 06 D2 B0 00 06 73 08 1B 00 0A 28 43 17 00 2B 2A
+  -- decoded --
+    IL_0000: newobj         .<>c__DisplayClass31_0::.ctor
+    IL_0005: stloc.0        
+    IL_0006: ldloc.0        
+    IL_0007: ldarg.0        
+    IL_0008: stfld          .<>c__DisplayClass31_0::player
+    IL_000D: ldarg.1        
+    IL_000E: ldloc.0        
+    IL_000F: ldftn          .<>c__DisplayClass31_0::<GetCards>b__0
+    IL_0015: newobj         <typespec>::.ctor
+    IL_001A: call           System.Linq.Enumerable::SelectMany<...>
+    IL_001F: ret            
+
+
+===== <>c__DisplayClass31_0.<GetCards>b__0(, p)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 02 7B 43 70 00 04 28 85 52 00 06 6F 4C 52 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: ldarg.0        
+    IL_0002: ldfld          .<>c__DisplayClass31_0::player
+    IL_0007: call           MegaCrit.Sts2.Core.Entities.Cards.PileTypeExtensions::GetPile
+    IL_000C: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Cards
+    IL_0011: ret            
+
+

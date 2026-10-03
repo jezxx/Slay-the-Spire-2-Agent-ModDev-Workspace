@@ -1,0 +1,9 @@
+### internal class MegaCrit.Sts2.Core.Entities.Cards.CardKeywordExtensions
+    base: System.Object
+
+    field  internal static readonly MegaCrit.Sts2.Core.Localization.LocString _period
+    method public static string GetLocKeyPrefix(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    method public static MegaCrit.Sts2.Core.Localization.LocString GetTitle(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    method public static MegaCrit.Sts2.Core.Localization.LocString GetDescription(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    method public static string GetCardText(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    method internal static void .cctor()

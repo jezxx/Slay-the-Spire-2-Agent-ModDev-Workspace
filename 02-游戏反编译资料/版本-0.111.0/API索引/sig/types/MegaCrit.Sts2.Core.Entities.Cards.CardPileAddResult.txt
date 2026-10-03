@@ -1,0 +1,8 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardPileAddResult
+    base: System.ValueType
+
+    field  public bool success
+    field  public MegaCrit.Sts2.Core.Models.CardModel cardAdded
+    field  public MegaCrit.Sts2.Core.Entities.Cards.CardPile oldPile
+    field  public MegaCrit.Sts2.Core.Entities.Cards.PileType targetPile
+    field  public System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.AbstractModel> modifyingModels

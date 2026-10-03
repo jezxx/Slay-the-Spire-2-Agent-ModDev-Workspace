@@ -1,0 +1,257 @@
+### MegaCrit.Sts2.Core.Models.EventModel   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    _initialPageKey = String
+
+  --- fields ---
+    priv MegaCrit.Sts2.Core.Entities.Players.Player <Owner>k__BackingField
+    priv MegaCrit.Sts2.Core.Localization.LocString <Description>k__BackingField
+    prot MegaCrit.Sts2.Core.Multiplayer.Game.EventCombatSynchronizer _combatSynchronizer
+    priv System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Events.EventOption> _currentOptions
+    priv bool _isFinished
+    priv bool _cleanupCalled
+    priv System.Action`1<MegaCrit.Sts2.Core.Models.EventModel> StateChanged
+    priv System.Action EnteringEventCombat
+    priv MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    priv MegaCrit.Sts2.Core.Random.Rng <Rng>k__BackingField
+    priv Godot.Control <Node>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.EventModel _canonicalInstance
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [virtual(newslot)] Godot.Color get_ButtonColor()
+    pub [virtual(newslot)] bool get_IsDeterministic()
+    pub [OVERRIDE] bool get_ShouldReceiveCombatHooks()
+    pub [virtual(newslot)] string get_LocTable()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    pub [virtual(newslot)] MegaCrit.Sts2.Core.Localization.LocString get_InitialDescription()
+    pub MegaCrit.Sts2.Core.Localization.LocString GetOptionTitle(string)
+    pub MegaCrit.Sts2.Core.Localization.LocString GetOptionDescription(string)
+    pub MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    priv void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player)
+    pub [virtual(newslot)] bool get_IsShared()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    priv void set_Description(MegaCrit.Sts2.Core.Localization.LocString)
+    pub [virtual(newslot)] MegaCrit.Sts2.Core.Models.EncounterModel get_CanonicalEncounter()
+    pub System.Threading.Tasks.Task BeginEvent(MegaCrit.Sts2.Core.Entities.Players.Player, MegaCrit.Sts2.Core.Multiplayer.Game.EventCombatSynchronizer, bool)
+    prot [virtual(newslot)] void SetInitialEventState(bool)
+    prot [virtual(newslot)] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> GenerateInitialOptionsWrapper()
+    prot void ReplaceNullOptions(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Events.EventOption>)
+    prot [abstract,virtual(newslot)] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> GenerateInitialOptions()
+    pub bool get_IsFinished()
+    priv void set_IsFinished(bool)
+    pub System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> get_CurrentOptions()
+    prot void ClearCurrentOptions()
+    pub void add_StateChanged(System.Action`1<MegaCrit.Sts2.Core.Models.EventModel>)
+    pub void remove_StateChanged(System.Action`1<MegaCrit.Sts2.Core.Models.EventModel>)
+    pub void add_EnteringEventCombat(System.Action)
+    pub void remove_EnteringEventCombat(System.Action)
+    pub MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    prot [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    pub [virtual(newslot)] bool IsAllowed(MegaCrit.Sts2.Core.Runs.IRunState)
+    pub MegaCrit.Sts2.Core.Random.Rng get_Rng()
+    priv void set_Rng(MegaCrit.Sts2.Core.Random.Rng)
+    pub [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.LocString> get_GameInfoOptions()
+    pub [virtual(newslot)] MegaCrit.Sts2.Core.Events.EventLayoutType get_LayoutType()
+    pub Godot.PackedScene CreateScene()
+    pub Godot.Control get_Node()
+    priv void set_Node(Godot.Control)
+    pub void SetNode(Godot.Control)
+    priv string get_LayoutScenePath()
+    pub MegaCrit.Sts2.Core.Models.EventModel get_CanonicalInstance()
+    priv void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.EventModel)
+    priv string get_InitialPortraitPath()
+    priv string get_InitialPhobiaModePortraitPath()
+    pub bool get_HasPhobiaModePortrait()
+    priv string get_BackgroundScenePath()
+    priv string get_VfxPath()
+    pub bool get_HasVfx()
+    pub [static] Godot.Vector2 get_VfxOffset()
+    pub Godot.Texture2D CreateInitialPortrait()
+    pub Godot.Texture2D CreateInitialPhobiaModePortrait()
+    pub Godot.PackedScene CreateBackgroundScene()
+    pub Godot.Node2D CreateVfx()
+    pub MegaCrit.Sts2.Core.Rooms.ICombatRoomVisuals CreateCombatRoomVisuals(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Players.Player>, MegaCrit.Sts2.Core.Models.ActModel)
+    pub MegaCrit.Sts2.Core.Models.EventModel ToMutable()
+    prot [OVERRIDE] void DeepCloneFields()
+    prot [OVERRIDE] void AfterCloned()
+    pub [virtual(newslot)] void CalculateVars()
+    prot MegaCrit.Sts2.Core.Localization.LocString L10NLookup(string)
+    pub [virtual(newslot)] System.Collections.Generic.IEnumerable`1<string> GetAssetPaths(MegaCrit.Sts2.Core.Runs.IRunState)
+    pub [virtual(newslot)] void OnRoomEnter()
+    pub [virtual(newslot)] System.Threading.Tasks.Task Resume(MegaCrit.Sts2.Core.Rooms.AbstractRoom)
+    prot void SetEventFinished(MegaCrit.Sts2.Core.Localization.LocString)
+    prot [virtual(newslot)] System.Threading.Tasks.Task BeforeEventStarted(bool)
+    pub [virtual(newslot)] System.Threading.Tasks.Task AfterEventStarted()
+    prot [virtual(newslot)] void OnEventFinished()
+    pub void EnsureCleanup()
+    prot [virtual(newslot)] void SetEventState(MegaCrit.Sts2.Core.Localization.LocString, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Events.EventOption>)
+    prot void EnterCombatWithoutExitingEvent(System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Rewards.Reward>, bool)
+    prot void EnterCombatWithoutExitingEvent(MegaCrit.Sts2.Core.Models.EncounterModel, System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Rewards.Reward>, bool)
+    prot MegaCrit.Sts2.Core.Events.EventOption RelicOption(System.Func`1<System.Threading.Tasks.Task>, string)
+    prot MegaCrit.Sts2.Core.Events.EventOption RelicOption(MegaCrit.Sts2.Core.Models.RelicModel, System.Func`1<System.Threading.Tasks.Task>, string)
+    prot string InitialOptionKey(string)
+    priv string OptionKey(string, string)
+    prot System.Threading.Tasks.Task SelectCardsToAddToDeckFromGrid(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Cards.CardCreationResult>, MegaCrit.Sts2.Core.CardSelection.CardSelectorPrefs)
+    priv bool <get_GameInfoOptions>b__59_0(string)
+    priv MegaCrit.Sts2.Core.Localization.LocString <get_GameInfoOptions>b__59_1(string)
+
+  --- properties ---
+    Godot.Color ButtonColor { [virtual] get; }
+    bool IsDeterministic { [virtual] get; }
+    bool ShouldReceiveCombatHooks { [OVERRIDE] get; }
+    string LocTable { [virtual] get; }
+    MegaCrit.Sts2.Core.Localization.LocString Title { get; }
+    MegaCrit.Sts2.Core.Localization.LocString InitialDescription { [virtual] get; }
+    MegaCrit.Sts2.Core.Entities.Players.Player Owner { get; set; }
+    bool IsShared { [virtual] get; }
+    MegaCrit.Sts2.Core.Localization.LocString Description { get; set; }
+    MegaCrit.Sts2.Core.Models.EncounterModel CanonicalEncounter { [virtual] get; }
+    bool IsFinished { get; set; }
+    System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> CurrentOptions { get; }
+    MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { [virtual] get; }
+    MegaCrit.Sts2.Core.Random.Rng Rng { get; set; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.LocString> GameInfoOptions { [virtual] get; }
+    MegaCrit.Sts2.Core.Events.EventLayoutType LayoutType { [virtual] get; }
+    Godot.Control Node { get; set; }
+    string LayoutScenePath { get; }
+    MegaCrit.Sts2.Core.Models.EventModel CanonicalInstance { get; set; }
+    string InitialPortraitPath { get; }
+    string InitialPhobiaModePortraitPath { get; }
+    bool HasPhobiaModePortrait { get; }
+    string BackgroundScenePath { get; }
+    string VfxPath { get; }
+    bool HasVfx { get; }
+    Godot.Vector2 VfxOffset { get; }
+
+  --- nested types --- <>c__DisplayClass113_0, <BeginEvent>d__28, <SelectCardsToAddToDeckFromGrid>d__113
+
+### MegaCrit.Sts2.Core.Events.EventOption   [class]
+  base: System.Object
+  interfaces: 
+
+  --- fields ---
+    priv string <TextKey>k__BackingField
+    priv MegaCrit.Sts2.Core.Localization.LocString <Title>k__BackingField
+    priv MegaCrit.Sts2.Core.Localization.LocString <Description>k__BackingField
+    priv readonly System.Func`1<System.Threading.Tasks.Task> <OnChosen>k__BackingField
+    priv System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> <HoverTips>k__BackingField
+    priv readonly bool <IsLocked>k__BackingField
+    priv bool <IsProceed>k__BackingField
+    priv bool <WasChosen>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.RelicModel <Relic>k__BackingField
+    priv readonly bool <DisableOnChosen>k__BackingField
+    priv System.Func`2<MegaCrit.Sts2.Core.Entities.Players.Player, bool> <WillKillPlayer>k__BackingField
+    priv bool <ShouldSaveChoiceToHistory>k__BackingField
+    priv MegaCrit.Sts2.Core.Localization.LocString <HistoryName>k__BackingField
+    priv bool <ShouldSaveVariablesToHistory>k__BackingField
+    priv System.Func`2<MegaCrit.Sts2.Core.Events.EventOption, System.Threading.Tasks.Task> BeforeChosen
+
+  --- ctors ---
+    pub .ctor(MegaCrit.Sts2.Core.Models.EventModel, System.Func`1<System.Threading.Tasks.Task>, MegaCrit.Sts2.Core.Localization.LocString, MegaCrit.Sts2.Core.Localization.LocString, string, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip>)
+    pub .ctor(MegaCrit.Sts2.Core.Models.EventModel, System.Func`1<System.Threading.Tasks.Task>, string, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip>)
+    pub .ctor(MegaCrit.Sts2.Core.Models.EventModel, System.Func`1<System.Threading.Tasks.Task>, string, MegaCrit.Sts2.Core.HoverTips.IHoverTip[])
+    pub .ctor(MegaCrit.Sts2.Core.Models.EventModel, System.Func`1<System.Threading.Tasks.Task>, string, bool, bool, MegaCrit.Sts2.Core.HoverTips.IHoverTip[])
+    pub .ctor(MegaCrit.Sts2.Core.Events.EventOption)
+
+  --- methods ---
+    pub string get_TextKey()
+    priv void set_TextKey(string)
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    priv void set_Title(MegaCrit.Sts2.Core.Localization.LocString)
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    priv void set_Description(MegaCrit.Sts2.Core.Localization.LocString)
+    priv System.Func`1<System.Threading.Tasks.Task> get_OnChosen()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    pub void set_HoverTips(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip>)
+    pub bool get_IsLocked()
+    pub bool get_IsProceed()
+    priv void set_IsProceed(bool)
+    pub bool get_WasChosen()
+    priv void set_WasChosen(bool)
+    pub MegaCrit.Sts2.Core.Models.RelicModel get_Relic()
+    priv void set_Relic(MegaCrit.Sts2.Core.Models.RelicModel)
+    priv bool get_DisableOnChosen()
+    pub System.Func`2<MegaCrit.Sts2.Core.Entities.Players.Player, bool> get_WillKillPlayer()
+    priv void set_WillKillPlayer(System.Func`2<MegaCrit.Sts2.Core.Entities.Players.Player, bool>)
+    pub bool get_ShouldSaveChoiceToHistory()
+    priv void set_ShouldSaveChoiceToHistory(bool)
+    pub MegaCrit.Sts2.Core.Localization.LocString get_HistoryName()
+    priv void set_HistoryName(MegaCrit.Sts2.Core.Localization.LocString)
+    pub bool get_ShouldSaveVariablesToHistory()
+    priv void set_ShouldSaveVariablesToHistory(bool)
+    pub void add_BeforeChosen(System.Func`2<MegaCrit.Sts2.Core.Events.EventOption, System.Threading.Tasks.Task>)
+    pub void remove_BeforeChosen(System.Func`2<MegaCrit.Sts2.Core.Events.EventOption, System.Threading.Tasks.Task>)
+    pub [static] MegaCrit.Sts2.Core.Events.EventOption FromRelic(MegaCrit.Sts2.Core.Models.RelicModel, MegaCrit.Sts2.Core.Models.EventModel, System.Func`1<System.Threading.Tasks.Task>, string)
+    pub MegaCrit.Sts2.Core.Events.EventOption WithRelic(MegaCrit.Sts2.Core.Entities.Players.Player)
+    pub MegaCrit.Sts2.Core.Events.EventOption WithRelic(MegaCrit.Sts2.Core.Models.RelicModel)
+    pub System.Threading.Tasks.Task Chosen()
+    pub MegaCrit.Sts2.Core.Events.EventOption WithOverridenHistoryName(MegaCrit.Sts2.Core.Localization.LocString)
+    pub MegaCrit.Sts2.Core.Events.EventOption ThatDoesDamage(System.Decimal)
+    pub MegaCrit.Sts2.Core.Events.EventOption ThatDecreasesMaxHp(System.Decimal)
+    pub MegaCrit.Sts2.Core.Events.EventOption ThatWillKillPlayerIf(System.Func`2<MegaCrit.Sts2.Core.Entities.Players.Player, bool>)
+    pub MegaCrit.Sts2.Core.Events.EventOption ThatHasDynamicTitle()
+    pub MegaCrit.Sts2.Core.Events.EventOption ThatWontSaveToChoiceHistory()
+    priv void AddLocVars(MegaCrit.Sts2.Core.Models.EventModel)
+    pub [OVERRIDE] string ToString()
+
+  --- properties ---
+    string TextKey { get; set; }
+    MegaCrit.Sts2.Core.Localization.LocString Title { get; set; }
+    MegaCrit.Sts2.Core.Localization.LocString Description { get; set; }
+    System.Func`1<System.Threading.Tasks.Task> OnChosen { get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { get; set; }
+    bool IsLocked { get; }
+    bool IsProceed { get; set; }
+    bool WasChosen { get; set; }
+    MegaCrit.Sts2.Core.Models.RelicModel Relic { get; set; }
+    bool DisableOnChosen { get; }
+    System.Func`2<MegaCrit.Sts2.Core.Entities.Players.Player, bool> WillKillPlayer { get; set; }
+    bool ShouldSaveChoiceToHistory { get; set; }
+    MegaCrit.Sts2.Core.Localization.LocString HistoryName { get; set; }
+    bool ShouldSaveVariablesToHistory { get; set; }
+
+  --- nested types --- <>c__DisplayClass66_0, <>c__DisplayClass67_0, <Chosen>d__64
+
+### MegaCrit.Sts2.Core.Events.EventLayoutType   [sealed class]
+  base: System.Enum
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    Default = 0
+    Combat = 1
+    Ancient = 2
+    Custom = 3
+
+  --- fields ---
+    pub int value__
+
+
+### MegaCrit.Sts2.Core.Modding.ModHelper   [static class]
+  base: System.Object
+  interfaces: 
+
+  --- fields ---
+    priv static readonly System.Collections.Generic.Dictionary`2<System.Type, ModPoolContent> _moddedContentForPools
+    priv static readonly System.Collections.Generic.List`1<ModRunHookSubscriber> _runHookSubscribers
+    priv static readonly System.Collections.Generic.List`1<ModCombatHookSubscriber> _combatHookSubscribers
+
+  --- ctors ---
+    priv .cctor()
+
+  --- methods ---
+    pub [static] void AddModelToPool()
+    pub [static] void AddModelToPool(System.Type, System.Type)
+    pub [static] System.Collections.Generic.IEnumerable`1<!!0> ConcatModelsFromMods(MegaCrit.Sts2.Core.Models.IPoolModel, System.Collections.Generic.IEnumerable`1<!!0>)
+    pub [static] void SubscribeForRunStateHooks(string, MegaCrit.Sts2.Core.Modding.RunHookSubscriptionDelegate)
+    pub [static] void SubscribeForCombatStateHooks(string, MegaCrit.Sts2.Core.Modding.CombatHookSubscriptionDelegate)
+    pub [static] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> IterateAllRunStateSubscribers(MegaCrit.Sts2.Core.Runs.RunState)
+    pub [static] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> IterateAllCombatStateSubscribers(MegaCrit.Sts2.Core.Combat.CombatState)
+
+  --- nested types --- ModPoolContent, ModRunHookSubscriber, ModCombatHookSubscriber, <>c, <>c__8`1, <>c__DisplayClass10_0, <>c__DisplayClass9_0, <IterateAllCombatStateSubscribers>d__12, <IterateAllRunStateSubscribers>d__11
+

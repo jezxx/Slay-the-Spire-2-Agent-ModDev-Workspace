@@ -1,0 +1,7 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CardPilePosition
+    base: System.Enum
+
+    enum None = 0
+    enum Bottom = 1
+    enum Top = 2
+    enum Random = 3

@@ -1,0 +1,10 @@
+===== MegaCrit.Sts2.Core.Models.AbstractModel.get_Id()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 94 08 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Models.AbstractModel::<Id>k__BackingField
+    IL_0006: ret            
+
+

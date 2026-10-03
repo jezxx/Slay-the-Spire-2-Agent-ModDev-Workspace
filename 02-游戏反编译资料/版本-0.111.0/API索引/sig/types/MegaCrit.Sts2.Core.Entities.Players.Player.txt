@@ -1,0 +1,183 @@
+### public class MegaCrit.Sts2.Core.Entities.Players.Player
+    base: System.Object
+
+    field  public static int initialMaxPotionSlotCount
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> RelicObtained
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> RelicRemoved
+    field  internal System.Action`1<int> MaxPotionCountChanged
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> PotionProcured
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> PotionDiscarded
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> UsedPotionRemoved
+    field  internal System.Action AddPotionFailed
+    field  internal System.Action GoldChanged
+    field  internal MegaCrit.Sts2.Core.Entities.Cards.CardPile[] _runPiles
+    field  internal readonly System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel> _relics
+    field  internal readonly System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.PotionModel> _potionSlots
+    field  internal readonly MegaCrit.Sts2.Core.Models.CharacterModel <Character>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Creatures.Creature <Creature>k__BackingField
+    field  internal readonly ulong <NetId>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Random.PlayerRngSet <PlayerRng>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Odds.PlayerOddsSet <PlayerOdds>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Runs.RelicGrabBag <RelicGrabBag>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Unlocks.UnlockState <UnlockState>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Runs.IRunState _runState
+    field  internal bool <IsActiveForHooks>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState <PlayerCombatState>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Entities.Players.ExtraPlayerFields <ExtraFields>k__BackingField
+    field  internal int _gold
+    field  internal readonly int <MaxAscensionWhenRunStarted>k__BackingField
+    field  internal System.Action CanUseOrRemovePotionsChanged
+    field  internal bool _canUseOrRemovePotions
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.CardPile <Deck>k__BackingField
+    field  internal int <MaxEnergy>k__BackingField
+    field  internal System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> <DiscoveredCards>k__BackingField
+    field  internal System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> <DiscoveredRelics>k__BackingField
+    field  internal System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> <DiscoveredPotions>k__BackingField
+    field  internal System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> <DiscoveredEnemies>k__BackingField
+    field  internal System.Collections.Generic.List`1<string> <DiscoveredEpochs>k__BackingField
+    field  internal int <BaseOrbSlotCount>k__BackingField
+    prop   int MaxPotionCount { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CharacterModel Character { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Creature { public get; }
+    prop   ulong NetId { public get; }
+    prop   MegaCrit.Sts2.Core.Random.PlayerRngSet PlayerRng { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Odds.PlayerOddsSet PlayerOdds { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Runs.RelicGrabBag RelicGrabBag { public get; }
+    prop   MegaCrit.Sts2.Core.Unlocks.UnlockState UnlockState { public get; }
+    prop   MegaCrit.Sts2.Core.Runs.IRunState RunState { public get; public set; }
+    prop   bool IsActiveForHooks { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState PlayerCombatState { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.ExtraPlayerFields ExtraFields { public get; internal set; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.RelicModel> Relics { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.PotionModel> PotionSlots { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> Potions { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Osty { public get; }
+    prop   bool IsOstyAlive { public get; }
+    prop   bool IsOstyMissing { public get; }
+    prop   int Gold { public get; public set; }
+    prop   int MaxAscensionWhenRunStarted { public get; }
+    prop   bool HasOpenPotionSlots { public get; }
+    prop   bool CanUseOrRemovePotions { public get; public set; }
+    prop   bool IsInventoryPopulated { internal get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardPile Deck { public get; }
+    prop   int MaxEnergy { public get; public set; }
+    prop   System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> DiscoveredCards { public get; public set; }
+    prop   System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> DiscoveredRelics { public get; public set; }
+    prop   System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> DiscoveredPotions { public get; public set; }
+    prop   System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> DiscoveredEnemies { public get; public set; }
+    prop   System.Collections.Generic.List`1<string> DiscoveredEpochs { public get; public set; }
+    prop   int BaseOrbSlotCount { public get; public set; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Cards.CardPile> Piles { public get; }
+    method public void add_RelicObtained(System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> value)
+    method public void remove_RelicObtained(System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> value)
+    method public void add_RelicRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> value)
+    method public void remove_RelicRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> value)
+    method public void add_MaxPotionCountChanged(System.Action`1<int> value)
+    method public void remove_MaxPotionCountChanged(System.Action`1<int> value)
+    method public void add_PotionProcured(System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> value)
+    method public void remove_PotionProcured(System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> value)
+    method public void add_PotionDiscarded(System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> value)
+    method public void remove_PotionDiscarded(System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> value)
+    method public void add_UsedPotionRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> value)
+    method public void remove_UsedPotionRemoved(System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> value)
+    method public void add_AddPotionFailed(System.Action value)
+    method public void remove_AddPotionFailed(System.Action value)
+    method public void add_GoldChanged(System.Action value)
+    method public void remove_GoldChanged(System.Action value)
+    method public int get_MaxPotionCount()
+    method public MegaCrit.Sts2.Core.Models.CharacterModel get_Character()
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Creature()
+    method public ulong get_NetId()
+    method public MegaCrit.Sts2.Core.Random.PlayerRngSet get_PlayerRng()
+    method internal void set_PlayerRng(MegaCrit.Sts2.Core.Random.PlayerRngSet value)
+    method public MegaCrit.Sts2.Core.Odds.PlayerOddsSet get_PlayerOdds()
+    method internal void set_PlayerOdds(MegaCrit.Sts2.Core.Odds.PlayerOddsSet value)
+    method public MegaCrit.Sts2.Core.Runs.RelicGrabBag get_RelicGrabBag()
+    method public MegaCrit.Sts2.Core.Unlocks.UnlockState get_UnlockState()
+    method public MegaCrit.Sts2.Core.Runs.IRunState get_RunState()
+    method public void set_RunState(MegaCrit.Sts2.Core.Runs.IRunState value)
+    method public bool get_IsActiveForHooks()
+    method internal void set_IsActiveForHooks(bool value)
+    method public MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState get_PlayerCombatState()
+    method internal void set_PlayerCombatState(MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState value)
+    method public MegaCrit.Sts2.Core.Entities.Players.ExtraPlayerFields get_ExtraFields()
+    method internal void set_ExtraFields(MegaCrit.Sts2.Core.Entities.Players.ExtraPlayerFields value)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.RelicModel> get_Relics()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.PotionModel> get_PotionSlots()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> get_Potions()
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Osty()
+    method public bool get_IsOstyAlive()
+    method public bool get_IsOstyMissing()
+    method public bool HasEventPet()
+    method public int get_Gold()
+    method public void set_Gold(int value)
+    method public int get_MaxAscensionWhenRunStarted()
+    method public bool get_HasOpenPotionSlots()
+    method public void add_CanUseOrRemovePotionsChanged(System.Action value)
+    method public void remove_CanUseOrRemovePotionsChanged(System.Action value)
+    method public bool get_CanUseOrRemovePotions()
+    method public void set_CanUseOrRemovePotions(bool value)
+    method internal bool get_IsInventoryPopulated()
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardPile get_Deck()
+    method public int get_MaxEnergy()
+    method public void set_MaxEnergy(int value)
+    method public System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> get_DiscoveredCards()
+    method public void set_DiscoveredCards(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> value)
+    method public System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> get_DiscoveredRelics()
+    method public void set_DiscoveredRelics(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> value)
+    method public System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> get_DiscoveredPotions()
+    method public void set_DiscoveredPotions(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> value)
+    method public System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> get_DiscoveredEnemies()
+    method public void set_DiscoveredEnemies(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> value)
+    method public System.Collections.Generic.List`1<string> get_DiscoveredEpochs()
+    method public void set_DiscoveredEpochs(System.Collections.Generic.List`1<string> value)
+    method public int get_BaseOrbSlotCount()
+    method public void set_BaseOrbSlotCount(int value)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Cards.CardPile> get_Piles()
+    method internal void .ctor(MegaCrit.Sts2.Core.Models.CharacterModel character, ulong netId, int currentHp, int maxHp, int maxEnergy, int gold, int potionSlotCount, int orbSlotCount, MegaCrit.Sts2.Core.Runs.RelicGrabBag sharedRelicGrabBag, MegaCrit.Sts2.Core.Unlocks.UnlockState unlockState, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> discoveredCards, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> discoveredEnemies, System.Collections.Generic.List`1<string> discoveredEpochs, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> discoveredPotions, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ModelId> discoveredRelics)
+    method public static MegaCrit.Sts2.Core.Entities.Players.Player CreateForNewRun<T>(MegaCrit.Sts2.Core.Unlocks.UnlockState unlockState, ulong netId)
+    method public static MegaCrit.Sts2.Core.Entities.Players.Player CreateForNewRun(MegaCrit.Sts2.Core.Models.CharacterModel character, MegaCrit.Sts2.Core.Unlocks.UnlockState unlockState, ulong netId)
+    method public static MegaCrit.Sts2.Core.Entities.Players.Player FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializablePlayer save)
+    method public void InitializeSeed(string seed)
+    method internal void PopulateStartingInventory()
+    method internal void LoadInventory(MegaCrit.Sts2.Core.Saves.Runs.SerializablePlayer save)
+    method public void PopulateRelicGrabBagIfNecessary(MegaCrit.Sts2.Core.Random.Rng rng)
+    method public MegaCrit.Sts2.Core.Saves.Runs.SerializablePlayer ToSerializable()
+    method public void SyncWithSerializedPlayer(MegaCrit.Sts2.Core.Saves.Runs.SerializablePlayer player)
+    method public void AddRelicInternal(MegaCrit.Sts2.Core.Models.RelicModel relic, int index, bool silent)
+    method public void RemoveRelicInternal(MegaCrit.Sts2.Core.Models.RelicModel relic, bool silent)
+    method public void MeltRelicInternal(MegaCrit.Sts2.Core.Models.RelicModel relic)
+    method public T GetRelic<T>()
+    method public MegaCrit.Sts2.Core.Models.RelicModel GetRelicById(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public int GetPotionSlotIndex(MegaCrit.Sts2.Core.Models.PotionModel model)
+    method public MegaCrit.Sts2.Core.Models.PotionModel GetPotionAtSlotIndex(int index)
+    method public void AddToMaxPotionCount(int maxPotionCountIncrease)
+    method public void SubtractFromMaxPotionCount(int maxPotionCountDecrease)
+    method internal void SetMaxPotionCountInternal(int newMaxPotionCount)
+    method public MegaCrit.Sts2.Core.Entities.Potions.PotionProcureResult AddPotionInternal(MegaCrit.Sts2.Core.Models.PotionModel potion, int slotIndex, bool silent)
+    method public void DiscardPotionInternal(MegaCrit.Sts2.Core.Models.PotionModel potion, bool silent)
+    method public void RemoveUsedPotionInternal(MegaCrit.Sts2.Core.Models.PotionModel potion)
+    method internal void RemovePotionInternal(MegaCrit.Sts2.Core.Models.PotionModel potion)
+    method internal void PopulateStartingDeck()
+    method internal void PopulateDeck(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> cards, bool silent)
+    method internal void PopulateStartingRelics()
+    method internal void PopulateRelics(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> relics, bool silent)
+    method internal void LoadPotions(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Saves.Runs.SerializablePotion> serializablePotions, bool silent)
+    method public void ResetCombatState()
+    method public void PopulateCombatState(MegaCrit.Sts2.Core.Random.Rng rng, MegaCrit.Sts2.Core.Combat.CombatState state)
+    method public System.Threading.Tasks.Task ReviveBeforeCombatEnd()
+    method public void AfterCombatEnd()
+    method internal void OnRelicFlashed(MegaCrit.Sts2.Core.Models.RelicModel relic, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> targets)
+    method public void OnSideSwitch()
+    method public void DeactivateHooks()
+    method public void ActivateHooks()
+    method internal MegaCrit.Sts2.Core.Models.CardModel <SyncWithSerializedPlayer>b__142_0(MegaCrit.Sts2.Core.Saves.Runs.SerializableCard c)
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> RelicObtained
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.RelicModel> RelicRemoved
+    event  System.Action`1<int> MaxPotionCountChanged
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> PotionProcured
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> PotionDiscarded
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.PotionModel> UsedPotionRemoved
+    event  System.Action AddPotionFailed
+    event  System.Action GoldChanged
+    event  System.Action CanUseOrRemovePotionsChanged

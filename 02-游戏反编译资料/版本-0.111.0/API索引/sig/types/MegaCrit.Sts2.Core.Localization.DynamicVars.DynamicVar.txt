@@ -1,0 +1,54 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+    base: System.Object
+    implements: System.IConvertible
+
+    field  internal readonly string <Name>k__BackingField
+    field  public MegaCrit.Sts2.Core.Models.AbstractModel _owner
+    field  internal System.Decimal _baseValue
+    field  internal System.Decimal _enchantedValue
+    field  internal System.Decimal _previewValue
+    field  internal bool <WasJustUpgraded>k__BackingField
+    prop   string Name { public get; }
+    prop   System.Decimal BaseValue { public get; public set; }
+    prop   System.Decimal EnchantedValue { public get; public set; }
+    prop   System.Decimal PreviewValue { public get; public set; }
+    prop   bool WasJustUpgraded { public get; public set; }
+    prop   int IntValue { public get; }
+    method public string get_Name()
+    method public System.Decimal get_BaseValue()
+    method public void set_BaseValue(System.Decimal value)
+    method public System.Decimal get_EnchantedValue()
+    method public void set_EnchantedValue(System.Decimal value)
+    method public System.Decimal get_PreviewValue()
+    method public void set_PreviewValue(System.Decimal value)
+    method public bool get_WasJustUpgraded()
+    method public void set_WasJustUpgraded(bool value)
+    method public int get_IntValue()
+    method public void .ctor(string name, System.Decimal baseValue)
+    method public void ResetToBase()
+    method public void SetOwner(MegaCrit.Sts2.Core.Models.AbstractModel owner)
+    method public void UpdateCardPreview(MegaCrit.Sts2.Core.Models.CardModel card, MegaCrit.Sts2.Core.Entities.Cards.CardPreviewMode previewMode, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, bool runGlobalHooks)
+    method public void UpgradeValueBy(System.Decimal addend)
+    method public void FinalizeUpgrade()
+    method public MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar Clone()
+    method public string ToHighlightedString(bool inverse)
+    method public string ToString()
+    method public object GetSourceValue(SmartFormat.Core.Extensions.ISelectorInfo selector)
+    method public System.TypeCode GetTypeCode()
+    method public bool ToBoolean(System.IFormatProvider provider)
+    method public byte ToByte(System.IFormatProvider provider)
+    method public char ToChar(System.IFormatProvider provider)
+    method public System.DateTime ToDateTime(System.IFormatProvider provider)
+    method public System.Decimal ToDecimal(System.IFormatProvider provider)
+    method public double ToDouble(System.IFormatProvider provider)
+    method public short ToInt16(System.IFormatProvider provider)
+    method public int ToInt32(System.IFormatProvider provider)
+    method public long ToInt64(System.IFormatProvider provider)
+    method public sbyte ToSByte(System.IFormatProvider provider)
+    method public float ToSingle(System.IFormatProvider provider)
+    method public string ToString(System.IFormatProvider provider)
+    method public object ToType(System.Type conversionType, System.IFormatProvider provider)
+    method public ushort ToUInt16(System.IFormatProvider provider)
+    method public uint ToUInt32(System.IFormatProvider provider)
+    method public ulong ToUInt64(System.IFormatProvider provider)
+    method public System.Decimal GetBaseValueForIConvertible()

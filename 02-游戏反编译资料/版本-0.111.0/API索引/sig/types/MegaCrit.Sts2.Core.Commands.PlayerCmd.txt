@@ -1,0 +1,22 @@
+### public class MegaCrit.Sts2.Core.Commands.PlayerCmd
+    base: System.Object
+
+    field  public static string goldSmallSfx
+    field  public static string goldMediumSfx
+    field  public static string goldLargeSfx
+    method public static System.Threading.Tasks.Task GainEnergy(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task LoseEnergy(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task SetEnergy(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task GainStars(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task LoseStars(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task SetStars(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task GainGold(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player, bool wasStolenBack)
+    method public static System.Threading.Tasks.Task LoseGold(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Entities.Gold.GoldLossType goldLossType)
+    method public static System.Threading.Tasks.Task SetGold(System.Decimal amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task GainMaxPotionCount(int amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task LoseMaxPotionCount(int amount, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> AddPet<T>(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task AddPet(MegaCrit.Sts2.Core.Entities.Creatures.Creature pet, MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public static System.Threading.Tasks.Task MimicRestSiteHeal(MegaCrit.Sts2.Core.Entities.Players.Player player, bool playSfx)
+    method public static void EndTurn(MegaCrit.Sts2.Core.Entities.Players.Player player, bool canBackOut, System.Func`1<System.Threading.Tasks.Task> actionDuringEnemyTurn)
+    method public static void CompleteQuest(MegaCrit.Sts2.Core.Models.CardModel questCard)

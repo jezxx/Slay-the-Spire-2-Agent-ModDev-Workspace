@@ -1,0 +1,382 @@
+### MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue   [class]
+  base: System.Object
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    _locTable = String
+
+  --- fields ---
+    priv readonly System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine> <Lines>k__BackingField
+    priv bool <IsRepeating>k__BackingField
+    priv readonly System.Nullable`1<int> <VisitIndex>k__BackingField
+    priv readonly MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers <StartAttackers>k__BackingField
+    priv readonly MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers <EndAttackers>k__BackingField
+
+  --- ctors ---
+    pub .ctor(string[])
+
+  --- methods ---
+    pub System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine> get_Lines()
+    pub bool get_IsRepeating()
+    pub void set_IsRepeating(bool)
+    pub System.Nullable`1<int> get_VisitIndex()
+    pub void set_VisitIndex(System.Nullable`1<int>)
+    pub MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers get_StartAttackers()
+    pub void set_StartAttackers(MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers)
+    pub MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers get_EndAttackers()
+    pub void set_EndAttackers(MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers)
+    pub void PopulateLines(string, string, int)
+    priv [static] bool HasRepeatingSuffix(string)
+
+  --- properties ---
+    System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine> Lines { get; }
+    bool IsRepeating { get; set; }
+    System.Nullable`1<int> VisitIndex { get; set; }
+    MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers StartAttackers { get; set; }
+    MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers EndAttackers { get; set; }
+
+  --- nested types --- <>c
+
+### MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine   [class]
+  base: System.Object
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    sfxFallbackPath = String
+
+  --- fields ---
+    priv MegaCrit.Sts2.Core.Localization.LocString <LineText>k__BackingField
+    priv MegaCrit.Sts2.Core.Localization.LocString <NextButtonText>k__BackingField
+    priv MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSpeaker <Speaker>k__BackingField
+    priv readonly string _sfxPath
+
+  --- ctors ---
+    pub .ctor(string)
+
+  --- methods ---
+    pub MegaCrit.Sts2.Core.Localization.LocString get_LineText()
+    pub void set_LineText(MegaCrit.Sts2.Core.Localization.LocString)
+    pub MegaCrit.Sts2.Core.Localization.LocString get_NextButtonText()
+    pub void set_NextButtonText(MegaCrit.Sts2.Core.Localization.LocString)
+    pub MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSpeaker get_Speaker()
+    pub void set_Speaker(MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSpeaker)
+    pub string GetSfxOrFallbackPath()
+
+  --- properties ---
+    MegaCrit.Sts2.Core.Localization.LocString LineText { get; set; }
+    MegaCrit.Sts2.Core.Localization.LocString NextButtonText { get; set; }
+    MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSpeaker Speaker { get; set; }
+
+
+### MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet   [class]
+  base: System.Object
+  interfaces: 
+
+  --- fields ---
+    priv readonly MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue <FirstVisitEverDialogue>k__BackingField
+    priv readonly System.Collections.Generic.Dictionary`2<string, System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>> <CharacterDialogues>k__BackingField
+    priv readonly System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue> <AgnosticDialogues>k__BackingField
+
+  --- ctors ---
+    pub .ctor()
+
+  --- methods ---
+    pub MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue get_FirstVisitEverDialogue()
+    pub void set_FirstVisitEverDialogue(MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue)
+    pub System.Collections.Generic.Dictionary`2<string, System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>> get_CharacterDialogues()
+    pub void set_CharacterDialogues(System.Collections.Generic.Dictionary`2<string, System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>>)
+    pub System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue> get_AgnosticDialogues()
+    pub void set_AgnosticDialogues(System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>)
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue> GetAllDialogues()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue> GetValidDialogues(MegaCrit.Sts2.Core.Models.ModelId, int, int, bool)
+    pub void PopulateLocKeys(string)
+    priv [static] void AddRepeatingDialogues(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>, int)
+
+  --- properties ---
+    MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue FirstVisitEverDialogue { get; set; }
+    System.Collections.Generic.Dictionary`2<string, System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue>> CharacterDialogues { get; set; }
+    System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue> AgnosticDialogues { get; set; }
+
+  --- nested types --- <>c__DisplayClass13_0, <GetAllDialogues>d__12
+
+### MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSpeaker   [sealed class]
+  base: System.Enum
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    None = 0
+    Ancient = 1
+    Character = 2
+
+  --- fields ---
+    pub int value__
+
+
+### MegaCrit.Sts2.Core.Models.AncientEventModel   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.EventModel
+  interfaces: 
+
+  --- fields ---
+    priv MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet _dialogueSet
+    priv System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Events.EventOption> _generatedOptions
+    priv string _customDonePage
+    priv readonly Godot.Color <DialogueColor>k__BackingField
+    priv string _debugOption
+    priv int <HealedAmount>k__BackingField
+    priv Godot.Color <EventButtonColor>k__BackingField
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [OVERRIDE] string get_LocTable()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Epithet()
+    pub MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet get_DialogueSet()
+    prot [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet DefineDialogues()
+    prot [static] string CharKey()
+    pub [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CharacterModel> get_AnyCharacterDialogueBlacklist()
+    pub [OVERRIDE] Godot.Color get_ButtonColor()
+    pub [virtual(newslot)] Godot.Color get_DialogueColor()
+    priv string get_CustomDonePage()
+    priv void set_CustomDonePage(string)
+    pub string get_DebugOption()
+    pub void set_DebugOption(string)
+    priv System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Events.EventOption> get_GeneratedOptions()
+    priv void set_GeneratedOptions(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Events.EventOption>)
+    pub [OVERRIDE] MegaCrit.Sts2.Core.Events.EventLayoutType get_LayoutType()
+    priv string get_MapIconPath()
+    priv string get_MapIconOutlinePath()
+    pub Godot.Texture2D get_MapIcon()
+    pub Godot.Texture2D get_MapIconOutline()
+    pub System.Collections.Generic.IEnumerable`1<string> get_MapNodeAssetPaths()
+    pub [virtual(newslot)] string get_AmbientBgm()
+    pub bool get_HasAmbientBgm()
+    pub Godot.Texture2D get_RunHistoryIcon()
+    pub Godot.Texture2D get_RunHistoryIconOutline()
+    priv string get_RunHistoryIconOutlinePath()
+    pub int get_HealedAmount()
+    priv void set_HealedAmount(int)
+    pub [abstract,virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Events.EventOption> get_AllPossibleOptions()
+    prot [virtual(newslot)] Godot.Color get_EventButtonColor()
+    prot [virtual(newslot)] void set_EventButtonColor(Godot.Color)
+    pub [OVERRIDE] MegaCrit.Sts2.Core.Localization.LocString get_InitialDescription()
+    prot [OVERRIDE] System.Threading.Tasks.Task BeforeEventStarted(bool)
+    prot [sealed-override] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> GenerateInitialOptionsWrapper()
+    prot [OVERRIDE] void SetInitialEventState(bool)
+    priv void UpdateRunHistory()
+    pub void StartPreFinished()
+    prot void Done()
+    prot MegaCrit.Sts2.Core.Events.EventOption RelicOption(string, string)
+    prot MegaCrit.Sts2.Core.Events.EventOption RelicOption(MegaCrit.Sts2.Core.Models.RelicModel, string, string)
+    priv bool <GenerateInitialOptionsWrapper>b__63_0(MegaCrit.Sts2.Core.Events.EventOption)
+
+  --- properties ---
+    string LocTable { [OVERRIDE] get; }
+    MegaCrit.Sts2.Core.Localization.LocString Epithet { get; }
+    MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet DialogueSet { get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CharacterModel> AnyCharacterDialogueBlacklist { [virtual] get; }
+    Godot.Color ButtonColor { [OVERRIDE] get; }
+    Godot.Color DialogueColor { [virtual] get; }
+    string CustomDonePage { get; set; }
+    string DebugOption { get; set; }
+    System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Events.EventOption> GeneratedOptions { get; set; }
+    MegaCrit.Sts2.Core.Events.EventLayoutType LayoutType { [OVERRIDE] get; }
+    string MapIconPath { get; }
+    string MapIconOutlinePath { get; }
+    Godot.Texture2D MapIcon { get; }
+    Godot.Texture2D MapIconOutline { get; }
+    System.Collections.Generic.IEnumerable`1<string> MapNodeAssetPaths { get; }
+    string AmbientBgm { [virtual] get; }
+    bool HasAmbientBgm { get; }
+    Godot.Texture2D RunHistoryIcon { get; }
+    Godot.Texture2D RunHistoryIconOutline { get; }
+    string RunHistoryIconOutlinePath { get; }
+    int HealedAmount { get; set; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Events.EventOption> AllPossibleOptions { [virtual] get; }
+    Godot.Color EventButtonColor { [virtual] get; [virtual] set; }
+    MegaCrit.Sts2.Core.Localization.LocString InitialDescription { [OVERRIDE] get; }
+
+  --- nested types --- <>O, <>c__DisplayClass69_0, <BeforeEventStarted>d__62
+
+### MegaCrit.Sts2.Core.Models.CharacterModel   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    locTable = String
+    _relaxedTrigger = String
+    _idleTrigger = String
+    relaxedAnim = String
+
+  --- fields ---
+    priv readonly Godot.Color <DialogueColor>k__BackingField
+    priv readonly MegaCrit.Sts2.Core.Nodes.Vfx.VfxColor <SpeechBubbleColor>k__BackingField
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [virtual(newslot)] bool get_IsPlayable()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_TitleObject()
+    pub [abstract,virtual(newslot)] Godot.Color get_NameColor()
+    pub [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Entities.Characters.CharacterGender get_Gender()
+    prot [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Models.CharacterModel get_UnlocksAfterRunAs()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_BestiarySeenQuote()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_BestiaryKillQuote()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_PronounObject()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_PossessiveAdjective()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_PronounPossessive()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_PronounSubject()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_CardsModifierTitle()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_CardsModifierDescription()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_EventDeathPreventionLine()
+    pub string get_TrailPath()
+    pub [abstract,virtual(newslot)] int get_StartingHp()
+    pub [abstract,virtual(newslot)] int get_StartingGold()
+    pub [virtual(newslot)] int get_MaxEnergy()
+    pub [virtual(newslot)] Godot.Color get_EnergyLabelOutlineColor()
+    pub [virtual(newslot)] int get_BaseOrbSlotCount()
+    pub [virtual(newslot)] bool get_ShouldAlwaysShowStarCounter()
+    pub [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Models.CardPoolModel get_CardPool()
+    pub [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Models.RelicPoolModel get_RelicPool()
+    pub [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Models.PotionPoolModel get_PotionPool()
+    pub [abstract,virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> get_StartingDeck()
+    pub [abstract,virtual(newslot)] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.RelicModel> get_StartingRelics()
+    pub [virtual(newslot)] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.PotionModel> get_StartingPotions()
+    priv string get_VisualsPath()
+    pub MegaCrit.Sts2.Core.Nodes.Combat.NCreatureVisuals CreateVisuals()
+    priv string get_IconTexturePath()
+    pub Godot.Texture2D get_IconTexture()
+    priv string get_IconOutlineTexturePath()
+    pub Godot.Texture2D get_IconOutlineTexture()
+    prot [virtual(newslot)] string get_IconPath()
+    pub Godot.Control get_Icon()
+    pub string get_EnergyCounterPath()
+    pub string get_MerchantAnimPath()
+    pub string get_RestSiteAnimPath()
+    priv string get_ArmPointingTexturePath()
+    pub Godot.Texture2D get_ArmPointingTexture()
+    priv string get_ArmRockTexturePath()
+    pub Godot.Texture2D get_ArmRockTexture()
+    priv string get_ArmPaperTexturePath()
+    pub Godot.Texture2D get_ArmPaperTexture()
+    priv string get_ArmScissorsTexturePath()
+    pub Godot.Texture2D get_ArmScissorsTexture()
+    pub MegaCrit.Sts2.Core.Achievements.Achievement get_RunWonAchievement()
+    prot [virtual(newslot)] System.Collections.Generic.IEnumerable`1<string> get_ExtraAssetPaths()
+    pub string get_CharacterSelectTitle()
+    pub string get_CharacterSelectDesc()
+    pub string get_CharacterSelectBg()
+    prot [virtual(newslot)] string get_CharacterSelectIconPath()
+    pub Godot.CompressedTexture2D get_CharacterSelectIcon()
+    prot [virtual(newslot)] string get_CharacterSelectLockedIconPath()
+    pub Godot.CompressedTexture2D get_CharacterSelectLockedIcon()
+    pub string get_CharacterSelectTransitionPath()
+    prot [virtual(newslot)] string get_MapMarkerPath()
+    pub Godot.CompressedTexture2D get_MapMarker()
+    pub [virtual(newslot)] Godot.Color get_DialogueColor()
+    pub [virtual(newslot)] MegaCrit.Sts2.Core.Nodes.Vfx.VfxColor get_SpeechBubbleColor()
+    pub [virtual(newslot)] Godot.Color get_MapDrawingColor()
+    pub [virtual(newslot)] Godot.Color get_RemoteTargetingLineColor()
+    pub [virtual(newslot)] Godot.Color get_RemoteTargetingLineOutline()
+    pub System.Collections.Generic.IEnumerable`1<string> get_AssetPathsCharacterSelect()
+    pub System.Collections.Generic.IEnumerable`1<string> get_AssetPaths()
+    pub [abstract,virtual(newslot)] float get_AttackAnimDelay()
+    pub [abstract,virtual(newslot)] float get_CastAnimDelay()
+    pub [virtual(newslot)] float get_PowerUpAnimDelay()
+    pub [abstract,virtual(newslot)] System.Collections.Generic.List`1<string> GetArchitectAttackVfx()
+    pub [virtual(newslot)] string get_CharacterSelectSfx()
+    pub string get_AttackSfx()
+    pub string get_CastSfx()
+    pub string get_PowerUpSfx()
+    pub string get_DeathSfx()
+    pub [virtual(newslot)] string get_CharacterTransitionSfx()
+    prot System.Func`2<MegaCrit.Sts2.Core.Entities.Creatures.Creature, bool> get_IsLowHealth()
+    prot [virtual(newslot)] System.Collections.Generic.List`1<System.ValueTuple`2<MegaCrit.Sts2.Core.Animation.AnimState, string>> get_AnimationStates()
+    pub [virtual(newslot)] MegaCrit.Sts2.Core.Animation.CreatureAnimator GenerateAnimator(MegaCrit.Sts2.Core.Bindings.MegaSpine.MegaSprite, MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+    pub [OVERRIDE] bool get_ShouldReceiveCombatHooks()
+    pub void AddDetailsTo(MegaCrit.Sts2.Core.Localization.LocString)
+    pub MegaCrit.Sts2.Core.Localization.LocString GetUnlockText()
+
+  --- properties ---
+    bool IsPlayable { [virtual] get; }
+    MegaCrit.Sts2.Core.Localization.LocString Title { get; }
+    MegaCrit.Sts2.Core.Localization.LocString TitleObject { get; }
+    Godot.Color NameColor { [virtual] get; }
+    MegaCrit.Sts2.Core.Entities.Characters.CharacterGender Gender { [virtual] get; }
+    MegaCrit.Sts2.Core.Models.CharacterModel UnlocksAfterRunAs { [virtual] get; }
+    MegaCrit.Sts2.Core.Localization.LocString BestiarySeenQuote { get; }
+    MegaCrit.Sts2.Core.Localization.LocString BestiaryKillQuote { get; }
+    MegaCrit.Sts2.Core.Localization.LocString PronounObject { get; }
+    MegaCrit.Sts2.Core.Localization.LocString PossessiveAdjective { get; }
+    MegaCrit.Sts2.Core.Localization.LocString PronounPossessive { get; }
+    MegaCrit.Sts2.Core.Localization.LocString PronounSubject { get; }
+    MegaCrit.Sts2.Core.Localization.LocString CardsModifierTitle { get; }
+    MegaCrit.Sts2.Core.Localization.LocString CardsModifierDescription { get; }
+    MegaCrit.Sts2.Core.Localization.LocString EventDeathPreventionLine { get; }
+    string TrailPath { get; }
+    int StartingHp { [virtual] get; }
+    int StartingGold { [virtual] get; }
+    int MaxEnergy { [virtual] get; }
+    Godot.Color EnergyLabelOutlineColor { [virtual] get; }
+    int BaseOrbSlotCount { [virtual] get; }
+    bool ShouldAlwaysShowStarCounter { [virtual] get; }
+    MegaCrit.Sts2.Core.Models.CardPoolModel CardPool { [virtual] get; }
+    MegaCrit.Sts2.Core.Models.RelicPoolModel RelicPool { [virtual] get; }
+    MegaCrit.Sts2.Core.Models.PotionPoolModel PotionPool { [virtual] get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> StartingDeck { [virtual] get; }
+    System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.RelicModel> StartingRelics { [virtual] get; }
+    System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.PotionModel> StartingPotions { [virtual] get; }
+    string VisualsPath { get; }
+    string IconTexturePath { get; }
+    Godot.Texture2D IconTexture { get; }
+    string IconOutlineTexturePath { get; }
+    Godot.Texture2D IconOutlineTexture { get; }
+    string IconPath { [virtual] get; }
+    Godot.Control Icon { get; }
+    string EnergyCounterPath { get; }
+    string MerchantAnimPath { get; }
+    string RestSiteAnimPath { get; }
+    string ArmPointingTexturePath { get; }
+    Godot.Texture2D ArmPointingTexture { get; }
+    string ArmRockTexturePath { get; }
+    Godot.Texture2D ArmRockTexture { get; }
+    string ArmPaperTexturePath { get; }
+    Godot.Texture2D ArmPaperTexture { get; }
+    string ArmScissorsTexturePath { get; }
+    Godot.Texture2D ArmScissorsTexture { get; }
+    MegaCrit.Sts2.Core.Achievements.Achievement RunWonAchievement { get; }
+    System.Collections.Generic.IEnumerable`1<string> ExtraAssetPaths { [virtual] get; }
+    string CharacterSelectTitle { get; }
+    string CharacterSelectDesc { get; }
+    string CharacterSelectBg { get; }
+    string CharacterSelectIconPath { [virtual] get; }
+    Godot.CompressedTexture2D CharacterSelectIcon { get; }
+    string CharacterSelectLockedIconPath { [virtual] get; }
+    Godot.CompressedTexture2D CharacterSelectLockedIcon { get; }
+    string CharacterSelectTransitionPath { get; }
+    string MapMarkerPath { [virtual] get; }
+    Godot.CompressedTexture2D MapMarker { get; }
+    Godot.Color DialogueColor { [virtual] get; }
+    MegaCrit.Sts2.Core.Nodes.Vfx.VfxColor SpeechBubbleColor { [virtual] get; }
+    Godot.Color MapDrawingColor { [virtual] get; }
+    Godot.Color RemoteTargetingLineColor { [virtual] get; }
+    Godot.Color RemoteTargetingLineOutline { [virtual] get; }
+    System.Collections.Generic.IEnumerable`1<string> AssetPathsCharacterSelect { get; }
+    System.Collections.Generic.IEnumerable`1<string> AssetPaths { get; }
+    float AttackAnimDelay { [virtual] get; }
+    float CastAnimDelay { [virtual] get; }
+    float PowerUpAnimDelay { [virtual] get; }
+    string CharacterSelectSfx { [virtual] get; }
+    string AttackSfx { get; }
+    string CastSfx { get; }
+    string PowerUpSfx { get; }
+    string DeathSfx { get; }
+    string CharacterTransitionSfx { [virtual] get; }
+    System.Func`2<MegaCrit.Sts2.Core.Entities.Creatures.Creature, bool> IsLowHealth { get; }
+    System.Collections.Generic.List`1<System.ValueTuple`2<MegaCrit.Sts2.Core.Animation.AnimState, string>> AnimationStates { [virtual] get; }
+    bool ShouldReceiveCombatHooks { [OVERRIDE] get; }
+
+  --- nested types --- <>c, <>c__DisplayClass160_0
+

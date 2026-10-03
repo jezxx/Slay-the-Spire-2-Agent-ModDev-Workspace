@@ -1,0 +1,40 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardPlay
+    base: System.Object
+
+    field  internal readonly MegaCrit.Sts2.Core.Models.CardModel <Card>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Players.Player <Player>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Creatures.Creature <Target>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.PileType <ResultPile>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo <Resources>k__BackingField
+    field  internal readonly bool <IsAutoPlay>k__BackingField
+    field  internal readonly int <PlayIndex>k__BackingField
+    field  internal readonly int <PlayCount>k__BackingField
+    prop   MegaCrit.Sts2.Core.Models.CardModel Card { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.Player Player { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Target { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.PileType ResultPile { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo Resources { public get; public set; }
+    prop   bool IsAutoPlay { public get; public set; }
+    prop   int PlayIndex { public get; public set; }
+    prop   int PlayCount { public get; public set; }
+    prop   bool IsFirstInSeries { public get; }
+    prop   bool IsLastInSeries { public get; }
+    method public MegaCrit.Sts2.Core.Models.CardModel get_Card()
+    method public void set_Card(MegaCrit.Sts2.Core.Models.CardModel value)
+    method public MegaCrit.Sts2.Core.Entities.Players.Player get_Player()
+    method public void set_Player(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Target()
+    method public void set_Target(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    method public MegaCrit.Sts2.Core.Entities.Cards.PileType get_ResultPile()
+    method public void set_ResultPile(MegaCrit.Sts2.Core.Entities.Cards.PileType value)
+    method public MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo get_Resources()
+    method public void set_Resources(MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo value)
+    method public bool get_IsAutoPlay()
+    method public void set_IsAutoPlay(bool value)
+    method public int get_PlayIndex()
+    method public void set_PlayIndex(int value)
+    method public int get_PlayCount()
+    method public void set_PlayCount(int value)
+    method public bool get_IsFirstInSeries()
+    method public bool get_IsLastInSeries()
+    method public void .ctor()

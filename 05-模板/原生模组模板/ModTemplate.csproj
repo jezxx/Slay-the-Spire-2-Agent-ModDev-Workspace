@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    《杀戮尖塔2》原生模组工程模板（零第三方依赖 / 不需要 Godot 编辑器）
+    - 只依赖游戏自带的 sts2.dll、0Harmony.dll、GodotSharp.dll
+    - 编译产物 <ModId>.dll + <ModId>.json 即可被游戏识别
+    - 若需要自定义图片/音频等资源，才额外需要 .pck；放一个 <ModId>.pck 到本目录即可
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>13.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>__MODID__</AssemblyName>
+    <RootNamespace>__MODID__</RootNamespace>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <!-- 不要把这些引用拷到输出目录（游戏运行时会自己提供） -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <!--
+      Godot 有时会在 .godot\mono\temp\ 下生成自己的 AssemblyInfo.cs / AssemblyAttributes.cs。
+      如果不排除，我们的 glob 会把它们也编进来，报 CS0579（特性重复）。
+    -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);.godot\**;Build\**;bin\**;obj\**</DefaultItemExcludes>
+    <EnableDefaultItems>true</EnableDefaultItems>
+  </PropertyGroup>
+
+  <!--
+    游戏路径由构建命令传入：
+      dotnet build -p:Sts2Dir="<游戏目录>"
+    不在模板里写死任何作者电脑的盘符。
+  -->
+  <PropertyGroup>
+    <Sts2Dir Condition="'$(Sts2Dir)' == ''">$(STS2_GAME_DIR)</Sts2Dir>
+    <Sts2DataDir Condition="'$(Sts2DataDir)' == ''">$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="sts2">
+      <HintPath>$(Sts2DataDir)\sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GodotSharp">
+      <HintPath>$(Sts2DataDir)\GodotSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!--
+    这里**故意不写自动部署 target**。
+    部署统一交给发行包中的构建流程或用户自己的构建脚本做（单一部署者）。
+
+    原因是一个踩过的真实坑：如果 csproj 自己也部署，而 build-mod.ps1 又从
+    固定路径（bin\Release\net9.0）去找产物，一旦 MSBuild 的输出目录变了
+    （例如 DefaultItemExcludes 包含 bin/obj 时会变到 .godot\mono\temp\bin\...），
+    脚本就会找不到新产物、转而复制旧文件 —— 结果是"编译成功但跑的是旧代码"，
+    极难发现。build-mod.ps1 现在直接用 TargetPath，并校验产物比源码新。
+  -->
+
+</Project>

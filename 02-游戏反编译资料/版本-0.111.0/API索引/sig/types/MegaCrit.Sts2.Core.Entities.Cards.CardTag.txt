@@ -1,0 +1,9 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CardTag
+    base: System.Enum
+
+    enum None = 0
+    enum Strike = 1
+    enum Defend = 2
+    enum Minion = 3
+    enum OstyAttack = 4
+    enum Shiv = 5

@@ -1,0 +1,10 @@
+MegaCrit.Sts2.Core.HoverTips.CardHoverTip  [class] : System.Object
+MegaCrit.Sts2.Core.HoverTips.HoverTip  [class] : System.ValueType
+MegaCrit.Sts2.Core.HoverTips.HoverTipAlignment  [enum] : System.Enum
+MegaCrit.Sts2.Core.HoverTips.HoverTipExtensions  [static] : System.Object
+MegaCrit.Sts2.Core.HoverTips.HoverTipExtensions+<>c__DisplayClass0_0  [class] : System.Object
+MegaCrit.Sts2.Core.HoverTips.HoverTipFactory  [static] : System.Object
+MegaCrit.Sts2.Core.HoverTips.IHoverTip  [interface]
+MegaCrit.Sts2.Core.HoverTips.IHoverTip+<>c  [class] : System.Object
+MegaCrit.Sts2.Core.HoverTips.IHoverTip+<>c__DisplayClass12_0  [class] : System.Object
+MegaCrit.Sts2.Core.HoverTips.StaticHoverTip  [enum] : System.Enum

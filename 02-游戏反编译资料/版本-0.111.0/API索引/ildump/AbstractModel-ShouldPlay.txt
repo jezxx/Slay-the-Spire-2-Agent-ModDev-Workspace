@@ -1,0 +1,18 @@
+===== MegaCrit.Sts2.Core.Models.AbstractModel.ShouldPlay(card, autoPlayType)  [attrs=0x1C6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  17 2A
+  -- decoded --
+    IL_0000: ldc.i4.1       
+    IL_0001: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.AbstractModel.ShouldPlayerResetEnergy(player)  [attrs=0x1C6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  17 2A
+  -- decoded --
+    IL_0000: ldc.i4.1       
+    IL_0001: ret            
+
+

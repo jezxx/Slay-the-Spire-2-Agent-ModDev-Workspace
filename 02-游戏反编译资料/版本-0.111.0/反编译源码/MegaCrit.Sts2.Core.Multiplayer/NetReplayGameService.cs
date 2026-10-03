@@ -1,0 +1,76 @@
+using System;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
+using MegaCrit.Sts2.Core.Multiplayer.Game;
+using MegaCrit.Sts2.Core.Multiplayer.Quality;
+using MegaCrit.Sts2.Core.Multiplayer.Serialization;
+using MegaCrit.Sts2.Core.Platform;
+
+namespace MegaCrit.Sts2.Core.Multiplayer;
+
+public class NetReplayGameService : INetGameService
+{
+	private bool _isLoading;
+
+	public bool IsGameLoading => _isLoading;
+
+	public bool IsConnected => true;
+
+	public ulong NetId { get; set; }
+
+	public NetGameType Type => NetGameType.Replay;
+
+	public PlatformType Platform => PlatformType.None;
+
+	public PeerVersionInfo LocalVersion { get; } = PeerVersionInfo.LocalDefault();
+
+
+	public event Action<NetErrorInfo>? Disconnected;
+
+	public NetReplayGameService(ulong netId)
+	{
+		NetId = netId;
+	}
+
+	public void SendMessage<T>(T message, ulong playerId) where T : INetMessage
+	{
+	}
+
+	public void SendMessage<T>(T message) where T : INetMessage
+	{
+	}
+
+	public void RegisterMessageHandler<T>(MessageHandlerDelegate<T> handler) where T : INetMessage
+	{
+	}
+
+	public void UnregisterMessageHandler<T>(MessageHandlerDelegate<T> handler) where T : INetMessage
+	{
+	}
+
+	public void Update()
+	{
+	}
+
+	public void Disconnect(NetError reason, bool now = false)
+	{
+	}
+
+	public ConnectionStats GetStatsForPeer(ulong peerId)
+	{
+		return new ConnectionStats(peerId);
+	}
+
+	public void SetGameLoading(bool isLoading)
+	{
+		_isLoading = isLoading;
+	}
+
+	public void SetBufferMessages(bool bufferMessages)
+	{
+	}
+
+	public string? GetRawLobbyIdentifier()
+	{
+		return null;
+	}
+}

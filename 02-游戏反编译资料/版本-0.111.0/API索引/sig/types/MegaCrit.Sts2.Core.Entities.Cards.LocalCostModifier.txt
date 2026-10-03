@@ -1,0 +1,19 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifier
+    base: System.Object
+
+    field  internal int <Amount>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.LocalCostType <Type>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifierExpiration <Expiration>k__BackingField
+    field  internal readonly bool <IsReduceOnly>k__BackingField
+    prop   int Amount { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.LocalCostType Type { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifierExpiration Expiration { public get; }
+    prop   bool IsReduceOnly { public get; }
+    method public int get_Amount()
+    method public void set_Amount(int value)
+    method public MegaCrit.Sts2.Core.Entities.Cards.LocalCostType get_Type()
+    method public MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifierExpiration get_Expiration()
+    method public bool get_IsReduceOnly()
+    method public void .ctor(int amount, MegaCrit.Sts2.Core.Entities.Cards.LocalCostType type, MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifierExpiration expiration, bool reduceOnly)
+    method public int Modify(int currentCost)
+    method public MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifier Clone()

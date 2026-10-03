@@ -1,0 +1,133 @@
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_PackedIconPath()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 33 AC 01 70 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 72 F4 0B 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "atlases/power_atlas.sprites/"
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0010: callvirt       System.String::ToLowerInvariant
+    IL_0015: ldstr          ".tres"
+    IL_001A: call           System.String::Concat
+    IL_001F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0024: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_BigIconPath()  [attrs=0x881] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 6D AC 01 70 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 72 34 0C 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "powers/"
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0010: callvirt       System.String::ToLowerInvariant
+    IL_0015: ldstr          ".png"
+    IL_001A: call           System.String::Concat
+    IL_001F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0024: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_BigBetaIconPath()  [attrs=0x881] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 7D AC 01 70 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 72 34 0C 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "powers/beta/"
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0010: callvirt       System.String::ToLowerInvariant
+    IL_0015: ldstr          ".png"
+    IL_001A: call           System.String::Concat
+    IL_001F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0024: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_MissingIconPath()  [attrs=0x891] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 01 A5 01 70 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "powers/missing_power.png"
+    IL_0005: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_000A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_IconPath()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 52 1B 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.PowerModel::get_PackedIconPath
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_Icon()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 52 1B 00 06 14 17 6A 28 93 00 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.PowerModel::get_PackedIconPath
+    IL_0006: ldnull         
+    IL_0007: ldc.i4.1       
+    IL_0008: conv.i8        
+    IL_0009: call           Godot.ResourceLoader::Load<...>
+    IL_000E: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_BigIcon()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 D8 59 00 06 02 28 59 1B 00 06 6F 93 59 00 06 2A
+  -- decoded --
+    IL_0000: call           MegaCrit.Sts2.Core.Assets.PreloadManager::get_Cache
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.PowerModel::get_ResolvedBigIconPath
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Assets.AssetCache::GetTexture2D
+    IL_0010: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_ResolvedBigIconPath()  [attrs=0x886] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 44 09 00 04 2C 07 02 7B 44 09 00 04 2A 02 28 53 1B 00 06 72 05 01 00 70 28 35 02 00 0A 2C 0E 02 02 28 53 1B 00 06 7D 44 09 00 04 2B 2B 02 28 54 1B 00 06 72 05 01 00 70 28 35 02 00 0A 2C 0E 02 02 28 54 1B 00 06 7D 44 09 00 04 2B 0B 02 28 55 1B 00 06 7D 44 09 00 04 02 7B 44 09 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Models.PowerModel::_resolvedBigIconPath
+    IL_0006: brfalse.s      IL_000F
+    IL_0008: ldarg.0        
+    IL_0009: ldfld          MegaCrit.Sts2.Core.Models.PowerModel::_resolvedBigIconPath
+    IL_000E: ret            
+    IL_000F: ldarg.0        
+    IL_0010: call           MegaCrit.Sts2.Core.Models.PowerModel::get_BigIconPath
+    IL_0015: ldstr          ""
+    IL_001A: call           Godot.ResourceLoader::Exists
+    IL_001F: brfalse.s      IL_002F
+    IL_0021: ldarg.0        
+    IL_0022: ldarg.0        
+    IL_0023: call           MegaCrit.Sts2.Core.Models.PowerModel::get_BigIconPath
+    IL_0028: stfld          MegaCrit.Sts2.Core.Models.PowerModel::_resolvedBigIconPath
+    IL_002D: br.s           IL_005A
+    IL_002F: ldarg.0        
+    IL_0030: call           MegaCrit.Sts2.Core.Models.PowerModel::get_BigBetaIconPath
+    IL_0035: ldstr          ""
+    IL_003A: call           Godot.ResourceLoader::Exists
+    IL_003F: brfalse.s      IL_004F
+    IL_0041: ldarg.0        
+    IL_0042: ldarg.0        
+    IL_0043: call           MegaCrit.Sts2.Core.Models.PowerModel::get_BigBetaIconPath
+    IL_0048: stfld          MegaCrit.Sts2.Core.Models.PowerModel::_resolvedBigIconPath
+    IL_004D: br.s           IL_005A
+    IL_004F: ldarg.0        
+    IL_0050: call           MegaCrit.Sts2.Core.Models.PowerModel::get_MissingIconPath
+    IL_0055: stfld          MegaCrit.Sts2.Core.Models.PowerModel::_resolvedBigIconPath
+    IL_005A: ldarg.0        
+    IL_005B: ldfld          MegaCrit.Sts2.Core.Models.PowerModel::_resolvedBigIconPath
+    IL_0060: ret            
+
+

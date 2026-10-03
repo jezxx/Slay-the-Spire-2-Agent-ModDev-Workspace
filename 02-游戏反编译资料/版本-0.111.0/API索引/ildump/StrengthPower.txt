@@ -1,0 +1,22 @@
+===== MegaCrit.Sts2.Core.Models.Powers.StrengthPower.ModifyDamageAdditive(target, amount, props, dealer, cardSource, cardPlay)  [attrs=0xC6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 7A 1B 00 06 0E 04 2E 06 7E 19 15 00 0A 2A 05 28 94 01 00 06 2D 06 7E 19 15 00 0A 2A 02 28 65 1B 00 06 28 6B 11 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_0006: ldarg.s        4
+    IL_0008: beq.s          IL_0010
+    IL_000A: ldsfld         System.Decimal::Zero
+    IL_000F: ret            
+    IL_0010: ldarg.3        
+    IL_0011: call           MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions::IsPoweredAttack
+    IL_0016: brtrue.s       IL_001E
+    IL_0018: ldsfld         System.Decimal::Zero
+    IL_001D: ret            
+    IL_001E: ldarg.0        
+    IL_001F: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Amount
+    IL_0024: call           System.Decimal::op_Implicit
+    IL_0029: ret            
+
+

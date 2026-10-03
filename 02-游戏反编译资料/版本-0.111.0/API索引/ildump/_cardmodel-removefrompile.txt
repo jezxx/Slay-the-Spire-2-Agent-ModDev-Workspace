@@ -1,0 +1,19 @@
+===== MegaCrit.Sts2.Core.Models.CardModel.RemoveFromCurrentPile(silent)  [attrs=0x86] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 C8 16 00 06 02 28 66 18 00 06 25 2D 02 26 2A 02 03 28 54 52 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.AbstractModel::AssertMutable
+    IL_0006: ldarg.0        
+    IL_0007: call           MegaCrit.Sts2.Core.Models.CardModel::get_Pile
+    IL_000C: dup            
+    IL_000D: brtrue.s       IL_0011
+    IL_000F: pop            
+    IL_0010: ret            
+    IL_0011: ldarg.0        
+    IL_0012: ldarg.1        
+    IL_0013: call           MegaCrit.Sts2.Core.Entities.Cards.CardPile::RemoveInternal
+    IL_0018: ret            
+
+

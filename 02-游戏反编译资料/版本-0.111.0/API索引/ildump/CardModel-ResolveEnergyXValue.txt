@@ -1,0 +1,42 @@
+===== MegaCrit.Sts2.Core.Models.CardModel.ResolveEnergyXValue()  [attrs=0x86] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 6A 18 00 06 6F 18 52 00 06 2D 0B 72 1A 8E 01 70 73 F5 01 00 0A 7A 02 28 BD 18 00 06 02 02 28 6A 18 00 06 6F 1E 52 00 06 28 E4 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.CardModel::get_EnergyCost
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost::get_CostsX
+    IL_000B: brtrue.s       IL_0018
+    IL_000D: ldstr          "This card does not have an X-cost."
+    IL_0012: newobj         System.InvalidOperationException::.ctor
+    IL_0017: throw          
+    IL_0018: ldarg.0        
+    IL_0019: call           MegaCrit.Sts2.Core.Models.CardModel::get_CombatState
+    IL_001E: ldarg.0        
+    IL_001F: ldarg.0        
+    IL_0020: call           MegaCrit.Sts2.Core.Models.CardModel::get_EnergyCost
+    IL_0025: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost::get_CapturedXValue
+    IL_002A: call           MegaCrit.Sts2.Core.Hooks.Hook::ModifyXValue
+    IL_002F: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.ResolveStarXValue()  [attrs=0x86] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 76 18 00 06 2D 0B 72 1A 8E 01 70 73 F5 01 00 0A 7A 02 28 BD 18 00 06 02 02 28 77 18 00 06 28 E4 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_HasStarCostX
+    IL_0006: brtrue.s       IL_0013
+    IL_0008: ldstr          "This card does not have an X-cost."
+    IL_000D: newobj         System.InvalidOperationException::.ctor
+    IL_0012: throw          
+    IL_0013: ldarg.0        
+    IL_0014: call           MegaCrit.Sts2.Core.Models.CardModel::get_CombatState
+    IL_0019: ldarg.0        
+    IL_001A: ldarg.0        
+    IL_001B: call           MegaCrit.Sts2.Core.Models.CardModel::get_LastStarsSpent
+    IL_0020: call           MegaCrit.Sts2.Core.Hooks.Hook::ModifyXValue
+    IL_0025: ret            
+
+

@@ -1,0 +1,11 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CardKeyword
+    base: System.Enum
+
+    enum None = 0
+    enum Exhaust = 1
+    enum Ethereal = 2
+    enum Innate = 3
+    enum Unplayable = 4
+    enum Retain = 5
+    enum Sly = 6
+    enum Eternal = 7

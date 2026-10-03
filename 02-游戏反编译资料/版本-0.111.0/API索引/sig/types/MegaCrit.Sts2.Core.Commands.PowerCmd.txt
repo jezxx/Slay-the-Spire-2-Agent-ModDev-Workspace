@@ -1,0 +1,12 @@
+### public class MegaCrit.Sts2.Core.Commands.PowerCmd
+    base: System.Object
+
+    method public static System.Threading.Tasks.Task`1<System.Collections.Generic.IReadOnlyList`1<T>> Apply<T>(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> targets, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource, bool silent)
+    method public static System.Threading.Tasks.Task`1<T> Apply<T>(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource, bool silent)
+    method public static System.Threading.Tasks.Task Apply(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Models.PowerModel power, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource, bool silent)
+    method public static MegaCrit.Sts2.Core.Models.PowerModel FindExistingInstanceForStacking(MegaCrit.Sts2.Core.Models.PowerModel basePower, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier)
+    method public static System.Threading.Tasks.Task Decrement(MegaCrit.Sts2.Core.Models.PowerModel power)
+    method public static System.Threading.Tasks.Task TickDownDuration(MegaCrit.Sts2.Core.Models.PowerModel power)
+    method public static System.Threading.Tasks.Task`1<int> ModifyAmount(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Models.PowerModel power, System.Decimal offset, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource, bool silent)
+    method public static System.Threading.Tasks.Task Remove<T>(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature)
+    method public static System.Threading.Tasks.Task Remove(MegaCrit.Sts2.Core.Models.PowerModel power)

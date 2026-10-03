@@ -1,0 +1,411 @@
+### MegaCrit.Sts2.Core.Models.PotionModel
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: IComparable`1
+  isAbstract=True isSealed=False isEnum=False
+  --- ctors ---
+    prot .ctor()
+  --- methods ---
+    priv System.Boolean <get_Pool>b__35_0(MegaCrit.Sts2.Core.Models.PotionPoolModel p)
+    prot virtual System.Void AfterCloned()
+    pub System.Void AfterUsageCanceled()
+    prot static System.Void AssertValidForTargetedPotion(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.Boolean CanThrowAtAlly()
+    pub System.Void Discard()
+    pub System.Void EnqueueManualUse(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub static MegaCrit.Sts2.Core.Models.PotionModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializablePotion save)
+    pub System.Boolean IsValidTarget(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    prot virtual System.Threading.Tasks.Task OnUse(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.Threading.Tasks.Task OnUseWrapper(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.Void RemoveBeforeUse()
+    pub MegaCrit.Sts2.Core.Models.PotionModel ToMutable()
+    pub MegaCrit.Sts2.Core.Saves.Runs.SerializablePotion ToSerializable(System.Int32 slotIndex)
+    pub System.Void add_BeforeUse(System.Action value)
+    pub virtual System.Boolean get_CanBeGeneratedInCombat()
+    pub MegaCrit.Sts2.Core.Models.PotionModel get_CanonicalInstance()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CanonicalVars()
+    priv MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_DynamicDescription()
+    pub MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    pub virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_ExtraHoverTips()
+    pub System.Boolean get_HasBeenRemovedFromState()
+    pub MegaCrit.Sts2.Core.HoverTips.HoverTip get_HoverTip()
+    pub System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_HoverTips()
+    pub Godot.Texture2D get_Image()
+    pub System.String get_ImagePath()
+    pub System.Boolean get_IsQueued()
+    pub Godot.Texture2D get_LargeImage()
+    pub System.String get_LargeImagePath()
+    pub Godot.Texture2D get_Outline()
+    pub System.String get_OutlinePath()
+    pub MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    priv System.String get_PackedImagePath()
+    priv System.String get_PackedOutlinePath()
+    pub virtual System.Boolean get_PassesCustomUsabilityCheck()
+    pub MegaCrit.Sts2.Core.Models.PotionPoolModel get_Pool()
+    pub abstract virtual MegaCrit.Sts2.Core.Entities.Potions.PotionRarity get_Rarity()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    pub virtual System.Boolean get_ShouldReceiveCombatHooks()
+    pub abstract virtual MegaCrit.Sts2.Core.Entities.Cards.TargetType get_TargetType()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    pub abstract virtual MegaCrit.Sts2.Core.Entities.Potions.PotionUsage get_Usage()
+    pub System.Void remove_BeforeUse(System.Action value)
+    priv System.Void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.PotionModel value)
+    priv System.Void set_HasBeenRemovedFromState(System.Boolean value)
+    priv System.Void set_IsQueued(System.Boolean value)
+    pub System.Void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+  --- properties ---
+    MegaCrit.Sts2.Core.Localization.LocString Title { get; }
+    MegaCrit.Sts2.Core.Localization.LocString Description { get; }
+    MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { get; }
+    MegaCrit.Sts2.Core.Localization.LocString DynamicDescription { get; }
+    System.String PackedImagePath { get; }
+    System.String PackedOutlinePath { get; }
+    System.String ImagePath { get; }
+    Godot.Texture2D Image { get; }
+    System.String OutlinePath { get; }
+    Godot.Texture2D Outline { get; }
+    System.String LargeImagePath { get; }
+    Godot.Texture2D LargeImage { get; }
+    MegaCrit.Sts2.Core.Entities.Potions.PotionRarity Rarity { get; }
+    MegaCrit.Sts2.Core.Entities.Potions.PotionUsage Usage { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.TargetType TargetType { get; }
+    MegaCrit.Sts2.Core.Models.PotionPoolModel Pool { get; }
+    MegaCrit.Sts2.Core.Entities.Players.Player Owner { get; set; }
+    MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CanonicalVars { get; }
+    System.Boolean IsQueued { get; set; }
+    System.Boolean CanBeGeneratedInCombat { get; }
+    System.Boolean PassesCustomUsabilityCheck { get; }
+    MegaCrit.Sts2.Core.HoverTips.HoverTip HoverTip { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] HoverTips { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] ExtraHoverTips { get; }
+    MegaCrit.Sts2.Core.Models.PotionModel CanonicalInstance { get; set; }
+    System.Boolean ShouldReceiveCombatHooks { get; }
+    System.Boolean HasBeenRemovedFromState { get; set; }
+  --- fields ---
+    pub static System.String locTable
+    priv System.Action BeforeUse
+    priv MegaCrit.Sts2.Core.Entities.Players.Player _owner
+    priv MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    priv System.Boolean <IsQueued>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.PotionModel _canonicalInstance
+    priv System.Boolean <HasBeenRemovedFromState>k__BackingField
+### MegaCrit.Sts2.Core.Models.RelicModel
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: IComparable`1
+  isAbstract=True isSealed=False isEnum=False
+  --- ctors ---
+    prot .ctor()
+  --- methods ---
+    priv System.Boolean <get_Pool>b__46_0(MegaCrit.Sts2.Core.Models.RelicPoolModel p)
+    prot virtual System.Void AfterCloned()
+    pub virtual System.Threading.Tasks.Task AfterObtained()
+    pub virtual System.Threading.Tasks.Task AfterRemoved()
+    prot virtual System.Void DeepCloneFields()
+    pub System.Void Flash()
+    pub System.Void Flash(System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Creatures.Creature, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] targets)
+    pub static MegaCrit.Sts2.Core.Models.RelicModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableRelic save)
+    pub System.Void IncrementStackCount()
+    prot System.Void InvokeDisplayAmountChanged()
+    pub virtual System.Boolean IsAllowed(MegaCrit.Sts2.Core.Runs.IRunState runState)
+    pub virtual System.Boolean IsAllowedAtNeow(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    prot static System.Boolean IsBeforeAct3TreasureChest(MegaCrit.Sts2.Core.Runs.IRunState runState)
+    prot static MegaCrit.Sts2.Core.Localization.LocString L10NLookup(System.String entryName)
+    prot System.Void RelicIconChanged()
+    pub System.Void RemoveInternal()
+    pub MegaCrit.Sts2.Core.Models.RelicModel ToMutable()
+    pub MegaCrit.Sts2.Core.Saves.Runs.SerializableRelic ToSerializable()
+    pub System.Void UpdateTexture(Godot.TextureRect texture)
+    pub System.Void add_DisplayAmountChanged(System.Action value)
+    pub System.Void add_Flashed(System.Action`2[[MegaCrit.Sts2.Core.Models.RelicModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Creatures.Creature, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] value)
+    pub System.Void add_StatusChanged(System.Action value)
+    prot MegaCrit.Sts2.Core.Localization.LocString get_AdditionalRestSiteHealText()
+    pub virtual System.Boolean get_AddsPet()
+    priv System.String get_BigBetaIconPath()
+    pub Godot.Texture2D get_BigIcon()
+    prot virtual System.String get_BigIconPath()
+    pub MegaCrit.Sts2.Core.Models.RelicModel get_CanonicalInstance()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CanonicalVars()
+    priv MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    pub virtual System.Int32 get_DisplayAmount()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_DynamicDescription()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_DynamicEventDescription()
+    pub MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    prot MegaCrit.Sts2.Core.Localization.LocString get_EventDescription()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_ExtraHoverTips()
+    pub virtual System.String get_FlashSfx()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Flavor()
+    pub System.Int32 get_FloorAddedToDeck()
+    pub System.Boolean get_HasBeenRemovedFromState()
+    pub virtual System.Boolean get_HasUponPickupEffect()
+    pub MegaCrit.Sts2.Core.HoverTips.HoverTip get_HoverTip()
+    pub System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_HoverTips()
+    pub System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_HoverTipsExcludingRelic()
+    pub Godot.Texture2D get_Icon()
+    prot virtual System.String get_IconBaseName()
+    pub Godot.Texture2D get_IconOutline()
+    pub System.String get_IconPath()
+    pub virtual System.Boolean get_IsAllowedInShops()
+    pub System.Boolean get_IsMelted()
+    pub virtual System.Boolean get_IsStackable()
+    pub System.Boolean get_IsTradable()
+    pub virtual System.Boolean get_IsUsedUp()
+    pub System.Boolean get_IsWax()
+    pub virtual System.Int32 get_MerchantCost()
+    priv static System.String get_MissingIconPath()
+    pub MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    prot virtual System.String get_PackedIconOutlinePath()
+    pub virtual System.String get_PackedIconPath()
+    pub MegaCrit.Sts2.Core.Models.RelicPoolModel get_Pool()
+    pub abstract virtual MegaCrit.Sts2.Core.Entities.Relics.RelicRarity get_Rarity()
+    priv System.String get_ResolvedBigIconPath()
+    prot MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    pub virtual System.Boolean get_ShouldFlashOnPlayer()
+    pub virtual System.Boolean get_ShouldReceiveCombatHooks()
+    pub virtual System.Boolean get_ShowCounter()
+    pub virtual System.Boolean get_SpawnsPets()
+    pub System.Int32 get_StackCount()
+    pub MegaCrit.Sts2.Core.Entities.Relics.RelicStatus get_Status()
+    pub virtual MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    pub System.Void remove_DisplayAmountChanged(System.Action value)
+    pub System.Void remove_Flashed(System.Action`2[[MegaCrit.Sts2.Core.Models.RelicModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Creatures.Creature, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] value)
+    pub System.Void remove_StatusChanged(System.Action value)
+    priv System.Void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.RelicModel value)
+    pub System.Void set_FloorAddedToDeck(System.Int32 value)
+    priv System.Void set_HasBeenRemovedFromState(System.Boolean value)
+    pub System.Void set_IsMelted(System.Boolean value)
+    pub System.Void set_IsWax(System.Boolean value)
+    pub System.Void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    priv System.Void set_StackCount(System.Int32 value)
+    pub System.Void set_Status(MegaCrit.Sts2.Core.Entities.Relics.RelicStatus value)
+  --- properties ---
+    MegaCrit.Sts2.Core.Localization.LocString Title { get; }
+    MegaCrit.Sts2.Core.Localization.LocString Flavor { get; }
+    MegaCrit.Sts2.Core.Localization.LocString EventDescription { get; }
+    MegaCrit.Sts2.Core.Localization.LocString Description { get; }
+    MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { get; }
+    MegaCrit.Sts2.Core.Localization.LocString DynamicEventDescription { get; }
+    MegaCrit.Sts2.Core.Localization.LocString DynamicDescription { get; }
+    MegaCrit.Sts2.Core.Localization.LocString AdditionalRestSiteHealText { get; }
+    System.String IconBaseName { get; }
+    System.String PackedIconPath { get; }
+    System.String PackedIconOutlinePath { get; }
+    System.String BigIconPath { get; }
+    System.String BigBetaIconPath { get; }
+    System.String MissingIconPath { get; }
+    System.String IconPath { get; }
+    Godot.Texture2D Icon { get; }
+    Godot.Texture2D IconOutline { get; }
+    Godot.Texture2D BigIcon { get; }
+    System.String ResolvedBigIconPath { get; }
+    MegaCrit.Sts2.Core.Entities.Relics.RelicRarity Rarity { get; }
+    MegaCrit.Sts2.Core.Models.RelicPoolModel Pool { get; }
+    System.Boolean IsTradable { get; }
+    System.Boolean IsAllowedInShops { get; }
+    MegaCrit.Sts2.Core.Entities.Players.Player Owner { get; set; }
+    System.Boolean IsUsedUp { get; }
+    System.Boolean HasUponPickupEffect { get; }
+    System.Boolean SpawnsPets { get; }
+    System.Boolean IsStackable { get; }
+    System.Boolean IsWax { get; set; }
+    System.Boolean IsMelted { get; set; }
+    System.Boolean AddsPet { get; }
+    System.Int32 StackCount { get; set; }
+    MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CanonicalVars { get; }
+    System.Int32 MerchantCost { get; }
+    System.Int32 FloorAddedToDeck { get; set; }
+    MegaCrit.Sts2.Core.Entities.Relics.RelicStatus Status { get; set; }
+    System.Boolean ShowCounter { get; }
+    System.Int32 DisplayAmount { get; }
+    System.String FlashSfx { get; }
+    System.Boolean ShouldFlashOnPlayer { get; }
+    MegaCrit.Sts2.Core.HoverTips.HoverTip HoverTip { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] ExtraHoverTips { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] HoverTipsExcludingRelic { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] HoverTips { get; }
+    MegaCrit.Sts2.Core.Models.RelicModel CanonicalInstance { get; set; }
+    System.Boolean HasBeenRemovedFromState { get; set; }
+    System.Boolean ShouldReceiveCombatHooks { get; }
+  --- fields ---
+    priv static Godot.StringName _isUsed
+    priv static Godot.StringName _pulse
+    priv static Godot.StringName _isWaxStr
+    prot static System.String _locTable
+    priv System.String _resolvedBigIconPath
+    priv MegaCrit.Sts2.Core.Entities.Players.Player _owner
+    priv System.Boolean _isWax
+    priv System.Boolean _isMelted
+    priv System.Int32 <StackCount>k__BackingField
+    priv MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    priv System.Int32 _floorAddedToDeck
+    priv MegaCrit.Sts2.Core.Entities.Relics.RelicStatus _status
+    priv System.Action`2[[MegaCrit.Sts2.Core.Models.RelicModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Creatures.Creature, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] Flashed
+    priv System.Action DisplayAmountChanged
+    priv System.Action StatusChanged
+    priv MegaCrit.Sts2.Core.Models.RelicModel _canonicalInstance
+    priv System.Boolean <HasBeenRemovedFromState>k__BackingField
+### MegaCrit.Sts2.Core.Models.PowerModel
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: IComparable`1
+  isAbstract=True isSealed=False isEnum=False
+  --- ctors ---
+    prot .ctor()
+  --- methods ---
+    priv System.Void AddDumbVariablesToDescription(MegaCrit.Sts2.Core.Localization.LocString description, System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] amountOverride)
+    pub virtual System.Threading.Tasks.Task AfterApplied(MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource)
+    prot virtual System.Void AfterCloned()
+    pub virtual System.Threading.Tasks.Task AfterRemoved(MegaCrit.Sts2.Core.Entities.Creatures.Creature oldOwner)
+    pub System.Void ApplyInternal(MegaCrit.Sts2.Core.Entities.Creatures.Creature owner, System.Decimal amount, System.Boolean silent)
+    pub virtual System.Threading.Tasks.Task BeforeApplied(MegaCrit.Sts2.Core.Entities.Creatures.Creature target, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource)
+    prot virtual System.Void DeepCloneFields()
+    prot System.Void Flash()
+    pub MegaCrit.Sts2.Core.HoverTips.HoverTip GetDumbHoverTip(System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] amountOverride)
+    prot T GetInternalData()
+    pub virtual System.Decimal GetScaledAmountForMultiplayer(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, MegaCrit.Sts2.Core.Models.CardModel cardSource)
+    pub MegaCrit.Sts2.Core.Entities.Powers.PowerType GetTypeForAmount(System.Decimal customAmount)
+    prot virtual System.Object InitInternalData()
+    prot System.Void InvokeDisplayAmountChanged()
+    pub System.Void RemoveInternal()
+    pub System.Void SetAmount(System.Int32 amount, System.Boolean silent)
+    pub virtual System.Boolean ShouldOwnerDeathTriggerFatal()
+    pub virtual System.Boolean ShouldPowerBeRemovedAfterOwnerDeath()
+    pub System.Boolean ShouldRemoveDueToAmount()
+    pub System.Void StartPulsing()
+    pub System.Void StopPulsing()
+    pub MegaCrit.Sts2.Core.Models.PowerModel ToMutable(System.Int32 initialAmount)
+    pub System.Void add_DisplayAmountChanged(System.Action value)
+    pub System.Void add_Flashed(System.Action`1[[MegaCrit.Sts2.Core.Models.PowerModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] value)
+    pub System.Void add_PulsingStarted(System.Action value)
+    pub System.Void add_PulsingStopped(System.Action value)
+    pub System.Void add_Removed(System.Action value)
+    pub virtual System.Boolean get_AllowNegative()
+    pub System.Int32 get_Amount()
+    pub virtual Godot.Color get_AmountLabelColor()
+    pub System.Int32 get_AmountOnTurnStart()
+    pub MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Applier()
+    priv System.String get_BigBetaIconPath()
+    pub Godot.Texture2D get_BigIcon()
+    priv System.String get_BigIconPath()
+    priv MegaCrit.Sts2.Core.Models.PowerModel get_CanonicalInstance()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CanonicalVars()
+    pub MegaCrit.Sts2.Core.Combat.ICombatState get_CombatState()
+    pub virtual MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    pub virtual System.Int32 get_DisplayAmount()
+    pub MegaCrit.Sts2.Core.HoverTips.HoverTip get_DumbHoverTip()
+    pub MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_ExtraHoverTips()
+    pub System.Boolean get_HasRemoteDescription()
+    pub System.Boolean get_HasSmartDescription()
+    pub System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_HoverTips()
+    pub Godot.Texture2D get_Icon()
+    pub System.String get_IconPath()
+    pub virtual MegaCrit.Sts2.Core.Entities.Powers.PowerInstanceType get_InstanceType()
+    pub System.Boolean get_IsVisible()
+    prot virtual System.Boolean get_IsVisibleInternal()
+    priv static System.String get_MissingIconPath()
+    pub MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Owner()
+    pub virtual System.Boolean get_OwnerIsSecondaryEnemy()
+    pub System.String get_PackedIconPath()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_RemoteDescription()
+    prot virtual System.String get_RemoteDescriptionLocKey()
+    pub System.String get_ResolvedBigIconPath()
+    prot MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    pub virtual System.Boolean get_ShouldPlayVfx()
+    pub virtual System.Boolean get_ShouldReceiveCombatHooks()
+    pub virtual System.Boolean get_ShouldScaleInMultiplayer()
+    pub System.Boolean get_SkipNextDurationTick()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_SmartDescription()
+    prot virtual System.String get_SmartDescriptionLocKey()
+    pub abstract virtual MegaCrit.Sts2.Core.Entities.Powers.PowerStackType get_StackType()
+    pub MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Target()
+    pub virtual MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    pub abstract virtual MegaCrit.Sts2.Core.Entities.Powers.PowerType get_Type()
+    pub MegaCrit.Sts2.Core.Entities.Powers.PowerType get_TypeForCurrentAmount()
+    pub System.Void remove_DisplayAmountChanged(System.Action value)
+    pub System.Void remove_Flashed(System.Action`1[[MegaCrit.Sts2.Core.Models.PowerModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] value)
+    pub System.Void remove_PulsingStarted(System.Action value)
+    pub System.Void remove_PulsingStopped(System.Action value)
+    pub System.Void remove_Removed(System.Action value)
+    priv System.Void set_Amount(System.Int32 value)
+    pub System.Void set_AmountOnTurnStart(System.Int32 value)
+    pub System.Void set_Applier(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    priv System.Void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.PowerModel value)
+    priv System.Void set_Owner(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    pub System.Void set_SkipNextDurationTick(System.Boolean value)
+    pub System.Void set_Target(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+  --- properties ---
+    MegaCrit.Sts2.Core.Localization.LocString Title { get; }
+    MegaCrit.Sts2.Core.Localization.LocString Description { get; }
+    MegaCrit.Sts2.Core.Localization.LocString SmartDescription { get; }
+    System.Boolean HasSmartDescription { get; }
+    MegaCrit.Sts2.Core.Localization.LocString RemoteDescription { get; }
+    System.Boolean HasRemoteDescription { get; }
+    System.String RemoteDescriptionLocKey { get; }
+    System.String SmartDescriptionLocKey { get; }
+    MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { get; }
+    System.String PackedIconPath { get; }
+    System.String BigIconPath { get; }
+    System.String BigBetaIconPath { get; }
+    System.String MissingIconPath { get; }
+    System.String IconPath { get; }
+    Godot.Texture2D Icon { get; }
+    Godot.Texture2D BigIcon { get; }
+    System.String ResolvedBigIconPath { get; }
+    MegaCrit.Sts2.Core.Entities.Powers.PowerType Type { get; }
+    MegaCrit.Sts2.Core.Entities.Powers.PowerInstanceType InstanceType { get; }
+    System.Boolean IsVisible { get; }
+    System.Boolean IsVisibleInternal { get; }
+    System.Boolean ShouldPlayVfx { get; }
+    System.Int32 Amount { get; set; }
+    System.Int32 AmountOnTurnStart { get; set; }
+    System.Int32 DisplayAmount { get; }
+    Godot.Color AmountLabelColor { get; }
+    MegaCrit.Sts2.Core.Entities.Powers.PowerStackType StackType { get; }
+    System.Boolean AllowNegative { get; }
+    MegaCrit.Sts2.Core.Entities.Powers.PowerType TypeForCurrentAmount { get; }
+    System.Boolean SkipNextDurationTick { get; set; }
+    MegaCrit.Sts2.Core.Entities.Creatures.Creature Owner { get; set; }
+    MegaCrit.Sts2.Core.Combat.ICombatState CombatState { get; }
+    MegaCrit.Sts2.Core.Entities.Creatures.Creature Applier { get; set; }
+    MegaCrit.Sts2.Core.Entities.Creatures.Creature Target { get; set; }
+    MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { get; }
+    System.Boolean ShouldScaleInMultiplayer { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CanonicalVars { get; }
+    MegaCrit.Sts2.Core.HoverTips.HoverTip DumbHoverTip { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] ExtraHoverTips { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] HoverTips { get; }
+    MegaCrit.Sts2.Core.Models.PowerModel CanonicalInstance { get; set; }
+    System.Boolean ShouldReceiveCombatHooks { get; }
+    System.Boolean OwnerIsSecondaryEnemy { get; }
+  --- fields ---
+    pub static System.String locTable
+    prot static Godot.Color _normalAmountLabelColor
+    prot static Godot.Color _debuffAmountLabelColor
+    priv System.String _resolvedBigIconPath
+    priv System.Action PulsingStarted
+    priv System.Action PulsingStopped
+    priv System.Int32 _amount
+    priv System.Int32 _amountOnTurnStart
+    priv System.Action`1[[MegaCrit.Sts2.Core.Models.PowerModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Flashed
+    priv System.Action DisplayAmountChanged
+    priv System.Action Removed
+    priv System.Boolean _skipNextDurationTick
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature _owner
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature _applier
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature _target
+    priv MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    priv System.Object _internalData
+    priv MegaCrit.Sts2.Core.Models.PowerModel _canonicalInstance
+### MegaCrit.Sts2.Core.Helpers.ImageHelper
+  base: System.Object
+  interfaces: 
+  isAbstract=True isSealed=True isEnum=False
+  --- ctors ---
+  --- methods ---
+    pub static System.String GetImagePath(System.String innerPath)
+    pub static System.String GetRoomIconOutlinePath(MegaCrit.Sts2.Core.Map.MapPointType mapPointType, MegaCrit.Sts2.Core.Rooms.RoomType roomType, MegaCrit.Sts2.Core.Models.ModelId modelId)
+    pub static System.String GetRoomIconPath(MegaCrit.Sts2.Core.Map.MapPointType mapPointType, MegaCrit.Sts2.Core.Rooms.RoomType roomType, MegaCrit.Sts2.Core.Models.ModelId modelId)
+    priv static System.String GetRoomIconSuffix(MegaCrit.Sts2.Core.Map.MapPointType mapPointType, MegaCrit.Sts2.Core.Rooms.RoomType roomType, MegaCrit.Sts2.Core.Models.ModelId modelId)
+  --- properties ---
+  --- fields ---

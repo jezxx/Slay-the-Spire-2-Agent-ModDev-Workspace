@@ -1,0 +1,1227 @@
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using Godot;
+using Godot.Bridge;
+using Godot.NativeInterop;
+using MegaCrit.Sts2.Core.Achievements;
+using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.ControllerInput;
+using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using MegaCrit.Sts2.Core.Nodes.Screens.ScreenContext;
+using MegaCrit.Sts2.Core.Nodes.Vfx.Ui;
+using MegaCrit.Sts2.Core.Saves;
+using MegaCrit.Sts2.Core.Settings;
+using MegaCrit.Sts2.Core.Timeline;
+using MegaCrit.Sts2.addons.mega_text;
+
+namespace MegaCrit.Sts2.Core.Nodes.Screens.Timeline;
+
+/// <summary>
+/// The screen which opens when you click on an Epoch to view the bigger image + flavor text.
+/// Note that there are two UX for this screen. One for first time open (plays the animation of
+/// the text crawling in) and the second time open, which skips this animation.
+/// </summary>
+[ScriptPath("res://src/Core/Nodes/Screens/Timeline/NEpochInspectScreen.cs")]
+public class NEpochInspectScreen : NClickableControl, IScreenContext
+{
+	/// <summary>
+	/// Cached StringNames for the methods contained in this class, for fast lookup.
+	/// </summary>
+	public new class MethodName : NClickableControl.MethodName
+	{
+		/// <summary>
+		/// Cached name for the '_Ready' method.
+		/// </summary>
+		public new static readonly StringName _Ready = "_Ready";
+
+		/// <summary>
+		/// Cached name for the 'HidePaginators' method.
+		/// </summary>
+		public static readonly StringName HidePaginators = "HidePaginators";
+
+		/// <summary>
+		/// Cached name for the 'Close' method.
+		/// </summary>
+		public static readonly StringName Close = "Close";
+
+		/// <summary>
+		/// Cached name for the 'UpdateShaderS' method.
+		/// </summary>
+		public static readonly StringName UpdateShaderS = "UpdateShaderS";
+
+		/// <summary>
+		/// Cached name for the 'UpdateShaderV' method.
+		/// </summary>
+		public static readonly StringName UpdateShaderV = "UpdateShaderV";
+
+		/// <summary>
+		/// Cached name for the '_Input' method.
+		/// </summary>
+		public new static readonly StringName _Input = "_Input";
+
+		/// <summary>
+		/// Cached name for the 'OnMouseReleased' method.
+		/// </summary>
+		public static readonly StringName OnMouseReleased = "OnMouseReleased";
+
+		/// <summary>
+		/// Cached name for the 'SpeedUpTextAnimation' method.
+		/// </summary>
+		public static readonly StringName SpeedUpTextAnimation = "SpeedUpTextAnimation";
+
+		/// <summary>
+		/// Cached name for the 'NextChapter' method.
+		/// </summary>
+		public static readonly StringName NextChapter = "NextChapter";
+
+		/// <summary>
+		/// Cached name for the 'PrevChapter' method.
+		/// </summary>
+		public static readonly StringName PrevChapter = "PrevChapter";
+
+		/// <summary>
+		/// Cached name for the 'RefreshChapterPaginators' method.
+		/// </summary>
+		public static readonly StringName RefreshChapterPaginators = "RefreshChapterPaginators";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the properties and fields contained in this class, for fast lookup.
+	/// </summary>
+	public new class PropertyName : NClickableControl.PropertyName
+	{
+		/// <summary>
+		/// Cached name for the 'DefaultFocusedControl' property.
+		/// </summary>
+		public static readonly StringName DefaultFocusedControl = "DefaultFocusedControl";
+
+		/// <summary>
+		/// Cached name for the '_closeButton' field.
+		/// </summary>
+		public static readonly StringName _closeButton = "_closeButton";
+
+		/// <summary>
+		/// Cached name for the '_portrait' field.
+		/// </summary>
+		public static readonly StringName _portrait = "_portrait";
+
+		/// <summary>
+		/// Cached name for the '_portraitFlash' field.
+		/// </summary>
+		public static readonly StringName _portraitFlash = "_portraitFlash";
+
+		/// <summary>
+		/// Cached name for the '_mask' field.
+		/// </summary>
+		public static readonly StringName _mask = "_mask";
+
+		/// <summary>
+		/// Cached name for the '_chains' field.
+		/// </summary>
+		public static readonly StringName _chains = "_chains";
+
+		/// <summary>
+		/// Cached name for the '_portraitHsv' field.
+		/// </summary>
+		public static readonly StringName _portraitHsv = "_portraitHsv";
+
+		/// <summary>
+		/// Cached name for the '_fancyText' field.
+		/// </summary>
+		public static readonly StringName _fancyText = "_fancyText";
+
+		/// <summary>
+		/// Cached name for the '_storyLabel' field.
+		/// </summary>
+		public static readonly StringName _storyLabel = "_storyLabel";
+
+		/// <summary>
+		/// Cached name for the '_chapterLabel' field.
+		/// </summary>
+		public static readonly StringName _chapterLabel = "_chapterLabel";
+
+		/// <summary>
+		/// Cached name for the '_placeholderLabel' field.
+		/// </summary>
+		public static readonly StringName _placeholderLabel = "_placeholderLabel";
+
+		/// <summary>
+		/// Cached name for the '_nextChapterButton' field.
+		/// </summary>
+		public static readonly StringName _nextChapterButton = "_nextChapterButton";
+
+		/// <summary>
+		/// Cached name for the '_prevChapterButton' field.
+		/// </summary>
+		public static readonly StringName _prevChapterButton = "_prevChapterButton";
+
+		/// <summary>
+		/// Cached name for the '_unlockInfo' field.
+		/// </summary>
+		public static readonly StringName _unlockInfo = "_unlockInfo";
+
+		/// <summary>
+		/// Cached name for the '_hasStory' field.
+		/// </summary>
+		public static readonly StringName _hasStory = "_hasStory";
+
+		/// <summary>
+		/// Cached name for the '_wasRevealed' field.
+		/// </summary>
+		public static readonly StringName _wasRevealed = "_wasRevealed";
+
+		/// <summary>
+		/// Cached name for the '_prevChapterButtonOffsetX' field.
+		/// </summary>
+		public static readonly StringName _prevChapterButtonOffsetX = "_prevChapterButtonOffsetX";
+
+		/// <summary>
+		/// Cached name for the '_nextChapterButtonOffsetX' field.
+		/// </summary>
+		public static readonly StringName _nextChapterButtonOffsetX = "_nextChapterButtonOffsetX";
+
+		/// <summary>
+		/// Cached name for the '_maskOffsetX' field.
+		/// </summary>
+		public static readonly StringName _maskOffsetX = "_maskOffsetX";
+
+		/// <summary>
+		/// Cached name for the '_maskOffsetY' field.
+		/// </summary>
+		public static readonly StringName _maskOffsetY = "_maskOffsetY";
+
+		/// <summary>
+		/// Cached name for the '_closeButtonY' field.
+		/// </summary>
+		public static readonly StringName _closeButtonY = "_closeButtonY";
+
+		/// <summary>
+		/// Cached name for the '_unlockTween' field.
+		/// </summary>
+		public static readonly StringName _unlockTween = "_unlockTween";
+
+		/// <summary>
+		/// Cached name for the '_buttonTween' field.
+		/// </summary>
+		public static readonly StringName _buttonTween = "_buttonTween";
+
+		/// <summary>
+		/// Cached name for the '_tween' field.
+		/// </summary>
+		public static readonly StringName _tween = "_tween";
+
+		/// <summary>
+		/// Cached name for the '_textTween' field.
+		/// </summary>
+		public static readonly StringName _textTween = "_textTween";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the signals contained in this class, for fast lookup.
+	/// </summary>
+	public new class SignalName : NClickableControl.SignalName
+	{
+	}
+
+	private static readonly LocString _placeholderLoc = new LocString("timeline", "PLACEHOLDER_PORTRAIT");
+
+	public static readonly string lockedImagePath = ImageHelper.GetImagePath("packed/timeline/epoch_slot_locked.png");
+
+	private NCloseButton _closeButton;
+
+	private TextureRect _portrait;
+
+	private TextureRect _portraitFlash;
+
+	private TextureRect _mask;
+
+	private NEpochChains _chains;
+
+	private ShaderMaterial _portraitHsv;
+
+	private MegaRichTextLabel _fancyText;
+
+	private MegaLabel _storyLabel;
+
+	private MegaLabel _chapterLabel;
+
+	private MegaLabel _placeholderLabel;
+
+	private NEpochPaginateButton _nextChapterButton;
+
+	private NEpochPaginateButton _prevChapterButton;
+
+	private NUnlockInfo _unlockInfo;
+
+	private List<SerializableEpoch> _allEpochs;
+
+	private EpochModel _epoch;
+
+	private EpochModel? _prevChapterEpoch;
+
+	private EpochModel? _nextChapterEpoch;
+
+	private LocString _chapterLoc;
+
+	private bool _hasStory;
+
+	private bool _wasRevealed;
+
+	private float _prevChapterButtonOffsetX;
+
+	private float _nextChapterButtonOffsetX;
+
+	private float _maskOffsetX;
+
+	private float _maskOffsetY;
+
+	private float _closeButtonY;
+
+	private Tween? _unlockTween;
+
+	private Tween? _buttonTween;
+
+	private Tween? _tween;
+
+	private Tween? _textTween;
+
+	private static readonly StringName _v = new StringName("v");
+
+	private static readonly StringName _s = new StringName("s");
+
+	public Control? DefaultFocusedControl => null;
+
+	public override void _Ready()
+	{
+		_storyLabel = GetNode<MegaLabel>("%StoryLabel");
+		_chapterLabel = GetNode<MegaLabel>("%ChapterLabel");
+		_placeholderLabel = GetNode<MegaLabel>("%PlaceholderLabel");
+		_portrait = GetNode<TextureRect>("%Portrait");
+		_portraitFlash = GetNode<TextureRect>("%PortraitFlash");
+		_mask = GetNode<TextureRect>("%Mask");
+		_maskOffsetY = _mask.OffsetTop;
+		_maskOffsetX = _mask.OffsetLeft;
+		_chains = GetNode<NEpochChains>("%Chains");
+		_portraitHsv = (ShaderMaterial)_portrait.Material;
+		_closeButton = GetNode<NCloseButton>("%CloseButton");
+		_fancyText = GetNode<MegaRichTextLabel>("%FancyText");
+		_chapterLoc = new LocString("timeline", "EPOCH_INSPECT.chapterFormat");
+		_unlockInfo = GetNode<NUnlockInfo>("%UnlockInfo");
+		_nextChapterButton = GetNode<NEpochPaginateButton>("%NextChapterButton");
+		_prevChapterButton = GetNode<NEpochPaginateButton>("%PrevChapterButton");
+		_prevChapterButtonOffsetX = _prevChapterButton.OffsetLeft;
+		_nextChapterButtonOffsetX = _nextChapterButton.OffsetLeft;
+		_nextChapterButton.Connect(NClickableControl.SignalName.Released, Callable.From<NClickableControl>(delegate
+		{
+			NextChapter();
+		}));
+		_prevChapterButton.Connect(NClickableControl.SignalName.Released, Callable.From<NClickableControl>(delegate
+		{
+			PrevChapter();
+		}));
+		_prevChapterButton.IsLeft = true;
+		Connect(NClickableControl.SignalName.MouseReleased, Callable.From<InputEvent>(OnMouseReleased));
+		_closeButton.Disable();
+		_nextChapterButton.Disable();
+		_prevChapterButton.Disable();
+	}
+
+	/// <summary>
+	/// If the Epoch was revealed, we go through a slightly different UX flow (more dramatic opening of screen, queue up
+	/// unlocks, etc)
+	/// </summary>
+	public async Task Open(NEpochSlot slot, EpochModel epoch, bool wasRevealed)
+	{
+		_buttonTween?.FastForwardToCompletion();
+		_wasRevealed = wasRevealed;
+		_epoch = epoch;
+		if (!_epoch.HasRealPortrait)
+		{
+			_placeholderLabel.Visible = true;
+			_placeholderLabel.Text = _placeholderLoc.GetRawText();
+		}
+		else
+		{
+			_placeholderLabel.Visible = false;
+		}
+		base.Modulate = Colors.White;
+		_portrait.Texture = epoch.RealPortrait;
+		_fancyText.Modulate = StsColors.transparentWhite;
+		_fancyText.Text = epoch.Description;
+		_hasStory = epoch.StoryTitle != null;
+		SfxCmd.Play("event:/sfx/ui/timeline/ui_timeline_open_epoch");
+		if (_hasStory)
+		{
+			_storyLabel.SetTextAutoSize(epoch.StoryTitle ?? string.Empty);
+			_chapterLoc.Add("ChapterIndex", epoch.ChapterIndex);
+			_chapterLoc.Add("ChapterName", epoch.Title);
+			_chapterLabel.SetTextAutoSize(_chapterLoc.GetFormattedText());
+			_chapterLabel.VerticalAlignment = VerticalAlignment.Center;
+			_nextChapterButton.Enable();
+			_prevChapterButton.Enable();
+		}
+		else
+		{
+			_storyLabel.SetTextAutoSize(string.Empty);
+			_chapterLabel.SetTextAutoSize(epoch.Title.GetFormattedText());
+			_chapterLabel.VerticalAlignment = VerticalAlignment.Bottom;
+			_nextChapterButton.Disable();
+			_prevChapterButton.Disable();
+		}
+		_closeButton.MouseFilter = MouseFilterEnum.Stop;
+		_closeButton.Scale = Vector2.One;
+		_closeButtonY = _closeButton.Position.Y + 180f;
+		_closeButton.Position = new Vector2(_closeButton.Position.X, _closeButtonY);
+		_closeButton.Modulate = StsColors.transparentWhite;
+		_closeButton.Disable();
+		NTimelineScreen.Instance.ShowBackstopAndHideUi();
+		base.Visible = true;
+		Vector2 size = _mask.Size;
+		_mask.GlobalPosition = slot.GlobalPosition;
+		_mask.SetDeferred(Control.PropertyName.Size, slot.Size * slot.GetGlobalTransform().Scale);
+		_tween?.Kill();
+		_tween = CreateTween().SetParallel();
+		_tween.TweenProperty(_mask, "offset_left", _maskOffsetX, 0.4).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.Out);
+		_tween.TweenProperty(_mask, "offset_top", _maskOffsetY, 0.4).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Expo);
+		_tween.TweenProperty(_mask, "size", size, 0.4).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.Out);
+		_storyLabel.Modulate = StsColors.transparentWhite;
+		_chapterLabel.Modulate = StsColors.transparentWhite;
+		_nextChapterButton.Modulate = StsColors.transparentWhite;
+		_prevChapterButton.Modulate = StsColors.transparentWhite;
+		_tween.TweenProperty(_storyLabel, "modulate:a", 1f, 0.5).SetDelay(0.4);
+		_tween.TweenProperty(_chapterLabel, "modulate:a", 1f, 0.5).SetDelay(0.2);
+		_tween.TweenProperty(_prevChapterButton, "offset_left", _prevChapterButtonOffsetX, 0.25).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Back)
+			.From(_prevChapterButtonOffsetX + 100f)
+			.SetDelay(0.25);
+		_tween.TweenProperty(_prevChapterButton, "modulate:a", 1f, 0.25).SetDelay(0.25);
+		_tween.TweenProperty(_nextChapterButton, "offset_left", _nextChapterButtonOffsetX, 0.25).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Back)
+			.From(_nextChapterButtonOffsetX - 100f)
+			.SetDelay(0.25);
+		_tween.TweenProperty(_nextChapterButton, "modulate:a", 1f, 0.25).SetDelay(0.25);
+		if (wasRevealed)
+		{
+			await TaskHelper.RunSafely(UnlockAnimation(epoch));
+			return;
+		}
+		_closeButton.SetLabel(new LocString("timeline", "EPOCH_INSPECT.closeButton").GetRawText());
+		_fancyText.Text = epoch.Description;
+		_textTween?.Kill();
+		_textTween = CreateTween().SetParallel();
+		_textTween.TweenProperty(_fancyText, "modulate:a", 1f, 0.5).SetDelay(0.1);
+		_fancyText.VisibleRatio = 1f;
+		_buttonTween?.Kill();
+		_buttonTween = CreateTween().SetParallel();
+		_buttonTween.TweenProperty(_closeButton, "modulate:a", 1f, 0.3).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Cubic)
+			.SetDelay(0.1);
+		_buttonTween.TweenProperty(_closeButton, "position:y", _closeButtonY - 180f, 0.3).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Back)
+			.SetDelay(0.1);
+		_buttonTween.TweenCallback(Callable.From(_closeButton.Enable));
+		RefreshChapterPaginators();
+		_unlockInfo.AnimIn(epoch.UnlockText);
+	}
+
+	private void HidePaginators()
+	{
+		_hasStory = false;
+		_nextChapterButton.Disable();
+		_prevChapterButton.Disable();
+	}
+
+	/// <summary>
+	/// The Epoch Inspect Screen was navigated to via the Chapter Navigator button.
+	/// </summary>
+	private void OpenViaPaginator(EpochModel epoch)
+	{
+		_epoch = epoch;
+		base.Modulate = Colors.White;
+		_fancyText.Text = epoch.Description;
+		_portrait.Texture = epoch.RealPortrait;
+		_hasStory = epoch.StoryTitle != null;
+		_storyLabel.Modulate = Colors.White;
+		_chapterLabel.Modulate = Colors.White;
+		if (!_epoch.HasRealPortrait)
+		{
+			_placeholderLabel.Visible = true;
+			_placeholderLabel.Text = _placeholderLoc.GetRawText();
+		}
+		else
+		{
+			_placeholderLabel.Visible = false;
+		}
+		if (_hasStory)
+		{
+			_storyLabel.SetTextAutoSize(epoch.StoryTitle ?? string.Empty);
+			_chapterLoc.Add("ChapterIndex", epoch.ChapterIndex);
+			_chapterLoc.Add("ChapterName", epoch.Title);
+			_chapterLabel.SetTextAutoSize(_chapterLoc.GetFormattedText());
+			_chapterLabel.VerticalAlignment = VerticalAlignment.Center;
+			_nextChapterButton.Enable();
+			_prevChapterButton.Enable();
+		}
+		else
+		{
+			_storyLabel.SetTextAutoSize(string.Empty);
+			_chapterLabel.SetTextAutoSize(epoch.Title.GetFormattedText());
+			_chapterLabel.VerticalAlignment = VerticalAlignment.Bottom;
+			_nextChapterButton.Disable();
+			_prevChapterButton.Disable();
+		}
+		_fancyText.Modulate = StsColors.transparentWhite;
+		NTimelineScreen.Instance.ShowBackstopAndHideUi();
+		base.Visible = true;
+		_tween?.Kill();
+		_tween = CreateTween().SetParallel();
+		_textTween?.Kill();
+		_textTween = CreateTween().SetParallel();
+		_tween.TweenProperty(_mask, "offset_top", _maskOffsetY, 0.25).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Expo);
+		_textTween.TweenProperty(_fancyText, "modulate:a", 1f, 0.5).SetDelay(0.1);
+		_fancyText.VisibleRatio = 1f;
+		TaskHelper.RunSafely(_unlockInfo.AnimInViaPaginator(epoch.UnlockText));
+	}
+
+	public void Close()
+	{
+		if (NTimelineScreen.Instance.IsScreenQueued())
+		{
+			NTimelineScreen.Instance.OpenQueuedScreen();
+		}
+		else
+		{
+			NTimelineScreen.Instance.EnableInput();
+			NTimelineScreen.Instance.HideBackstopAndShowUi(showBackButton: true);
+		}
+		base.FocusMode = FocusModeEnum.None;
+		_buttonTween?.FastForwardToCompletion();
+		_unlockTween?.FastForwardToCompletion();
+		_tween?.FastForwardToCompletion();
+		_textTween?.FastForwardToCompletion();
+		_buttonTween = CreateTween().SetParallel();
+		_buttonTween.TweenProperty(_closeButton, "scale", new Vector2(3f, 0.1f), 0.3).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Expo);
+		_buttonTween.TweenProperty(_closeButton, "modulate:a", 0f, 0.25).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Cubic);
+		_buttonTween.TweenProperty(this, "modulate", new Color(0f, 0f, 0f, 0f), 0.5);
+		_buttonTween.TweenCallback(Callable.From(delegate
+		{
+			base.Visible = false;
+			_closeButton.Disable();
+			if (_wasRevealed)
+			{
+				AchievementsHelper.CheckTimelineComplete();
+			}
+		}));
+		_nextChapterButton.Disable();
+		_prevChapterButton.Disable();
+	}
+
+	/// <summary>
+	/// Is called when the player opens the Epoch inspect screen by clicking on a locked node in the Timeline.
+	/// </summary>
+	/// <param name="epoch"></param>
+	private async Task UnlockAnimation(EpochModel epoch)
+	{
+		HidePaginators();
+		epoch.QueueUnlocks();
+		SaveManager.Instance.SaveProgressFile();
+		_unlockInfo.HideImmediately();
+		_closeButton.SetLabel(new LocString("timeline", "EPOCH_INSPECT.continueButton").GetRawText());
+		_fancyText.VisibleRatio = 0f;
+		_fancyText.Modulate = StsColors.transparentWhite;
+		_portraitHsv.SetShaderParameter(_s, 0f);
+		_portraitHsv.SetShaderParameter(_v, 0.75f);
+		_chains.Texture = PreloadManager.Cache.GetTexture2D(lockedImagePath);
+		_chains.Visible = true;
+		_chains.Modulate = Colors.White;
+		_chains.SelfModulate = Colors.White;
+		_portraitFlash.Modulate = StsColors.transparentWhite;
+		bool isFast = SaveManager.Instance.PrefsSave.FastMode == FastModeType.Fast;
+		_unlockTween?.Kill();
+		_unlockTween = CreateTween().SetParallel();
+		_unlockTween.TweenProperty(_chains, "scale", Vector2.One * 0.98f, isFast ? 0.25 : 0.5).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Expo)
+			.SetDelay(isFast ? 0.25 : 0.5);
+		if (await _unlockTween.AwaitFinished(this))
+		{
+			_chains.Unlock();
+			await _chains.AwaitSignal(NEpochChains.SignalName.OnAnimationFinished, this);
+			_portraitFlash.Modulate = Colors.White;
+			_unlockTween = CreateTween().SetParallel();
+			_unlockTween.TweenProperty(_portraitFlash, "modulate:a", 0f, isFast ? 0.25 : 0.5);
+			_unlockTween.TweenMethod(Callable.From<float>(UpdateShaderS), _portraitHsv.GetShaderParameter(_s), 1f, isFast ? 0.5 : 1.0).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Expo);
+			_unlockTween.TweenMethod(Callable.From<float>(UpdateShaderV), _portraitHsv.GetShaderParameter(_v), 1f, isFast ? 0.5 : 1.0).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Expo);
+			_textTween?.Kill();
+			_textTween = CreateTween().SetParallel();
+			_textTween.TweenProperty(_fancyText, "modulate:a", 1f, isFast ? 1.0 : 2.0).SetDelay(isFast ? 0.1 : 0.25);
+			_textTween.TweenProperty(_fancyText, "visible_ratio", 1f, (double)_fancyText.GetTotalCharacterCount() * 0.015).SetDelay(isFast ? 0.25 : 0.5);
+			_buttonTween?.Kill();
+			_buttonTween = CreateTween().SetParallel();
+			_buttonTween.TweenProperty(_closeButton, "modulate:a", 1f, 0.3).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Cubic)
+				.SetDelay(isFast ? 0.5 : 1.0);
+			_buttonTween.TweenProperty(_closeButton, "position:y", _closeButtonY - 180f, 0.3).SetEase(Tween.EaseType.Out).SetTrans(Tween.TransitionType.Back)
+				.SetDelay(isFast ? 0.5 : 1.0);
+			_buttonTween.TweenCallback(Callable.From(_closeButton.Enable));
+			await _unlockTween.AwaitFinished(this);
+		}
+	}
+
+	private void UpdateShaderS(float value)
+	{
+		_portraitHsv.SetShaderParameter(_s, value);
+	}
+
+	private void UpdateShaderV(float value)
+	{
+		_portraitHsv.SetShaderParameter(_v, value);
+	}
+
+	public override void _Input(InputEvent inputEvent)
+	{
+		if (inputEvent.IsActionPressed(MegaInput.select) || inputEvent.IsActionPressed(MegaInput.confirm))
+		{
+			SpeedUpTextAnimation();
+		}
+	}
+
+	private void OnMouseReleased(InputEvent obj)
+	{
+		SpeedUpTextAnimation();
+	}
+
+	private void SpeedUpTextAnimation()
+	{
+		if (_textTween != null && _textTween.IsRunning())
+		{
+			_textTween.Kill();
+			_fancyText.Modulate = Colors.White;
+			_fancyText.VisibleRatio = 1f;
+		}
+	}
+
+	private void NextChapter()
+	{
+		OpenViaPaginator(_nextChapterEpoch);
+		RefreshChapterPaginators();
+	}
+
+	private void PrevChapter()
+	{
+		OpenViaPaginator(_prevChapterEpoch);
+		RefreshChapterPaginators();
+	}
+
+	private void RefreshChapterPaginators()
+	{
+		if (_hasStory)
+		{
+			_nextChapterEpoch = StoryModel.NextChapter(_epoch);
+			_prevChapterEpoch = StoryModel.PrevChapter(_epoch);
+			if (_nextChapterEpoch != null)
+			{
+				_nextChapterButton.Enable();
+			}
+			else
+			{
+				_nextChapterButton.Disable();
+			}
+			if (_prevChapterEpoch != null)
+			{
+				_prevChapterButton.Enable();
+			}
+			else
+			{
+				_prevChapterButton.Disable();
+			}
+		}
+	}
+
+	/// <summary>
+	/// Get the method information for all the methods declared in this class.
+	/// This method is used by Godot to register the available methods in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<MethodInfo> GetGodotMethodList()
+	{
+		List<MethodInfo> list = new List<MethodInfo>(11);
+		list.Add(new MethodInfo(MethodName._Ready, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.HidePaginators, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.Close, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.UpdateShaderS, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Float, "value", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.UpdateShaderV, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Float, "value", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName._Input, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "inputEvent", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("InputEvent"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.OnMouseReleased, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "obj", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("InputEvent"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.SpeedUpTextAnimation, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.NextChapter, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.PrevChapter, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.RefreshChapterPaginators, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool InvokeGodotClassMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName._Ready && args.Count == 0)
+		{
+			_Ready();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.HidePaginators && args.Count == 0)
+		{
+			HidePaginators();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.Close && args.Count == 0)
+		{
+			Close();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.UpdateShaderS && args.Count == 1)
+		{
+			UpdateShaderS(VariantUtils.ConvertTo<float>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.UpdateShaderV && args.Count == 1)
+		{
+			UpdateShaderV(VariantUtils.ConvertTo<float>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName._Input && args.Count == 1)
+		{
+			_Input(VariantUtils.ConvertTo<InputEvent>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnMouseReleased && args.Count == 1)
+		{
+			OnMouseReleased(VariantUtils.ConvertTo<InputEvent>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.SpeedUpTextAnimation && args.Count == 0)
+		{
+			SpeedUpTextAnimation();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.NextChapter && args.Count == 0)
+		{
+			NextChapter();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.PrevChapter && args.Count == 0)
+		{
+			PrevChapter();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.RefreshChapterPaginators && args.Count == 0)
+		{
+			RefreshChapterPaginators();
+			ret = default(godot_variant);
+			return true;
+		}
+		return base.InvokeGodotClassMethod(in method, args, out ret);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool HasGodotClassMethod(in godot_string_name method)
+	{
+		if (method == MethodName._Ready)
+		{
+			return true;
+		}
+		if (method == MethodName.HidePaginators)
+		{
+			return true;
+		}
+		if (method == MethodName.Close)
+		{
+			return true;
+		}
+		if (method == MethodName.UpdateShaderS)
+		{
+			return true;
+		}
+		if (method == MethodName.UpdateShaderV)
+		{
+			return true;
+		}
+		if (method == MethodName._Input)
+		{
+			return true;
+		}
+		if (method == MethodName.OnMouseReleased)
+		{
+			return true;
+		}
+		if (method == MethodName.SpeedUpTextAnimation)
+		{
+			return true;
+		}
+		if (method == MethodName.NextChapter)
+		{
+			return true;
+		}
+		if (method == MethodName.PrevChapter)
+		{
+			return true;
+		}
+		if (method == MethodName.RefreshChapterPaginators)
+		{
+			return true;
+		}
+		return base.HasGodotClassMethod(in method);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool SetGodotClassPropertyValue(in godot_string_name name, in godot_variant value)
+	{
+		if (name == PropertyName._closeButton)
+		{
+			_closeButton = VariantUtils.ConvertTo<NCloseButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._portrait)
+		{
+			_portrait = VariantUtils.ConvertTo<TextureRect>(in value);
+			return true;
+		}
+		if (name == PropertyName._portraitFlash)
+		{
+			_portraitFlash = VariantUtils.ConvertTo<TextureRect>(in value);
+			return true;
+		}
+		if (name == PropertyName._mask)
+		{
+			_mask = VariantUtils.ConvertTo<TextureRect>(in value);
+			return true;
+		}
+		if (name == PropertyName._chains)
+		{
+			_chains = VariantUtils.ConvertTo<NEpochChains>(in value);
+			return true;
+		}
+		if (name == PropertyName._portraitHsv)
+		{
+			_portraitHsv = VariantUtils.ConvertTo<ShaderMaterial>(in value);
+			return true;
+		}
+		if (name == PropertyName._fancyText)
+		{
+			_fancyText = VariantUtils.ConvertTo<MegaRichTextLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._storyLabel)
+		{
+			_storyLabel = VariantUtils.ConvertTo<MegaLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._chapterLabel)
+		{
+			_chapterLabel = VariantUtils.ConvertTo<MegaLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._placeholderLabel)
+		{
+			_placeholderLabel = VariantUtils.ConvertTo<MegaLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._nextChapterButton)
+		{
+			_nextChapterButton = VariantUtils.ConvertTo<NEpochPaginateButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._prevChapterButton)
+		{
+			_prevChapterButton = VariantUtils.ConvertTo<NEpochPaginateButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._unlockInfo)
+		{
+			_unlockInfo = VariantUtils.ConvertTo<NUnlockInfo>(in value);
+			return true;
+		}
+		if (name == PropertyName._hasStory)
+		{
+			_hasStory = VariantUtils.ConvertTo<bool>(in value);
+			return true;
+		}
+		if (name == PropertyName._wasRevealed)
+		{
+			_wasRevealed = VariantUtils.ConvertTo<bool>(in value);
+			return true;
+		}
+		if (name == PropertyName._prevChapterButtonOffsetX)
+		{
+			_prevChapterButtonOffsetX = VariantUtils.ConvertTo<float>(in value);
+			return true;
+		}
+		if (name == PropertyName._nextChapterButtonOffsetX)
+		{
+			_nextChapterButtonOffsetX = VariantUtils.ConvertTo<float>(in value);
+			return true;
+		}
+		if (name == PropertyName._maskOffsetX)
+		{
+			_maskOffsetX = VariantUtils.ConvertTo<float>(in value);
+			return true;
+		}
+		if (name == PropertyName._maskOffsetY)
+		{
+			_maskOffsetY = VariantUtils.ConvertTo<float>(in value);
+			return true;
+		}
+		if (name == PropertyName._closeButtonY)
+		{
+			_closeButtonY = VariantUtils.ConvertTo<float>(in value);
+			return true;
+		}
+		if (name == PropertyName._unlockTween)
+		{
+			_unlockTween = VariantUtils.ConvertTo<Tween>(in value);
+			return true;
+		}
+		if (name == PropertyName._buttonTween)
+		{
+			_buttonTween = VariantUtils.ConvertTo<Tween>(in value);
+			return true;
+		}
+		if (name == PropertyName._tween)
+		{
+			_tween = VariantUtils.ConvertTo<Tween>(in value);
+			return true;
+		}
+		if (name == PropertyName._textTween)
+		{
+			_textTween = VariantUtils.ConvertTo<Tween>(in value);
+			return true;
+		}
+		return base.SetGodotClassPropertyValue(in name, in value);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
+	{
+		if (name == PropertyName.DefaultFocusedControl)
+		{
+			Control from = DefaultFocusedControl;
+			value = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		if (name == PropertyName._closeButton)
+		{
+			value = VariantUtils.CreateFrom(in _closeButton);
+			return true;
+		}
+		if (name == PropertyName._portrait)
+		{
+			value = VariantUtils.CreateFrom(in _portrait);
+			return true;
+		}
+		if (name == PropertyName._portraitFlash)
+		{
+			value = VariantUtils.CreateFrom(in _portraitFlash);
+			return true;
+		}
+		if (name == PropertyName._mask)
+		{
+			value = VariantUtils.CreateFrom(in _mask);
+			return true;
+		}
+		if (name == PropertyName._chains)
+		{
+			value = VariantUtils.CreateFrom(in _chains);
+			return true;
+		}
+		if (name == PropertyName._portraitHsv)
+		{
+			value = VariantUtils.CreateFrom(in _portraitHsv);
+			return true;
+		}
+		if (name == PropertyName._fancyText)
+		{
+			value = VariantUtils.CreateFrom(in _fancyText);
+			return true;
+		}
+		if (name == PropertyName._storyLabel)
+		{
+			value = VariantUtils.CreateFrom(in _storyLabel);
+			return true;
+		}
+		if (name == PropertyName._chapterLabel)
+		{
+			value = VariantUtils.CreateFrom(in _chapterLabel);
+			return true;
+		}
+		if (name == PropertyName._placeholderLabel)
+		{
+			value = VariantUtils.CreateFrom(in _placeholderLabel);
+			return true;
+		}
+		if (name == PropertyName._nextChapterButton)
+		{
+			value = VariantUtils.CreateFrom(in _nextChapterButton);
+			return true;
+		}
+		if (name == PropertyName._prevChapterButton)
+		{
+			value = VariantUtils.CreateFrom(in _prevChapterButton);
+			return true;
+		}
+		if (name == PropertyName._unlockInfo)
+		{
+			value = VariantUtils.CreateFrom(in _unlockInfo);
+			return true;
+		}
+		if (name == PropertyName._hasStory)
+		{
+			value = VariantUtils.CreateFrom(in _hasStory);
+			return true;
+		}
+		if (name == PropertyName._wasRevealed)
+		{
+			value = VariantUtils.CreateFrom(in _wasRevealed);
+			return true;
+		}
+		if (name == PropertyName._prevChapterButtonOffsetX)
+		{
+			value = VariantUtils.CreateFrom(in _prevChapterButtonOffsetX);
+			return true;
+		}
+		if (name == PropertyName._nextChapterButtonOffsetX)
+		{
+			value = VariantUtils.CreateFrom(in _nextChapterButtonOffsetX);
+			return true;
+		}
+		if (name == PropertyName._maskOffsetX)
+		{
+			value = VariantUtils.CreateFrom(in _maskOffsetX);
+			return true;
+		}
+		if (name == PropertyName._maskOffsetY)
+		{
+			value = VariantUtils.CreateFrom(in _maskOffsetY);
+			return true;
+		}
+		if (name == PropertyName._closeButtonY)
+		{
+			value = VariantUtils.CreateFrom(in _closeButtonY);
+			return true;
+		}
+		if (name == PropertyName._unlockTween)
+		{
+			value = VariantUtils.CreateFrom(in _unlockTween);
+			return true;
+		}
+		if (name == PropertyName._buttonTween)
+		{
+			value = VariantUtils.CreateFrom(in _buttonTween);
+			return true;
+		}
+		if (name == PropertyName._tween)
+		{
+			value = VariantUtils.CreateFrom(in _tween);
+			return true;
+		}
+		if (name == PropertyName._textTween)
+		{
+			value = VariantUtils.CreateFrom(in _textTween);
+			return true;
+		}
+		return base.GetGodotClassPropertyValue(in name, out value);
+	}
+
+	/// <summary>
+	/// Get the property information for all the properties declared in this class.
+	/// This method is used by Godot to register the available properties in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<PropertyInfo> GetGodotPropertyList()
+	{
+		List<PropertyInfo> list = new List<PropertyInfo>();
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._closeButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._portrait, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._portraitFlash, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._mask, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._chains, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._portraitHsv, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._fancyText, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._storyLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._chapterLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._placeholderLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._nextChapterButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._prevChapterButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._unlockInfo, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Bool, PropertyName._hasStory, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Bool, PropertyName._wasRevealed, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Float, PropertyName._prevChapterButtonOffsetX, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Float, PropertyName._nextChapterButtonOffsetX, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Float, PropertyName._maskOffsetX, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Float, PropertyName._maskOffsetY, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Float, PropertyName._closeButtonY, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._unlockTween, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._buttonTween, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._tween, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._textTween, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName.DefaultFocusedControl, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void SaveGodotObjectData(GodotSerializationInfo info)
+	{
+		base.SaveGodotObjectData(info);
+		info.AddProperty(PropertyName._closeButton, Variant.From(in _closeButton));
+		info.AddProperty(PropertyName._portrait, Variant.From(in _portrait));
+		info.AddProperty(PropertyName._portraitFlash, Variant.From(in _portraitFlash));
+		info.AddProperty(PropertyName._mask, Variant.From(in _mask));
+		info.AddProperty(PropertyName._chains, Variant.From(in _chains));
+		info.AddProperty(PropertyName._portraitHsv, Variant.From(in _portraitHsv));
+		info.AddProperty(PropertyName._fancyText, Variant.From(in _fancyText));
+		info.AddProperty(PropertyName._storyLabel, Variant.From(in _storyLabel));
+		info.AddProperty(PropertyName._chapterLabel, Variant.From(in _chapterLabel));
+		info.AddProperty(PropertyName._placeholderLabel, Variant.From(in _placeholderLabel));
+		info.AddProperty(PropertyName._nextChapterButton, Variant.From(in _nextChapterButton));
+		info.AddProperty(PropertyName._prevChapterButton, Variant.From(in _prevChapterButton));
+		info.AddProperty(PropertyName._unlockInfo, Variant.From(in _unlockInfo));
+		info.AddProperty(PropertyName._hasStory, Variant.From(in _hasStory));
+		info.AddProperty(PropertyName._wasRevealed, Variant.From(in _wasRevealed));
+		info.AddProperty(PropertyName._prevChapterButtonOffsetX, Variant.From(in _prevChapterButtonOffsetX));
+		info.AddProperty(PropertyName._nextChapterButtonOffsetX, Variant.From(in _nextChapterButtonOffsetX));
+		info.AddProperty(PropertyName._maskOffsetX, Variant.From(in _maskOffsetX));
+		info.AddProperty(PropertyName._maskOffsetY, Variant.From(in _maskOffsetY));
+		info.AddProperty(PropertyName._closeButtonY, Variant.From(in _closeButtonY));
+		info.AddProperty(PropertyName._unlockTween, Variant.From(in _unlockTween));
+		info.AddProperty(PropertyName._buttonTween, Variant.From(in _buttonTween));
+		info.AddProperty(PropertyName._tween, Variant.From(in _tween));
+		info.AddProperty(PropertyName._textTween, Variant.From(in _textTween));
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void RestoreGodotObjectData(GodotSerializationInfo info)
+	{
+		base.RestoreGodotObjectData(info);
+		if (info.TryGetProperty(PropertyName._closeButton, out var value))
+		{
+			_closeButton = value.As<NCloseButton>();
+		}
+		if (info.TryGetProperty(PropertyName._portrait, out var value2))
+		{
+			_portrait = value2.As<TextureRect>();
+		}
+		if (info.TryGetProperty(PropertyName._portraitFlash, out var value3))
+		{
+			_portraitFlash = value3.As<TextureRect>();
+		}
+		if (info.TryGetProperty(PropertyName._mask, out var value4))
+		{
+			_mask = value4.As<TextureRect>();
+		}
+		if (info.TryGetProperty(PropertyName._chains, out var value5))
+		{
+			_chains = value5.As<NEpochChains>();
+		}
+		if (info.TryGetProperty(PropertyName._portraitHsv, out var value6))
+		{
+			_portraitHsv = value6.As<ShaderMaterial>();
+		}
+		if (info.TryGetProperty(PropertyName._fancyText, out var value7))
+		{
+			_fancyText = value7.As<MegaRichTextLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._storyLabel, out var value8))
+		{
+			_storyLabel = value8.As<MegaLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._chapterLabel, out var value9))
+		{
+			_chapterLabel = value9.As<MegaLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._placeholderLabel, out var value10))
+		{
+			_placeholderLabel = value10.As<MegaLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._nextChapterButton, out var value11))
+		{
+			_nextChapterButton = value11.As<NEpochPaginateButton>();
+		}
+		if (info.TryGetProperty(PropertyName._prevChapterButton, out var value12))
+		{
+			_prevChapterButton = value12.As<NEpochPaginateButton>();
+		}
+		if (info.TryGetProperty(PropertyName._unlockInfo, out var value13))
+		{
+			_unlockInfo = value13.As<NUnlockInfo>();
+		}
+		if (info.TryGetProperty(PropertyName._hasStory, out var value14))
+		{
+			_hasStory = value14.As<bool>();
+		}
+		if (info.TryGetProperty(PropertyName._wasRevealed, out var value15))
+		{
+			_wasRevealed = value15.As<bool>();
+		}
+		if (info.TryGetProperty(PropertyName._prevChapterButtonOffsetX, out var value16))
+		{
+			_prevChapterButtonOffsetX = value16.As<float>();
+		}
+		if (info.TryGetProperty(PropertyName._nextChapterButtonOffsetX, out var value17))
+		{
+			_nextChapterButtonOffsetX = value17.As<float>();
+		}
+		if (info.TryGetProperty(PropertyName._maskOffsetX, out var value18))
+		{
+			_maskOffsetX = value18.As<float>();
+		}
+		if (info.TryGetProperty(PropertyName._maskOffsetY, out var value19))
+		{
+			_maskOffsetY = value19.As<float>();
+		}
+		if (info.TryGetProperty(PropertyName._closeButtonY, out var value20))
+		{
+			_closeButtonY = value20.As<float>();
+		}
+		if (info.TryGetProperty(PropertyName._unlockTween, out var value21))
+		{
+			_unlockTween = value21.As<Tween>();
+		}
+		if (info.TryGetProperty(PropertyName._buttonTween, out var value22))
+		{
+			_buttonTween = value22.As<Tween>();
+		}
+		if (info.TryGetProperty(PropertyName._tween, out var value23))
+		{
+			_tween = value23.As<Tween>();
+		}
+		if (info.TryGetProperty(PropertyName._textTween, out var value24))
+		{
+			_textTween = value24.As<Tween>();
+		}
+	}
+}

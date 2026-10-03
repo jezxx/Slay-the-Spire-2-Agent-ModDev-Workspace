@@ -1,0 +1,9 @@
+namespace MegaCrit.Sts2.Core.Models.Modifiers;
+
+public class Flight : ModifierModel
+{
+	public override bool ShouldAllowFreeTravel()
+	{
+		return true;
+	}
+}

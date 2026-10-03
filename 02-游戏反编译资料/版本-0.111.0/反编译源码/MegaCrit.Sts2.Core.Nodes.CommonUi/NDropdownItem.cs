@@ -1,0 +1,414 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Godot;
+using Godot.Bridge;
+using Godot.NativeInterop;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using MegaCrit.Sts2.addons.mega_text;
+
+namespace MegaCrit.Sts2.Core.Nodes.CommonUi;
+
+/// <summary>
+/// Represents a single item within a DropdownList.
+/// Must be extended, see NLanguageDropdownItem for an example.
+/// </summary>
+[ScriptPath("res://src/Core/Nodes/CommonUi/NDropdownItem.cs")]
+public class NDropdownItem : NButton
+{
+	[Signal]
+	public delegate void SelectedEventHandler(NDropdownItem cardHolder);
+
+	/// <summary>
+	/// Cached StringNames for the methods contained in this class, for fast lookup.
+	/// </summary>
+	public new class MethodName : NButton.MethodName
+	{
+		/// <summary>
+		/// Cached name for the '_Ready' method.
+		/// </summary>
+		public new static readonly StringName _Ready = "_Ready";
+
+		/// <summary>
+		/// Cached name for the 'OnFocus' method.
+		/// </summary>
+		public new static readonly StringName OnFocus = "OnFocus";
+
+		/// <summary>
+		/// Cached name for the 'OnUnfocus' method.
+		/// </summary>
+		public new static readonly StringName OnUnfocus = "OnUnfocus";
+
+		/// <summary>
+		/// Cached name for the 'OnPress' method.
+		/// </summary>
+		public new static readonly StringName OnPress = "OnPress";
+
+		/// <summary>
+		/// Cached name for the 'OnRelease' method.
+		/// </summary>
+		public new static readonly StringName OnRelease = "OnRelease";
+
+		/// <summary>
+		/// Cached name for the 'UnhoverSelection' method.
+		/// </summary>
+		public static readonly StringName UnhoverSelection = "UnhoverSelection";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the properties and fields contained in this class, for fast lookup.
+	/// </summary>
+	public new class PropertyName : NButton.PropertyName
+	{
+		/// <summary>
+		/// Cached name for the 'Text' property.
+		/// </summary>
+		public static readonly StringName Text = "Text";
+
+		/// <summary>
+		/// Cached name for the '_highlight' field.
+		/// </summary>
+		public static readonly StringName _highlight = "_highlight";
+
+		/// <summary>
+		/// Cached name for the '_label' field.
+		/// </summary>
+		public static readonly StringName _label = "_label";
+
+		/// <summary>
+		/// Cached name for the '_richLabel' field.
+		/// </summary>
+		public static readonly StringName _richLabel = "_richLabel";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the signals contained in this class, for fast lookup.
+	/// </summary>
+	public new class SignalName : NButton.SignalName
+	{
+		/// <summary>
+		/// Cached name for the 'Selected' signal.
+		/// </summary>
+		public static readonly StringName Selected = "Selected";
+	}
+
+	private ColorRect _highlight;
+
+	protected MegaLabel _label;
+
+	protected MegaRichTextLabel? _richLabel;
+
+	private SelectedEventHandler backing_Selected;
+
+	public string Text
+	{
+		get
+		{
+			return _label.Text;
+		}
+		set
+		{
+			_label.SetTextAutoSize(value);
+		}
+	}
+
+	/// <inheritdoc cref="T:MegaCrit.Sts2.Core.Nodes.CommonUi.NDropdownItem.SelectedEventHandler" />
+	public event SelectedEventHandler Selected
+	{
+		add
+		{
+			backing_Selected = (SelectedEventHandler)Delegate.Combine(backing_Selected, value);
+		}
+		remove
+		{
+			backing_Selected = (SelectedEventHandler)Delegate.Remove(backing_Selected, value);
+		}
+	}
+
+	public override void _Ready()
+	{
+		ConnectSignals();
+		_highlight = GetNode<ColorRect>("Highlight");
+		_label = GetNodeOrNull<MegaLabel>("Label");
+		_richLabel = GetNodeOrNull<MegaRichTextLabel>("RichLabel");
+	}
+
+	protected override void OnFocus()
+	{
+		_highlight.Visible = true;
+	}
+
+	protected override void OnUnfocus()
+	{
+		_highlight.Visible = false;
+	}
+
+	protected override void OnPress()
+	{
+		_highlight.Visible = false;
+	}
+
+	protected sealed override void OnRelease()
+	{
+		_highlight.Visible = true;
+		EmitSignal(SignalName.Selected, this);
+	}
+
+	/// <summary>
+	/// Helper class to access protected method OnUnhover()
+	/// </summary>
+	public void UnhoverSelection()
+	{
+		OnUnfocus();
+	}
+
+	/// <summary>
+	/// Get the method information for all the methods declared in this class.
+	/// This method is used by Godot to register the available methods in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<MethodInfo> GetGodotMethodList()
+	{
+		List<MethodInfo> list = new List<MethodInfo>(6);
+		list.Add(new MethodInfo(MethodName._Ready, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnFocus, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnUnfocus, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnPress, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnRelease, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.UnhoverSelection, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool InvokeGodotClassMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName._Ready && args.Count == 0)
+		{
+			_Ready();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnFocus && args.Count == 0)
+		{
+			OnFocus();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnUnfocus && args.Count == 0)
+		{
+			OnUnfocus();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnPress && args.Count == 0)
+		{
+			OnPress();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnRelease && args.Count == 0)
+		{
+			OnRelease();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.UnhoverSelection && args.Count == 0)
+		{
+			UnhoverSelection();
+			ret = default(godot_variant);
+			return true;
+		}
+		return base.InvokeGodotClassMethod(in method, args, out ret);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool HasGodotClassMethod(in godot_string_name method)
+	{
+		if (method == MethodName._Ready)
+		{
+			return true;
+		}
+		if (method == MethodName.OnFocus)
+		{
+			return true;
+		}
+		if (method == MethodName.OnUnfocus)
+		{
+			return true;
+		}
+		if (method == MethodName.OnPress)
+		{
+			return true;
+		}
+		if (method == MethodName.OnRelease)
+		{
+			return true;
+		}
+		if (method == MethodName.UnhoverSelection)
+		{
+			return true;
+		}
+		return base.HasGodotClassMethod(in method);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool SetGodotClassPropertyValue(in godot_string_name name, in godot_variant value)
+	{
+		if (name == PropertyName.Text)
+		{
+			Text = VariantUtils.ConvertTo<string>(in value);
+			return true;
+		}
+		if (name == PropertyName._highlight)
+		{
+			_highlight = VariantUtils.ConvertTo<ColorRect>(in value);
+			return true;
+		}
+		if (name == PropertyName._label)
+		{
+			_label = VariantUtils.ConvertTo<MegaLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._richLabel)
+		{
+			_richLabel = VariantUtils.ConvertTo<MegaRichTextLabel>(in value);
+			return true;
+		}
+		return base.SetGodotClassPropertyValue(in name, in value);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
+	{
+		if (name == PropertyName.Text)
+		{
+			string from = Text;
+			value = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		if (name == PropertyName._highlight)
+		{
+			value = VariantUtils.CreateFrom(in _highlight);
+			return true;
+		}
+		if (name == PropertyName._label)
+		{
+			value = VariantUtils.CreateFrom(in _label);
+			return true;
+		}
+		if (name == PropertyName._richLabel)
+		{
+			value = VariantUtils.CreateFrom(in _richLabel);
+			return true;
+		}
+		return base.GetGodotClassPropertyValue(in name, out value);
+	}
+
+	/// <summary>
+	/// Get the property information for all the properties declared in this class.
+	/// This method is used by Godot to register the available properties in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<PropertyInfo> GetGodotPropertyList()
+	{
+		List<PropertyInfo> list = new List<PropertyInfo>();
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._highlight, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._label, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._richLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.String, PropertyName.Text, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void SaveGodotObjectData(GodotSerializationInfo info)
+	{
+		base.SaveGodotObjectData(info);
+		StringName text = PropertyName.Text;
+		string from = Text;
+		info.AddProperty(text, Variant.From(in from));
+		info.AddProperty(PropertyName._highlight, Variant.From(in _highlight));
+		info.AddProperty(PropertyName._label, Variant.From(in _label));
+		info.AddProperty(PropertyName._richLabel, Variant.From(in _richLabel));
+		info.AddSignalEventDelegate(SignalName.Selected, backing_Selected);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void RestoreGodotObjectData(GodotSerializationInfo info)
+	{
+		base.RestoreGodotObjectData(info);
+		if (info.TryGetProperty(PropertyName.Text, out var value))
+		{
+			Text = value.As<string>();
+		}
+		if (info.TryGetProperty(PropertyName._highlight, out var value2))
+		{
+			_highlight = value2.As<ColorRect>();
+		}
+		if (info.TryGetProperty(PropertyName._label, out var value3))
+		{
+			_label = value3.As<MegaLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._richLabel, out var value4))
+		{
+			_richLabel = value4.As<MegaRichTextLabel>();
+		}
+		if (info.TryGetSignalEventDelegate<SelectedEventHandler>(SignalName.Selected, out var value5))
+		{
+			backing_Selected = value5;
+		}
+	}
+
+	/// <summary>
+	/// Get the signal information for all the signals declared in this class.
+	/// This method is used by Godot to register the available signals in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<MethodInfo> GetGodotSignalList()
+	{
+		List<MethodInfo> list = new List<MethodInfo>(1);
+		list.Add(new MethodInfo(SignalName.Selected, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "cardHolder", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		return list;
+	}
+
+	protected void EmitSignalSelected(NDropdownItem cardHolder)
+	{
+		EmitSignal(SignalName.Selected, cardHolder);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void RaiseGodotClassSignalCallbacks(in godot_string_name signal, NativeVariantPtrArgs args)
+	{
+		if (signal == SignalName.Selected && args.Count == 1)
+		{
+			backing_Selected?.Invoke(VariantUtils.ConvertTo<NDropdownItem>(in args[0]));
+		}
+		else
+		{
+			base.RaiseGodotClassSignalCallbacks(in signal, args);
+		}
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool HasGodotClassSignal(in godot_string_name signal)
+	{
+		if (signal == SignalName.Selected)
+		{
+			return true;
+		}
+		return base.HasGodotClassSignal(in signal);
+	}
+}

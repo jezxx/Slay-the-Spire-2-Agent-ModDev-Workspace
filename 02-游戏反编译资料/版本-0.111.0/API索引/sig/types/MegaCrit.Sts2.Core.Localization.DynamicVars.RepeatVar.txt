@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.RepeatVar
+    base: MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+
+    field  public static string defaultName
+    method public void .ctor(int times)
+    method public void .ctor(string name, int times)

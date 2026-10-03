@@ -1,0 +1,38 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+
+namespace MegaCrit.Sts2.Core.Models.Relics;
+
+public sealed class JeweledMask : RelicModel
+{
+	public override RelicRarity Rarity => RelicRarity.Ancient;
+
+	public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
+	{
+		if (player != base.Owner || base.Owner.PlayerCombatState.TurnNumber > 1)
+		{
+			return;
+		}
+		IReadOnlyList<CardModel> cards = PileType.Draw.GetPile(player).Cards;
+		List<CardModel> list = cards.Where((CardModel c) => c.Type == CardType.Power).ToList();
+		if (list.Count != 0)
+		{
+			List<CardModel> list2 = list.Where((CardModel c) => !c.Keywords.Contains(CardKeyword.Innate)).ToList();
+			if (list2.Count > 0)
+			{
+				list = list2;
+			}
+			CardModel cardModel = player.RunState.Rng.CombatCardSelection.NextItem(list);
+			Flash();
+			cardModel.SetToFreeThisTurn();
+			await CardPileCmd.Add(cardModel, PileType.Hand);
+		}
+	}
+}

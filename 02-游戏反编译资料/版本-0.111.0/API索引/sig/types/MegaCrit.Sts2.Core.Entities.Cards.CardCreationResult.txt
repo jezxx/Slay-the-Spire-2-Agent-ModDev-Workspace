@@ -1,0 +1,15 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardCreationResult
+    base: System.Object
+
+    field  public readonly MegaCrit.Sts2.Core.Models.CardModel originalCard
+    field  internal MegaCrit.Sts2.Core.Models.CardModel _modifiedCard
+    field  internal readonly System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel> _modifyingRelics
+    prop   MegaCrit.Sts2.Core.Models.CardModel Card { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> ModifyingRelics { public get; }
+    prop   bool HasBeenModified { public get; }
+    method public MegaCrit.Sts2.Core.Models.CardModel get_Card()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> get_ModifyingRelics()
+    method public bool get_HasBeenModified()
+    method public void .ctor(MegaCrit.Sts2.Core.Models.CardModel originalCard)
+    method public void ModifyCard(MegaCrit.Sts2.Core.Models.CardModel card, MegaCrit.Sts2.Core.Models.RelicModel modifyingRelic)
+    method public void ModifyCard(MegaCrit.Sts2.Core.Models.CardModel card)

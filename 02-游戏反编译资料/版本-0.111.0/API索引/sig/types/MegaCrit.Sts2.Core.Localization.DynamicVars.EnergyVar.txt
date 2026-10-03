@@ -1,0 +1,10 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.EnergyVar
+    base: MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+
+    field  public static string defaultName
+    field  internal string <ColorPrefix>k__BackingField
+    prop   string ColorPrefix { public get; public set; }
+    method public string get_ColorPrefix()
+    method public void set_ColorPrefix(string value)
+    method public void .ctor(int energy)
+    method public void .ctor(string name, int energy)

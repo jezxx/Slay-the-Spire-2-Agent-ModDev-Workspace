@@ -1,0 +1,30 @@
+### public class MegaCrit.Sts2.Core.Models.ModelId
+    base: System.Object
+    implements: System.IComparable`1<MegaCrit.Sts2.Core.Models.ModelId>
+    implements: System.IEquatable`1<MegaCrit.Sts2.Core.Models.ModelId>
+
+    field  public static readonly MegaCrit.Sts2.Core.Models.ModelId none
+    field  internal static string _bannedSuffix
+    field  internal readonly string <Category>k__BackingField
+    field  internal readonly string <Entry>k__BackingField
+    prop   System.Type EqualityContract { public get; }
+    prop   string Category { public get; }
+    prop   string Entry { public get; }
+    method public System.Type get_EqualityContract()
+    method public string get_Category()
+    method public string get_Entry()
+    method public void .ctor(string category, string entry)
+    method public static MegaCrit.Sts2.Core.Models.ModelId Deserialize(string json)
+    method public string ToString()
+    method public int CompareTo(MegaCrit.Sts2.Core.Models.ModelId other)
+    method public static string SlugifyCategory<T>()
+    method public static string SlugifyCategory(string category)
+    method public bool PrintMembers(System.Text.StringBuilder builder)
+    method public static bool op_Inequality(MegaCrit.Sts2.Core.Models.ModelId left, MegaCrit.Sts2.Core.Models.ModelId right)
+    method public static bool op_Equality(MegaCrit.Sts2.Core.Models.ModelId left, MegaCrit.Sts2.Core.Models.ModelId right)
+    method public int GetHashCode()
+    method public bool Equals(object obj)
+    method public bool Equals(MegaCrit.Sts2.Core.Models.ModelId other)
+    method public MegaCrit.Sts2.Core.Models.ModelId <Clone>$()
+    method public void .ctor(MegaCrit.Sts2.Core.Models.ModelId original)
+    method internal static void .cctor()

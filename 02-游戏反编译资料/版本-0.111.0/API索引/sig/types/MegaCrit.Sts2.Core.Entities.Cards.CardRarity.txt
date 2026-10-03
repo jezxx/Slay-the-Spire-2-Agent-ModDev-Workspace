@@ -1,0 +1,14 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CardRarity
+    base: System.Enum
+
+    enum None = 0
+    enum Basic = 1
+    enum Common = 2
+    enum Uncommon = 3
+    enum Rare = 4
+    enum Ancient = 5
+    enum Event = 6
+    enum Token = 7
+    enum Status = 8
+    enum Curse = 9
+    enum Quest = 10

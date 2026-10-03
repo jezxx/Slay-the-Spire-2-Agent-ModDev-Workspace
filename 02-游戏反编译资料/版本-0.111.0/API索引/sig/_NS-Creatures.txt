@@ -1,0 +1,5 @@
+MegaCrit.Sts2.Core.Entities.Creatures.Creature  [type] : System.Object
+MegaCrit.Sts2.Core.Entities.Creatures.DamageResult  [type] : System.Object
+MegaCrit.Sts2.Core.Entities.Creatures.HpDisplay  [enum] : System.Enum
+MegaCrit.Sts2.Core.Entities.Creatures.HpDisplayExtensions  [type] : System.Object
+MegaCrit.Sts2.Core.Entities.Creatures.SummonResult  [type] : System.Object

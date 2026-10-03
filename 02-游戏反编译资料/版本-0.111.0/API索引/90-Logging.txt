@@ -1,0 +1,12 @@
+MegaCrit.Sts2.Core.Logging.ConsoleLogPrinter  [class] : System.Object
+MegaCrit.Sts2.Core.Logging.EditorLogPrinter  [class] : System.Object
+MegaCrit.Sts2.Core.Logging.ILogPrinter  [interface]
+MegaCrit.Sts2.Core.Logging.IdAnonymizer  [static] : System.Object
+MegaCrit.Sts2.Core.Logging.Log  [static] : System.Object
+MegaCrit.Sts2.Core.Logging.LogLevel  [enum] : System.Enum
+MegaCrit.Sts2.Core.Logging.LogSanitizer  [static] : System.Object
+MegaCrit.Sts2.Core.Logging.LogSanitizer+<>O  [static] : System.Object
+MegaCrit.Sts2.Core.Logging.LogType  [enum] : System.Enum
+MegaCrit.Sts2.Core.Logging.Logger  [class] : System.Object
+MegaCrit.Sts2.Core.Logging.Logger+<>O  [static] : System.Object
+MegaCrit.Sts2.Core.Logging.Logger+<>c  [class] : System.Object

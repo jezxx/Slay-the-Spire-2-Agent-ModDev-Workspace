@@ -1,0 +1,379 @@
+### public class MegaCrit.Sts2.Core.Models.CardModel
+    base: MegaCrit.Sts2.Core.Models.AbstractModel
+
+    field  internal System.Action AfflictionChanged
+    field  internal System.Action EnchantmentChanged
+    field  internal System.Action EnergyCostChanged
+    field  internal System.Action KeywordsChanged
+    field  internal System.Action ReplayCountChanged
+    field  internal System.Action Played
+    field  internal System.Action Drawn
+    field  internal System.Action StarCostChanged
+    field  internal System.Action Upgraded
+    field  internal System.Action Forged
+    field  internal MegaCrit.Sts2.Core.Localization.LocString _titleLocString
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.CardType <Type>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.CardRarity <Rarity>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Models.CardPoolModel _pool
+    field  internal MegaCrit.Sts2.Core.Entities.Players.Player _owner
+    field  internal readonly int <CanonicalEnergyCost>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost _energyCost
+    field  internal int _baseReplayCount
+    field  internal bool _starCostSet
+    field  internal int _baseStarCost
+    field  internal bool _wasStarCostJustUpgraded
+    field  internal System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost> _temporaryStarCosts
+    field  internal int _lastStarsSpent
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Cards.TargetType <TargetType>k__BackingField
+    field  internal System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> _keywords
+    field  internal System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Cards.CardTag> _tags
+    field  internal MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    field  internal bool _exhaustOnNextPlay
+    field  internal bool _hasSingleTurnRetain
+    field  internal bool _hasSingleTurnSly
+    field  internal MegaCrit.Sts2.Core.Models.EnchantmentModel <Enchantment>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Models.AfflictionModel <Affliction>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Models.CardModel _cloneOf
+    field  internal bool _isDupe
+    field  internal int _currentUpgradeLevel
+    field  internal MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType _upgradePreviewType
+    field  internal readonly bool <ShouldShowInCardLibrary>k__BackingField
+    field  internal bool _isEnchantmentPreview
+    field  internal System.Nullable`1<int> _floorAddedToDeck
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature _currentTarget
+    field  internal int _currentPlayIndex
+    field  internal MegaCrit.Sts2.Core.Models.CardModel _deckVersion
+    field  internal bool <HasBeenRemovedFromState>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Models.CardModel _canonicalInstance
+    prop   MegaCrit.Sts2.Core.Localization.LocString TitleLocString { public get; }
+    prop   string Title { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Description { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { public get; }
+    prop   string PortraitPath { public get; }
+    prop   string BetaPortraitPath { public get; }
+    prop   string MissingPortraitPath { public get; }
+    prop   string PortraitPngPath { public get; }
+    prop   string BetaPortraitPngPath { internal get; }
+    prop   bool HasPortrait { public get; }
+    prop   bool HasBetaPortrait { public get; }
+    prop   Godot.Texture2D Portrait { public get; }
+    prop   string FramePath { internal get; }
+    prop   Godot.Texture2D Frame { public get; }
+    prop   string PortraitBorderPath { internal get; }
+    prop   string AncientBorderPath { internal get; }
+    prop   string AncientTextBgPath { internal get; }
+    prop   Godot.Texture2D AncientTextBg { public get; }
+    prop   Godot.Texture2D AncientBorder { public get; }
+    prop   Godot.Texture2D PortraitBorder { public get; }
+    prop   string EnergyIconPath { internal get; }
+    prop   Godot.Texture2D EnergyIcon { public get; }
+    prop   MegaCrit.Sts2.Core.HoverTips.IHoverTip EnergyHoverTip { public get; }
+    prop   string BannerTexturePath { internal get; }
+    prop   Godot.Texture2D BannerTexture { public get; }
+    prop   string BannerMaterialPath { internal get; }
+    prop   Godot.Material BannerMaterial { public get; }
+    prop   Godot.Material FrameMaterial { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardType Type { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardRarity Rarity { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardMultiplayerConstraint MultiplayerConstraint { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardPoolModel Pool { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardPoolModel VisualCardPool { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.Player Owner { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardPile Pile { public get; }
+    prop   int CanonicalEnergyCost { public get; }
+    prop   bool HasEnergyCostX { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost EnergyCost { public get; }
+    prop   int BaseReplayCount { public get; public set; }
+    prop   int CanonicalStarCost { public get; }
+    prop   int BaseStarCost { public get; internal set; }
+    prop   bool WasStarCostJustUpgraded { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost TemporaryStarCost { public get; }
+    prop   int CurrentStarCost { public get; }
+    prop   bool HasStarCostX { public get; }
+    prop   int LastStarsSpent { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.TargetType TargetType { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> CanonicalKeywords { public get; }
+    prop   System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> LocalKeywords { internal get; }
+    prop   System.Collections.Generic.IReadOnlySet`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> Keywords { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Cards.CardTag> Tags { public get; }
+    prop   System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Cards.CardTag> CanonicalTags { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { public get; }
+    prop   bool ExhaustOnNextPlay { public get; public set; }
+    prop   bool HasSingleTurnRetain { internal get; internal set; }
+    prop   bool ShouldRetainThisTurn { public get; }
+    prop   bool HasSingleTurnSly { internal get; internal set; }
+    prop   bool IsSlyThisTurn { public get; }
+    prop   MegaCrit.Sts2.Core.Models.EnchantmentModel Enchantment { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Models.AfflictionModel Affliction { public get; internal set; }
+    prop   bool CanBeGeneratedInCombat { public get; }
+    prop   bool CanBeGeneratedByModifiers { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.OrbEvokeType OrbEvokeType { public get; }
+    prop   bool GainsBlock { public get; }
+    prop   bool IsBasicStrikeOrDefend { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardModel CloneOf { public get; }
+    prop   bool IsClone { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardModel DupeOf { public get; }
+    prop   bool IsDupe { public get; internal set; }
+    prop   bool IsRemovable { public get; }
+    prop   bool IsTransformable { public get; }
+    prop   bool IsInCombat { public get; }
+    prop   int CurrentUpgradeLevel { public get; internal set; }
+    prop   int MaxUpgradeLevel { public get; }
+    prop   bool IsUpgraded { public get; }
+    prop   bool IsUpgradable { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType UpgradePreviewType { public get; public set; }
+    prop   bool IsPlayable { public get; }
+    prop   bool ShouldShowInCardLibrary { public get; }
+    prop   bool ShouldGlowGold { public get; }
+    prop   bool ShouldGlowRed { public get; }
+    prop   bool ShouldGlowGoldInternal { public get; }
+    prop   bool ShouldGlowRedInternal { public get; }
+    prop   bool IsEnchantmentPreview { public get; public set; }
+    prop   bool HasBuiltInOverlay { public get; }
+    prop   string OverlayPath { public get; }
+    prop   System.Nullable`1<int> FloorAddedToDeck { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature CurrentTarget { public get; internal set; }
+    prop   int CurrentPlayIndex { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Models.CardModel DeckVersion { public get; public set; }
+    prop   bool HasBeenRemovedFromState { public get; public set; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardModel CanonicalInstance { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Runs.IRunState RunState { public get; }
+    prop   MegaCrit.Sts2.Core.Combat.ICombatState CombatState { public get; }
+    prop   MegaCrit.Sts2.Core.Runs.ICardScope CardScope { public get; }
+    prop   bool HasTurnEndInHandEffect { public get; }
+    prop   bool ShouldReceiveCombatHooks { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<string> AllPortraitPaths { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<string> RunAssetPaths { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<string> ExtraRunAssetPaths { public get; }
+    method public void .ctor(int canonicalEnergyCost, MegaCrit.Sts2.Core.Entities.Cards.CardType type, MegaCrit.Sts2.Core.Entities.Cards.CardRarity rarity, MegaCrit.Sts2.Core.Entities.Cards.TargetType targetType, bool shouldShowInCardLibrary)
+    method public void add_AfflictionChanged(System.Action value)
+    method public void remove_AfflictionChanged(System.Action value)
+    method public void add_EnchantmentChanged(System.Action value)
+    method public void remove_EnchantmentChanged(System.Action value)
+    method public void add_EnergyCostChanged(System.Action value)
+    method public void remove_EnergyCostChanged(System.Action value)
+    method public void add_KeywordsChanged(System.Action value)
+    method public void remove_KeywordsChanged(System.Action value)
+    method public void add_ReplayCountChanged(System.Action value)
+    method public void remove_ReplayCountChanged(System.Action value)
+    method public void add_Played(System.Action value)
+    method public void remove_Played(System.Action value)
+    method public void add_Drawn(System.Action value)
+    method public void remove_Drawn(System.Action value)
+    method public void add_StarCostChanged(System.Action value)
+    method public void remove_StarCostChanged(System.Action value)
+    method public void add_Upgraded(System.Action value)
+    method public void remove_Upgraded(System.Action value)
+    method public void add_Forged(System.Action value)
+    method public void remove_Forged(System.Action value)
+    method public MegaCrit.Sts2.Core.Localization.LocString get_TitleLocString()
+    method public string get_Title()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    method public string get_PortraitPath()
+    method public string get_BetaPortraitPath()
+    method public static string get_MissingPortraitPath()
+    method public string get_PortraitPngPath()
+    method internal string get_BetaPortraitPngPath()
+    method public bool get_HasPortrait()
+    method public bool get_HasBetaPortrait()
+    method public Godot.Texture2D get_Portrait()
+    method internal string get_FramePath()
+    method public Godot.Texture2D get_Frame()
+    method internal string get_PortraitBorderPath()
+    method internal static string get_AncientBorderPath()
+    method internal string get_AncientTextBgPath()
+    method public Godot.Texture2D get_AncientTextBg()
+    method public Godot.Texture2D get_AncientBorder()
+    method public Godot.Texture2D get_PortraitBorder()
+    method internal string get_EnergyIconPath()
+    method public Godot.Texture2D get_EnergyIcon()
+    method public MegaCrit.Sts2.Core.HoverTips.IHoverTip get_EnergyHoverTip()
+    method internal string get_BannerTexturePath()
+    method public Godot.Texture2D get_BannerTexture()
+    method internal string get_BannerMaterialPath()
+    method public Godot.Material get_BannerMaterial()
+    method public Godot.Material get_FrameMaterial()
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardType get_Type()
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardRarity get_Rarity()
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardMultiplayerConstraint get_MultiplayerConstraint()
+    method public MegaCrit.Sts2.Core.Models.CardPoolModel get_Pool()
+    method public MegaCrit.Sts2.Core.Models.CardPoolModel get_VisualCardPool()
+    method public MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    method public void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardPile get_Pile()
+    method public int get_CanonicalEnergyCost()
+    method public bool get_HasEnergyCostX()
+    method public void MockSetEnergyCost(MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost cost)
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost get_EnergyCost()
+    method public void InvokeEnergyCostChanged()
+    method public int ResolveEnergyXValue()
+    method public int get_BaseReplayCount()
+    method public void set_BaseReplayCount(int value)
+    method public int GetEnchantedReplayCount()
+    method public int get_CanonicalStarCost()
+    method public int get_BaseStarCost()
+    method internal void set_BaseStarCost(int value)
+    method public bool get_WasStarCostJustUpgraded()
+    method public MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost get_TemporaryStarCost()
+    method public int get_CurrentStarCost()
+    method public bool get_HasStarCostX()
+    method public int get_LastStarsSpent()
+    method public void set_LastStarsSpent(int value)
+    method public int ResolveStarXValue()
+    method public MegaCrit.Sts2.Core.Entities.Cards.TargetType get_TargetType()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> get_CanonicalKeywords()
+    method internal System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> get_LocalKeywords()
+    method public System.Collections.Generic.IReadOnlySet`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> get_Keywords()
+    method public System.Collections.Generic.IReadOnlySet`1<MegaCrit.Sts2.Core.Entities.Cards.CardKeyword> GetKeywordsWithSources(MegaCrit.Sts2.Core.Entities.Cards.KeywordSources sources)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Cards.CardTag> get_Tags()
+    method public System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Cards.CardTag> get_CanonicalTags()
+    method public MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    method public bool get_ExhaustOnNextPlay()
+    method public void set_ExhaustOnNextPlay(bool value)
+    method internal bool get_HasSingleTurnRetain()
+    method internal void set_HasSingleTurnRetain(bool value)
+    method public bool get_ShouldRetainThisTurn()
+    method internal bool get_HasSingleTurnSly()
+    method internal void set_HasSingleTurnSly(bool value)
+    method public bool get_IsSlyThisTurn()
+    method public MegaCrit.Sts2.Core.Models.EnchantmentModel get_Enchantment()
+    method internal void set_Enchantment(MegaCrit.Sts2.Core.Models.EnchantmentModel value)
+    method public MegaCrit.Sts2.Core.Models.AfflictionModel get_Affliction()
+    method internal void set_Affliction(MegaCrit.Sts2.Core.Models.AfflictionModel value)
+    method public bool get_CanBeGeneratedInCombat()
+    method public bool get_CanBeGeneratedByModifiers()
+    method public MegaCrit.Sts2.Core.Entities.Cards.OrbEvokeType get_OrbEvokeType()
+    method public bool get_GainsBlock()
+    method public bool get_IsBasicStrikeOrDefend()
+    method public MegaCrit.Sts2.Core.Models.CardModel get_CloneOf()
+    method public bool get_IsClone()
+    method public MegaCrit.Sts2.Core.Models.CardModel get_DupeOf()
+    method public bool get_IsDupe()
+    method internal void set_IsDupe(bool value)
+    method public bool get_IsRemovable()
+    method public bool get_IsTransformable()
+    method public bool get_IsInCombat()
+    method public int get_CurrentUpgradeLevel()
+    method internal void set_CurrentUpgradeLevel(int value)
+    method public int get_MaxUpgradeLevel()
+    method public bool get_IsUpgraded()
+    method public bool get_IsUpgradable()
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType get_UpgradePreviewType()
+    method public void set_UpgradePreviewType(MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType value)
+    method public bool get_IsPlayable()
+    method public bool get_ShouldShowInCardLibrary()
+    method public bool get_ShouldGlowGold()
+    method public bool get_ShouldGlowRed()
+    method public bool get_ShouldGlowGoldInternal()
+    method public bool get_ShouldGlowRedInternal()
+    method public bool get_IsEnchantmentPreview()
+    method public void set_IsEnchantmentPreview(bool value)
+    method public bool get_HasBuiltInOverlay()
+    method public string get_OverlayPath()
+    method public Godot.Control CreateOverlay()
+    method public System.Nullable`1<int> get_FloorAddedToDeck()
+    method public void set_FloorAddedToDeck(System.Nullable`1<int> value)
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_CurrentTarget()
+    method internal void set_CurrentTarget(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    method public int get_CurrentPlayIndex()
+    method internal void set_CurrentPlayIndex(int value)
+    method public MegaCrit.Sts2.Core.Models.CardModel get_DeckVersion()
+    method public void set_DeckVersion(MegaCrit.Sts2.Core.Models.CardModel value)
+    method public bool get_HasBeenRemovedFromState()
+    method public void set_HasBeenRemovedFromState(bool value)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method public MegaCrit.Sts2.Core.Models.CardModel get_CanonicalInstance()
+    method internal void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.CardModel value)
+    method public MegaCrit.Sts2.Core.Runs.IRunState get_RunState()
+    method public MegaCrit.Sts2.Core.Combat.ICombatState get_CombatState()
+    method public MegaCrit.Sts2.Core.Runs.ICardScope get_CardScope()
+    method public MegaCrit.Sts2.Core.Models.CardModel ToMutable()
+    method public void DeepCloneFields()
+    method public void AfterCloned()
+    method public void AfterCreated()
+    method public void AfterDeserialized()
+    method public void NeverEverCallThisOutsideOfTests_ClearOwner()
+    method public void SetToFreeThisTurn()
+    method public void SetToFreeThisCombat()
+    method public void SetStarCostUntilPlayed(int cost)
+    method public void SetStarCostThisTurn(int cost)
+    method public void SetStarCostThisCombat(int cost)
+    method public int GetStarCostThisCombat()
+    method internal void AddTemporaryStarCost(MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost cost)
+    method public void UpgradeStarCostBy(int addend)
+    method public void AddKeyword(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    method public void RemoveKeyword(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    method public void GiveSingleTurnRetain()
+    method public void GiveSingleTurnSly()
+    method public string GetDescriptionForPile(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public string GetDescriptionForUpgradePreview()
+    method internal string GetDescriptionForPile(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Models.CardModel+DescriptionPreviewType previewType, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public void UpdateDynamicVarPreview(MegaCrit.Sts2.Core.Entities.Cards.CardPreviewMode previewMode, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet dynamicVarSet)
+    method public void EnchantInternal(MegaCrit.Sts2.Core.Models.EnchantmentModel enchantment, System.Decimal amount)
+    method public void AfflictInternal(MegaCrit.Sts2.Core.Models.AfflictionModel affliction, System.Decimal amount)
+    method public void ClearEnchantmentInternal()
+    method public void ClearAfflictionInternal()
+    method public void AddExtraArgsToDescription(MegaCrit.Sts2.Core.Localization.LocString description)
+    method public int GetStarCostWithModifiers()
+    method public bool CostsEnergyOrStars(bool includeGlobalModifiers)
+    method public void RemoveFromCurrentPile(bool silent)
+    method public void RemoveFromState()
+    method public void EndOfTurnCleanup()
+    method public void AfterTransformedFrom()
+    method public void AfterTransformedTo()
+    method public void AfterForged()
+    method public System.Threading.Tasks.Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public System.Threading.Tasks.Task OnEnqueuePlayVfx(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public void OnUpgrade()
+    method public bool get_HasTurnEndInHandEffect()
+    method public System.Threading.Tasks.Task OnTurnEndInHand(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    method public System.Threading.Tasks.Task OnTurnEndInHandWrapper(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    method public bool CanPlayTargeting(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public bool CanPlay()
+    method public bool CanPlay(MegaCrit.Sts2.Core.Entities.Cards.UnplayableReason& reason, MegaCrit.Sts2.Core.Models.AbstractModel& preventer)
+    method public bool IsValidTarget(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public bool TryManualPlay(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method internal void EnqueueManualPlay(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public System.Threading.Tasks.Task`1<System.ValueTuple`2<int, int>> SpendResources()
+    method internal System.Threading.Tasks.Task SpendEnergy(int amount)
+    method internal System.Threading.Tasks.Task SpendStars(int amount)
+    method public System.Threading.Tasks.Task OnPlayWrapper(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, bool isAutoPlay, MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo resources, bool skipCardPileVisuals)
+    method public System.Threading.Tasks.Task`1<int> GeneratePlayCount(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method internal System.Threading.Tasks.Task PlayPowerCardFlyVfx()
+    method public MegaCrit.Sts2.Core.Entities.Cards.CardLocation GetResultLocationForCardPlay()
+    method public System.Threading.Tasks.Task MoveToResultPileWithoutPlaying(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    method public void UpgradeInternal()
+    method public void FinalizeUpgradeInternal()
+    method public void DowngradeInternal()
+    method public void AfterDowngraded()
+    method public void InvokeDrawn()
+    method public MegaCrit.Sts2.Core.Models.CardModel CreateClone()
+    method public MegaCrit.Sts2.Core.Models.CardModel CreateCloneForPlayer(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public void GiveToAnotherPlayer(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public MegaCrit.Sts2.Core.Models.CardModel CreateDupe(MegaCrit.Sts2.Core.Entities.Players.Player newOwner)
+    method public bool get_ShouldReceiveCombatHooks()
+    method public MegaCrit.Sts2.Core.Saves.Runs.SerializableCard ToSerializable()
+    method public static MegaCrit.Sts2.Core.Models.CardModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableCard save)
+    method public int CompareTo(MegaCrit.Sts2.Core.Models.AbstractModel other)
+    method public System.Collections.Generic.IEnumerable`1<string> get_AllPortraitPaths()
+    method public System.Collections.Generic.IEnumerable`1<string> get_RunAssetPaths()
+    method public System.Collections.Generic.IEnumerable`1<string> get_ExtraRunAssetPaths()
+    method internal bool <get_Pool>b__99_0(MegaCrit.Sts2.Core.Models.CardPoolModel pool)
+    method internal bool <get_Pile>b__107_0(MegaCrit.Sts2.Core.Entities.Cards.CardPile p)
+    method internal bool <UpgradeStarCostBy>b__301_0(MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost c)
+    event  System.Action AfflictionChanged
+    event  System.Action EnchantmentChanged
+    event  System.Action EnergyCostChanged
+    event  System.Action KeywordsChanged
+    event  System.Action ReplayCountChanged
+    event  System.Action Played
+    event  System.Action Drawn
+    event  System.Action StarCostChanged
+    event  System.Action Upgraded
+    event  System.Action Forged

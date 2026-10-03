@@ -1,0 +1,12 @@
+### public class MegaCrit.Sts2.Core.Commands.Builders.AttackContext
+    base: System.Object
+    implements: System.IAsyncDisposable
+
+    field  internal readonly MegaCrit.Sts2.Core.Combat.ICombatState _combatState
+    field  internal readonly MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext _choiceContext
+    field  internal readonly MegaCrit.Sts2.Core.Commands.Builders.AttackCommand _attackCommand
+    field  internal bool _disposed
+    method internal void .ctor(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Commands.Builders.AttackContext> CreateAsync(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public void AddHit(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Entities.Creatures.DamageResult> results)
+    method public System.Threading.Tasks.ValueTask DisposeAsync()

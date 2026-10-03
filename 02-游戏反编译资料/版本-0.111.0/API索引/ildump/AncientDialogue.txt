@@ -1,0 +1,242 @@
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue.PopulateLines(ancientEntry, charEntry, dialogueIndex)  [attrs=0x86] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  12 03 1F 09 19 28 ED 00 00 0A 12 03 03 28 50 02 00 0A 12 03 72 B1 48 02 70 28 F5 00 00 0A 12 03 04 28 50 02 00 0A 12 03 72 CA 0E 00 70 28 F5 00 00 0A 12 03 05 28 17 00 00 2B 12 03 72 55 9F 03 70 28 F5 00 00 0A 12 03 28 EF 00 00 0A 0A 06 28 C0 52 00 06 0B 07 2C 07 02 17 28 B7 52 00 06 07 2D 07 72 05 01 00 70 2B 05 72 5B 9F 03 70 0C 16 13 04 38 17 02 00 00 12 03 1E 1A 28 ED 00 00 0A 12 03 03 28 50 02 00 0A 12 03 72 B1 48 02 70 28 F5 00 00 0A 12 03 04 28 50 02 00 0A 12 03 72 CA 0E 00 70 28 F5 00 00 0A 12 03 05 28 17 00 00 2B 12 03 72 1D DC 02 70 28 F5 00 00 0A 12 03 11 04 28 17 00 00 2B 12 03 28 EF 00 00 0A 13 05 11 05 28 C0 52 00 06 13 06 07 39 87 00 00 00 11 06 3A 80 00 00 00 12 03 1F 3B 1A 28 ED 00 00 0A 12 03 72 5F 9F 03 70 28 F5 00 00 0A 12 03 03 28 50 02 00 0A 12 03 72 B1 48 02 70 28 F5 00 00 0A 12 03 04 28 50 02 00 0A 12 03 72 CA 0E 00 70 28 F5 00 00 0A 12 03 05 28 17 00 00 2B 12 03 72 99 1D 00 70 28 F5 00 00 0A 12 03 72 73 9F 03 70 28 F5 00 00 0A 12 03 11 04 28 17 00 00 2B 12 03 72 B3 9F 03 70 28 F5 00 00 0A 12 03 28 EF 00 00 0A 73 F5 01 00 0A 7A 07 16 FE 01 11 06 5F 39 80 00 00 00 12 03 1F 3A 1A 28 ED 00 00 0A 12 03 72 5F 9F 03 70 28 F5 00 00 0A 12 03 03 28 50 02 00 0A 12 03 72 B1 48 02 70 28 F5 00 00 0A 12 03 04 28 50 02 00 0A 12 03 72 CA 0E 00 70 28 F5 00 00 0A 12 03 05 28 17 00 00 2B 12 03 72 99 1D 00 70 28 F5 00 00 0A 12 03 72 C9 9F 03 70 28 F5 00 00 0A 12 03 11 04 28 17 00 00 2B 12 03 72 0F A0 03 70 28 F5 00 00 0A 12 03 28 EF 00 00 0A 73 F5 01 00 0A 7A 11 05 08 28 F8 00 00 0A 13 07 11 07 72 1D A0 03 70 28 F8 00 00 0A 13 08 11 07 72 2F A0 03 70 28 F8 00 00 0A 13 09 72 6A 83 01 70 11 08 28 C7 4A 00 06 2C 33 02 28 B5 52 00 06 11 04 6F D9 16 00 0A 72 6A 83 01 70 11 08 73 C2 4A 00 06 6F C2 52 00 06 02 28 B5 52 00 06 11 04 6F D9 16 00 0A 17 6F C6 52 00 06 2B 31 02 28 B5 52 00 06 11 04 6F D9 16 00 0A 72 6A 83 01 70 11 09 73 C2 4A 00 06 6F C2 52 00 06 02 28 B5 52 00 06 11 04 6F D9 16 00 0A 18 6F C6 52 00 06 11 04 17 58 13 04 11 04 02 28 B5 52 00 06 6F D7 16 00 0A 3F D7 FD FF FF 2A
+  -- decoded --
+    IL_0000: ldloca.s       3
+    IL_0002: ldc.i4.s       9
+    IL_0004: ldc.i4.3       
+    IL_0005: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_000A: ldloca.s       3
+    IL_000C: ldarg.1        
+    IL_000D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0012: ldloca.s       3
+    IL_0014: ldstr          ".talk."
+    IL_0019: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_001E: ldloca.s       3
+    IL_0020: ldarg.2        
+    IL_0021: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0026: ldloca.s       3
+    IL_0028: ldstr          "."
+    IL_002D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0032: ldloca.s       3
+    IL_0034: ldarg.3        
+    IL_0035: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_003A: ldloca.s       3
+    IL_003C: ldstr          "-0"
+    IL_0041: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0046: ldloca.s       3
+    IL_0048: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_004D: stloc.0        
+    IL_004E: ldloc.0        
+    IL_004F: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::HasRepeatingSuffix
+    IL_0054: stloc.1        
+    IL_0055: ldloc.1        
+    IL_0056: brfalse.s      IL_005F
+    IL_0058: ldarg.0        
+    IL_0059: ldc.i4.1       
+    IL_005A: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_IsRepeating
+    IL_005F: ldloc.1        
+    IL_0060: brtrue.s       IL_0069
+    IL_0062: ldstr          ""
+    IL_0067: br.s           IL_006E
+    IL_0069: ldstr          "r"
+    IL_006E: stloc.2        
+    IL_006F: ldc.i4.0       
+    IL_0070: stloc.s        4
+    IL_0072: br             IL_028E
+    IL_0077: ldloca.s       3
+    IL_0079: ldc.i4.8       
+    IL_007A: ldc.i4.4       
+    IL_007B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0080: ldloca.s       3
+    IL_0082: ldarg.1        
+    IL_0083: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0088: ldloca.s       3
+    IL_008A: ldstr          ".talk."
+    IL_008F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0094: ldloca.s       3
+    IL_0096: ldarg.2        
+    IL_0097: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_009C: ldloca.s       3
+    IL_009E: ldstr          "."
+    IL_00A3: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_00A8: ldloca.s       3
+    IL_00AA: ldarg.3        
+    IL_00AB: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_00B0: ldloca.s       3
+    IL_00B2: ldstr          "-"
+    IL_00B7: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_00BC: ldloca.s       3
+    IL_00BE: ldloc.s        4
+    IL_00C0: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_00C5: ldloca.s       3
+    IL_00C7: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_00CC: stloc.s        5
+    IL_00CE: ldloc.s        5
+    IL_00D0: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::HasRepeatingSuffix
+    IL_00D5: stloc.s        6
+    IL_00D7: ldloc.1        
+    IL_00D8: brfalse        IL_0164
+    IL_00DD: ldloc.s        6
+    IL_00DF: brtrue         IL_0164
+    IL_00E4: ldloca.s       3
+    IL_00E6: ldc.i4.s       59
+    IL_00E8: ldc.i4.4       
+    IL_00E9: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_00EE: ldloca.s       3
+    IL_00F0: ldstr          "Dialogue "
+    IL_00F5: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_00FA: ldloca.s       3
+    IL_00FC: ldarg.1        
+    IL_00FD: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0102: ldloca.s       3
+    IL_0104: ldstr          ".talk."
+    IL_0109: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_010E: ldloca.s       3
+    IL_0110: ldarg.2        
+    IL_0111: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0116: ldloca.s       3
+    IL_0118: ldstr          "."
+    IL_011D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0122: ldloca.s       3
+    IL_0124: ldarg.3        
+    IL_0125: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_012A: ldloca.s       3
+    IL_012C: ldstr          ": "
+    IL_0131: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0136: ldloca.s       3
+    IL_0138: ldstr          "line 0 has 'r' suffix but line "
+    IL_013D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0142: ldloca.s       3
+    IL_0144: ldloc.s        4
+    IL_0146: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_014B: ldloca.s       3
+    IL_014D: ldstr          " does not."
+    IL_0152: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0157: ldloca.s       3
+    IL_0159: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_015E: newobj         System.InvalidOperationException::.ctor
+    IL_0163: throw          
+    IL_0164: ldloc.1        
+    IL_0165: ldc.i4.0       
+    IL_0166: ceq            
+    IL_0168: ldloc.s        6
+    IL_016A: and            
+    IL_016B: brfalse        IL_01F0
+    IL_0170: ldloca.s       3
+    IL_0172: ldc.i4.s       58
+    IL_0174: ldc.i4.4       
+    IL_0175: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_017A: ldloca.s       3
+    IL_017C: ldstr          "Dialogue "
+    IL_0181: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0186: ldloca.s       3
+    IL_0188: ldarg.1        
+    IL_0189: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_018E: ldloca.s       3
+    IL_0190: ldstr          ".talk."
+    IL_0195: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_019A: ldloca.s       3
+    IL_019C: ldarg.2        
+    IL_019D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_01A2: ldloca.s       3
+    IL_01A4: ldstr          "."
+    IL_01A9: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_01AE: ldloca.s       3
+    IL_01B0: ldarg.3        
+    IL_01B1: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_01B6: ldloca.s       3
+    IL_01B8: ldstr          ": "
+    IL_01BD: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_01C2: ldloca.s       3
+    IL_01C4: ldstr          "line 0 has no 'r' suffix but line "
+    IL_01C9: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_01CE: ldloca.s       3
+    IL_01D0: ldloc.s        4
+    IL_01D2: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_01D7: ldloca.s       3
+    IL_01D9: ldstr          " does."
+    IL_01DE: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_01E3: ldloca.s       3
+    IL_01E5: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_01EA: newobj         System.InvalidOperationException::.ctor
+    IL_01EF: throw          
+    IL_01F0: ldloc.s        5
+    IL_01F2: ldloc.2        
+    IL_01F3: call           System.String::Concat
+    IL_01F8: stloc.s        7
+    IL_01FA: ldloc.s        7
+    IL_01FC: ldstr          ".ancient"
+    IL_0201: call           System.String::Concat
+    IL_0206: stloc.s        8
+    IL_0208: ldloc.s        7
+    IL_020A: ldstr          ".char"
+    IL_020F: call           System.String::Concat
+    IL_0214: stloc.s        9
+    IL_0216: ldstr          "ancients"
+    IL_021B: ldloc.s        8
+    IL_021D: call           MegaCrit.Sts2.Core.Localization.LocString::Exists
+    IL_0222: brfalse.s      IL_0257
+    IL_0224: ldarg.0        
+    IL_0225: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_022A: ldloc.s        4
+    IL_022C: callvirt       <typespec>::get_Item
+    IL_0231: ldstr          "ancients"
+    IL_0236: ldloc.s        8
+    IL_0238: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_023D: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::set_LineText
+    IL_0242: ldarg.0        
+    IL_0243: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_0248: ldloc.s        4
+    IL_024A: callvirt       <typespec>::get_Item
+    IL_024F: ldc.i4.1       
+    IL_0250: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::set_Speaker
+    IL_0255: br.s           IL_0288
+    IL_0257: ldarg.0        
+    IL_0258: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_025D: ldloc.s        4
+    IL_025F: callvirt       <typespec>::get_Item
+    IL_0264: ldstr          "ancients"
+    IL_0269: ldloc.s        9
+    IL_026B: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_0270: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::set_LineText
+    IL_0275: ldarg.0        
+    IL_0276: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_027B: ldloc.s        4
+    IL_027D: callvirt       <typespec>::get_Item
+    IL_0282: ldc.i4.2       
+    IL_0283: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::set_Speaker
+    IL_0288: ldloc.s        4
+    IL_028A: ldc.i4.1       
+    IL_028B: add            
+    IL_028C: stloc.s        4
+    IL_028E: ldloc.s        4
+    IL_0290: ldarg.0        
+    IL_0291: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_0296: callvirt       <typespec>::get_Count
+    IL_029B: blt            IL_0077
+    IL_02A0: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue.HasRepeatingSuffix(baseKey)  [attrs=0x91] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 6A 83 01 70 02 72 3B A0 03 70 28 F8 00 00 0A 28 C7 4A 00 06 2D 16 72 6A 83 01 70 02 72 4F A0 03 70 28 F8 00 00 0A 28 C7 4A 00 06 2A 17 2A
+  -- decoded --
+    IL_0000: ldstr          "ancients"
+    IL_0005: ldarg.0        
+    IL_0006: ldstr          "r.ancient"
+    IL_000B: call           System.String::Concat
+    IL_0010: call           MegaCrit.Sts2.Core.Localization.LocString::Exists
+    IL_0015: brtrue.s       IL_002D
+    IL_0017: ldstr          "ancients"
+    IL_001C: ldarg.0        
+    IL_001D: ldstr          "r.char"
+    IL_0022: call           System.String::Concat
+    IL_0027: call           MegaCrit.Sts2.Core.Localization.LocString::Exists
+    IL_002C: ret            
+    IL_002D: ldc.i4.1       
+    IL_002E: ret            
+
+

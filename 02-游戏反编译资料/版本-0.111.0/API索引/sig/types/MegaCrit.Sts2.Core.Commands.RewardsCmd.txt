@@ -1,0 +1,7 @@
+### public class MegaCrit.Sts2.Core.Commands.RewardsCmd
+    base: System.Object
+
+    method public static System.Threading.Tasks.Task OfferForRoomEnd(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Rooms.AbstractRoom room)
+    method public static System.Threading.Tasks.Task OfferCustom(MegaCrit.Sts2.Core.Entities.Players.Player player, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Rewards.Reward> rewards)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Rewards.RewardsSet> GenerateForRoomEnd(MegaCrit.Sts2.Core.Entities.Players.Player player, MegaCrit.Sts2.Core.Rooms.AbstractRoom room)
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Rewards.RewardsSet> GenerateCustom(MegaCrit.Sts2.Core.Entities.Players.Player player, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Rewards.Reward> rewards)

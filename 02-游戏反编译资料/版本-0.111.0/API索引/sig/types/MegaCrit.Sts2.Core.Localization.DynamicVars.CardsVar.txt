@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.CardsVar
+    base: MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+
+    field  public static string defaultName
+    method public void .ctor(int cards)
+    method public void .ctor(string name, int cards)

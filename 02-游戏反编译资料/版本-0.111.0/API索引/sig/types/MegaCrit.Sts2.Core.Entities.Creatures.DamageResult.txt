@@ -1,0 +1,36 @@
+### public class MegaCrit.Sts2.Core.Entities.Creatures.DamageResult
+    base: System.Object
+
+    field  internal readonly MegaCrit.Sts2.Core.Entities.Creatures.Creature <Receiver>k__BackingField
+    field  internal readonly MegaCrit.Sts2.Core.ValueProps.ValueProp <Props>k__BackingField
+    field  internal int <BlockedDamage>k__BackingField
+    field  internal readonly int <UnblockedDamage>k__BackingField
+    field  internal readonly int <OverkillDamage>k__BackingField
+    field  internal bool <WasBlockBroken>k__BackingField
+    field  internal bool <WasFullyBlocked>k__BackingField
+    field  internal readonly bool <WasTargetKilled>k__BackingField
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Receiver { public get; }
+    prop   MegaCrit.Sts2.Core.ValueProps.ValueProp Props { public get; }
+    prop   int BlockedDamage { public get; public set; }
+    prop   int UnblockedDamage { public get; public set; }
+    prop   int OverkillDamage { public get; public set; }
+    prop   int TotalDamage { public get; }
+    prop   bool WasBlockBroken { public get; public set; }
+    prop   bool WasFullyBlocked { public get; public set; }
+    prop   bool WasTargetKilled { public get; public set; }
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Receiver()
+    method public MegaCrit.Sts2.Core.ValueProps.ValueProp get_Props()
+    method public int get_BlockedDamage()
+    method public void set_BlockedDamage(int value)
+    method public int get_UnblockedDamage()
+    method public void set_UnblockedDamage(int value)
+    method public int get_OverkillDamage()
+    method public void set_OverkillDamage(int value)
+    method public int get_TotalDamage()
+    method public bool get_WasBlockBroken()
+    method public void set_WasBlockBroken(bool value)
+    method public bool get_WasFullyBlocked()
+    method public void set_WasFullyBlocked(bool value)
+    method public bool get_WasTargetKilled()
+    method public void set_WasTargetKilled(bool value)
+    method public void .ctor(MegaCrit.Sts2.Core.Entities.Creatures.Creature receiver, MegaCrit.Sts2.Core.ValueProps.ValueProp props)

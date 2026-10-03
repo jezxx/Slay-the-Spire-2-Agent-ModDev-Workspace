@@ -1,0 +1,85 @@
+===== MegaCrit.Sts2.Core.Models.Powers.VulnerablePower.ModifyDamageMultiplicative(target, amount, props, dealer, cardSource, cardPlay)  [attrs=0xC6] =====
+  maxStack=6 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 02 28 7A 1B 00 06 2E 06 7E 1A 15 00 0A 2A 05 28 94 01 00 06 2D 06 7E 1A 15 00 0A 2A 02 28 81 1B 00 06 72 60 BA 01 70 6F C4 4B 00 06 6F 9A 4B 00 06 0A 0E 04 2C 5A 0E 04 6F B5 51 00 06 25 2D 04 26 14 2B 05 28 1E 0C 00 2B 0C 08 2C 0E 08 03 06 05 0E 04 0E 05 6F DD 20 00 06 0A 0E 04 6F 1F 0C 00 2B 25 2D 19 26 0E 04 6F C0 51 00 06 25 2D 04 26 14 2B 0A 28 59 50 00 06 6F 1F 0C 00 2B 0D 09 2C 0E 09 03 06 05 0E 04 0E 05 6F E3 24 00 06 0A 03 6F 20 0C 00 2B 0B 07 2C 0E 07 03 06 05 0E 04 0E 05 6F 0F 25 00 06 0A 06 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: ldarg.0        
+    IL_0002: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_0007: beq.s          IL_000F
+    IL_0009: ldsfld         System.Decimal::One
+    IL_000E: ret            
+    IL_000F: ldarg.3        
+    IL_0010: call           MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions::IsPoweredAttack
+    IL_0015: brtrue.s       IL_001D
+    IL_0017: ldsfld         System.Decimal::One
+    IL_001C: ret            
+    IL_001D: ldarg.0        
+    IL_001E: call           MegaCrit.Sts2.Core.Models.PowerModel::get_DynamicVars
+    IL_0023: ldstr          "DamageIncrease"
+    IL_0028: callvirt       MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::get_Item
+    IL_002D: callvirt       MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar::get_BaseValue
+    IL_0032: stloc.0        
+    IL_0033: ldarg.s        4
+    IL_0035: brfalse.s      IL_0091
+    IL_0037: ldarg.s        4
+    IL_0039: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Player
+    IL_003E: dup            
+    IL_003F: brtrue.s       IL_0045
+    IL_0041: pop            
+    IL_0042: ldnull         
+    IL_0043: br.s           IL_004A
+    IL_0045: call           MegaCrit.Sts2.Core.Entities.Players.Player::GetRelic<...>
+    IL_004A: stloc.2        
+    IL_004B: ldloc.2        
+    IL_004C: brfalse.s      IL_005C
+    IL_004E: ldloc.2        
+    IL_004F: ldarg.1        
+    IL_0050: ldloc.0        
+    IL_0051: ldarg.3        
+    IL_0052: ldarg.s        4
+    IL_0054: ldarg.s        5
+    IL_0056: callvirt       MegaCrit.Sts2.Core.Models.Relics.PaperPhrog::ModifyVulnerableMultiplier
+    IL_005B: stloc.0        
+    IL_005C: ldarg.s        4
+    IL_005E: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::GetPower<...>
+    IL_0063: dup            
+    IL_0064: brtrue.s       IL_007F
+    IL_0066: pop            
+    IL_0067: ldarg.s        4
+    IL_0069: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_PetOwner
+    IL_006E: dup            
+    IL_006F: brtrue.s       IL_0075
+    IL_0071: pop            
+    IL_0072: ldnull         
+    IL_0073: br.s           IL_007F
+    IL_0075: call           MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_007A: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::GetPower<...>
+    IL_007F: stloc.3        
+    IL_0080: ldloc.3        
+    IL_0081: brfalse.s      IL_0091
+    IL_0083: ldloc.3        
+    IL_0084: ldarg.1        
+    IL_0085: ldloc.0        
+    IL_0086: ldarg.3        
+    IL_0087: ldarg.s        4
+    IL_0089: ldarg.s        5
+    IL_008B: callvirt       MegaCrit.Sts2.Core.Models.Powers.CrueltyPower::ModifyVulnerableMultiplier
+    IL_0090: stloc.0        
+    IL_0091: ldarg.1        
+    IL_0092: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::GetPower<...>
+    IL_0097: stloc.1        
+    IL_0098: ldloc.1        
+    IL_0099: brfalse.s      IL_00A9
+    IL_009B: ldloc.1        
+    IL_009C: ldarg.1        
+    IL_009D: ldloc.0        
+    IL_009E: ldarg.3        
+    IL_009F: ldarg.s        4
+    IL_00A1: ldarg.s        5
+    IL_00A3: callvirt       MegaCrit.Sts2.Core.Models.Powers.DebilitatePower::ModifyVulnerableMultiplier
+    IL_00A8: stloc.0        
+    IL_00A9: ldloc.0        
+    IL_00AA: ret            
+
+

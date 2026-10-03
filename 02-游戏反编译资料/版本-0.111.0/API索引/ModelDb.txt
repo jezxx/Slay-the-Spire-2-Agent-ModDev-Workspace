@@ -1,0 +1,135 @@
+### MegaCrit.Sts2.Core.Models.ModelDb
+  base: System.Object
+  interfaces: 
+  isAbstract=True isSealed=True isEnum=False
+  --- ctors ---
+  --- methods ---
+    pub static T Achievement()
+    pub static T Act()
+    pub static T Affliction()
+    pub static T AncientEvent()
+    pub static T Badge()
+    pub static T Card()
+    pub static T CardPool()
+    pub static T Character()
+    pub static System.Boolean Contains(System.Type type)
+    pub static MegaCrit.Sts2.Core.Models.OrbModel DebugOrb(System.Type type)
+    pub static MegaCrit.Sts2.Core.Models.PowerModel DebugPower(System.Type type)
+    pub static T Enchantment()
+    pub static T Encounter()
+    pub static T Event()
+    priv static T Get()
+    priv static MegaCrit.Sts2.Core.Models.AbstractModel Get(System.Type type)
+    pub static T GetById(MegaCrit.Sts2.Core.Models.ModelId id)
+    pub static T GetByIdOrNull(MegaCrit.Sts2.Core.Models.ModelId id)
+    pub static System.String GetCategory(System.Type type)
+    pub static System.Type GetCategoryType(System.Type type)
+    pub static System.String GetEntry(System.Type type)
+    pub static MegaCrit.Sts2.Core.Models.ModelId GetId()
+    pub static MegaCrit.Sts2.Core.Models.ModelId GetId(System.Type type)
+    pub static System.Void Init(System.Type[] injectedModelTypes)
+    pub static System.Void InitIds()
+    pub static System.Void Inject(System.Type type)
+    pub static T Modifier()
+    pub static T Monster()
+    pub static T Orb()
+    pub static T Potion()
+    pub static T PotionPool()
+    pub static T Power()
+    pub static System.Void Preload()
+    pub static T Relic()
+    pub static T RelicPool()
+    pub static System.Void Remove(System.Type type)
+    pub static System.Void ResetForTest()
+    pub static T Singleton()
+    pub static System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.AchievementModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Achievements()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.ActModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Acts()
+    pub static System.Collections.Generic.IReadOnlyList`1[[System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.ActModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_ActsByIndex()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AbstractModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_All()
+    pub static System.Type[] get_AllAbstractModelSubtypes()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AncientEventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllAncients()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllCardPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllCards()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllCharacterCardPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllCharacterPotionPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllCharacterRelicPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CharacterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllCharacters()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EncounterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllEncounters()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllEvents()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllPotionPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllPotions()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PowerModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllPowers()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllRelicPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllRelics()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AncientEventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllSharedAncients()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllSharedCardPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllSharedEvents()
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllSharedPotionPools()
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_AllSharedRelicPools()
+    pub static System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.ModifierModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_BadModifiers()
+    pub static System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.BadgeModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_BadgeModels()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CharacterRelicPools()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AfflictionModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_DebugAfflictions()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EnchantmentModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_DebugEnchantments()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EncounterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_EventEncounters()
+    pub static System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.ModifierModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_GoodModifiers()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.MonsterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Monsters()
+    pub static System.Collections.Generic.IReadOnlyList`1[[System.Collections.Generic.IReadOnlySet`1[[MegaCrit.Sts2.Core.Models.ModifierModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_MutuallyExclusiveModifiers()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.OrbModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Orbs()
+  --- properties ---
+    System.Type[] AllAbstractModelSubtypes { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AbstractModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] All { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AfflictionModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] DebugAfflictions { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EnchantmentModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] DebugEnchantments { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllCards { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllCardPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllSharedCardPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllCharacterCardPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CharacterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllCharacters { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllSharedEvents { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AncientEventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllAncients { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AncientEventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllSharedAncients { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllEvents { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.MonsterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Monsters { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EncounterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllEncounters { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EncounterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] EventEncounters { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllPotions { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllPotionPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllCharacterPotionPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllCharacterRelicPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllSharedPotionPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PowerModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllPowers { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllRelics { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllRelicPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CharacterRelicPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] AllSharedRelicPools { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.OrbModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Orbs { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.ActModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Acts { get; }
+    System.Collections.Generic.IReadOnlyList`1[[System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.ActModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] ActsByIndex { get; }
+    System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.BadgeModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] BadgeModels { get; }
+    System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.AchievementModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Achievements { get; }
+    System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.ModifierModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] GoodModifiers { get; }
+    System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Models.ModifierModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] BadModifiers { get; }
+    System.Collections.Generic.IReadOnlyList`1[[System.Collections.Generic.IReadOnlySet`1[[MegaCrit.Sts2.Core.Models.ModifierModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] MutuallyExclusiveModifiers { get; }
+  --- fields ---
+    priv static System.Int32 _initialCapacity
+    priv static System.Collections.Generic.Dictionary`2[[MegaCrit.Sts2.Core.Models.ModelId, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null],[MegaCrit.Sts2.Core.Models.AbstractModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _contentById
+    priv static System.Type[] _allAbstractModelSubtypes
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allCards
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allCardPools
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.CardPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allCharacterCardPools
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allSharedEvents
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EventModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allEvents
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EncounterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allEncounters
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.EncounterModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _eventEncounters
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allPotions
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allPotionPools
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allCharacterPotionPools
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allCharacterRelicPools
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PotionPoolModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allSharedPotionPools
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.PowerModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allPowers
+    priv static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.RelicModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _allRelics
+    priv static System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Models.ActModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _acts
+    priv static System.Collections.Generic.List`1[[System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Models.ActModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] _actsByIndex
+    priv static System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Models.BadgeModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _badges
+    priv static System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Models.AchievementModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _achievements

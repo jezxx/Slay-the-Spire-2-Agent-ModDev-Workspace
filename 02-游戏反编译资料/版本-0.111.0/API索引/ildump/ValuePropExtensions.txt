@@ -1,0 +1,59 @@
+===== MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions.IsPoweredAttack(props)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 8C 2A 00 00 02 1E 8C 2A 00 00 02 28 02 02 00 0A 2C 15 02 8C 2A 00 00 02 1A 8C 2A 00 00 02 28 02 02 00 0A 16 FE 01 2A 16 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_0006: ldc.i4.8       
+    IL_0007: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_000C: call           System.Enum::HasFlag
+    IL_0011: brfalse.s      IL_0028
+    IL_0013: ldarg.0        
+    IL_0014: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_0019: ldc.i4.4       
+    IL_001A: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_001F: call           System.Enum::HasFlag
+    IL_0024: ldc.i4.0       
+    IL_0025: ceq            
+    IL_0027: ret            
+    IL_0028: ldc.i4.0       
+    IL_0029: ret            
+
+
+===== MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions.IsPoweredCardOrMonsterMoveBlock(props)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 8C 2A 00 00 02 1E 8C 2A 00 00 02 28 02 02 00 0A 2C 15 02 8C 2A 00 00 02 1A 8C 2A 00 00 02 28 02 02 00 0A 16 FE 01 2A 16 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_0006: ldc.i4.8       
+    IL_0007: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_000C: call           System.Enum::HasFlag
+    IL_0011: brfalse.s      IL_0028
+    IL_0013: ldarg.0        
+    IL_0014: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_0019: ldc.i4.4       
+    IL_001A: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_001F: call           System.Enum::HasFlag
+    IL_0024: ldc.i4.0       
+    IL_0025: ceq            
+    IL_0027: ret            
+    IL_0028: ldc.i4.0       
+    IL_0029: ret            
+
+
+===== MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions.IsCardOrMonsterMove(props)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 8C 2A 00 00 02 1E 8C 2A 00 00 02 28 02 02 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_0006: ldc.i4.8       
+    IL_0007: box            MegaCrit.Sts2.Core.ValueProps.ValueProp
+    IL_000C: call           System.Enum::HasFlag
+    IL_0011: ret            
+
+

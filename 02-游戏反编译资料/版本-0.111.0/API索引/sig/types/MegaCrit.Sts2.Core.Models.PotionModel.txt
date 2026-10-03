@@ -1,0 +1,88 @@
+### public class MegaCrit.Sts2.Core.Models.PotionModel
+    base: MegaCrit.Sts2.Core.Models.AbstractModel
+
+    field  public static string locTable
+    field  internal System.Action BeforeUse
+    field  internal MegaCrit.Sts2.Core.Entities.Players.Player _owner
+    field  internal MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    field  internal bool <IsQueued>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Models.PotionModel _canonicalInstance
+    field  internal bool <HasBeenRemovedFromState>k__BackingField
+    prop   MegaCrit.Sts2.Core.Localization.LocString Title { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Description { internal get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicDescription { public get; }
+    prop   string PackedImagePath { internal get; }
+    prop   string PackedOutlinePath { internal get; }
+    prop   string ImagePath { public get; }
+    prop   Godot.Texture2D Image { public get; }
+    prop   string OutlinePath { public get; }
+    prop   Godot.Texture2D Outline { public get; }
+    prop   string LargeImagePath { public get; }
+    prop   Godot.Texture2D LargeImage { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Potions.PotionRarity Rarity { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Potions.PotionUsage Usage { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Cards.TargetType TargetType { public get; }
+    prop   MegaCrit.Sts2.Core.Models.PotionPoolModel Pool { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Players.Player Owner { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { public get; }
+    prop   bool IsQueued { public get; internal set; }
+    prop   bool CanBeGeneratedInCombat { public get; }
+    prop   bool PassesCustomUsabilityCheck { public get; }
+    prop   MegaCrit.Sts2.Core.HoverTips.HoverTip HoverTip { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    prop   MegaCrit.Sts2.Core.Models.PotionModel CanonicalInstance { public get; internal set; }
+    prop   bool ShouldReceiveCombatHooks { public get; }
+    prop   bool HasBeenRemovedFromState { public get; internal set; }
+    method public void add_BeforeUse(System.Action value)
+    method public void remove_BeforeUse(System.Action value)
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    method internal MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicDescription()
+    method internal string get_PackedImagePath()
+    method internal string get_PackedOutlinePath()
+    method public string get_ImagePath()
+    method public Godot.Texture2D get_Image()
+    method public string get_OutlinePath()
+    method public Godot.Texture2D get_Outline()
+    method public string get_LargeImagePath()
+    method public Godot.Texture2D get_LargeImage()
+    method public MegaCrit.Sts2.Core.Entities.Potions.PotionRarity get_Rarity()
+    method public MegaCrit.Sts2.Core.Entities.Potions.PotionUsage get_Usage()
+    method public MegaCrit.Sts2.Core.Entities.Cards.TargetType get_TargetType()
+    method public MegaCrit.Sts2.Core.Models.PotionPoolModel get_Pool()
+    method public MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    method public void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    method public MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    method public bool get_IsQueued()
+    method internal void set_IsQueued(bool value)
+    method public bool get_CanBeGeneratedInCombat()
+    method public bool get_PassesCustomUsabilityCheck()
+    method public MegaCrit.Sts2.Core.HoverTips.HoverTip get_HoverTip()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public MegaCrit.Sts2.Core.Models.PotionModel get_CanonicalInstance()
+    method internal void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.PotionModel value)
+    method public bool get_ShouldReceiveCombatHooks()
+    method public bool get_HasBeenRemovedFromState()
+    method internal void set_HasBeenRemovedFromState(bool value)
+    method public MegaCrit.Sts2.Core.Models.PotionModel ToMutable()
+    method public void AfterCloned()
+    method public void Discard()
+    method public void RemoveBeforeUse()
+    method public void EnqueueManualUse(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public bool IsValidTarget(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public System.Threading.Tasks.Task OnUseWrapper(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public void AfterUsageCanceled()
+    method public System.Threading.Tasks.Task OnUse(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public MegaCrit.Sts2.Core.Saves.Runs.SerializablePotion ToSerializable(int slotIndex)
+    method public static MegaCrit.Sts2.Core.Models.PotionModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializablePotion save)
+    method public static void AssertValidForTargetedPotion(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public bool CanThrowAtAlly()
+    method public void .ctor()
+    method internal bool <get_Pool>b__35_0(MegaCrit.Sts2.Core.Models.PotionPoolModel p)
+    event  System.Action BeforeUse

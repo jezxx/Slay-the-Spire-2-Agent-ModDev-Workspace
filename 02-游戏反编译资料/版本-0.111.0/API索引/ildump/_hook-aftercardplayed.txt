@@ -1,0 +1,30 @@
+===== MegaCrit.Sts2.Core.Hooks.Hook.AfterCardPlayed(combatState, choiceContext, cardPlay)  [attrs=0x96] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  12 00 28 F1 00 00 0A 7D 06 6C 00 04 12 00 02 7D 07 6C 00 04 12 00 03 7D 08 6C 00 04 12 00 04 7D 09 6C 00 04 12 00 15 7D 05 6C 00 04 12 00 7C 06 6C 00 04 12 00 28 FB 15 00 2B 12 00 7C 06 6C 00 04 28 F3 00 00 0A 2A
+  -- decoded --
+    IL_0000: ldloca.s       0
+    IL_0002: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create
+    IL_0007: stfld          .<AfterCardPlayed>d__16::<>t__builder
+    IL_000C: ldloca.s       0
+    IL_000E: ldarg.0        
+    IL_000F: stfld          .<AfterCardPlayed>d__16::combatState
+    IL_0014: ldloca.s       0
+    IL_0016: ldarg.1        
+    IL_0017: stfld          .<AfterCardPlayed>d__16::choiceContext
+    IL_001C: ldloca.s       0
+    IL_001E: ldarg.2        
+    IL_001F: stfld          .<AfterCardPlayed>d__16::cardPlay
+    IL_0024: ldloca.s       0
+    IL_0026: ldc.i4.m1      
+    IL_0027: stfld          .<AfterCardPlayed>d__16::<>1__state
+    IL_002C: ldloca.s       0
+    IL_002E: ldflda         .<AfterCardPlayed>d__16::<>t__builder
+    IL_0033: ldloca.s       0
+    IL_0035: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<...>
+    IL_003A: ldloca.s       0
+    IL_003C: ldflda         .<AfterCardPlayed>d__16::<>t__builder
+    IL_0041: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task
+    IL_0046: ret            
+
+

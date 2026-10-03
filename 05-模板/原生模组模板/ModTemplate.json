@@ -1,0 +1,12 @@
+{
+  "id": "__MODID__",
+  "name": "__MODID__",
+  "author": "你的名字",
+  "description": "模组描述",
+  "version": "0.1.0",
+  "min_game_version": "0.111.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": true
+}

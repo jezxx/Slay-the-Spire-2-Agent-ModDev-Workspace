@@ -1,0 +1,95 @@
+using System;
+using System.Net.Http;
+using System.Runtime.ExceptionServices;
+using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Logging;
+
+namespace MegaCrit.Sts2.Core.Daily;
+
+/// <summary>
+/// Static class for interfacing with MegaCrit's time server.
+/// </summary>
+public static class TimeServer
+{
+	private const string _timeServerUrl = "https://time.megacrit.com";
+
+	private const int _maxRetry = 2;
+
+	private const int _waitTimeCap = 4;
+
+	private static readonly Logger _logger = new Logger("TimeServer", LogType.Network);
+
+	public static Task<TimeServerResult?>? RequestTimeTask { get; private set; }
+
+	private static async Task<TimeServerResult?> RequestTime(string url)
+	{
+		using HttpClient client = new HttpClient
+		{
+			Timeout = TimeSpan.FromSeconds(5L)
+		};
+		Exception exception = null;
+		int retries = 0;
+		while (retries < 2)
+		{
+			long? num;
+			try
+			{
+				num = await RequestTimeInternal(client, url);
+			}
+			catch (Exception ex)
+			{
+				Log.Warn($"Caught exception while requesting server time of type {ex.GetType()}");
+				exception = ex;
+				num = null;
+			}
+			if (num.HasValue)
+			{
+				TimeServerResult value = default(TimeServerResult);
+				value.serverTime = DateTimeOffset.FromUnixTimeSeconds(num.Value);
+				value.localReceivedTime = DateTimeOffset.UtcNow;
+				return value;
+			}
+			retries++;
+			Log.Info($"Retries: {retries}/{2}");
+			if (retries < 2)
+			{
+				long seconds = Math.Min((long)Math.Pow(2.0, retries), 4L);
+				await Task.Delay(TimeSpan.FromSeconds(seconds));
+			}
+		}
+		_logger.Warn("Gave up trying to retrieve server time");
+		if (exception != null)
+		{
+			ExceptionDispatchInfo.Capture(exception).Throw();
+		}
+		return null;
+	}
+
+	private static async Task<long?> RequestTimeInternal(HttpClient client, string url)
+	{
+		HttpResponseMessage response = await client.GetAsync(url);
+		string text = await response.Content.ReadAsStringAsync();
+		if (response.IsSuccessStatusCode)
+		{
+			_logger.Info("Successfully queried time server. Response: " + text);
+			if (long.TryParse(text, out var result))
+			{
+				return result;
+			}
+		}
+		else
+		{
+			_logger.Info($"Failed to retrieve server time. Status: {response.StatusCode} Response: {text}");
+		}
+		return null;
+	}
+
+	/// <summary>
+	/// Begins fetching the time from the time server. After this, RequestTimeTask is non-null.
+	/// </summary>
+	public static Task<TimeServerResult?> FetchDailyTime()
+	{
+		RequestTimeTask = RequestTime("https://time.megacrit.com");
+		return RequestTimeTask;
+	}
+}

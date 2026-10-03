@@ -1,0 +1,72 @@
+### MegaCrit.Sts2.Core.Models.Events.TheArchitect   [sealed class]
+  base: MegaCrit.Sts2.Core.Models.EventModel
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    _locTable = String
+
+  --- fields ---
+    priv static readonly MegaCrit.Sts2.Core.Localization.LocString _emptyLocString
+    priv static readonly MegaCrit.Sts2.Core.Localization.LocString _continueLocString
+    priv static readonly MegaCrit.Sts2.Core.Localization.LocString _respondLocString
+    priv MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue _dialogue
+    priv int _currentLineIndex
+    priv MegaCrit.Sts2.Core.Nodes.Vfx.NSpeechBubbleVfx _speechBubble
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature _architectCreature
+    priv int _score
+    priv MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet _dialogueSet
+
+  --- ctors ---
+    pub .ctor()
+    priv .cctor()
+
+  --- methods ---
+    pub [OVERRIDE] MegaCrit.Sts2.Core.Events.EventLayoutType get_LayoutType()
+    pub [OVERRIDE] MegaCrit.Sts2.Core.Models.EncounterModel get_CanonicalEncounter()
+    pub [OVERRIDE] string get_LocTable()
+    priv MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue get_Dialogue()
+    priv void set_Dialogue(MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue)
+    priv int get_CurrentLineIndex()
+    priv void set_CurrentLineIndex(int)
+    priv MegaCrit.Sts2.Core.Nodes.Vfx.NSpeechBubbleVfx get_SpeechBubble()
+    priv void set_SpeechBubble(MegaCrit.Sts2.Core.Nodes.Vfx.NSpeechBubbleVfx)
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature get_ArchitectCreature()
+    priv void set_ArchitectCreature(MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+    priv int get_Score()
+    priv void set_Score(int)
+    pub [OVERRIDE] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.LocString> get_GameInfoOptions()
+    priv bool get_IsOnLastLine()
+    prot [OVERRIDE] void SetInitialEventState(bool)
+    prot [OVERRIDE] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> GenerateInitialOptions()
+    pub [OVERRIDE] void OnRoomEnter()
+    pub MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet get_DialogueSet()
+    priv [static] string CharKey()
+    priv [static] MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet DefineDialogues()
+    priv void LoadDialogue()
+    priv MegaCrit.Sts2.Core.Events.EventOption CreateOptionForCurrentLine()
+    priv MegaCrit.Sts2.Core.Events.EventOption CreateProceedOption()
+    priv System.Threading.Tasks.Task AdvanceDialogue()
+    priv System.Threading.Tasks.Task WinRun()
+    priv System.Threading.Tasks.Task`1<bool> AnimPlayerAttackIfNecessary(MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers)
+    priv [static] int[] DivideWildly(int, int, MegaCrit.Sts2.Core.Random.Rng)
+    priv System.Threading.Tasks.Task AnimArchitectAttackIfNecessary(MegaCrit.Sts2.Core.Entities.Ancients.ArchitectAttackers)
+    priv System.Threading.Tasks.Task PlayCurrentLine()
+    priv void ShowSpeechBubble(MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine, MegaCrit.Sts2.Core.Entities.Creatures.Creature)
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature GetSpeaker(MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSpeaker)
+    priv MegaCrit.Sts2.Core.Bindings.MegaSpine.MegaAnimationState GetArchitectAnimationState()
+
+  --- properties ---
+    MegaCrit.Sts2.Core.Events.EventLayoutType LayoutType { [OVERRIDE] get; }
+    MegaCrit.Sts2.Core.Models.EncounterModel CanonicalEncounter { [OVERRIDE] get; }
+    string LocTable { [OVERRIDE] get; }
+    MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue Dialogue { get; set; }
+    int CurrentLineIndex { get; set; }
+    MegaCrit.Sts2.Core.Nodes.Vfx.NSpeechBubbleVfx SpeechBubble { get; set; }
+    MegaCrit.Sts2.Core.Entities.Creatures.Creature ArchitectCreature { get; set; }
+    int Score { get; set; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.LocString> GameInfoOptions { [OVERRIDE] get; }
+    bool IsOnLastLine { get; }
+    MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet DialogueSet { get; }
+
+  --- nested types --- <>c, <AdvanceDialogue>d__45, <AnimArchitectAttackIfNecessary>d__49, <AnimPlayerAttackIfNecessary>d__47, <PlayCurrentLine>d__50, <WinRun>d__46
+

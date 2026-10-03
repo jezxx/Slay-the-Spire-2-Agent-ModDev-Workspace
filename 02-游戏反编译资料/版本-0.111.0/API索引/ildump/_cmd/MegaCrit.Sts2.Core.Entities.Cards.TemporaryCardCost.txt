@@ -1,0 +1,11 @@
+### MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost
+  get_Cost
+  set_Cost
+  get_ClearsWhenTurnEnds
+  set_ClearsWhenTurnEnds
+  get_ClearsWhenCardIsPlayed
+  set_ClearsWhenCardIsPlayed
+  UntilPlayed
+  ThisTurn
+  ThisCombat
+  .ctor

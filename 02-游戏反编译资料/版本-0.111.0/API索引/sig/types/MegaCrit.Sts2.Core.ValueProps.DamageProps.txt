@@ -1,0 +1,9 @@
+### public class MegaCrit.Sts2.Core.ValueProps.DamageProps
+    base: System.Object
+
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp card
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp cardUnpowered
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp cardHpLoss
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp monsterMove
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp nonCardUnpowered
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp nonCardHpLoss

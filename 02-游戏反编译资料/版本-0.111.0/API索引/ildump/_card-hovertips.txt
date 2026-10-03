@@ -1,0 +1,112 @@
+===== MegaCrit.Sts2.Core.Models.CardModel.get_EnergyHoverTip()  [attrs=0x884] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 5A 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::ForEnergy
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_ExtraHoverTips()  [attrs=0x9C4] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 A6 05 00 2B 2A
+  -- decoded --
+    IL_0000: call           System.Array::Empty<...>
+    IL_0005: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_HoverTips()  [attrs=0x886] =====
+  maxStack=7 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F B8 18 00 06 28 A7 05 00 2B 0A 02 28 8B 18 00 06 2C 11 06 02 28 8B 18 00 06 6F 98 19 00 06 6F 36 15 00 0A 02 28 8D 18 00 06 2C 11 06 02 28 8D 18 00 06 6F F6 17 00 06 6F 36 15 00 0A 02 28 6F 18 00 06 0B 07 16 31 26 06 1F 0E 17 8D 37 09 00 02 25 16 72 91 8F 01 70 07 28 6B 11 00 0A 73 A3 4B 00 06 A2 28 59 4C 00 06 6F 77 11 00 0A 02 6F 91 18 00 06 2C 11 06 19 28 96 07 00 2B 28 59 4C 00 06 6F 77 11 00 0A 02 6F 92 18 00 06 2C 11 06 1B 28 96 07 00 2B 28 59 4C 00 06 6F 77 11 00 0A 02 28 7D 18 00 06 6F 50 15 00 0A 0C 2B 23 08 6F 51 15 00 0A 0D 06 09 28 4B 4C 00 06 6F 77 11 00 0A 09 18 33 0C 06 17 28 4B 4C 00 06 6F 77 11 00 0A 08 6F 33 00 00 0A 2D D5 DE 0A 08 2C 06 08 6F 32 00 00 0A DC 06 28 98 07 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_ExtraHoverTips
+    IL_0006: call           System.Linq.Enumerable::ToList<...>
+    IL_000B: stloc.0        
+    IL_000C: ldarg.0        
+    IL_000D: call           MegaCrit.Sts2.Core.Models.CardModel::get_Enchantment
+    IL_0012: brfalse.s      IL_0025
+    IL_0014: ldloc.0        
+    IL_0015: ldarg.0        
+    IL_0016: call           MegaCrit.Sts2.Core.Models.CardModel::get_Enchantment
+    IL_001B: callvirt       MegaCrit.Sts2.Core.Models.EnchantmentModel::get_HoverTips
+    IL_0020: callvirt       <typespec>::AddRange
+    IL_0025: ldarg.0        
+    IL_0026: call           MegaCrit.Sts2.Core.Models.CardModel::get_Affliction
+    IL_002B: brfalse.s      IL_003E
+    IL_002D: ldloc.0        
+    IL_002E: ldarg.0        
+    IL_002F: call           MegaCrit.Sts2.Core.Models.CardModel::get_Affliction
+    IL_0034: callvirt       MegaCrit.Sts2.Core.Models.AfflictionModel::get_HoverTips
+    IL_0039: callvirt       <typespec>::AddRange
+    IL_003E: ldarg.0        
+    IL_003F: call           MegaCrit.Sts2.Core.Models.CardModel::GetEnchantedReplayCount
+    IL_0044: stloc.1        
+    IL_0045: ldloc.1        
+    IL_0046: ldc.i4.0       
+    IL_0047: ble.s          IL_006F
+    IL_0049: ldloc.0        
+    IL_004A: ldc.i4.s       14
+    IL_004C: ldc.i4.1       
+    IL_004D: newarr         MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+    IL_0052: dup            
+    IL_0053: ldc.i4.0       
+    IL_0054: ldstr          "Times"
+    IL_0059: ldloc.1        
+    IL_005A: call           System.Decimal::op_Implicit
+    IL_005F: newobj         MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar::.ctor
+    IL_0064: stelem.ref     
+    IL_0065: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::Static
+    IL_006A: callvirt       <typespec>::Add
+    IL_006F: ldarg.0        
+    IL_0070: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_OrbEvokeType
+    IL_0075: brfalse.s      IL_0088
+    IL_0077: ldloc.0        
+    IL_0078: ldc.i4.3       
+    IL_0079: call           System.Array::Empty<...>
+    IL_007E: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::Static
+    IL_0083: callvirt       <typespec>::Add
+    IL_0088: ldarg.0        
+    IL_0089: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_GainsBlock
+    IL_008E: brfalse.s      IL_00A1
+    IL_0090: ldloc.0        
+    IL_0091: ldc.i4.5       
+    IL_0092: call           System.Array::Empty<...>
+    IL_0097: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::Static
+    IL_009C: callvirt       <typespec>::Add
+    IL_00A1: ldarg.0        
+    IL_00A2: call           MegaCrit.Sts2.Core.Models.CardModel::get_Keywords
+    IL_00A7: callvirt       <typespec>::GetEnumerator
+    IL_00AC: stloc.2        
+    IL_00AD: br.s           IL_00D2
+    IL_00AF: ldloc.2        
+    IL_00B0: callvirt       <typespec>::get_Current
+    IL_00B5: stloc.3        
+    IL_00B6: ldloc.0        
+    IL_00B7: ldloc.3        
+    IL_00B8: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::FromKeyword
+    IL_00BD: callvirt       <typespec>::Add
+    IL_00C2: ldloc.3        
+    IL_00C3: ldc.i4.2       
+    IL_00C4: bne.un.s       IL_00D2
+    IL_00C6: ldloc.0        
+    IL_00C7: ldc.i4.1       
+    IL_00C8: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::FromKeyword
+    IL_00CD: callvirt       <typespec>::Add
+    IL_00D2: ldloc.2        
+    IL_00D3: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_00D8: brtrue.s       IL_00AF
+    IL_00DA: leave.s        IL_00E6
+    IL_00DC: ldloc.2        
+    IL_00DD: brfalse.s      IL_00E5
+    IL_00DF: ldloc.2        
+    IL_00E0: callvirt       System.IDisposable::Dispose
+    IL_00E5: endfinally     
+    IL_00E6: ldloc.0        
+    IL_00E7: call           System.Linq.Enumerable::Distinct<...>
+    IL_00EC: ret            
+
+

@@ -1,0 +1,182 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Map;
+using MegaCrit.Sts2.Core.Random;
+using MegaCrit.Sts2.Core.Runs;
+using MegaCrit.Sts2.Core.Runs.History;
+using MegaCrit.Sts2.Core.Saves.Runs;
+
+namespace MegaCrit.Sts2.Core.Models.Relics;
+
+public sealed class FurCoat : RelicModel
+{
+	private const string _combatsKey = "Combats";
+
+	private int _furCoatActIndex = -1;
+
+	public static LocString HistoryEntry
+	{
+		get
+		{
+			FurCoat furCoat = ModelDb.Relic<FurCoat>();
+			LocString locString = new LocString("relics", furCoat.Id.Entry + ".historyEntry");
+			locString.Add("Title", furCoat.Title);
+			return locString;
+		}
+	}
+
+	public override RelicRarity Rarity => RelicRarity.Ancient;
+
+	[SavedProperty]
+	public int FurCoatActIndex
+	{
+		get
+		{
+			return _furCoatActIndex;
+		}
+		set
+		{
+			AssertMutable();
+			_furCoatActIndex = value;
+		}
+	}
+
+	[SavedProperty]
+	private int[] FurCoatCoordCols { get; set; } = Array.Empty<int>();
+
+
+	[SavedProperty]
+	private int[] FurCoatCoordRows { get; set; } = Array.Empty<int>();
+
+
+	[SavedProperty]
+	private bool FurCoatCoordsSet { get; set; }
+
+	protected override IEnumerable<DynamicVar> CanonicalVars => new global::_003C_003Ez__ReadOnlySingleElementList<DynamicVar>(new DynamicVar("Combats", 8m));
+
+	public override Task AfterObtained()
+	{
+		FurCoatActIndex = base.Owner.RunState.CurrentActIndex;
+		AddMarkedRooms(base.Owner.RunState.Map);
+		return Task.CompletedTask;
+	}
+
+	public override ActMap ModifyGeneratedMapLate(IRunState runState, ActMap map, int actIndex)
+	{
+		return AddMarkedRooms(map);
+	}
+
+	private ActMap AddMarkedRooms(ActMap map)
+	{
+		ActMap map2 = map;
+		if (base.Owner.RunState.CurrentActIndex != FurCoatActIndex)
+		{
+			return map2;
+		}
+		List<MapCoord> markedCoords = GetMarkedCoords();
+		bool flag = markedCoords == null;
+		if (!flag)
+		{
+			flag = !markedCoords.TrueForAll((MapCoord c) => map2.HasPoint(c) && (map2.GetPoint(c).PointType == MapPointType.Monster || map2.GetPoint(c).PointType == MapPointType.Elite));
+		}
+		if (flag)
+		{
+			Rng rng = new Rng(base.Owner, base.Id, 0uL);
+			List<MapPoint> list = map2.GetAllMapPoints().Where(delegate(MapPoint p)
+			{
+				MapPointType pointType = p.PointType;
+				return (uint)(pointType - 5) <= 1u && !p.Quests.Any((AbstractModel q) => q is FurCoat);
+			}).ToList();
+			list.UnstableShuffle(rng);
+			int intValue = base.DynamicVars["Combats"].IntValue;
+			List<MapPoint> list2 = list.Take(intValue).ToList();
+			FurCoatCoordCols = new int[list2.Count];
+			FurCoatCoordRows = new int[list2.Count];
+			for (int i = 0; i < list2.Count; i++)
+			{
+				FurCoatCoordCols[i] = list2[i].coord.col;
+				FurCoatCoordRows[i] = list2[i].coord.row;
+			}
+			FurCoatCoordsSet = true;
+			foreach (MapPoint item in list2)
+			{
+				item.AddQuest(this);
+			}
+		}
+		else
+		{
+			foreach (MapCoord item2 in markedCoords)
+			{
+				MapPoint point = map2.GetPoint(item2);
+				if (point == null)
+				{
+					throw new InvalidOperationException($"Loaded a fur coat map with coordinate {item2}, but the generated map does not contain that coordinate!");
+				}
+				point.AddQuest(this);
+			}
+		}
+		return map2;
+	}
+
+	public override async Task BeforeCombatStart()
+	{
+		List<MapCoord> markedCoords = GetMarkedCoords();
+		if (markedCoords == null || !markedCoords.Contains(base.Owner.RunState.CurrentMapPoint.coord))
+		{
+			return;
+		}
+		MapPointHistoryEntry currentMapPointHistoryEntry = base.Owner.RunState.CurrentMapPointHistoryEntry;
+		if (currentMapPointHistoryEntry != null)
+		{
+			currentMapPointHistoryEntry.GetEntry(base.Owner.NetId).IsAffectedByFurCoat = true;
+		}
+		Flash();
+		IReadOnlyList<Creature> hittableEnemies = base.Owner.Creature.CombatState.HittableEnemies;
+		VfxCmd.PlayOnCreatureCenters(hittableEnemies, "vfx/vfx_bite");
+		foreach (Creature item in hittableEnemies)
+		{
+			await CreatureCmd.SetCurrentHp(item, 1m);
+		}
+	}
+
+	public override async Task AfterCreatureAddedToCombat(Creature creature)
+	{
+		if (creature.Side == CombatSide.Enemy)
+		{
+			List<MapCoord> markedCoords = GetMarkedCoords();
+			if (markedCoords != null && markedCoords.Contains(base.Owner.RunState.CurrentMapPoint.coord))
+			{
+				Flash();
+				VfxCmd.PlayOnCreatureCenter(creature, "vfx/vfx_bite");
+				await CreatureCmd.SetCurrentHp(creature, 1m);
+			}
+		}
+	}
+
+	public List<MapCoord>? GetMarkedCoords()
+	{
+		if (!FurCoatCoordsSet)
+		{
+			return null;
+		}
+		List<MapCoord> list = new List<MapCoord>();
+		for (int i = 0; i < FurCoatCoordCols.Length; i++)
+		{
+			list.Add(new MapCoord
+			{
+				col = FurCoatCoordCols[i],
+				row = FurCoatCoordRows[i]
+			});
+		}
+		return list;
+	}
+}

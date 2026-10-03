@@ -1,0 +1,89 @@
+### MegaCrit.Sts2.Core.Models.Events.PotionCourier   [sealed class]
+  base: MegaCrit.Sts2.Core.Models.EventModel
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    _foulPotionsKey = String
+
+  --- ctors ---
+    pub .ctor()
+
+  --- methods ---
+    prot [OVERRIDE] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> GenerateInitialOptions()
+    prot [OVERRIDE] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    pub [OVERRIDE] bool IsAllowed(MegaCrit.Sts2.Core.Runs.IRunState)
+    priv System.Threading.Tasks.Task GrabPotions()
+    priv System.Threading.Tasks.Task Ransack()
+
+  --- properties ---
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { [OVERRIDE] get; }
+
+  --- nested types --- <>c, <GrabPotions>d__5, <Ransack>d__6
+
+### MegaCrit.Sts2.Core.Models.Events.ThisOrThat   [sealed class]
+  base: MegaCrit.Sts2.Core.Models.EventModel
+  interfaces: 
+
+  --- ctors ---
+    pub .ctor()
+
+  --- methods ---
+    prot [OVERRIDE] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    pub [OVERRIDE] void CalculateVars()
+    prot [OVERRIDE] System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Events.EventOption> GenerateInitialOptions()
+    priv System.Threading.Tasks.Task Plain()
+    priv System.Threading.Tasks.Task Ornate()
+
+  --- properties ---
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { [OVERRIDE] get; }
+
+  --- nested types --- <Ornate>d__5, <Plain>d__4
+
+### MegaCrit.Sts2.Core.Localization.LocString   [class]
+  base: System.Object
+  interfaces: System.IComparable`1<MegaCrit.Sts2.Core.Localization.LocString>
+
+  --- fields ---
+    priv string <locTable>P
+    priv string <locEntryKey>P
+    priv readonly System.Collections.Generic.Dictionary`2<string, object> _variables
+
+  --- ctors ---
+    pub .ctor(string, string)
+
+  --- methods ---
+    pub string get_LocTable()
+    pub string get_LocEntryKey()
+    pub bool get_IsEmpty()
+    pub System.Collections.Generic.IReadOnlyDictionary`2<string, object> get_Variables()
+    pub [static] bool Exists(string, string)
+    pub [static] MegaCrit.Sts2.Core.Localization.LocString GetIfExists(string, string)
+    pub string GetFormattedText()
+    pub string GetRawText()
+    pub bool Exists()
+    pub [static] bool IsNullOrWhitespace(MegaCrit.Sts2.Core.Localization.LocString)
+    pub [static] void SubscribeToLocaleChange(LocaleChangeCallback)
+    pub [static] void UnsubscribeToLocaleChange(LocaleChangeCallback)
+    pub void Add(MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar)
+    pub void Add(string, System.Decimal)
+    pub void Add(string, bool)
+    pub void Add(string, string)
+    pub void Add(string, System.Collections.Generic.IList`1<string>)
+    pub void Add(string, MegaCrit.Sts2.Core.Localization.LocString)
+    pub void AddObj(string, object)
+    priv object get_Item(string)
+    priv void set_Item(string, object)
+    pub [static] MegaCrit.Sts2.Core.Localization.LocString KeyPathToLocString(string)
+    pub void AddVariablesFrom(MegaCrit.Sts2.Core.Localization.LocString)
+    pub [static] MegaCrit.Sts2.Core.Localization.LocString GetRandomWithPrefix(string, string, MegaCrit.Sts2.Core.Random.Rng)
+    pub [virtual(newslot)] int CompareTo(MegaCrit.Sts2.Core.Localization.LocString)
+    pub [OVERRIDE] string ToString()
+
+  --- properties ---
+    string LocTable { get; }
+    string LocEntryKey { get; }
+    bool IsEmpty { get; }
+    System.Collections.Generic.IReadOnlyDictionary`2<string, object> Variables { get; }
+    object Item { get; set; }
+
+

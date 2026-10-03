@@ -1,0 +1,10 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.UnplayableReason
+    base: System.Enum
+
+    enum None = 0
+    enum HasUnplayableKeyword = 2
+    enum BlockedByHook = 4
+    enum BlockedByCardLogic = 8
+    enum EnergyCostTooHigh = 16
+    enum StarCostTooHigh = 32
+    enum NoLivingAllies = 64

@@ -1,0 +1,13 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.TargetType
+    base: System.Enum
+
+    enum None = 0
+    enum Self = 1
+    enum AnyEnemy = 2
+    enum AllEnemies = 3
+    enum RandomEnemy = 4
+    enum AnyPlayer = 5
+    enum AnyAlly = 6
+    enum AllAllies = 7
+    enum TargetedNoCreature = 8
+    enum Osty = 9

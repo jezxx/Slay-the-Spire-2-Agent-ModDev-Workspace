@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.MaxHpVar
+    base: MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+
+    field  public static string defaultName
+    method public void .ctor(System.Decimal maxHp)
+    method public void .ctor(string name, System.Decimal maxHp)

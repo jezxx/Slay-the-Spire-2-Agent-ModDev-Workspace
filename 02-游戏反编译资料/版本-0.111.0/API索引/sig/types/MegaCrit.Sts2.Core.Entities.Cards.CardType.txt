@@ -1,0 +1,10 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.CardType
+    base: System.Enum
+
+    enum None = 0
+    enum Attack = 1
+    enum Skill = 2
+    enum Power = 3
+    enum Status = 4
+    enum Curse = 5
+    enum Quest = 6

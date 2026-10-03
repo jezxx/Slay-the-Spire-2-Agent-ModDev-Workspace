@@ -1,0 +1,13 @@
+### MegaCrit.Sts2.Core.Commands.PotionCmd
+  TryToProcure
+  TryToProcure
+  Discard
+### <Discard>d__2
+  MoveNext
+  SetStateMachine
+### <TryToProcure>d__0`1
+  MoveNext
+  SetStateMachine
+### <TryToProcure>d__1
+  MoveNext
+  SetStateMachine

@@ -1,0 +1,81 @@
+### MegaCrit.Sts2.Core.Modding.ModHelper
+  base: System.Object
+  interfaces: 
+  isAbstract=True isSealed=True isEnum=False
+  --- ctors ---
+  --- methods ---
+    pub static System.Void AddModelToPool()
+    pub static System.Void AddModelToPool(System.Type poolType, System.Type modelType)
+    pub static IEnumerable`1 ConcatModelsFromMods(MegaCrit.Sts2.Core.Models.IPoolModel poolModel, IEnumerable`1 pool)
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AbstractModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] IterateAllCombatStateSubscribers(MegaCrit.Sts2.Core.Combat.CombatState combatState)
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Models.AbstractModel, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] IterateAllRunStateSubscribers(MegaCrit.Sts2.Core.Runs.RunState runState)
+    pub static System.Void SubscribeForCombatStateHooks(System.String id, MegaCrit.Sts2.Core.Modding.CombatHookSubscriptionDelegate del)
+    pub static System.Void SubscribeForRunStateHooks(System.String id, MegaCrit.Sts2.Core.Modding.RunHookSubscriptionDelegate del)
+  --- properties ---
+  --- fields ---
+    priv static System.Collections.Generic.Dictionary`2[[System.Type, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[MegaCrit.Sts2.Core.Modding.ModHelper+ModPoolContent, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _moddedContentForPools
+    priv static System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.ModHelper+ModRunHookSubscriber, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _runHookSubscribers
+    priv static System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.ModHelper+ModCombatHookSubscriber, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _combatHookSubscribers
+### MegaCrit.Sts2.Core.Modding.ModManager
+  base: System.Object
+  interfaces: 
+  isAbstract=True isSealed=True isEnum=False
+  --- ctors ---
+  --- methods ---
+    pub static System.Void AssociateAssemblyWithMod(System.String modId, System.Reflection.Assembly assembly)
+    pub static System.Void CallMetricsHooks(MegaCrit.Sts2.Core.Saves.SerializableRun run, System.Boolean isVictory, System.UInt64 localPlayerId)
+    priv static System.Boolean CallModInitializer(System.Type initializerType)
+    priv static System.Threading.Tasks.Task CheckSteamBranchSupport()
+    pub static System.Void Copy(MegaCrit.Sts2.Core.Modding.IModManagerFileIo fileIo, System.String baseDir, System.String sourceFile, System.String targetFile)
+    pub static System.Void CopyUnmoddedSaveFilesIfNeeded(MegaCrit.Sts2.Core.Modding.IModManagerFileIo fileIo)
+    pub static System.Void Dispose()
+    pub static System.ValueTuple`2[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[MegaCrit.Sts2.Core.Platform.PlatformBranch, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] EvaluateBranchSupport(MegaCrit.Sts2.Core.Platform.PlatformBranch currentBranch, System.Collections.Generic.IReadOnlyList`1[[System.ValueTuple`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] supportedVersions)
+    pub static System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] GetGameplayRelevantModNameList()
+    pub static System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] GetLoadedMods()
+    pub static System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] GetModdedLocTables(System.String language, System.String file)
+    pub static System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] GetNonGameplayRelevantModNameList()
+    priv static System.Reflection.Assembly HandleAssemblyResolveFailure(System.Object source, System.ResolveEventArgs ev)
+    pub static System.Boolean HasHarmonyPatches()
+    pub static System.Threading.Tasks.Task Initialize(MegaCrit.Sts2.Core.Modding.IModManagerFileIo fileIo, MegaCrit.Sts2.Core.Modding.ModSettings settings, MegaCrit.Sts2.Core.Debug.SemanticVersion gameVersion)
+    priv static System.Void InvokeOnModDetected(MegaCrit.Sts2.Core.Modding.Mod mod)
+    pub static System.Boolean IsRunningModded()
+    priv static System.Void OnSteamWorkshopItemInstalled(Steamworks.ItemInstalled_t ev)
+    priv static MegaCrit.Sts2.Core.Modding.Mod ReadModManifest(System.String filename, MegaCrit.Sts2.Core.Modding.ModSource source)
+    priv static System.Void ReadModsInDirRecursive(System.String path, MegaCrit.Sts2.Core.Modding.ModSource source, System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] newMods)
+    priv static System.Void ReadSteamMods()
+    priv static System.Void RemoveDisabledMods()
+    pub static System.Void ResetForTests()
+    priv static System.Void SortModList(System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.SettingsSaveMod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] manualOrdering)
+    priv static System.Void TryLoadMod(MegaCrit.Sts2.Core.Modding.Mod mod)
+    priv static System.Void TryReadModFromSteam(Steamworks.PublishedFileId_t workshopItemId, System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] newMods)
+    pub static System.Void add_OnMetricsUpload(MegaCrit.Sts2.Core.Modding.ModManager+MetricsUploadHook value)
+    pub static System.Void add_OnModDetected(System.Action`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] value)
+    pub static System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Mods()
+    pub static System.Boolean get_PlayerAgreedToModLoading()
+    pub static MegaCrit.Sts2.Core.Modding.ModManagerState get_State()
+    pub static System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Action, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_TestInitializers()
+    pub static System.Boolean get_UnmoddedSavesWereCopied()
+    pub static System.Void remove_OnMetricsUpload(MegaCrit.Sts2.Core.Modding.ModManager+MetricsUploadHook value)
+    pub static System.Void remove_OnModDetected(System.Action`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] value)
+    priv static System.Void set_State(MegaCrit.Sts2.Core.Modding.ModManagerState value)
+    priv static System.Void set_UnmoddedSavesWereCopied(System.Boolean value)
+  --- properties ---
+    MegaCrit.Sts2.Core.Modding.ModManagerState State { get; set; }
+    System.Collections.Generic.IReadOnlyList`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Mods { get; }
+    System.Boolean PlayerAgreedToModLoading { get; }
+    System.Boolean UnmoddedSavesWereCopied { get; set; }
+    System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Action, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] TestInitializers { get; }
+  --- fields ---
+    priv static System.Boolean _allowInitForTests
+    priv static System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _mods
+    priv static MegaCrit.Sts2.Core.Modding.ModManagerState <State>k__BackingField
+    priv static Steamworks.Callback`1[[Steamworks.ItemInstalled_t, Steamworks.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] _steamItemInstalledCallback
+    priv static MegaCrit.Sts2.Core.Modding.ModSettings _settings
+    priv static MegaCrit.Sts2.Core.Modding.IModManagerFileIo _fileIo
+    priv static MegaCrit.Sts2.Core.Debug.SemanticVersion _gameVersion
+    priv static System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] _circularDependencies
+    priv static System.Action`1[[MegaCrit.Sts2.Core.Modding.Mod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] OnModDetected
+    priv static MegaCrit.Sts2.Core.Modding.ModManager+MetricsUploadHook OnMetricsUpload
+    priv static System.Boolean <UnmoddedSavesWereCopied>k__BackingField
+    priv static System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Action, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] <TestInitializers>k__BackingField
+    priv static System.Nullable`1[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] _hasHarmonyPatches

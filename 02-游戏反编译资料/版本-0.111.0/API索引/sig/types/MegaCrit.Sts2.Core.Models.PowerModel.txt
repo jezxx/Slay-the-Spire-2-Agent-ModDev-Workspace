@@ -1,0 +1,153 @@
+### public class MegaCrit.Sts2.Core.Models.PowerModel
+    base: MegaCrit.Sts2.Core.Models.AbstractModel
+
+    field  public static string locTable
+    field  public static readonly Godot.Color _normalAmountLabelColor
+    field  public static readonly Godot.Color _debuffAmountLabelColor
+    field  internal string _resolvedBigIconPath
+    field  internal System.Action PulsingStarted
+    field  internal System.Action PulsingStopped
+    field  internal int _amount
+    field  internal int _amountOnTurnStart
+    field  internal System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> Flashed
+    field  internal System.Action DisplayAmountChanged
+    field  internal System.Action Removed
+    field  internal bool _skipNextDurationTick
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature _owner
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature _applier
+    field  internal MegaCrit.Sts2.Core.Entities.Creatures.Creature _target
+    field  internal MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    field  internal object _internalData
+    field  internal MegaCrit.Sts2.Core.Models.PowerModel _canonicalInstance
+    prop   MegaCrit.Sts2.Core.Localization.LocString Title { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Description { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString SmartDescription { public get; }
+    prop   bool HasSmartDescription { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString RemoteDescription { public get; }
+    prop   bool HasRemoteDescription { public get; }
+    prop   string RemoteDescriptionLocKey { public get; }
+    prop   string SmartDescriptionLocKey { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { public get; }
+    prop   string PackedIconPath { public get; }
+    prop   string BigIconPath { internal get; }
+    prop   string BigBetaIconPath { internal get; }
+    prop   string MissingIconPath { internal get; }
+    prop   string IconPath { public get; }
+    prop   Godot.Texture2D Icon { public get; }
+    prop   Godot.Texture2D BigIcon { public get; }
+    prop   string ResolvedBigIconPath { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Powers.PowerType Type { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Powers.PowerInstanceType InstanceType { public get; }
+    prop   bool IsVisible { public get; }
+    prop   bool IsVisibleInternal { public get; }
+    prop   bool ShouldPlayVfx { public get; }
+    prop   int Amount { public get; internal set; }
+    prop   int AmountOnTurnStart { public get; public set; }
+    prop   int DisplayAmount { public get; }
+    prop   Godot.Color AmountLabelColor { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Powers.PowerStackType StackType { public get; }
+    prop   bool AllowNegative { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Powers.PowerType TypeForCurrentAmount { public get; }
+    prop   bool SkipNextDurationTick { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Owner { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.Combat.ICombatState CombatState { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Applier { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Entities.Creatures.Creature Target { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { public get; }
+    prop   bool ShouldScaleInMultiplayer { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { public get; }
+    prop   MegaCrit.Sts2.Core.HoverTips.HoverTip DumbHoverTip { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    prop   MegaCrit.Sts2.Core.Models.PowerModel CanonicalInstance { internal get; internal set; }
+    prop   bool ShouldReceiveCombatHooks { public get; }
+    prop   bool OwnerIsSecondaryEnemy { public get; }
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_SmartDescription()
+    method public bool get_HasSmartDescription()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_RemoteDescription()
+    method public bool get_HasRemoteDescription()
+    method public string get_RemoteDescriptionLocKey()
+    method public string get_SmartDescriptionLocKey()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    method public string get_PackedIconPath()
+    method internal string get_BigIconPath()
+    method internal string get_BigBetaIconPath()
+    method internal static string get_MissingIconPath()
+    method public string get_IconPath()
+    method public Godot.Texture2D get_Icon()
+    method public Godot.Texture2D get_BigIcon()
+    method public string get_ResolvedBigIconPath()
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerType get_Type()
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerInstanceType get_InstanceType()
+    method public bool get_IsVisible()
+    method public bool get_IsVisibleInternal()
+    method public bool get_ShouldPlayVfx()
+    method public void StartPulsing()
+    method public void StopPulsing()
+    method public void add_PulsingStarted(System.Action value)
+    method public void remove_PulsingStarted(System.Action value)
+    method public void add_PulsingStopped(System.Action value)
+    method public void remove_PulsingStopped(System.Action value)
+    method public int get_Amount()
+    method internal void set_Amount(int value)
+    method public int get_AmountOnTurnStart()
+    method public void set_AmountOnTurnStart(int value)
+    method public int get_DisplayAmount()
+    method public Godot.Color get_AmountLabelColor()
+    method public void Flash()
+    method public void InvokeDisplayAmountChanged()
+    method public void add_Flashed(System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> value)
+    method public void remove_Flashed(System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> value)
+    method public void add_DisplayAmountChanged(System.Action value)
+    method public void remove_DisplayAmountChanged(System.Action value)
+    method public void add_Removed(System.Action value)
+    method public void remove_Removed(System.Action value)
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerStackType get_StackType()
+    method public bool get_AllowNegative()
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerType get_TypeForCurrentAmount()
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerType GetTypeForAmount(System.Decimal customAmount)
+    method public bool ShouldRemoveDueToAmount()
+    method public bool get_SkipNextDurationTick()
+    method public void set_SkipNextDurationTick(bool value)
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Owner()
+    method internal void set_Owner(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    method public MegaCrit.Sts2.Core.Combat.ICombatState get_CombatState()
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Applier()
+    method public void set_Applier(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature get_Target()
+    method public void set_Target(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    method public MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    method public bool get_ShouldScaleInMultiplayer()
+    method public System.Decimal GetScaledAmountForMultiplayer(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, MegaCrit.Sts2.Core.Models.CardModel cardSource)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    method public object InitInternalData()
+    method public T GetInternalData<T>()
+    method public MegaCrit.Sts2.Core.HoverTips.HoverTip get_DumbHoverTip()
+    method public MegaCrit.Sts2.Core.HoverTips.HoverTip GetDumbHoverTip(System.Nullable`1<int> amountOverride)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method internal void AddDumbVariablesToDescription(MegaCrit.Sts2.Core.Localization.LocString description, System.Nullable`1<int> amountOverride)
+    method internal MegaCrit.Sts2.Core.Models.PowerModel get_CanonicalInstance()
+    method internal void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.PowerModel value)
+    method public void SetAmount(int amount, bool silent)
+    method public MegaCrit.Sts2.Core.Models.PowerModel ToMutable(int initialAmount)
+    method public void ApplyInternal(MegaCrit.Sts2.Core.Entities.Creatures.Creature owner, System.Decimal amount, bool silent)
+    method public void RemoveInternal()
+    method public void DeepCloneFields()
+    method public void AfterCloned()
+    method public bool get_ShouldReceiveCombatHooks()
+    method public System.Threading.Tasks.Task BeforeApplied(MegaCrit.Sts2.Core.Entities.Creatures.Creature target, System.Decimal amount, MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource)
+    method public System.Threading.Tasks.Task AfterApplied(MegaCrit.Sts2.Core.Entities.Creatures.Creature applier, MegaCrit.Sts2.Core.Models.CardModel cardSource)
+    method public System.Threading.Tasks.Task AfterRemoved(MegaCrit.Sts2.Core.Entities.Creatures.Creature oldOwner)
+    method public bool ShouldPowerBeRemovedAfterOwnerDeath()
+    method public bool ShouldOwnerDeathTriggerFatal()
+    method public bool get_OwnerIsSecondaryEnemy()
+    method public void .ctor()
+    method internal static void .cctor()
+    event  System.Action PulsingStarted
+    event  System.Action PulsingStopped
+    event  System.Action`1<MegaCrit.Sts2.Core.Models.PowerModel> Flashed
+    event  System.Action DisplayAmountChanged
+    event  System.Action Removed

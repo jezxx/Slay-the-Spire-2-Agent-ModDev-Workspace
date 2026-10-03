@@ -1,0 +1,8 @@
+### public class MegaCrit.Sts2.Core.Commands.CardSelectCmd+SelectorScope
+    base: System.Object
+    implements: System.IDisposable
+
+    field  internal readonly System.Collections.Generic.Stack`1<MegaCrit.Sts2.Core.TestSupport.ICardSelector> _stack
+    field  internal bool _disposed
+    method public void .ctor(System.Collections.Generic.Stack`1<MegaCrit.Sts2.Core.TestSupport.ICardSelector> stack)
+    method public void Dispose()

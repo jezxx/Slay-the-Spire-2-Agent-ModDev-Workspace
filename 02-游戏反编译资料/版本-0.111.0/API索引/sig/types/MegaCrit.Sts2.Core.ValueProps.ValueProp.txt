@@ -1,0 +1,7 @@
+### public enum MegaCrit.Sts2.Core.ValueProps.ValueProp
+    base: System.Enum
+
+    enum Unblockable = 2
+    enum Unpowered = 4
+    enum Move = 8
+    enum SkipHurtAnim = 16

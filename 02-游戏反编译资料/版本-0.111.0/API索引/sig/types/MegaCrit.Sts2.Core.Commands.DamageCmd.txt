@@ -1,0 +1,5 @@
+### public class MegaCrit.Sts2.Core.Commands.DamageCmd
+    base: System.Object
+
+    method public static MegaCrit.Sts2.Core.Commands.Builders.AttackCommand Attack(System.Decimal damagePerHit)
+    method public static MegaCrit.Sts2.Core.Commands.Builders.AttackCommand Attack(MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedDamageVar calculatedDamageVar)

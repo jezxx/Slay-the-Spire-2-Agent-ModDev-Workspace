@@ -1,0 +1,11 @@
+### MegaCrit.Sts2.Core.Commands.Builders.AttackContext
+  .ctor
+  CreateAsync
+  AddHit
+  DisposeAsync
+### <CreateAsync>d__5
+  MoveNext
+  SetStateMachine
+### <DisposeAsync>d__7
+  MoveNext
+  SetStateMachine

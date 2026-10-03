@@ -1,0 +1,4 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.CardTypeExtensions
+    base: System.Object
+
+    method public static MegaCrit.Sts2.Core.Localization.LocString ToLocString(MegaCrit.Sts2.Core.Entities.Cards.CardType cardType)

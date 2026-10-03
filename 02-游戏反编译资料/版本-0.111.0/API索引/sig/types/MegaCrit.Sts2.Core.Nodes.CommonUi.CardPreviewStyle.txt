@@ -1,0 +1,8 @@
+### public enum MegaCrit.Sts2.Core.Nodes.CommonUi.CardPreviewStyle
+    base: System.Enum
+
+    enum None = 0
+    enum HorizontalLayout = 1
+    enum MessyLayout = 2
+    enum EventLayout = 3
+    enum GridLayout = 4

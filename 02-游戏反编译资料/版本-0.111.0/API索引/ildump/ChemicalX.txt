@@ -1,0 +1,22 @@
+===== MegaCrit.Sts2.Core.Models.Relics.ChemicalX.ModifyXValue(card, originalValue)  [attrs=0xC6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 B4 1B 00 06 03 6F 64 18 00 06 2E 02 04 2A 04 02 28 C1 1B 00 06 72 D9 B1 01 70 6F C4 4B 00 06 6F A2 4B 00 06 58 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.RelicModel::get_Owner
+    IL_0006: ldarg.1        
+    IL_0007: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_000C: beq.s          IL_0010
+    IL_000E: ldarg.2        
+    IL_000F: ret            
+    IL_0010: ldarg.2        
+    IL_0011: ldarg.0        
+    IL_0012: call           MegaCrit.Sts2.Core.Models.RelicModel::get_DynamicVars
+    IL_0017: ldstr          "Increase"
+    IL_001C: callvirt       MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::get_Item
+    IL_0021: callvirt       MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar::get_IntValue
+    IL_0026: add            
+    IL_0027: ret            
+
+

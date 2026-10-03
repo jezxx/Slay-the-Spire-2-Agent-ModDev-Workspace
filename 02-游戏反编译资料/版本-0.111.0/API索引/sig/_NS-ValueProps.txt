@@ -1,0 +1,4 @@
+MegaCrit.Sts2.Core.ValueProps.BlockProps  [type] : System.Object
+MegaCrit.Sts2.Core.ValueProps.DamageProps  [type] : System.Object
+MegaCrit.Sts2.Core.ValueProps.ValueProp  [enum] : System.Enum
+MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions  [type] : System.Object

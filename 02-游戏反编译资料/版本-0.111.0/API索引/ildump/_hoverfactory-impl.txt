@@ -1,0 +1,215 @@
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.FromKeyword(keyword)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  7E 39 16 00 04 02 6F 47 19 00 0A 2D 1D 7E 39 16 00 04 02 02 28 32 52 00 06 02 28 33 52 00 06 14 73 3A 4C 00 06 6F 48 19 00 0A 7E 39 16 00 04 02 6F 49 19 00 0A 8C 4E 09 00 02 2A
+  -- decoded --
+    IL_0000: ldsfld         MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::_keywordHoverTips
+    IL_0005: ldarg.0        
+    IL_0006: callvirt       <typespec>::ContainsKey
+    IL_000B: brtrue.s       IL_002A
+    IL_000D: ldsfld         MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::_keywordHoverTips
+    IL_0012: ldarg.0        
+    IL_0013: ldarg.0        
+    IL_0014: call           MegaCrit.Sts2.Core.Entities.Cards.CardKeywordExtensions::GetTitle
+    IL_0019: ldarg.0        
+    IL_001A: call           MegaCrit.Sts2.Core.Entities.Cards.CardKeywordExtensions::GetDescription
+    IL_001F: ldnull         
+    IL_0020: newobj         MegaCrit.Sts2.Core.HoverTips.HoverTip::.ctor
+    IL_0025: callvirt       <typespec>::set_Item
+    IL_002A: ldsfld         MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::_keywordHoverTips
+    IL_002F: ldarg.0        
+    IL_0030: callvirt       <typespec>::get_Item
+    IL_0035: box            MegaCrit.Sts2.Core.HoverTips.HoverTip
+    IL_003A: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.FromPower(amount)  [attrs=0x96] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 E5 15 00 2B 8C 1E 00 00 1B 0A 06 02 28 4D 4C 00 06 2A
+  -- decoded --
+    IL_0000: call           MegaCrit.Sts2.Core.Models.ModelDb::Power<...>
+    IL_0005: box            <typespec>
+    IL_000A: stloc.0        
+    IL_000B: ldloc.0        
+    IL_000C: ldarg.0        
+    IL_000D: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::FromPower
+    IL_0012: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.FromPower(model, amount)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 03 6F 88 1B 00 06 8C 4E 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldarg.1        
+    IL_0002: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::GetDumbHoverTip
+    IL_0007: box            MegaCrit.Sts2.Core.HoverTips.HoverTip
+    IL_000C: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.FromPowerWithPowerHoverTips(amount)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  17 8D 51 09 00 02 25 16 02 28 E6 15 00 2B A2 28 E5 15 00 2B 8C 1E 00 00 1B 6F 8A 1B 00 06 28 28 08 00 2B 2A
+  -- decoded --
+    IL_0000: ldc.i4.1       
+    IL_0001: newarr         MegaCrit.Sts2.Core.HoverTips.IHoverTip
+    IL_0006: dup            
+    IL_0007: ldc.i4.0       
+    IL_0008: ldarg.0        
+    IL_0009: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::FromPower<...>
+    IL_000E: stelem.ref     
+    IL_000F: call           MegaCrit.Sts2.Core.Models.ModelDb::Power<...>
+    IL_0014: box            <typespec>
+    IL_0019: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_HoverTips
+    IL_001E: call           System.Linq.Enumerable::Concat<...>
+    IL_0023: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.Static(tip, vars)  [attrs=0x96] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  0F 00 FE 16 53 09 00 02 6F 8C 00 00 0A 28 79 4D 00 06 0A 06 72 75 06 00 70 28 F8 00 00 0A 28 61 4C 00 06 0B 06 72 83 06 00 70 28 F8 00 00 0A 28 61 4C 00 06 0C 03 0D 16 13 04 2B 1C 09 11 04 9A 13 05 07 11 05 6F CF 4A 00 06 08 11 05 6F CF 4A 00 06 11 04 17 58 13 04 11 04 09 8E 69 32 DD 07 08 14 73 3A 4C 00 06 8C 4E 09 00 02 2A
+  -- decoded --
+    IL_0000: ldarga.s       0
+    IL_0002: constrained.   MegaCrit.Sts2.Core.HoverTips.StaticHoverTip
+    IL_0008: callvirt       System.Object::ToString
+    IL_000D: call           MegaCrit.Sts2.Core.Helpers.StringHelper::Slugify
+    IL_0012: stloc.0        
+    IL_0013: ldloc.0        
+    IL_0014: ldstr          ".title"
+    IL_0019: call           System.String::Concat
+    IL_001E: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::L10NStatic
+    IL_0023: stloc.1        
+    IL_0024: ldloc.0        
+    IL_0025: ldstr          ".description"
+    IL_002A: call           System.String::Concat
+    IL_002F: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::L10NStatic
+    IL_0034: stloc.2        
+    IL_0035: ldarg.1        
+    IL_0036: stloc.3        
+    IL_0037: ldc.i4.0       
+    IL_0038: stloc.s        4
+    IL_003A: br.s           IL_0058
+    IL_003C: ldloc.3        
+    IL_003D: ldloc.s        4
+    IL_003F: ldelem.ref     
+    IL_0040: stloc.s        5
+    IL_0042: ldloc.1        
+    IL_0043: ldloc.s        5
+    IL_0045: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_004A: ldloc.2        
+    IL_004B: ldloc.s        5
+    IL_004D: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0052: ldloc.s        4
+    IL_0054: ldc.i4.1       
+    IL_0055: add            
+    IL_0056: stloc.s        4
+    IL_0058: ldloc.s        4
+    IL_005A: ldloc.3        
+    IL_005B: ldlen          
+    IL_005C: conv.i4        
+    IL_005D: blt.s          IL_003C
+    IL_005F: ldloc.1        
+    IL_0060: ldloc.2        
+    IL_0061: ldnull         
+    IL_0062: newobj         MegaCrit.Sts2.Core.HoverTips.HoverTip::.ctor
+    IL_0067: box            MegaCrit.Sts2.Core.HoverTips.HoverTip
+    IL_006C: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.ForEnergy(card)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 31 4D 00 06 28 5F 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Helpers.EnergyIconHelper::GetPath
+    IL_0006: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::ForEnergyWithIconPath
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.ForEnergy(potion)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 31 4D 00 06 28 5F 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Helpers.EnergyIconHelper::GetPath
+    IL_0006: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::ForEnergyWithIconPath
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.ForEnergy(power)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 31 4D 00 06 28 5F 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Helpers.EnergyIconHelper::GetPath
+    IL_0006: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::ForEnergyWithIconPath
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.ForEnergy(player)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 58 50 00 06 6F 32 19 00 06 28 31 4D 00 06 28 5F 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Character
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Models.CharacterModel::get_CardPool
+    IL_000B: call           MegaCrit.Sts2.Core.Helpers.EnergyIconHelper::GetPath
+    IL_0010: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::ForEnergyWithIconPath
+    IL_0015: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.ForEnergy(relic)  [attrs=0x96] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 31 4D 00 06 28 5F 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Helpers.EnergyIconHelper::GetPath
+    IL_0006: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::ForEnergyWithIconPath
+    IL_000B: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.ForEnergyWithIconPath(path)  [attrs=0x91] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 DF 0B 00 06 6F 70 0C 00 06 0A 72 5D FE 02 70 28 61 4C 00 06 72 77 FE 02 70 28 61 4C 00 06 28 D8 59 00 06 06 2D 03 02 2B 06 06 28 32 4D 00 06 6F 93 59 00 06 73 3A 4C 00 06 8C 4E 09 00 02 2A
+  -- decoded --
+    IL_0000: call           MegaCrit.Sts2.Core.Runs.RunManager::get_Instance
+    IL_0005: callvirt       MegaCrit.Sts2.Core.Runs.RunManager::GetLocalCharacterEnergyIconPrefix
+    IL_000A: stloc.0        
+    IL_000B: ldstr          "ENERGY.title"
+    IL_0010: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::L10NStatic
+    IL_0015: ldstr          "ENERGY.description"
+    IL_001A: call           MegaCrit.Sts2.Core.HoverTips.HoverTipFactory::L10NStatic
+    IL_001F: call           MegaCrit.Sts2.Core.Assets.PreloadManager::get_Cache
+    IL_0024: ldloc.0        
+    IL_0025: brtrue.s       IL_002A
+    IL_0027: ldarg.0        
+    IL_0028: br.s           IL_0030
+    IL_002A: ldloc.0        
+    IL_002B: call           MegaCrit.Sts2.Core.Helpers.EnergyIconHelper::GetPath
+    IL_0030: callvirt       MegaCrit.Sts2.Core.Assets.AssetCache::GetTexture2D
+    IL_0035: newobj         MegaCrit.Sts2.Core.HoverTips.HoverTip::.ctor
+    IL_003A: box            MegaCrit.Sts2.Core.HoverTips.HoverTip
+    IL_003F: ret            
+
+
+===== MegaCrit.Sts2.Core.HoverTips.HoverTipFactory.L10NStatic(entry)  [attrs=0x91] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 21 04 00 70 02 73 C2 4A 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "static_hover_tips"
+    IL_0005: ldarg.0        
+    IL_0006: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_000B: ret            
+
+

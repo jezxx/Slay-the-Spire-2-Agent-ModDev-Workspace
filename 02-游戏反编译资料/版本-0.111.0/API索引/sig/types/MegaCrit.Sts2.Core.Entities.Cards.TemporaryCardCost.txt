@@ -1,0 +1,19 @@
+### public class MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost
+    base: System.Object
+
+    field  internal int <Cost>k__BackingField
+    field  internal bool <ClearsWhenTurnEnds>k__BackingField
+    field  internal bool <ClearsWhenCardIsPlayed>k__BackingField
+    prop   int Cost { public get; internal set; }
+    prop   bool ClearsWhenTurnEnds { public get; internal set; }
+    prop   bool ClearsWhenCardIsPlayed { public get; internal set; }
+    method public int get_Cost()
+    method internal void set_Cost(int value)
+    method public bool get_ClearsWhenTurnEnds()
+    method internal void set_ClearsWhenTurnEnds(bool value)
+    method public bool get_ClearsWhenCardIsPlayed()
+    method internal void set_ClearsWhenCardIsPlayed(bool value)
+    method public static MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost UntilPlayed(int cost)
+    method public static MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost ThisTurn(int cost)
+    method public static MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost ThisCombat(int cost)
+    method public void .ctor()

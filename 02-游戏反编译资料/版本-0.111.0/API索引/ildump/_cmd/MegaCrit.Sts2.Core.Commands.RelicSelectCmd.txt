@@ -1,0 +1,6 @@
+### MegaCrit.Sts2.Core.Commands.RelicSelectCmd
+  ShouldSelectLocalRelic
+  FromChooseARelicScreen
+### <FromChooseARelicScreen>d__1
+  MoveNext
+  SetStateMachine

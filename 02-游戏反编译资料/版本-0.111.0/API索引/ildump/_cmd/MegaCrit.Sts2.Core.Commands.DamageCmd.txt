@@ -1,0 +1,3 @@
+### MegaCrit.Sts2.Core.Commands.DamageCmd
+  Attack
+  Attack

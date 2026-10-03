@@ -1,0 +1,36 @@
+### MegaCrit.Sts2.Core.Modding.Mod
+  base: System.Object
+  interfaces: 
+  isAbstract=False isSealed=False isEnum=False
+  --- ctors ---
+    pub .ctor()
+  --- methods ---
+  --- properties ---
+  --- fields ---
+    pub MegaCrit.Sts2.Core.Modding.ModSource modSource
+    pub System.String path
+    pub MegaCrit.Sts2.Core.Modding.ModLoadState state
+    pub MegaCrit.Sts2.Core.Modding.ModManifest manifest
+    pub MegaCrit.Sts2.Core.Debug.SemanticVersion version
+    pub System.Collections.Generic.List`1[[System.Reflection.Assembly, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] assemblies
+    pub System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Localization.LocString, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] errors
+    pub System.Nullable`1[[System.UInt64, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] workshopId
+### MegaCrit.Sts2.Core.Modding.ModSettings
+  base: System.Object
+  interfaces: 
+  isAbstract=False isSealed=False isEnum=False
+  --- ctors ---
+    pub .ctor()
+  --- methods ---
+    pub System.Boolean IsModDisabled(MegaCrit.Sts2.Core.Modding.Mod mod)
+    pub System.Boolean IsModDisabled(System.String id, MegaCrit.Sts2.Core.Modding.ModSource source)
+    pub System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.SettingsSaveMod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_ModList()
+    pub System.Boolean get_PlayerAgreedToModLoading()
+    pub System.Void set_ModList(System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.SettingsSaveMod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] value)
+    pub System.Void set_PlayerAgreedToModLoading(System.Boolean value)
+  --- properties ---
+    System.Boolean PlayerAgreedToModLoading { get; set; }
+    System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.SettingsSaveMod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] ModList { get; set; }
+  --- fields ---
+    priv System.Boolean <PlayerAgreedToModLoading>k__BackingField
+    priv System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Modding.SettingsSaveMod, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] <ModList>k__BackingField

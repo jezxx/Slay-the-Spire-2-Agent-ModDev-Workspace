@@ -1,0 +1,149 @@
+### STS2RitsuLib.Scaffolding.Content.ModEventTemplate   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.EventModel
+  interfaces: STS2RitsuLib.Scaffolding.Content.Patches.IModEventAssetOverrides, STS2RitsuLib.Scaffolding.Content.IModEventLayoutPackedSceneFactory, STS2RitsuLib.Scaffolding.Content.IModEventBackgroundPackedSceneFactory, STS2RitsuLib.Scaffolding.Content.IModEventVfxFactory
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    prot [virtual(newslot)] bool get_SuppliesCustomEventVfx()
+    pub [virtual(newslot)] STS2RitsuLib.Scaffolding.Content.EventAssetProfile get_AssetProfile()
+    pub [virtual(newslot)] string get_CustomLayoutScenePath()
+    pub [virtual(newslot)] string get_CustomInitialPortraitPath()
+    pub [virtual(newslot)] string get_CustomBackgroundScenePath()
+    pub [virtual(newslot)] string get_CustomVfxScenePath()
+    priv [virtual(newslot)] Godot.PackedScene STS2RitsuLib.Scaffolding.Content.IModEventBackgroundPackedSceneFactory.TryCreateBackgroundPackedScene()
+    priv [virtual(newslot)] Godot.PackedScene STS2RitsuLib.Scaffolding.Content.IModEventLayoutPackedSceneFactory.TryCreateLayoutPackedScene()
+    priv [virtual(newslot)] bool STS2RitsuLib.Scaffolding.Content.IModEventVfxFactory.get_SuppliesCustomEventVfx()
+    priv [virtual(newslot)] Godot.Node2D STS2RitsuLib.Scaffolding.Content.IModEventVfxFactory.TryCreateEventVfx()
+    prot [virtual(newslot)] Godot.PackedScene TryCreateLayoutPackedScene()
+    prot [virtual(newslot)] Godot.PackedScene TryCreateBackgroundPackedScene()
+    prot [virtual(newslot)] Godot.Node2D TryCreateEventVfx()
+    prot string ModOptionKey(string, string)
+    prot string InitialOptionKey(string)
+    prot MegaCrit.Sts2.Core.Localization.LocString PageDescription(string)
+    prot MegaCrit.Sts2.Core.Events.EventOption CreateModRelicOption(System.Func`1<System.Threading.Tasks.Task>, string)
+    prot MegaCrit.Sts2.Core.Events.EventOption CreateModRelicOption(MegaCrit.Sts2.Core.Models.RelicModel, System.Func`1<System.Threading.Tasks.Task>, string)
+
+  --- properties ---
+    bool SuppliesCustomEventVfx { [virtual] get; }
+    STS2RitsuLib.Scaffolding.Content.EventAssetProfile AssetProfile { [virtual] get; }
+    string CustomLayoutScenePath { [virtual] get; }
+    string CustomInitialPortraitPath { [virtual] get; }
+    string CustomBackgroundScenePath { [virtual] get; }
+    string CustomVfxScenePath { [virtual] get; }
+    bool STS2RitsuLib.Scaffolding.Content.IModEventVfxFactory.SuppliesCustomEventVfx { [virtual] get; }
+
+
+### STS2RitsuLib.Scaffolding.Content.ModEnchantmentTemplate   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.EnchantmentModel
+  interfaces: STS2RitsuLib.Scaffolding.Content.Patches.IModEnchantmentAssetOverrides
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [virtual(newslot)] STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile get_AssetProfile()
+    pub [virtual(newslot)] string get_CustomIconPath()
+
+  --- properties ---
+    STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile AssetProfile { [virtual] get; }
+    string CustomIconPath { [virtual] get; }
+
+
+### STS2RitsuLib.Scaffolding.Content.EventAssetProfile   [sealed class]
+  base: System.Object
+  interfaces: System.IEquatable`1<STS2RitsuLib.Scaffolding.Content.EventAssetProfile>
+
+  --- fields ---
+    priv readonly string <LayoutScenePath>k__BackingField
+    priv readonly string <InitialPortraitPath>k__BackingField
+    priv readonly string <BackgroundScenePath>k__BackingField
+    priv readonly string <VfxScenePath>k__BackingField
+    priv static readonly STS2RitsuLib.Scaffolding.Content.EventAssetProfile <Empty>k__BackingField
+
+  --- ctors ---
+    pub .ctor(string, string, string, string)
+    priv .ctor(STS2RitsuLib.Scaffolding.Content.EventAssetProfile)
+    priv .cctor()
+
+  --- methods ---
+    priv System.Type get_EqualityContract()
+    pub string get_LayoutScenePath()
+    pub void set_LayoutScenePath(string)
+    pub string get_InitialPortraitPath()
+    pub void set_InitialPortraitPath(string)
+    pub string get_BackgroundScenePath()
+    pub void set_BackgroundScenePath(string)
+    pub string get_VfxScenePath()
+    pub void set_VfxScenePath(string)
+    pub [static] STS2RitsuLib.Scaffolding.Content.EventAssetProfile get_Empty()
+    pub [OVERRIDE] string ToString()
+    priv bool PrintMembers(System.Text.StringBuilder)
+    pub [static] bool op_Inequality(STS2RitsuLib.Scaffolding.Content.EventAssetProfile, STS2RitsuLib.Scaffolding.Content.EventAssetProfile)
+    pub [static] bool op_Equality(STS2RitsuLib.Scaffolding.Content.EventAssetProfile, STS2RitsuLib.Scaffolding.Content.EventAssetProfile)
+    pub [OVERRIDE] int GetHashCode()
+    pub [OVERRIDE] bool Equals(object)
+    pub [virtual(newslot)] bool Equals(STS2RitsuLib.Scaffolding.Content.EventAssetProfile)
+    pub STS2RitsuLib.Scaffolding.Content.EventAssetProfile <Clone>$()
+    pub void Deconstruct(string&, string&, string&, string&)
+
+  --- properties ---
+    System.Type EqualityContract { get; }
+    string LayoutScenePath { get; set; }
+    string InitialPortraitPath { get; set; }
+    string BackgroundScenePath { get; set; }
+    string VfxScenePath { get; set; }
+    STS2RitsuLib.Scaffolding.Content.EventAssetProfile Empty { get; }
+
+
+### STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile   [sealed class]
+  base: System.Object
+  interfaces: System.IEquatable`1<STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile>
+
+  --- fields ---
+    priv readonly string <IconPath>k__BackingField
+    priv static readonly STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile <Empty>k__BackingField
+
+  --- ctors ---
+    pub .ctor(string)
+    priv .ctor(STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile)
+    priv .cctor()
+
+  --- methods ---
+    priv System.Type get_EqualityContract()
+    pub string get_IconPath()
+    pub void set_IconPath(string)
+    pub [static] STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile get_Empty()
+    pub [OVERRIDE] string ToString()
+    priv bool PrintMembers(System.Text.StringBuilder)
+    pub [static] bool op_Inequality(STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile, STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile)
+    pub [static] bool op_Equality(STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile, STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile)
+    pub [OVERRIDE] int GetHashCode()
+    pub [OVERRIDE] bool Equals(object)
+    pub [virtual(newslot)] bool Equals(STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile)
+    pub STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile <Clone>$()
+    pub void Deconstruct(string&)
+
+  --- properties ---
+    System.Type EqualityContract { get; }
+    string IconPath { get; set; }
+    STS2RitsuLib.Scaffolding.Content.EnchantmentAssetProfile Empty { get; }
+
+
+### STS2RitsuLib.Interop.AutoRegistration.RegisterActEventAttribute   [sealed class]
+  base: STS2RitsuLib.Interop.AutoRegistration.ActScopedRegistrationAttributeBase
+  interfaces: 
+
+  --- ctors ---
+    pub .ctor(System.Type)
+
+
+### STS2RitsuLib.Interop.AutoRegistration.RegisterEnchantmentAttribute   [sealed class]
+  base: STS2RitsuLib.Interop.AutoRegistration.ContentRegistrationAttribute
+  interfaces: 
+
+  --- ctors ---
+    pub .ctor()
+
+

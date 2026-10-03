@@ -1,0 +1,98 @@
+### public class MegaCrit.Sts2.Core.Models.EnchantmentModel
+    base: MegaCrit.Sts2.Core.Models.AbstractModel
+
+    field  public static string locTable
+    field  internal string _iconPath
+    field  internal MegaCrit.Sts2.Core.Models.CardModel _card
+    field  internal int _amount
+    field  internal MegaCrit.Sts2.Core.Saves.Runs.SavedProperties <Props>k__BackingField
+    field  internal MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    field  internal MegaCrit.Sts2.Core.Entities.Enchantments.EnchantmentStatus _status
+    field  internal System.Action StatusChanged
+    field  internal MegaCrit.Sts2.Core.Models.EnchantmentModel _canonicalInstance
+    prop   MegaCrit.Sts2.Core.Localization.LocString Title { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Description { internal get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString ExtraCardText { internal get; }
+    prop   bool HasExtraCardText { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicDescription { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicExtraCardText { public get; }
+    prop   string MissingIconPath { public get; }
+    prop   string IntendedIconPath { public get; }
+    prop   string BetaIconPath { internal get; }
+    prop   string IconPath { public get; }
+    prop   Godot.CompressedTexture2D Icon { public get; }
+    prop   bool ShowAmount { public get; }
+    prop   int DisplayAmount { public get; }
+    prop   bool PreviewOutsideOfCombat { public get; }
+    prop   bool ShouldReceiveCombatHooks { public get; }
+    prop   bool ShouldStartAtBottomOfDrawPile { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardModel Card { public get; public set; }
+    prop   bool HasCard { public get; }
+    prop   int Amount { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Saves.Runs.SavedProperties Props { public get; public set; }
+    prop   bool IsStackable { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> CanonicalVars { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Enchantments.EnchantmentStatus Status { public get; public set; }
+    prop   bool ShouldGlowGold { public get; }
+    prop   bool ShouldGlowRed { public get; }
+    prop   MegaCrit.Sts2.Core.Models.EnchantmentModel CanonicalInstance { public get; internal set; }
+    prop   MegaCrit.Sts2.Core.HoverTips.HoverTip HoverTip { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    method internal MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    method internal MegaCrit.Sts2.Core.Localization.LocString get_ExtraCardText()
+    method public bool get_HasExtraCardText()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicDescription()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicExtraCardText()
+    method public static string get_MissingIconPath()
+    method public string get_IntendedIconPath()
+    method internal string get_BetaIconPath()
+    method public string get_IconPath()
+    method public Godot.CompressedTexture2D get_Icon()
+    method public bool get_ShowAmount()
+    method public int get_DisplayAmount()
+    method public bool get_PreviewOutsideOfCombat()
+    method public bool get_ShouldReceiveCombatHooks()
+    method public bool get_ShouldStartAtBottomOfDrawPile()
+    method public MegaCrit.Sts2.Core.Models.CardModel get_Card()
+    method public void set_Card(MegaCrit.Sts2.Core.Models.CardModel value)
+    method public bool get_HasCard()
+    method public int get_Amount()
+    method public void set_Amount(int value)
+    method public MegaCrit.Sts2.Core.Saves.Runs.SavedProperties get_Props()
+    method public void set_Props(MegaCrit.Sts2.Core.Saves.Runs.SavedProperties value)
+    method public bool CanEnchantCardType(MegaCrit.Sts2.Core.Entities.Cards.CardType cardType)
+    method public bool get_IsStackable()
+    method public bool CanEnchant(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public System.Threading.Tasks.Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    method public MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar> get_CanonicalVars()
+    method public MegaCrit.Sts2.Core.Entities.Enchantments.EnchantmentStatus get_Status()
+    method public void set_Status(MegaCrit.Sts2.Core.Entities.Enchantments.EnchantmentStatus value)
+    method public void add_StatusChanged(System.Action value)
+    method public void remove_StatusChanged(System.Action value)
+    method public bool get_ShouldGlowGold()
+    method public bool get_ShouldGlowRed()
+    method public MegaCrit.Sts2.Core.Models.EnchantmentModel get_CanonicalInstance()
+    method internal void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.EnchantmentModel value)
+    method public MegaCrit.Sts2.Core.Models.EnchantmentModel ToMutable()
+    method public void DeepCloneFields()
+    method public MegaCrit.Sts2.Core.HoverTips.HoverTip get_HoverTip()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method public void ApplyInternal(MegaCrit.Sts2.Core.Models.CardModel card, System.Decimal amount)
+    method public void ClearInternal()
+    method public void ModifyCard()
+    method public void RecalculateValues()
+    method public MegaCrit.Sts2.Core.Saves.Runs.SerializableEnchantment ToSerializable()
+    method public static MegaCrit.Sts2.Core.Models.EnchantmentModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableEnchantment save)
+    method public void OnEnchant()
+    method public System.Decimal EnchantBlockAdditive(System.Decimal originalBlock)
+    method public System.Decimal EnchantBlockMultiplicative(System.Decimal originalBlock)
+    method public System.Decimal EnchantDamageAdditive(System.Decimal originalDamage, MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public System.Decimal EnchantDamageMultiplicative(System.Decimal originalDamage, MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public int EnchantPlayCount(int originalPlayCount)
+    method public void .ctor()
+    event  System.Action StatusChanged

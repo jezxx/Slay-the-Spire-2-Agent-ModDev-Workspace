@@ -1,0 +1,548 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using Godot;
+using Godot.Bridge;
+using Godot.NativeInterop;
+using MegaCrit.Sts2.Core.Entities.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Logging;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using MegaCrit.Sts2.Core.Nodes.Screens.Capstones;
+using MegaCrit.Sts2.Core.Nodes.Screens.ScreenContext;
+
+namespace MegaCrit.Sts2.Core.Nodes.Screens;
+
+/// <summary>
+/// This is the screen used to view an arbitrary set of cards
+/// EX: pandoras box
+/// </summary>
+[ScriptPath("res://src/Core/Nodes/Screens/NCardsViewScreen.cs")]
+public abstract class NCardsViewScreen : Control, ICapstoneScreen, IScreenContext
+{
+	/// <summary>
+	/// Cached StringNames for the methods contained in this class, for fast lookup.
+	/// </summary>
+	public new class MethodName : Control.MethodName
+	{
+		/// <summary>
+		/// Cached name for the '_Ready' method.
+		/// </summary>
+		public new static readonly StringName _Ready = "_Ready";
+
+		/// <summary>
+		/// Cached name for the 'ConnectSignals' method.
+		/// </summary>
+		public static readonly StringName ConnectSignals = "ConnectSignals";
+
+		/// <summary>
+		/// Cached name for the 'OnInspectVisibilityChanged' method.
+		/// </summary>
+		public static readonly StringName OnInspectVisibilityChanged = "OnInspectVisibilityChanged";
+
+		/// <summary>
+		/// Cached name for the 'OnInspectCardHidden' method.
+		/// </summary>
+		public static readonly StringName OnInspectCardHidden = "OnInspectCardHidden";
+
+		/// <summary>
+		/// Cached name for the 'ToggleShowUpgrades' method.
+		/// </summary>
+		public static readonly StringName ToggleShowUpgrades = "ToggleShowUpgrades";
+
+		/// <summary>
+		/// Cached name for the 'OnReturnButtonPressed' method.
+		/// </summary>
+		public static readonly StringName OnReturnButtonPressed = "OnReturnButtonPressed";
+
+		/// <summary>
+		/// Cached name for the 'AfterCapstoneOpened' method.
+		/// </summary>
+		public static readonly StringName AfterCapstoneOpened = "AfterCapstoneOpened";
+
+		/// <summary>
+		/// Cached name for the 'AfterCapstoneClosed' method.
+		/// </summary>
+		public static readonly StringName AfterCapstoneClosed = "AfterCapstoneClosed";
+
+		/// <summary>
+		/// Cached name for the 'OnControllerStateUpdated' method.
+		/// </summary>
+		public static readonly StringName OnControllerStateUpdated = "OnControllerStateUpdated";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the properties and fields contained in this class, for fast lookup.
+	/// </summary>
+	public new class PropertyName : Control.PropertyName
+	{
+		/// <summary>
+		/// Cached name for the 'ScreenType' property.
+		/// </summary>
+		public static readonly StringName ScreenType = "ScreenType";
+
+		/// <summary>
+		/// Cached name for the 'DefaultFocusedControl' property.
+		/// </summary>
+		public static readonly StringName DefaultFocusedControl = "DefaultFocusedControl";
+
+		/// <summary>
+		/// Cached name for the 'FocusedControlFromTopBar' property.
+		/// </summary>
+		public static readonly StringName FocusedControlFromTopBar = "FocusedControlFromTopBar";
+
+		/// <summary>
+		/// Cached name for the 'UseSharedBackstop' property.
+		/// </summary>
+		public static readonly StringName UseSharedBackstop = "UseSharedBackstop";
+
+		/// <summary>
+		/// Cached name for the '_background' field.
+		/// </summary>
+		public static readonly StringName _background = "_background";
+
+		/// <summary>
+		/// Cached name for the '_grid' field.
+		/// </summary>
+		public static readonly StringName _grid = "_grid";
+
+		/// <summary>
+		/// Cached name for the '_backButton' field.
+		/// </summary>
+		public static readonly StringName _backButton = "_backButton";
+
+		/// <summary>
+		/// Cached name for the '_showUpgrades' field.
+		/// </summary>
+		public static readonly StringName _showUpgrades = "_showUpgrades";
+
+		/// <summary>
+		/// Cached name for the '_bottomLabel' field.
+		/// </summary>
+		public static readonly StringName _bottomLabel = "_bottomLabel";
+
+		/// <summary>
+		/// Cached name for the '_inspectCardScreen' field.
+		/// </summary>
+		public static readonly StringName _inspectCardScreen = "_inspectCardScreen";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the signals contained in this class, for fast lookup.
+	/// </summary>
+	public new class SignalName : Control.SignalName
+	{
+	}
+
+	private ColorRect _background;
+
+	protected NCardGrid _grid;
+
+	protected NButton _backButton;
+
+	private NTickbox _showUpgrades;
+
+	private RichTextLabel _bottomLabel;
+
+	protected List<CardModel> _cards;
+
+	private NInspectCardScreen? _inspectCardScreen;
+
+	protected LocString _infoText;
+
+	public abstract NetScreenType ScreenType { get; }
+
+	public Control? DefaultFocusedControl => _grid.DefaultFocusedControl;
+
+	public Control? FocusedControlFromTopBar => _grid.FocusedControlFromTopBar;
+
+	public bool UseSharedBackstop => true;
+
+	public override void _Ready()
+	{
+		if (GetType() != typeof(NCardsViewScreen))
+		{
+			Log.Error($"{GetType()}");
+			throw new InvalidOperationException("Don't call base._Ready()! Call ConnectSignals() instead.");
+		}
+		ConnectSignals();
+	}
+
+	protected virtual void ConnectSignals()
+	{
+		_bottomLabel = GetNode<RichTextLabel>("%BottomLabel");
+		_backButton = GetNode<NButton>("BackButton");
+		_backButton.Connect(NClickableControl.SignalName.Released, Callable.From<NButton>(OnReturnButtonPressed));
+		_backButton.Enable();
+		_grid = GetNode<NCardGrid>("CardGrid");
+		_grid.InsetForTopBar();
+		_bottomLabel.Text = _infoText.GetFormattedText();
+		_showUpgrades = GetNode<NTickbox>("%Upgrades");
+		_showUpgrades.Connect(NTickbox.SignalName.Toggled, Callable.From<NTickbox>(ToggleShowUpgrades));
+		OnControllerStateUpdated();
+		NControllerManager.Instance.Connect(NControllerManager.SignalName.MouseDetected, Callable.From(OnControllerStateUpdated));
+		NControllerManager.Instance.Connect(NControllerManager.SignalName.ControllerDetected, Callable.From(OnControllerStateUpdated));
+		base.ProcessMode = (ProcessModeEnum)(base.Visible ? 0 : 4);
+	}
+
+	protected void ShowCardDetail(CardModel cardModel)
+	{
+		_backButton.Disable();
+		List<CardModel> list = _grid.CurrentlyDisplayedCards.ToList();
+		NInspectCardScreen inspectCardScreen = NGame.Instance.GetInspectCardScreen();
+		inspectCardScreen.Open(list, list.IndexOf(cardModel), _grid.IsShowingUpgrades);
+		Callable callable = Callable.From(OnInspectVisibilityChanged);
+		if (inspectCardScreen.IsConnected(CanvasItem.SignalName.VisibilityChanged, callable))
+		{
+			inspectCardScreen.Disconnect(CanvasItem.SignalName.VisibilityChanged, callable);
+		}
+		_inspectCardScreen = inspectCardScreen;
+		inspectCardScreen.Connect(CanvasItem.SignalName.VisibilityChanged, callable, 4u);
+	}
+
+	private void OnInspectVisibilityChanged()
+	{
+		NInspectCardScreen inspectCardScreen = _inspectCardScreen;
+		if (inspectCardScreen != null && !inspectCardScreen.Visible)
+		{
+			OnInspectCardHidden();
+		}
+	}
+
+	protected virtual void OnInspectCardHidden()
+	{
+		_backButton.Enable();
+	}
+
+	private void ToggleShowUpgrades(NTickbox tickbox)
+	{
+		_grid.IsShowingUpgrades = tickbox.IsTicked;
+	}
+
+	protected void OnReturnButtonPressed(NButton _)
+	{
+		NCapstoneContainer.Instance.Close();
+	}
+
+	public virtual void AfterCapstoneOpened()
+	{
+		_showUpgrades.IsTicked = false;
+	}
+
+	public virtual void AfterCapstoneClosed()
+	{
+		base.Visible = false;
+		this.QueueFreeSafely();
+	}
+
+	private void OnControllerStateUpdated()
+	{
+		_showUpgrades.Visible = !NControllerManager.Instance.IsUsingDirectionalNavigation;
+		if (NControllerManager.Instance.IsUsingDirectionalNavigation)
+		{
+			_showUpgrades.IsTicked = false;
+			ToggleShowUpgrades(_showUpgrades);
+		}
+	}
+
+	/// <summary>
+	/// Get the method information for all the methods declared in this class.
+	/// This method is used by Godot to register the available methods in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal static List<MethodInfo> GetGodotMethodList()
+	{
+		List<MethodInfo> list = new List<MethodInfo>(9);
+		list.Add(new MethodInfo(MethodName._Ready, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.ConnectSignals, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnInspectVisibilityChanged, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnInspectCardHidden, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.ToggleShowUpgrades, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "tickbox", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.OnReturnButtonPressed, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "_", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.AfterCapstoneOpened, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.AfterCapstoneClosed, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.OnControllerStateUpdated, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool InvokeGodotClassMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName._Ready && args.Count == 0)
+		{
+			_Ready();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.ConnectSignals && args.Count == 0)
+		{
+			ConnectSignals();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnInspectVisibilityChanged && args.Count == 0)
+		{
+			OnInspectVisibilityChanged();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnInspectCardHidden && args.Count == 0)
+		{
+			OnInspectCardHidden();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.ToggleShowUpgrades && args.Count == 1)
+		{
+			ToggleShowUpgrades(VariantUtils.ConvertTo<NTickbox>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnReturnButtonPressed && args.Count == 1)
+		{
+			OnReturnButtonPressed(VariantUtils.ConvertTo<NButton>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.AfterCapstoneOpened && args.Count == 0)
+		{
+			AfterCapstoneOpened();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.AfterCapstoneClosed && args.Count == 0)
+		{
+			AfterCapstoneClosed();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.OnControllerStateUpdated && args.Count == 0)
+		{
+			OnControllerStateUpdated();
+			ret = default(godot_variant);
+			return true;
+		}
+		return base.InvokeGodotClassMethod(in method, args, out ret);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool HasGodotClassMethod(in godot_string_name method)
+	{
+		if (method == MethodName._Ready)
+		{
+			return true;
+		}
+		if (method == MethodName.ConnectSignals)
+		{
+			return true;
+		}
+		if (method == MethodName.OnInspectVisibilityChanged)
+		{
+			return true;
+		}
+		if (method == MethodName.OnInspectCardHidden)
+		{
+			return true;
+		}
+		if (method == MethodName.ToggleShowUpgrades)
+		{
+			return true;
+		}
+		if (method == MethodName.OnReturnButtonPressed)
+		{
+			return true;
+		}
+		if (method == MethodName.AfterCapstoneOpened)
+		{
+			return true;
+		}
+		if (method == MethodName.AfterCapstoneClosed)
+		{
+			return true;
+		}
+		if (method == MethodName.OnControllerStateUpdated)
+		{
+			return true;
+		}
+		return base.HasGodotClassMethod(in method);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool SetGodotClassPropertyValue(in godot_string_name name, in godot_variant value)
+	{
+		if (name == PropertyName._background)
+		{
+			_background = VariantUtils.ConvertTo<ColorRect>(in value);
+			return true;
+		}
+		if (name == PropertyName._grid)
+		{
+			_grid = VariantUtils.ConvertTo<NCardGrid>(in value);
+			return true;
+		}
+		if (name == PropertyName._backButton)
+		{
+			_backButton = VariantUtils.ConvertTo<NButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._showUpgrades)
+		{
+			_showUpgrades = VariantUtils.ConvertTo<NTickbox>(in value);
+			return true;
+		}
+		if (name == PropertyName._bottomLabel)
+		{
+			_bottomLabel = VariantUtils.ConvertTo<RichTextLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._inspectCardScreen)
+		{
+			_inspectCardScreen = VariantUtils.ConvertTo<NInspectCardScreen>(in value);
+			return true;
+		}
+		return base.SetGodotClassPropertyValue(in name, in value);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
+	{
+		if (name == PropertyName.ScreenType)
+		{
+			NetScreenType from = ScreenType;
+			value = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		Control from2;
+		if (name == PropertyName.DefaultFocusedControl)
+		{
+			from2 = DefaultFocusedControl;
+			value = VariantUtils.CreateFrom(in from2);
+			return true;
+		}
+		if (name == PropertyName.FocusedControlFromTopBar)
+		{
+			from2 = FocusedControlFromTopBar;
+			value = VariantUtils.CreateFrom(in from2);
+			return true;
+		}
+		if (name == PropertyName.UseSharedBackstop)
+		{
+			bool from3 = UseSharedBackstop;
+			value = VariantUtils.CreateFrom(in from3);
+			return true;
+		}
+		if (name == PropertyName._background)
+		{
+			value = VariantUtils.CreateFrom(in _background);
+			return true;
+		}
+		if (name == PropertyName._grid)
+		{
+			value = VariantUtils.CreateFrom(in _grid);
+			return true;
+		}
+		if (name == PropertyName._backButton)
+		{
+			value = VariantUtils.CreateFrom(in _backButton);
+			return true;
+		}
+		if (name == PropertyName._showUpgrades)
+		{
+			value = VariantUtils.CreateFrom(in _showUpgrades);
+			return true;
+		}
+		if (name == PropertyName._bottomLabel)
+		{
+			value = VariantUtils.CreateFrom(in _bottomLabel);
+			return true;
+		}
+		if (name == PropertyName._inspectCardScreen)
+		{
+			value = VariantUtils.CreateFrom(in _inspectCardScreen);
+			return true;
+		}
+		return base.GetGodotClassPropertyValue(in name, out value);
+	}
+
+	/// <summary>
+	/// Get the property information for all the properties declared in this class.
+	/// This method is used by Godot to register the available properties in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal static List<PropertyInfo> GetGodotPropertyList()
+	{
+		List<PropertyInfo> list = new List<PropertyInfo>();
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._background, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._grid, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._backButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._showUpgrades, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._bottomLabel, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._inspectCardScreen, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Int, PropertyName.ScreenType, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName.DefaultFocusedControl, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName.FocusedControlFromTopBar, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Bool, PropertyName.UseSharedBackstop, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void SaveGodotObjectData(GodotSerializationInfo info)
+	{
+		base.SaveGodotObjectData(info);
+		info.AddProperty(PropertyName._background, Variant.From(in _background));
+		info.AddProperty(PropertyName._grid, Variant.From(in _grid));
+		info.AddProperty(PropertyName._backButton, Variant.From(in _backButton));
+		info.AddProperty(PropertyName._showUpgrades, Variant.From(in _showUpgrades));
+		info.AddProperty(PropertyName._bottomLabel, Variant.From(in _bottomLabel));
+		info.AddProperty(PropertyName._inspectCardScreen, Variant.From(in _inspectCardScreen));
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void RestoreGodotObjectData(GodotSerializationInfo info)
+	{
+		base.RestoreGodotObjectData(info);
+		if (info.TryGetProperty(PropertyName._background, out var value))
+		{
+			_background = value.As<ColorRect>();
+		}
+		if (info.TryGetProperty(PropertyName._grid, out var value2))
+		{
+			_grid = value2.As<NCardGrid>();
+		}
+		if (info.TryGetProperty(PropertyName._backButton, out var value3))
+		{
+			_backButton = value3.As<NButton>();
+		}
+		if (info.TryGetProperty(PropertyName._showUpgrades, out var value4))
+		{
+			_showUpgrades = value4.As<NTickbox>();
+		}
+		if (info.TryGetProperty(PropertyName._bottomLabel, out var value5))
+		{
+			_bottomLabel = value5.As<RichTextLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._inspectCardScreen, out var value6))
+		{
+			_inspectCardScreen = value6.As<NInspectCardScreen>();
+		}
+	}
+}

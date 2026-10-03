@@ -1,0 +1,75 @@
+===== MegaCrit.Sts2.Core.Models.PotionModel.get_PackedImagePath()  [attrs=0x881] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 5D AA 01 70 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 72 F4 0B 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "atlases/potion_atlas.sprites/"
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0010: callvirt       System.String::ToLowerInvariant
+    IL_0015: ldstr          ".tres"
+    IL_001A: call           System.String::Concat
+    IL_001F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0024: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PotionModel.get_PackedOutlinePath()  [attrs=0x881] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 99 AA 01 70 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 72 F4 0B 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "atlases/potion_outline_atlas.sprites/"
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0010: callvirt       System.String::ToLowerInvariant
+    IL_0015: ldstr          ".tres"
+    IL_001A: call           System.String::Concat
+    IL_001F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0024: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PotionModel.get_ImagePath()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 16 1B 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.PotionModel::get_PackedImagePath
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PotionModel.get_OutlinePath()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 17 1B 00 06 72 05 01 00 70 28 35 02 00 0A 2D 02 14 2A 02 28 17 1B 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.PotionModel::get_PackedOutlinePath
+    IL_0006: ldstr          ""
+    IL_000B: call           Godot.ResourceLoader::Exists
+    IL_0010: brtrue.s       IL_0014
+    IL_0012: ldnull         
+    IL_0013: ret            
+    IL_0014: ldarg.0        
+    IL_0015: call           MegaCrit.Sts2.Core.Models.PotionModel::get_PackedOutlinePath
+    IL_001A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PotionModel.get_LargeImagePath()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 E5 AA 01 70 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 72 34 0C 00 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "potions/large/"
+    IL_0005: ldarg.0        
+    IL_0006: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0010: callvirt       System.String::ToLowerInvariant
+    IL_0015: ldstr          ".png"
+    IL_001A: call           System.String::Concat
+    IL_001F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0024: ret            
+
+

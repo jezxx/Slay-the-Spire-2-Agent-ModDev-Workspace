@@ -1,0 +1,16 @@
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine.GetSfxOrFallbackPath()  [attrs=0x86] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 16 1A 00 04 28 94 02 00 0A 2D 07 02 7B 16 1A 00 04 2A 72 5D A0 03 70 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::_sfxPath
+    IL_0006: call           System.String::IsNullOrEmpty
+    IL_000B: brtrue.s       IL_0014
+    IL_000D: ldarg.0        
+    IL_000E: ldfld          MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::_sfxPath
+    IL_0013: ret            
+    IL_0014: ldstr          "event:/sfx/ui/enchant_simple"
+    IL_0019: ret            
+
+

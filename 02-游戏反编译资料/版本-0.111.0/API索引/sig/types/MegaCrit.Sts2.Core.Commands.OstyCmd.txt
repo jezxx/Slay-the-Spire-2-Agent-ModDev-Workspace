@@ -1,0 +1,4 @@
+### public class MegaCrit.Sts2.Core.Commands.OstyCmd
+    base: System.Object
+
+    method public static System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Entities.Creatures.SummonResult> Summon(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Players.Player summoner, System.Decimal amount, MegaCrit.Sts2.Core.Models.AbstractModel source)

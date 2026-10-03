@@ -1,0 +1,248 @@
+===== MegaCrit.Sts2.Core.Models.CardModel.get_PortraitPath()  [attrs=0x9C6] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  12 00 1F 21 18 28 ED 00 00 0A 12 00 72 7E 86 01 70 28 F5 00 00 0A 12 00 02 6F 62 18 00 06 6F 09 19 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 D1 05 00 70 28 F5 00 00 0A 12 00 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 F4 0B 00 70 28 F5 00 00 0A 12 00 28 EF 00 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldloca.s       0
+    IL_0002: ldc.i4.s       33
+    IL_0004: ldc.i4.2       
+    IL_0005: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_000A: ldloca.s       0
+    IL_000C: ldstr          "atlases/card_atlas.sprites/"
+    IL_0011: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0016: ldloca.s       0
+    IL_0018: ldarg.0        
+    IL_0019: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pool
+    IL_001E: callvirt       MegaCrit.Sts2.Core.Models.CardPoolModel::get_Title
+    IL_0023: callvirt       System.String::ToLowerInvariant
+    IL_0028: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_002D: ldloca.s       0
+    IL_002F: ldstr          "/"
+    IL_0034: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0039: ldloca.s       0
+    IL_003B: ldarg.0        
+    IL_003C: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0041: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0046: callvirt       System.String::ToLowerInvariant
+    IL_004B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0050: ldloca.s       0
+    IL_0052: ldstr          ".tres"
+    IL_0057: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_005C: ldloca.s       0
+    IL_005E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0063: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0068: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_BetaPortraitPath()  [attrs=0x9C6] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  12 00 1F 26 18 28 ED 00 00 0A 12 00 72 7E 86 01 70 28 F5 00 00 0A 12 00 02 6F 62 18 00 06 6F 09 19 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 B6 86 01 70 28 F5 00 00 0A 12 00 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 F4 0B 00 70 28 F5 00 00 0A 12 00 28 EF 00 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldloca.s       0
+    IL_0002: ldc.i4.s       38
+    IL_0004: ldc.i4.2       
+    IL_0005: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_000A: ldloca.s       0
+    IL_000C: ldstr          "atlases/card_atlas.sprites/"
+    IL_0011: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0016: ldloca.s       0
+    IL_0018: ldarg.0        
+    IL_0019: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pool
+    IL_001E: callvirt       MegaCrit.Sts2.Core.Models.CardPoolModel::get_Title
+    IL_0023: callvirt       System.String::ToLowerInvariant
+    IL_0028: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_002D: ldloca.s       0
+    IL_002F: ldstr          "/beta/"
+    IL_0034: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0039: ldloca.s       0
+    IL_003B: ldarg.0        
+    IL_003C: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0041: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0046: callvirt       System.String::ToLowerInvariant
+    IL_004B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0050: ldloca.s       0
+    IL_0052: ldstr          ".tres"
+    IL_0057: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_005C: ldloca.s       0
+    IL_005E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0063: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0068: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_MissingPortraitPath()  [attrs=0x896] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  72 C4 86 01 70 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldstr          "atlases/card_atlas.sprites/beta.tres"
+    IL_0005: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_000A: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_PortraitPngPath()  [attrs=0x9C4] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  12 00 1F 1B 18 28 ED 00 00 0A 12 00 72 0E 87 01 70 28 F5 00 00 0A 12 00 02 6F 62 18 00 06 6F 09 19 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 D1 05 00 70 28 F5 00 00 0A 12 00 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 34 0C 00 70 28 F5 00 00 0A 12 00 28 EF 00 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldloca.s       0
+    IL_0002: ldc.i4.s       27
+    IL_0004: ldc.i4.2       
+    IL_0005: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_000A: ldloca.s       0
+    IL_000C: ldstr          "packed/card_portraits/"
+    IL_0011: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0016: ldloca.s       0
+    IL_0018: ldarg.0        
+    IL_0019: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pool
+    IL_001E: callvirt       MegaCrit.Sts2.Core.Models.CardPoolModel::get_Title
+    IL_0023: callvirt       System.String::ToLowerInvariant
+    IL_0028: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_002D: ldloca.s       0
+    IL_002F: ldstr          "/"
+    IL_0034: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0039: ldloca.s       0
+    IL_003B: ldarg.0        
+    IL_003C: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0041: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0046: callvirt       System.String::ToLowerInvariant
+    IL_004B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0050: ldloca.s       0
+    IL_0052: ldstr          ".png"
+    IL_0057: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_005C: ldloca.s       0
+    IL_005E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0063: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0068: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_BetaPortraitPngPath()  [attrs=0x881] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  12 00 1F 20 18 28 ED 00 00 0A 12 00 72 0E 87 01 70 28 F5 00 00 0A 12 00 02 6F 62 18 00 06 6F 09 19 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 B6 86 01 70 28 F5 00 00 0A 12 00 02 28 BC 16 00 06 6F 72 1A 00 06 6F 33 02 00 0A 28 50 02 00 0A 12 00 72 34 0C 00 70 28 F5 00 00 0A 12 00 28 EF 00 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldloca.s       0
+    IL_0002: ldc.i4.s       32
+    IL_0004: ldc.i4.2       
+    IL_0005: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_000A: ldloca.s       0
+    IL_000C: ldstr          "packed/card_portraits/"
+    IL_0011: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0016: ldloca.s       0
+    IL_0018: ldarg.0        
+    IL_0019: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pool
+    IL_001E: callvirt       MegaCrit.Sts2.Core.Models.CardPoolModel::get_Title
+    IL_0023: callvirt       System.String::ToLowerInvariant
+    IL_0028: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_002D: ldloca.s       0
+    IL_002F: ldstr          "/beta/"
+    IL_0034: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0039: ldloca.s       0
+    IL_003B: ldarg.0        
+    IL_003C: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0041: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0046: callvirt       System.String::ToLowerInvariant
+    IL_004B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0050: ldloca.s       0
+    IL_0052: ldstr          ".png"
+    IL_0057: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_005C: ldloca.s       0
+    IL_005E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0063: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0068: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_HasPortrait()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 4A 18 00 06 72 05 01 00 70 28 35 02 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_PortraitPngPath
+    IL_0006: ldstr          ""
+    IL_000B: call           Godot.ResourceLoader::Exists
+    IL_0010: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_HasBetaPortrait()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 4B 18 00 06 72 05 01 00 70 28 35 02 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.CardModel::get_BetaPortraitPngPath
+    IL_0006: ldstr          ""
+    IL_000B: call           Godot.ResourceLoader::Exists
+    IL_0010: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_Portrait()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 47 18 00 06 14 17 6A 28 93 00 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_PortraitPath
+    IL_0006: ldnull         
+    IL_0007: ldc.i4.1       
+    IL_0008: conv.i8        
+    IL_0009: call           Godot.ResourceLoader::Load<...>
+    IL_000E: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_PortraitBorderPath()  [attrs=0x881] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 5F 18 00 06 0B 07 45 07 00 00 00 02 00 00 00 06 00 00 00 06 00 00 00 06 00 00 00 02 00 00 00 02 00 00 00 02 00 00 00 2B 0D 18 0A 2B 0F 02 6F 5F 18 00 06 0A 2B 06 73 F9 00 00 0A 7A 72 A0 87 01 70 12 00 FE 16 12 0A 00 02 6F 8C 00 00 0A 6F 33 02 00 0A 72 90 87 01 70 28 34 02 00 0A 28 4E 4D 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Type
+    IL_0006: stloc.1        
+    IL_0007: ldloc.1        
+    IL_0008: switch         (7) -> 2, 6, 6, 6, 2, 2, 2
+    IL_0029: br.s           IL_0038
+    IL_002B: ldc.i4.2       
+    IL_002C: stloc.0        
+    IL_002D: br.s           IL_003E
+    IL_002F: ldarg.0        
+    IL_0030: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Type
+    IL_0035: stloc.0        
+    IL_0036: br.s           IL_003E
+    IL_0038: newobj         System.ArgumentOutOfRangeException::.ctor
+    IL_003D: throw          
+    IL_003E: ldstr          "atlases/ui_atlas.sprites/card/card_portrait_border_"
+    IL_0043: ldloca.s       0
+    IL_0045: constrained.   MegaCrit.Sts2.Core.Entities.Cards.CardType
+    IL_004B: callvirt       System.Object::ToString
+    IL_0050: callvirt       System.String::ToLowerInvariant
+    IL_0055: ldstr          "_s.tres"
+    IL_005A: call           System.String::Concat
+    IL_005F: call           MegaCrit.Sts2.Core.Helpers.ImageHelper::GetImagePath
+    IL_0064: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_PortraitBorder()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 51 18 00 06 14 17 6A 28 93 00 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Models.CardModel::get_PortraitBorderPath
+    IL_0006: ldnull         
+    IL_0007: ldc.i4.1       
+    IL_0008: conv.i8        
+    IL_0009: call           Godot.ResourceLoader::Load<...>
+    IL_000E: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.CardModel.get_AllPortraitPaths()  [attrs=0x9C6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 47 18 00 06 73 58 11 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_PortraitPath
+    IL_0006: newobj         <typespec>::.ctor
+    IL_000B: ret            
+
+

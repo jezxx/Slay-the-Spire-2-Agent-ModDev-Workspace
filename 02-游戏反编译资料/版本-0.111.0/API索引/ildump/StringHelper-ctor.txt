@@ -1,0 +1,10 @@
+===== <>c..cctor()  [attrs=0x1891] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 B6 AF 00 06 80 7C 6E 00 04 2A
+  -- decoded --
+    IL_0000: newobj         .<>c::.ctor
+    IL_0005: stsfld         .<>c::<>9
+    IL_000A: ret            
+
+

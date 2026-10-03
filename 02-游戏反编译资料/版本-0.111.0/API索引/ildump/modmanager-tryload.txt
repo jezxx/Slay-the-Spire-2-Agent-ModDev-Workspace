@@ -1,0 +1,1275 @@
+===== MegaCrit.Sts2.Core.Modding.ModManager.TryLoadMod(mod)  [attrs=0x91] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 55 AE 00 06 0A 02 7B F1 14 00 04 2C 07 02 28 6E 49 00 06 2A 14 0B 02 7B F5 14 00 04 25 2D 06 26 73 CD 17 00 0A 0C 02 7B F2 14 00 04 14 28 8A 49 00 06 2C 0B 72 FB C2 02 70 73 F5 01 00 0A 7A 02 7B F2 14 00 04 7B 19 15 00 04 2D 22 72 5F C3 02 70 02 7B F2 14 00 04 7B 15 15 00 04 72 69 C3 02 70 28 34 02 00 0A 18 28 67 4A 00 06 2B 7D 02 7B F2 14 00 04 7B 19 15 00 04 12 06 28 D9 54 00 06 2D 61 12 07 1F 3C 18 28 ED 00 00 0A 12 07 72 5F C3 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 15 15 00 04 28 50 02 00 0A 12 07 72 A1 C3 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 19 15 00 04 28 50 02 00 0A 12 07 72 C7 C3 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 67 4A 00 06 2B 08 02 11 06 7D F3 14 00 04 06 02 7B F2 14 00 04 7B 15 15 00 04 7D 12 6B 00 04 7E 05 15 00 04 06 FE 06 56 AE 00 06 73 15 13 00 0A 28 3A 06 00 2B 0D 16 13 04 17 13 05 7E 0A 15 00 04 2C 5C 02 7B F2 14 00 04 7B 1E 15 00 04 2D 22 72 5F C3 02 70 02 7B F2 14 00 04 7B 15 15 00 04 72 15 C4 02 70 28 34 02 00 0A 18 28 67 4A 00 06 2B 2D 02 7B F2 14 00 04 7B 1E 15 00 04 12 08 28 D9 54 00 06 2D 05 17 13 04 2B 14 7E 0A 15 00 04 11 08 6F DB 54 00 06 16 FE 04 16 FE 01 13 05 28 57 49 00 06 2C 27 72 45 BA 02 70 06 7B 12 6B 00 04 72 9C C4 02 70 28 34 02 00 0A 18 28 66 4A 00 06 02 1B 7D F1 14 00 04 38 9B 08 00 00 28 5E 49 00 06 2D 27 72 45 BA 02 70 06 7B 12 6B 00 04 72 D6 C4 02 70 28 34 02 00 0A 18 28 66 4A 00 06 02 19 7D F1 14 00 04 38 6D 08 00 00 09 2C 52 72 28 C5 02 70 72 42 C5 02 70 73 C2 4A 00 06 13 09 11 09 72 B9 08 00 70 06 7B 12 6B 00 04 6F D2 4A 00 06 08 11 09 6F CE 17 00 0A 72 70 C5 02 70 06 7B 12 6B 00 04 72 A6 C5 02 70 28 34 02 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 18 08 00 00 7E 0B 15 00 04 06 7B 12 6B 00 04 12 0A 6F CF 17 00 0A 39 96 00 00 00 72 28 C5 02 70 72 02 C6 02 70 73 C2 4A 00 06 13 0B 11 0B 72 B9 08 00 70 06 7B 12 6B 00 04 6F D2 4A 00 06 11 0B 72 3E C6 02 70 11 0A 6F D2 4A 00 06 08 11 0B 6F CE 17 00 0A 12 07 1F 4C 18 28 ED 00 00 0A 12 07 72 70 C5 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 5E C6 02 70 28 F5 00 00 0A 12 07 11 0A 28 50 02 00 0A 12 07 72 0A 6A 00 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 6B 07 00 00 11 04 39 B6 00 00 00 72 28 C5 02 70 72 C2 C6 02 70 73 C2 4A 00 06 13 0C 11 0C 72 B9 08 00 70 06 7B 12 6B 00 04 6F D2 4A 00 06 11 0C 72 32 2D 00 70 02 7B F2 14 00 04 7B 1E 15 00 04 25 2D 06 26 72 00 C7 02 70 6F D2 4A 00 06 08 11 0C 6F CE 17 00 0A 12 07 1F 4E 18 28 ED 00 00 0A 12 07 72 5F C3 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 15 15 00 04 28 50 02 00 0A 12 07 72 0E C7 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 1E 15 00 04 28 50 02 00 0A 12 07 72 46 C7 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 AE 06 00 00 11 05 3A E3 00 00 00 72 28 C5 02 70 72 A6 C7 02 70 73 C2 4A 00 06 13 0D 11 0D 72 B9 08 00 70 06 7B 12 6B 00 04 6F D2 4A 00 06 11 0D 72 32 2D 00 70 02 7B F2 14 00 04 7B 1E 15 00 04 25 2D 06 26 72 00 C7 02 70 6F D2 4A 00 06 11 0D 72 26 2E 00 70 7E 0A 15 00 04 25 2D 04 26 14 2B 05 6F 8C 00 00 0A 25 2D 06 26 72 00 C7 02 70 6F D2 4A 00 06 08 11 0D 6F CE 17 00 0A 12 07 1F 67 19 28 ED 00 00 0A 12 07 72 70 C5 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 EC C7 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 1E 15 00 04 28 50 02 00 0A 12 07 72 36 C8 02 70 28 F5 00 00 0A 12 07 7E 0A 15 00 04 28 8B 15 00 2B 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 C4 05 00 00 73 07 02 00 0A 13 0E 02 7B F2 14 00 04 7B 1C 15 00 04 39 AD 05 00 00 02 7B F2 14 00 04 7B 1C 15 00 04 6F A6 17 00 0A 13 0F 38 B1 04 00 00 73 57 AE 00 06 13 10 11 10 12 0F 28 A7 17 00 0A 7D 13 6B 00 04 7E 05 15 00 04 11 10 FE 06 58 AE 00 06 73 15 13 00 0A 28 88 15 00 2B 13 11 11 11 2C 0A 11 11 7B F1 14 00 04 17 2E 18 11 0E 11 10 7B 13 6B 00 04 7B F7 14 00 04 6F 06 02 00 0A 38 5D 04 00 00 11 10 7B 13 6B 00 04 7B F8 14 00 04 39 4C 04 00 00 11 10 7B 13 6B 00 04 7B F8 14 00 04 12 12 28 D9 54 00 06 3A E6 00 00 00 72 28 C5 02 70 72 8A C8 02 70 73 C2 4A 00 06 13 13 11 13 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 11 13 72 DC C8 02 70 11 10 7B 13 6B 00 04 7B F7 14 00 04 6F D2 4A 00 06 11 13 72 36 2C 00 70 11 10 7B 13 6B 00 04 7B F8 14 00 04 6F D2 4A 00 06 08 11 13 6F CE 17 00 0A 1F 3F 19 73 ED 00 00 0A 13 07 12 07 72 5F C3 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 F2 C8 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F7 14 00 04 28 50 02 00 0A 12 07 72 18 C9 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F8 14 00 04 28 50 02 00 0A 12 07 72 3E C9 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 4E 03 00 00 11 11 7B F2 14 00 04 25 2D 04 26 14 2B 05 7B 19 15 00 04 3A E6 00 00 00 72 28 C5 02 70 72 6E C9 02 70 73 C2 4A 00 06 13 14 11 14 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 11 14 72 DC C8 02 70 11 10 7B 13 6B 00 04 7B F7 14 00 04 6F D2 4A 00 06 11 14 72 36 2C 00 70 11 10 7B 13 6B 00 04 7B F8 14 00 04 6F D2 4A 00 06 08 11 14 6F CE 17 00 0A 1F 58 19 73 ED 00 00 0A 13 07 12 07 72 B8 C9 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 F2 C8 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F7 14 00 04 28 50 02 00 0A 12 07 72 18 C9 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F8 14 00 04 28 50 02 00 0A 12 07 72 DE C9 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 50 02 00 00 11 11 7B F3 14 00 04 3A 1D 01 00 00 72 28 C5 02 70 72 24 CA 02 70 73 C2 4A 00 06 13 15 11 15 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 11 15 72 DC C8 02 70 11 10 7B 13 6B 00 04 7B F7 14 00 04 6F D2 4A 00 06 11 15 72 36 2C 00 70 11 10 7B 13 6B 00 04 7B F8 14 00 04 6F D2 4A 00 06 11 15 72 8A 2C 00 70 11 11 7B F2 14 00 04 7B 19 15 00 04 6F D2 4A 00 06 08 11 15 6F CE 17 00 0A 1F 6D 1A 73 ED 00 00 0A 13 07 12 07 72 B8 C9 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 F2 C8 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F7 14 00 04 28 50 02 00 0A 12 07 72 18 C9 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F8 14 00 04 28 50 02 00 0A 12 07 72 6E CA 02 70 28 F5 00 00 0A 12 07 11 11 7B F2 14 00 04 7B 19 15 00 04 28 50 02 00 0A 12 07 72 AE CA 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 38 27 01 00 00 11 11 7B F3 14 00 04 11 12 6F DB 54 00 06 16 3C 13 01 00 00 72 28 C5 02 70 72 E0 CA 02 70 73 C2 4A 00 06 13 16 11 16 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 11 16 72 DC C8 02 70 11 10 7B 13 6B 00 04 7B F7 14 00 04 6F D2 4A 00 06 11 16 72 36 2C 00 70 11 10 7B 13 6B 00 04 7B F8 14 00 04 6F D2 4A 00 06 11 16 72 8A 2C 00 70 11 11 7B F2 14 00 04 7B 19 15 00 04 6F D2 4A 00 06 08 11 16 6F CE 17 00 0A 1F 45 1A 73 ED 00 00 0A 13 07 12 07 72 B8 C9 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 F2 C8 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F7 14 00 04 28 50 02 00 0A 12 07 72 18 C9 02 70 28 F5 00 00 0A 12 07 11 10 7B 13 6B 00 04 7B F8 14 00 04 28 50 02 00 0A 12 07 72 32 CB 02 70 28 F5 00 00 0A 12 07 11 11 7B F3 14 00 04 28 8B 15 00 2B 12 07 72 0A 6A 00 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 12 0F 28 AA 17 00 0A 3A 43 FB FF FF DE 0E 12 0F FE 16 4B 08 00 1B 6F 32 00 00 0A DC 11 0E 6F EB 01 00 0A 16 3E BC 00 00 00 72 98 83 00 70 11 0E 28 6E 0D 00 0A 13 17 72 28 C5 02 70 72 50 CB 02 70 73 C2 4A 00 06 13 18 11 18 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 11 18 72 8A CB 02 70 11 0E 6F EB 01 00 0A 28 6B 11 00 0A 6F D0 4A 00 06 11 18 72 A4 CB 02 70 11 17 6F D2 4A 00 06 08 11 18 6F CE 17 00 0A 12 07 1F 48 18 28 ED 00 00 0A 12 07 72 B8 C9 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 CC CB 02 70 28 F5 00 00 0A 12 07 11 17 28 50 02 00 0A 12 07 72 0A 6A 00 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 02 18 7D F1 14 00 04 02 7B F1 14 00 04 2C 19 02 08 6F 82 15 00 0A 2C 03 08 2B 01 14 7D F5 14 00 04 02 28 6E 49 00 06 2A 00 16 13 19 02 7B F0 14 00 04 06 7B 12 6B 00 04 72 38 CC 02 70 28 F8 00 00 0A 28 7A 02 00 0A 13 1A 02 7B F2 14 00 04 7B 1B 15 00 04 39 AB 00 00 00 28 EC 03 00 06 39 A1 00 00 00 7E 09 15 00 04 2C 42 7E 09 15 00 04 11 1A 6F 3F 49 00 06 2C 34 72 42 CC 02 70 11 1A 28 F8 00 00 0A 18 28 66 4A 00 06 28 7C 17 00 0A 28 D0 17 00 0A 13 1D 11 1D 39 83 00 00 00 11 1D 11 1A 6F D1 17 00 0A 0B 17 13 19 2B 74 1F 63 18 73 ED 00 00 0A 13 07 12 07 72 6E CC 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 15 15 00 04 28 50 02 00 0A 12 07 72 9A CC 02 70 28 F5 00 00 0A 12 07 11 1A 28 50 02 00 0A 12 07 72 23 CD 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 2B 1C 28 EA 03 00 06 2C 15 28 61 49 00 06 06 7B 12 6B 00 04 6F D2 17 00 0A 2C 03 17 13 19 02 7B F0 14 00 04 06 7B 12 6B 00 04 72 3B CD 02 70 28 F8 00 00 0A 28 7A 02 00 0A 13 1B 02 7B F2 14 00 04 7B 1A 15 00 04 39 B6 00 00 00 28 EC 03 00 06 39 AC 00 00 00 7E 09 15 00 04 2C 4F 7E 09 15 00 04 11 1B 6F 3F 49 00 06 2C 41 72 45 CD 02 70 11 1B 28 F8 00 00 0A 18 28 66 4A 00 06 11 1B 17 16 28 D3 17 00 0A 13 1E 11 1E 2D 1B 72 6B CD 02 70 06 7B 12 6B 00 04 72 0A 6A 00 70 28 34 02 00 0A 73 F5 01 00 0A 7A 17 13 19 2B 56 1F 58 18 73 ED 00 00 0A 13 07 12 07 72 6E CC 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 15 15 00 04 28 50 02 00 0A 12 07 72 B7 CD 02 70 28 F5 00 00 0A 12 07 11 1B 28 50 02 00 0A 12 07 72 23 CD 02 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 11 19 2D 20 72 29 CE 02 70 02 7B F2 14 00 04 7B 15 15 00 04 72 81 CE 02 70 28 34 02 00 0A 18 28 67 4A 00 06 12 1C FE 15 69 04 00 1B 28 EC 03 00 06 39 8C 01 00 00 07 14 28 D4 17 00 0A 39 80 01 00 00 12 1C 17 28 06 13 00 0A 07 6F D5 17 00 0A 7E 08 6B 00 04 25 2D 17 26 7E 03 6B 00 04 FE 06 48 AE 00 06 73 99 15 00 0A 25 80 08 6B 00 04 28 BF 07 00 2B 28 41 06 00 2B 13 1F 11 1F 6F 2C 13 00 0A 16 3E 8A 00 00 00 11 1F 6F D6 17 00 0A 13 20 2B 63 12 20 28 D7 17 00 0A 13 21 1F 28 18 73 ED 00 00 0A 13 07 12 07 72 B3 CE 02 70 28 F5 00 00 0A 12 07 11 21 28 A5 01 00 2B 12 07 72 46 6E 00 70 28 F5 00 00 0A 12 07 07 28 32 06 00 2B 12 07 28 EF 00 00 0A 18 28 66 4A 00 06 11 21 28 6F 49 00 06 13 22 12 1C 28 D8 17 00 0A 11 22 5F 73 06 13 00 0A 13 1C 12 20 28 D9 17 00 0A 2D 94 DD 00 01 00 00 12 20 FE 16 56 08 00 1B 6F 32 00 00 0A DC 00 1F 42 17 73 ED 00 00 0A 13 07 12 07 72 FB CE 02 70 28 F5 00 00 0A 12 07 07 28 32 06 00 2B 12 07 28 EF 00 00 0A 18 28 66 4A 00 06 02 7B F2 14 00 04 7B 17 15 00 04 25 2D 06 26 72 D8 2A 00 70 72 CA 0E 00 70 06 7B 12 6B 00 04 28 34 02 00 0A 73 DA 17 00 0A 13 23 11 23 07 6F DB 17 00 0A DD 8E 00 00 00 13 24 1F 3C 18 73 ED 00 00 0A 13 07 12 07 72 82 CF 02 70 28 F5 00 00 0A 12 07 07 28 32 06 00 2B 12 07 72 37 C1 02 70 28 F5 00 00 0A 12 07 11 24 28 93 03 00 2B 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 12 1C 16 28 06 13 00 0A DE 42 28 EA 03 00 06 2C 3B 02 7B F2 14 00 04 7B 1B 15 00 04 2C 2E 12 1C 28 61 49 00 06 02 7B F2 14 00 04 7B 15 15 00 04 12 25 6F DC 17 00 0A 28 06 13 00 0A 12 1C 28 D8 17 00 0A 2C 07 11 25 6F AB 02 00 0A 11 1C 13 26 16 13 27 12 26 28 69 0D 00 0A 11 27 FE 01 12 26 28 68 0D 00 0A 5F 2C 30 72 28 C5 02 70 72 F8 CF 02 70 73 C2 4A 00 06 13 28 11 28 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 08 11 28 6F CE 17 00 0A 1F 26 18 73 ED 00 00 0A 13 07 12 07 72 28 D0 02 70 28 F5 00 00 0A 12 07 02 7B F2 14 00 04 7B 16 15 00 04 28 50 02 00 0A 12 07 72 6C D0 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 80 83 00 70 28 F5 00 00 0A 12 07 28 EF 00 00 0A 18 28 66 4A 00 06 07 14 28 D4 17 00 0A 2C 0C 02 7B F4 14 00 04 07 6F DD 17 00 0A 02 17 7D F1 14 00 04 02 08 6F 82 15 00 0A 2C 03 08 2B 01 14 7D F5 14 00 04 02 28 6E 49 00 06 DD C5 00 00 00 13 29 12 07 1F 25 18 28 ED 00 00 0A 12 07 72 74 D0 02 70 28 F5 00 00 0A 12 07 06 7B 12 6B 00 04 28 50 02 00 0A 12 07 72 99 1D 00 70 28 F5 00 00 0A 12 07 11 29 28 93 03 00 2B 12 07 28 EF 00 00 0A 18 28 68 4A 00 06 72 28 C5 02 70 72 BC D0 02 70 73 C2 4A 00 06 13 2A 11 2A 72 E4 D0 02 70 11 29 6F 8B 02 00 0A 6F 8C 00 00 0A 6F D2 4A 00 06 11 2A 72 B9 08 00 70 02 7B F2 14 00 04 7B 15 15 00 04 6F D2 4A 00 06 08 11 2A 6F CE 17 00 0A 07 14 28 D4 17 00 0A 2C 0C 02 7B F4 14 00 04 07 6F DD 17 00 0A 02 18 7D F1 14 00 04 02 08 6F 82 15 00 0A 2C 03 08 2B 01 14 7D F5 14 00 04 02 28 6E 49 00 06 DE 00 2A
+  -- decoded --
+    IL_0000: newobj         .<>c__DisplayClass40_0::.ctor
+    IL_0005: stloc.0        
+    IL_0006: ldarg.0        
+    IL_0007: ldfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_000C: brfalse.s      IL_0015
+    IL_000E: ldarg.0        
+    IL_000F: call           MegaCrit.Sts2.Core.Modding.ModManager::InvokeOnModDetected
+    IL_0014: ret            
+    IL_0015: ldnull         
+    IL_0016: stloc.1        
+    IL_0017: ldarg.0        
+    IL_0018: ldfld          MegaCrit.Sts2.Core.Modding.Mod::errors
+    IL_001D: dup            
+    IL_001E: brtrue.s       IL_0026
+    IL_0020: pop            
+    IL_0021: newobj         <typespec>::.ctor
+    IL_0026: stloc.2        
+    IL_0027: ldarg.0        
+    IL_0028: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_002D: ldnull         
+    IL_002E: call           MegaCrit.Sts2.Core.Modding.ModManifest::op_Equality
+    IL_0033: brfalse.s      IL_0040
+    IL_0035: ldstr          "Tried to load mod before its manifest was loaded!"
+    IL_003A: newobj         System.InvalidOperationException::.ctor
+    IL_003F: throw          
+    IL_0040: ldarg.0        
+    IL_0041: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0046: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_004B: brtrue.s       IL_006F
+    IL_004D: ldstr          "Mod "
+    IL_0052: ldarg.0        
+    IL_0053: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0058: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_005D: ldstr          " does not declare a version"
+    IL_0062: call           System.String::Concat
+    IL_0067: ldc.i4.2       
+    IL_0068: call           MegaCrit.Sts2.Core.Logging.Log::Warn
+    IL_006D: br.s           IL_00EC
+    IL_006F: ldarg.0        
+    IL_0070: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0075: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_007A: ldloca.s       6
+    IL_007C: call           MegaCrit.Sts2.Core.Debug.SemanticVersion::TryFromString
+    IL_0081: brtrue.s       IL_00E4
+    IL_0083: ldloca.s       7
+    IL_0085: ldc.i4.s       60
+    IL_0087: ldc.i4.2       
+    IL_0088: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_008D: ldloca.s       7
+    IL_008F: ldstr          "Mod "
+    IL_0094: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0099: ldloca.s       7
+    IL_009B: ldarg.0        
+    IL_009C: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_00A1: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_00A6: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_00AB: ldloca.s       7
+    IL_00AD: ldstr          " declares version "
+    IL_00B2: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_00B7: ldloca.s       7
+    IL_00B9: ldarg.0        
+    IL_00BA: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_00BF: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_00C4: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_00C9: ldloca.s       7
+    IL_00CB: ldstr          " which is not a valid Semantic Version"
+    IL_00D0: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_00D5: ldloca.s       7
+    IL_00D7: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_00DC: ldc.i4.2       
+    IL_00DD: call           MegaCrit.Sts2.Core.Logging.Log::Warn
+    IL_00E2: br.s           IL_00EC
+    IL_00E4: ldarg.0        
+    IL_00E5: ldloc.s        6
+    IL_00E7: stfld          MegaCrit.Sts2.Core.Modding.Mod::version
+    IL_00EC: ldloc.0        
+    IL_00ED: ldarg.0        
+    IL_00EE: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_00F3: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_00F8: stfld          .<>c__DisplayClass40_0::modId
+    IL_00FD: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_mods
+    IL_0102: ldloc.0        
+    IL_0103: ldftn          .<>c__DisplayClass40_0::<TryLoadMod>b__0
+    IL_0109: newobj         <typespec>::.ctor
+    IL_010E: call           System.Linq.Enumerable::Any<...>
+    IL_0113: stloc.3        
+    IL_0114: ldc.i4.0       
+    IL_0115: stloc.s        4
+    IL_0117: ldc.i4.1       
+    IL_0118: stloc.s        5
+    IL_011A: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_gameVersion
+    IL_011F: brfalse.s      IL_017D
+    IL_0121: ldarg.0        
+    IL_0122: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0127: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::minGameVersion
+    IL_012C: brtrue.s       IL_0150
+    IL_012E: ldstr          "Mod "
+    IL_0133: ldarg.0        
+    IL_0134: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0139: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_013E: ldstr          " does not declare min game version. Assuming that it is supported."
+    IL_0143: call           System.String::Concat
+    IL_0148: ldc.i4.2       
+    IL_0149: call           MegaCrit.Sts2.Core.Logging.Log::Warn
+    IL_014E: br.s           IL_017D
+    IL_0150: ldarg.0        
+    IL_0151: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0156: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::minGameVersion
+    IL_015B: ldloca.s       8
+    IL_015D: call           MegaCrit.Sts2.Core.Debug.SemanticVersion::TryFromString
+    IL_0162: brtrue.s       IL_0169
+    IL_0164: ldc.i4.1       
+    IL_0165: stloc.s        4
+    IL_0167: br.s           IL_017D
+    IL_0169: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_gameVersion
+    IL_016E: ldloc.s        8
+    IL_0170: callvirt       MegaCrit.Sts2.Core.Debug.SemanticVersion::CompareTo
+    IL_0175: ldc.i4.0       
+    IL_0176: clt            
+    IL_0178: ldc.i4.0       
+    IL_0179: ceq            
+    IL_017B: stloc.s        5
+    IL_017D: call           MegaCrit.Sts2.Core.Modding.ModManager::get_State
+    IL_0182: brfalse.s      IL_01AB
+    IL_0184: ldstr          "Skipping loading mod "
+    IL_0189: ldloc.0        
+    IL_018A: ldfld          .<>c__DisplayClass40_0::modId
+    IL_018F: ldstr          ", can't load mods at runtime"
+    IL_0194: call           System.String::Concat
+    IL_0199: ldc.i4.2       
+    IL_019A: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_019F: ldarg.0        
+    IL_01A0: ldc.i4.5       
+    IL_01A1: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_01A6: br             IL_0A46
+    IL_01AB: call           MegaCrit.Sts2.Core.Modding.ModManager::get_PlayerAgreedToModLoading
+    IL_01B0: brtrue.s       IL_01D9
+    IL_01B2: ldstr          "Skipping loading mod "
+    IL_01B7: ldloc.0        
+    IL_01B8: ldfld          .<>c__DisplayClass40_0::modId
+    IL_01BD: ldstr          ", user has not yet seen the mods warning"
+    IL_01C2: call           System.String::Concat
+    IL_01C7: ldc.i4.2       
+    IL_01C8: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_01CD: ldarg.0        
+    IL_01CE: ldc.i4.3       
+    IL_01CF: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_01D4: br             IL_0A46
+    IL_01D9: ldloc.3        
+    IL_01DA: brfalse.s      IL_022E
+    IL_01DC: ldstr          "main_menu_ui"
+    IL_01E1: ldstr          "MOD_ERROR.DUPLICATE_ID"
+    IL_01E6: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_01EB: stloc.s        9
+    IL_01ED: ldloc.s        9
+    IL_01EF: ldstr          "id"
+    IL_01F4: ldloc.0        
+    IL_01F5: ldfld          .<>c__DisplayClass40_0::modId
+    IL_01FA: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_01FF: ldloc.2        
+    IL_0200: ldloc.s        9
+    IL_0202: callvirt       <typespec>::Add
+    IL_0207: ldstr          "Tried to load mod with id "
+    IL_020C: ldloc.0        
+    IL_020D: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0212: ldstr          ", but a mod is already loaded with that name!"
+    IL_0217: call           System.String::Concat
+    IL_021C: ldc.i4.2       
+    IL_021D: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0222: ldarg.0        
+    IL_0223: ldc.i4.2       
+    IL_0224: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0229: br             IL_0A46
+    IL_022E: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_circularDependencies
+    IL_0233: ldloc.0        
+    IL_0234: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0239: ldloca.s       10
+    IL_023B: callvirt       <typespec>::TryGetValue
+    IL_0240: brfalse        IL_02DB
+    IL_0245: ldstr          "main_menu_ui"
+    IL_024A: ldstr          "MOD_ERROR.CIRCULAR_DEPENDENCY"
+    IL_024F: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_0254: stloc.s        11
+    IL_0256: ldloc.s        11
+    IL_0258: ldstr          "id"
+    IL_025D: ldloc.0        
+    IL_025E: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0263: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0268: ldloc.s        11
+    IL_026A: ldstr          "dependencyChain"
+    IL_026F: ldloc.s        10
+    IL_0271: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0276: ldloc.2        
+    IL_0277: ldloc.s        11
+    IL_0279: callvirt       <typespec>::Add
+    IL_027E: ldloca.s       7
+    IL_0280: ldc.i4.s       76
+    IL_0282: ldc.i4.2       
+    IL_0283: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0288: ldloca.s       7
+    IL_028A: ldstr          "Tried to load mod with id "
+    IL_028F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0294: ldloca.s       7
+    IL_0296: ldloc.0        
+    IL_0297: ldfld          .<>c__DisplayClass40_0::modId
+    IL_029C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_02A1: ldloca.s       7
+    IL_02A3: ldstr          ", but it is part of a circular dependency chain: "
+    IL_02A8: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_02AD: ldloca.s       7
+    IL_02AF: ldloc.s        10
+    IL_02B1: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_02B6: ldloca.s       7
+    IL_02B8: ldstr          "!"
+    IL_02BD: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_02C2: ldloca.s       7
+    IL_02C4: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_02C9: ldc.i4.2       
+    IL_02CA: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_02CF: ldarg.0        
+    IL_02D0: ldc.i4.2       
+    IL_02D1: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_02D6: br             IL_0A46
+    IL_02DB: ldloc.s        4
+    IL_02DD: brfalse        IL_0398
+    IL_02E2: ldstr          "main_menu_ui"
+    IL_02E7: ldstr          "MOD_ERROR.GAME_VERSION_INVALID"
+    IL_02EC: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_02F1: stloc.s        12
+    IL_02F3: ldloc.s        12
+    IL_02F5: ldstr          "id"
+    IL_02FA: ldloc.0        
+    IL_02FB: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0300: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0305: ldloc.s        12
+    IL_0307: ldstr          "minGameVersion"
+    IL_030C: ldarg.0        
+    IL_030D: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0312: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::minGameVersion
+    IL_0317: dup            
+    IL_0318: brtrue.s       IL_0320
+    IL_031A: pop            
+    IL_031B: ldstr          "<null>"
+    IL_0320: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0325: ldloc.2        
+    IL_0326: ldloc.s        12
+    IL_0328: callvirt       <typespec>::Add
+    IL_032D: ldloca.s       7
+    IL_032F: ldc.i4.s       78
+    IL_0331: ldc.i4.2       
+    IL_0332: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0337: ldloca.s       7
+    IL_0339: ldstr          "Mod "
+    IL_033E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0343: ldloca.s       7
+    IL_0345: ldarg.0        
+    IL_0346: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_034B: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0350: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0355: ldloca.s       7
+    IL_0357: ldstr          " declares min game version "
+    IL_035C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0361: ldloca.s       7
+    IL_0363: ldarg.0        
+    IL_0364: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0369: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::minGameVersion
+    IL_036E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0373: ldloca.s       7
+    IL_0375: ldstr          " that can't be parsed! Assuming it is supported"
+    IL_037A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_037F: ldloca.s       7
+    IL_0381: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0386: ldc.i4.2       
+    IL_0387: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_038C: ldarg.0        
+    IL_038D: ldc.i4.2       
+    IL_038E: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0393: br             IL_0A46
+    IL_0398: ldloc.s        5
+    IL_039A: brtrue         IL_0482
+    IL_039F: ldstr          "main_menu_ui"
+    IL_03A4: ldstr          "MOD_ERROR.GAME_VERSION_UNSUPPORTED"
+    IL_03A9: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_03AE: stloc.s        13
+    IL_03B0: ldloc.s        13
+    IL_03B2: ldstr          "id"
+    IL_03B7: ldloc.0        
+    IL_03B8: ldfld          .<>c__DisplayClass40_0::modId
+    IL_03BD: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_03C2: ldloc.s        13
+    IL_03C4: ldstr          "minGameVersion"
+    IL_03C9: ldarg.0        
+    IL_03CA: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_03CF: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::minGameVersion
+    IL_03D4: dup            
+    IL_03D5: brtrue.s       IL_03DD
+    IL_03D7: pop            
+    IL_03D8: ldstr          "<null>"
+    IL_03DD: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_03E2: ldloc.s        13
+    IL_03E4: ldstr          "gameVersion"
+    IL_03E9: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_gameVersion
+    IL_03EE: dup            
+    IL_03EF: brtrue.s       IL_03F5
+    IL_03F1: pop            
+    IL_03F2: ldnull         
+    IL_03F3: br.s           IL_03FA
+    IL_03F5: callvirt       System.Object::ToString
+    IL_03FA: dup            
+    IL_03FB: brtrue.s       IL_0403
+    IL_03FD: pop            
+    IL_03FE: ldstr          "<null>"
+    IL_0403: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0408: ldloc.2        
+    IL_0409: ldloc.s        13
+    IL_040B: callvirt       <typespec>::Add
+    IL_0410: ldloca.s       7
+    IL_0412: ldc.i4.s       103
+    IL_0414: ldc.i4.3       
+    IL_0415: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_041A: ldloca.s       7
+    IL_041C: ldstr          "Tried to load mod with id "
+    IL_0421: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0426: ldloca.s       7
+    IL_0428: ldloc.0        
+    IL_0429: ldfld          .<>c__DisplayClass40_0::modId
+    IL_042E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0433: ldloca.s       7
+    IL_0435: ldstr          ", but its declared min game version "
+    IL_043A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_043F: ldloca.s       7
+    IL_0441: ldarg.0        
+    IL_0442: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0447: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::minGameVersion
+    IL_044C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0451: ldloca.s       7
+    IL_0453: ldstr          " is higher than the current game version "
+    IL_0458: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_045D: ldloca.s       7
+    IL_045F: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_gameVersion
+    IL_0464: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0469: ldloca.s       7
+    IL_046B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0470: ldc.i4.2       
+    IL_0471: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0476: ldarg.0        
+    IL_0477: ldc.i4.2       
+    IL_0478: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_047D: br             IL_0A46
+    IL_0482: newobj         <typespec>::.ctor
+    IL_0487: stloc.s        14
+    IL_0489: ldarg.0        
+    IL_048A: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_048F: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::dependencies
+    IL_0494: brfalse        IL_0A46
+    IL_0499: ldarg.0        
+    IL_049A: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_049F: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::dependencies
+    IL_04A4: callvirt       <typespec>::GetEnumerator
+    IL_04A9: stloc.s        15
+    IL_04AB: br             IL_0961
+    IL_04B0: newobj         .<>c__DisplayClass40_1::.ctor
+    IL_04B5: stloc.s        16
+    IL_04B7: ldloc.s        16
+    IL_04B9: ldloca.s       15
+    IL_04BB: call           <typespec>::get_Current
+    IL_04C0: stfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_04C5: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_mods
+    IL_04CA: ldloc.s        16
+    IL_04CC: ldftn          .<>c__DisplayClass40_1::<TryLoadMod>b__1
+    IL_04D2: newobj         <typespec>::.ctor
+    IL_04D7: call           System.Linq.Enumerable::FirstOrDefault<...>
+    IL_04DC: stloc.s        17
+    IL_04DE: ldloc.s        17
+    IL_04E0: brfalse.s      IL_04EC
+    IL_04E2: ldloc.s        17
+    IL_04E4: ldfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_04E9: ldc.i4.1       
+    IL_04EA: beq.s          IL_0504
+    IL_04EC: ldloc.s        14
+    IL_04EE: ldloc.s        16
+    IL_04F0: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_04F5: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_04FA: callvirt       <typespec>::Add
+    IL_04FF: br             IL_0961
+    IL_0504: ldloc.s        16
+    IL_0506: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_050B: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_0510: brfalse        IL_0961
+    IL_0515: ldloc.s        16
+    IL_0517: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_051C: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_0521: ldloca.s       18
+    IL_0523: call           MegaCrit.Sts2.Core.Debug.SemanticVersion::TryFromString
+    IL_0528: brtrue         IL_0613
+    IL_052D: ldstr          "main_menu_ui"
+    IL_0532: ldstr          "MOD_ERROR.DEPENDENCY_MIN_VERSION_INVALID"
+    IL_0537: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_053C: stloc.s        19
+    IL_053E: ldloc.s        19
+    IL_0540: ldstr          "id"
+    IL_0545: ldarg.0        
+    IL_0546: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_054B: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0550: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0555: ldloc.s        19
+    IL_0557: ldstr          "dependency"
+    IL_055C: ldloc.s        16
+    IL_055E: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_0563: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_0568: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_056D: ldloc.s        19
+    IL_056F: ldstr          "minVersion"
+    IL_0574: ldloc.s        16
+    IL_0576: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_057B: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_0580: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0585: ldloc.2        
+    IL_0586: ldloc.s        19
+    IL_0588: callvirt       <typespec>::Add
+    IL_058D: ldc.i4.s       63
+    IL_058F: ldc.i4.3       
+    IL_0590: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0595: stloc.s        7
+    IL_0597: ldloca.s       7
+    IL_0599: ldstr          "Mod "
+    IL_059E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_05A3: ldloca.s       7
+    IL_05A5: ldloc.0        
+    IL_05A6: ldfld          .<>c__DisplayClass40_0::modId
+    IL_05AB: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_05B0: ldloca.s       7
+    IL_05B2: ldstr          " which depends on "
+    IL_05B7: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_05BC: ldloca.s       7
+    IL_05BE: ldloc.s        16
+    IL_05C0: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_05C5: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_05CA: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_05CF: ldloca.s       7
+    IL_05D1: ldstr          " with min version "
+    IL_05D6: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_05DB: ldloca.s       7
+    IL_05DD: ldloc.s        16
+    IL_05DF: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_05E4: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_05E9: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_05EE: ldloca.s       7
+    IL_05F0: ldstr          " which cannot be parsed"
+    IL_05F5: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_05FA: ldloca.s       7
+    IL_05FC: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0601: ldc.i4.2       
+    IL_0602: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0607: ldarg.0        
+    IL_0608: ldc.i4.2       
+    IL_0609: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_060E: br             IL_0961
+    IL_0613: ldloc.s        17
+    IL_0615: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_061A: dup            
+    IL_061B: brtrue.s       IL_0621
+    IL_061D: pop            
+    IL_061E: ldnull         
+    IL_061F: br.s           IL_0626
+    IL_0621: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_0626: brtrue         IL_0711
+    IL_062B: ldstr          "main_menu_ui"
+    IL_0630: ldstr          "MOD_ERROR.DEPENDENCY_VERSION_MISSING"
+    IL_0635: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_063A: stloc.s        20
+    IL_063C: ldloc.s        20
+    IL_063E: ldstr          "id"
+    IL_0643: ldarg.0        
+    IL_0644: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0649: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_064E: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0653: ldloc.s        20
+    IL_0655: ldstr          "dependency"
+    IL_065A: ldloc.s        16
+    IL_065C: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_0661: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_0666: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_066B: ldloc.s        20
+    IL_066D: ldstr          "minVersion"
+    IL_0672: ldloc.s        16
+    IL_0674: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_0679: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_067E: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0683: ldloc.2        
+    IL_0684: ldloc.s        20
+    IL_0686: callvirt       <typespec>::Add
+    IL_068B: ldc.i4.s       88
+    IL_068D: ldc.i4.3       
+    IL_068E: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0693: stloc.s        7
+    IL_0695: ldloca.s       7
+    IL_0697: ldstr          "Tried to load mod "
+    IL_069C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_06A1: ldloca.s       7
+    IL_06A3: ldloc.0        
+    IL_06A4: ldfld          .<>c__DisplayClass40_0::modId
+    IL_06A9: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_06AE: ldloca.s       7
+    IL_06B0: ldstr          " which depends on "
+    IL_06B5: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_06BA: ldloca.s       7
+    IL_06BC: ldloc.s        16
+    IL_06BE: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_06C3: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_06C8: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_06CD: ldloca.s       7
+    IL_06CF: ldstr          " with min version "
+    IL_06D4: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_06D9: ldloca.s       7
+    IL_06DB: ldloc.s        16
+    IL_06DD: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_06E2: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_06E7: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_06EC: ldloca.s       7
+    IL_06EE: ldstr          ", but the mod declares no version!"
+    IL_06F3: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_06F8: ldloca.s       7
+    IL_06FA: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_06FF: ldc.i4.2       
+    IL_0700: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0705: ldarg.0        
+    IL_0706: ldc.i4.2       
+    IL_0707: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_070C: br             IL_0961
+    IL_0711: ldloc.s        17
+    IL_0713: ldfld          MegaCrit.Sts2.Core.Modding.Mod::version
+    IL_0718: brtrue         IL_083A
+    IL_071D: ldstr          "main_menu_ui"
+    IL_0722: ldstr          "MOD_ERROR.DEPENDENCY_VERSION_INVALID"
+    IL_0727: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_072C: stloc.s        21
+    IL_072E: ldloc.s        21
+    IL_0730: ldstr          "id"
+    IL_0735: ldarg.0        
+    IL_0736: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_073B: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0740: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0745: ldloc.s        21
+    IL_0747: ldstr          "dependency"
+    IL_074C: ldloc.s        16
+    IL_074E: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_0753: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_0758: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_075D: ldloc.s        21
+    IL_075F: ldstr          "minVersion"
+    IL_0764: ldloc.s        16
+    IL_0766: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_076B: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_0770: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0775: ldloc.s        21
+    IL_0777: ldstr          "version"
+    IL_077C: ldloc.s        17
+    IL_077E: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0783: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_0788: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_078D: ldloc.2        
+    IL_078E: ldloc.s        21
+    IL_0790: callvirt       <typespec>::Add
+    IL_0795: ldc.i4.s       109
+    IL_0797: ldc.i4.4       
+    IL_0798: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_079D: stloc.s        7
+    IL_079F: ldloca.s       7
+    IL_07A1: ldstr          "Tried to load mod "
+    IL_07A6: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_07AB: ldloca.s       7
+    IL_07AD: ldloc.0        
+    IL_07AE: ldfld          .<>c__DisplayClass40_0::modId
+    IL_07B3: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_07B8: ldloca.s       7
+    IL_07BA: ldstr          " which depends on "
+    IL_07BF: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_07C4: ldloca.s       7
+    IL_07C6: ldloc.s        16
+    IL_07C8: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_07CD: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_07D2: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_07D7: ldloca.s       7
+    IL_07D9: ldstr          " with min version "
+    IL_07DE: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_07E3: ldloca.s       7
+    IL_07E5: ldloc.s        16
+    IL_07E7: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_07EC: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_07F1: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_07F6: ldloca.s       7
+    IL_07F8: ldstr          ", but the mod declares version "
+    IL_07FD: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0802: ldloca.s       7
+    IL_0804: ldloc.s        17
+    IL_0806: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_080B: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_0810: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0815: ldloca.s       7
+    IL_0817: ldstr          " which cannot be parsed!"
+    IL_081C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0821: ldloca.s       7
+    IL_0823: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0828: ldc.i4.2       
+    IL_0829: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_082E: ldarg.0        
+    IL_082F: ldc.i4.2       
+    IL_0830: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0835: br             IL_0961
+    IL_083A: ldloc.s        17
+    IL_083C: ldfld          MegaCrit.Sts2.Core.Modding.Mod::version
+    IL_0841: ldloc.s        18
+    IL_0843: callvirt       MegaCrit.Sts2.Core.Debug.SemanticVersion::CompareTo
+    IL_0848: ldc.i4.0       
+    IL_0849: bge            IL_0961
+    IL_084E: ldstr          "main_menu_ui"
+    IL_0853: ldstr          "MOD_ERROR.DEPENDENCY_VERSION_UNSUPPORTED"
+    IL_0858: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_085D: stloc.s        22
+    IL_085F: ldloc.s        22
+    IL_0861: ldstr          "id"
+    IL_0866: ldarg.0        
+    IL_0867: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_086C: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0871: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0876: ldloc.s        22
+    IL_0878: ldstr          "dependency"
+    IL_087D: ldloc.s        16
+    IL_087F: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_0884: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_0889: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_088E: ldloc.s        22
+    IL_0890: ldstr          "minVersion"
+    IL_0895: ldloc.s        16
+    IL_0897: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_089C: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_08A1: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_08A6: ldloc.s        22
+    IL_08A8: ldstr          "version"
+    IL_08AD: ldloc.s        17
+    IL_08AF: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_08B4: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::version
+    IL_08B9: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_08BE: ldloc.2        
+    IL_08BF: ldloc.s        22
+    IL_08C1: callvirt       <typespec>::Add
+    IL_08C6: ldc.i4.s       69
+    IL_08C8: ldc.i4.4       
+    IL_08C9: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_08CE: stloc.s        7
+    IL_08D0: ldloca.s       7
+    IL_08D2: ldstr          "Tried to load mod "
+    IL_08D7: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_08DC: ldloca.s       7
+    IL_08DE: ldloc.0        
+    IL_08DF: ldfld          .<>c__DisplayClass40_0::modId
+    IL_08E4: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_08E9: ldloca.s       7
+    IL_08EB: ldstr          " which depends on "
+    IL_08F0: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_08F5: ldloca.s       7
+    IL_08F7: ldloc.s        16
+    IL_08F9: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_08FE: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_0903: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0908: ldloca.s       7
+    IL_090A: ldstr          " with min version "
+    IL_090F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0914: ldloca.s       7
+    IL_0916: ldloc.s        16
+    IL_0918: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_091D: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::minVersion
+    IL_0922: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0927: ldloca.s       7
+    IL_0929: ldstr          " but you have "
+    IL_092E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0933: ldloca.s       7
+    IL_0935: ldloc.s        17
+    IL_0937: ldfld          MegaCrit.Sts2.Core.Modding.Mod::version
+    IL_093C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0941: ldloca.s       7
+    IL_0943: ldstr          "!"
+    IL_0948: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_094D: ldloca.s       7
+    IL_094F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0954: ldc.i4.2       
+    IL_0955: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_095A: ldarg.0        
+    IL_095B: ldc.i4.2       
+    IL_095C: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0961: ldloca.s       15
+    IL_0963: call           <typespec>::MoveNext
+    IL_0968: brtrue         IL_04B0
+    IL_096D: leave.s        IL_097D
+    IL_096F: ldloca.s       15
+    IL_0971: constrained.   <typespec>
+    IL_0977: callvirt       System.IDisposable::Dispose
+    IL_097C: endfinally     
+    IL_097D: ldloc.s        14
+    IL_097F: callvirt       <typespec>::get_Count
+    IL_0984: ldc.i4.0       
+    IL_0985: ble            IL_0A46
+    IL_098A: ldstr          ","
+    IL_098F: ldloc.s        14
+    IL_0991: call           System.String::Join
+    IL_0996: stloc.s        23
+    IL_0998: ldstr          "main_menu_ui"
+    IL_099D: ldstr          "MOD_ERROR.MISSING_DEPENDENCY"
+    IL_09A2: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_09A7: stloc.s        24
+    IL_09A9: ldloc.s        24
+    IL_09AB: ldstr          "id"
+    IL_09B0: ldarg.0        
+    IL_09B1: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_09B6: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_09BB: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_09C0: ldloc.s        24
+    IL_09C2: ldstr          "missingCount"
+    IL_09C7: ldloc.s        14
+    IL_09C9: callvirt       <typespec>::get_Count
+    IL_09CE: call           System.Decimal::op_Implicit
+    IL_09D3: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_09D8: ldloc.s        24
+    IL_09DA: ldstr          "missingDependencies"
+    IL_09DF: ldloc.s        23
+    IL_09E1: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_09E6: ldloc.2        
+    IL_09E7: ldloc.s        24
+    IL_09E9: callvirt       <typespec>::Add
+    IL_09EE: ldloca.s       7
+    IL_09F0: ldc.i4.s       72
+    IL_09F2: ldc.i4.2       
+    IL_09F3: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_09F8: ldloca.s       7
+    IL_09FA: ldstr          "Tried to load mod "
+    IL_09FF: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0A04: ldloca.s       7
+    IL_0A06: ldloc.0        
+    IL_0A07: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0A0C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0A11: ldloca.s       7
+    IL_0A13: ldstr          ", but it depends on mods which have not been loaded: "
+    IL_0A18: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0A1D: ldloca.s       7
+    IL_0A1F: ldloc.s        23
+    IL_0A21: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0A26: ldloca.s       7
+    IL_0A28: ldstr          "!"
+    IL_0A2D: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0A32: ldloca.s       7
+    IL_0A34: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0A39: ldc.i4.2       
+    IL_0A3A: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0A3F: ldarg.0        
+    IL_0A40: ldc.i4.2       
+    IL_0A41: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0A46: ldarg.0        
+    IL_0A47: ldfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0A4C: brfalse.s      IL_0A67
+    IL_0A4E: ldarg.0        
+    IL_0A4F: ldloc.2        
+    IL_0A50: callvirt       <typespec>::get_Count
+    IL_0A55: brfalse.s      IL_0A5A
+    IL_0A57: ldloc.2        
+    IL_0A58: br.s           IL_0A5B
+    IL_0A5A: ldnull         
+    IL_0A5B: stfld          MegaCrit.Sts2.Core.Modding.Mod::errors
+    IL_0A60: ldarg.0        
+    IL_0A61: call           MegaCrit.Sts2.Core.Modding.ModManager::InvokeOnModDetected
+    IL_0A66: ret            
+    IL_0A67: nop            
+    IL_0A68: ldc.i4.0       
+    IL_0A69: stloc.s        25
+    IL_0A6B: ldarg.0        
+    IL_0A6C: ldfld          MegaCrit.Sts2.Core.Modding.Mod::path
+    IL_0A71: ldloc.0        
+    IL_0A72: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0A77: ldstr          ".dll"
+    IL_0A7C: call           System.String::Concat
+    IL_0A81: call           System.IO.Path::Combine
+    IL_0A86: stloc.s        26
+    IL_0A88: ldarg.0        
+    IL_0A89: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0A8E: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::hasDll
+    IL_0A93: brfalse        IL_0B43
+    IL_0A98: call           MegaCrit.Sts2.Core.TestSupport.TestMode::get_IsOff
+    IL_0A9D: brfalse        IL_0B43
+    IL_0AA2: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_fileIo
+    IL_0AA7: brfalse.s      IL_0AEB
+    IL_0AA9: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_fileIo
+    IL_0AAE: ldloc.s        26
+    IL_0AB0: callvirt       MegaCrit.Sts2.Core.Modding.IModManagerFileIo::FileExists
+    IL_0AB5: brfalse.s      IL_0AEB
+    IL_0AB7: ldstr          "Loading assembly DLL "
+    IL_0ABC: ldloc.s        26
+    IL_0ABE: call           System.String::Concat
+    IL_0AC3: ldc.i4.2       
+    IL_0AC4: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_0AC9: call           System.Reflection.Assembly::GetExecutingAssembly
+    IL_0ACE: call           System.Runtime.Loader.AssemblyLoadContext::GetLoadContext
+    IL_0AD3: stloc.s        29
+    IL_0AD5: ldloc.s        29
+    IL_0AD7: brfalse        IL_0B5F
+    IL_0ADC: ldloc.s        29
+    IL_0ADE: ldloc.s        26
+    IL_0AE0: callvirt       System.Runtime.Loader.AssemblyLoadContext::LoadFromAssemblyPath
+    IL_0AE5: stloc.1        
+    IL_0AE6: ldc.i4.1       
+    IL_0AE7: stloc.s        25
+    IL_0AE9: br.s           IL_0B5F
+    IL_0AEB: ldc.i4.s       99
+    IL_0AED: ldc.i4.2       
+    IL_0AEE: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0AF3: stloc.s        7
+    IL_0AF5: ldloca.s       7
+    IL_0AF7: ldstr          "Mod manifest for mod "
+    IL_0AFC: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0B01: ldloca.s       7
+    IL_0B03: ldarg.0        
+    IL_0B04: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0B09: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0B0E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0B13: ldloca.s       7
+    IL_0B15: ldstr          " declares that it should load an assembly, but no assembly at path "
+    IL_0B1A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0B1F: ldloca.s       7
+    IL_0B21: ldloc.s        26
+    IL_0B23: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0B28: ldloca.s       7
+    IL_0B2A: ldstr          " was found!"
+    IL_0B2F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0B34: ldloca.s       7
+    IL_0B36: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0B3B: ldc.i4.2       
+    IL_0B3C: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0B41: br.s           IL_0B5F
+    IL_0B43: call           MegaCrit.Sts2.Core.TestSupport.TestMode::get_IsOn
+    IL_0B48: brfalse.s      IL_0B5F
+    IL_0B4A: call           MegaCrit.Sts2.Core.Modding.ModManager::get_TestInitializers
+    IL_0B4F: ldloc.0        
+    IL_0B50: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0B55: callvirt       <typespec>::ContainsKey
+    IL_0B5A: brfalse.s      IL_0B5F
+    IL_0B5C: ldc.i4.1       
+    IL_0B5D: stloc.s        25
+    IL_0B5F: ldarg.0        
+    IL_0B60: ldfld          MegaCrit.Sts2.Core.Modding.Mod::path
+    IL_0B65: ldloc.0        
+    IL_0B66: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0B6B: ldstr          ".pck"
+    IL_0B70: call           System.String::Concat
+    IL_0B75: call           System.IO.Path::Combine
+    IL_0B7A: stloc.s        27
+    IL_0B7C: ldarg.0        
+    IL_0B7D: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0B82: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::hasPck
+    IL_0B87: brfalse        IL_0C42
+    IL_0B8C: call           MegaCrit.Sts2.Core.TestSupport.TestMode::get_IsOff
+    IL_0B91: brfalse        IL_0C42
+    IL_0B96: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_fileIo
+    IL_0B9B: brfalse.s      IL_0BEC
+    IL_0B9D: ldsfld         MegaCrit.Sts2.Core.Modding.ModManager::_fileIo
+    IL_0BA2: ldloc.s        27
+    IL_0BA4: callvirt       MegaCrit.Sts2.Core.Modding.IModManagerFileIo::FileExists
+    IL_0BA9: brfalse.s      IL_0BEC
+    IL_0BAB: ldstr          "Loading Godot PCK "
+    IL_0BB0: ldloc.s        27
+    IL_0BB2: call           System.String::Concat
+    IL_0BB7: ldc.i4.2       
+    IL_0BB8: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_0BBD: ldloc.s        27
+    IL_0BBF: ldc.i4.1       
+    IL_0BC0: ldc.i4.0       
+    IL_0BC1: call           Godot.ProjectSettings::LoadResourcePack
+    IL_0BC6: stloc.s        30
+    IL_0BC8: ldloc.s        30
+    IL_0BCA: brtrue.s       IL_0BE7
+    IL_0BCC: ldstr          "Godot errored while loading PCK file "
+    IL_0BD1: ldloc.0        
+    IL_0BD2: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0BD7: ldstr          "!"
+    IL_0BDC: call           System.String::Concat
+    IL_0BE1: newobj         System.InvalidOperationException::.ctor
+    IL_0BE6: throw          
+    IL_0BE7: ldc.i4.1       
+    IL_0BE8: stloc.s        25
+    IL_0BEA: br.s           IL_0C42
+    IL_0BEC: ldc.i4.s       88
+    IL_0BEE: ldc.i4.2       
+    IL_0BEF: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0BF4: stloc.s        7
+    IL_0BF6: ldloca.s       7
+    IL_0BF8: ldstr          "Mod manifest for mod "
+    IL_0BFD: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0C02: ldloca.s       7
+    IL_0C04: ldarg.0        
+    IL_0C05: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0C0A: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0C0F: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0C14: ldloca.s       7
+    IL_0C16: ldstr          " declares that it should load a PCK, but no PCK at path "
+    IL_0C1B: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0C20: ldloca.s       7
+    IL_0C22: ldloc.s        27
+    IL_0C24: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0C29: ldloca.s       7
+    IL_0C2B: ldstr          " was found!"
+    IL_0C30: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0C35: ldloca.s       7
+    IL_0C37: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0C3C: ldc.i4.2       
+    IL_0C3D: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0C42: ldloc.s        25
+    IL_0C44: brtrue.s       IL_0C66
+    IL_0C46: ldstr          "Neither a DLL nor a PCK was loaded for mod "
+    IL_0C4B: ldarg.0        
+    IL_0C4C: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0C51: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0C56: ldstr          ", something seems wrong!"
+    IL_0C5B: call           System.String::Concat
+    IL_0C60: ldc.i4.2       
+    IL_0C61: call           MegaCrit.Sts2.Core.Logging.Log::Warn
+    IL_0C66: ldloca.s       28
+    IL_0C68: initobj        <typespec>
+    IL_0C6E: call           MegaCrit.Sts2.Core.TestSupport.TestMode::get_IsOff
+    IL_0C73: brfalse        IL_0E04
+    IL_0C78: ldloc.1        
+    IL_0C79: ldnull         
+    IL_0C7A: call           System.Reflection.Assembly::op_Inequality
+    IL_0C7F: brfalse        IL_0E04
+    IL_0C84: ldloca.s       28
+    IL_0C86: ldc.i4.1       
+    IL_0C87: call           <typespec>::.ctor
+    IL_0C8C: ldloc.1        
+    IL_0C8D: callvirt       System.Reflection.Assembly::GetTypes
+    IL_0C92: ldsfld         .<>c::<>9__40_2
+    IL_0C97: dup            
+    IL_0C98: brtrue.s       IL_0CB1
+    IL_0C9A: pop            
+    IL_0C9B: ldsfld         .<>c::<>9
+    IL_0CA0: ldftn          .<>c::<TryLoadMod>b__40_2
+    IL_0CA6: newobj         <typespec>::.ctor
+    IL_0CAB: dup            
+    IL_0CAC: stsfld         .<>c::<>9__40_2
+    IL_0CB1: call           System.Linq.Enumerable::Where<...>
+    IL_0CB6: call           System.Linq.Enumerable::ToList<...>
+    IL_0CBB: stloc.s        31
+    IL_0CBD: ldloc.s        31
+    IL_0CBF: callvirt       <typespec>::get_Count
+    IL_0CC4: ldc.i4.0       
+    IL_0CC5: ble            IL_0D54
+    IL_0CCA: ldloc.s        31
+    IL_0CCC: callvirt       <typespec>::GetEnumerator
+    IL_0CD1: stloc.s        32
+    IL_0CD3: br.s           IL_0D38
+    IL_0CD5: ldloca.s       32
+    IL_0CD7: call           <typespec>::get_Current
+    IL_0CDC: stloc.s        33
+    IL_0CDE: ldc.i4.s       40
+    IL_0CE0: ldc.i4.2       
+    IL_0CE1: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0CE6: stloc.s        7
+    IL_0CE8: ldloca.s       7
+    IL_0CEA: ldstr          "Calling initializer method of type "
+    IL_0CEF: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0CF4: ldloca.s       7
+    IL_0CF6: ldloc.s        33
+    IL_0CF8: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0CFD: ldloca.s       7
+    IL_0CFF: ldstr          " for "
+    IL_0D04: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0D09: ldloca.s       7
+    IL_0D0B: ldloc.1        
+    IL_0D0C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0D11: ldloca.s       7
+    IL_0D13: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0D18: ldc.i4.2       
+    IL_0D19: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_0D1E: ldloc.s        33
+    IL_0D20: call           MegaCrit.Sts2.Core.Modding.ModManager::CallModInitializer
+    IL_0D25: stloc.s        34
+    IL_0D27: ldloca.s       28
+    IL_0D29: call           <typespec>::get_Value
+    IL_0D2E: ldloc.s        34
+    IL_0D30: and            
+    IL_0D31: newobj         <typespec>::.ctor
+    IL_0D36: stloc.s        28
+    IL_0D38: ldloca.s       32
+    IL_0D3A: call           <typespec>::MoveNext
+    IL_0D3F: brtrue.s       IL_0CD5
+    IL_0D41: leave          IL_0E46
+    IL_0D46: ldloca.s       32
+    IL_0D48: constrained.   <typespec>
+    IL_0D4E: callvirt       System.IDisposable::Dispose
+    IL_0D53: endfinally     
+    IL_0D54: nop            
+    IL_0D55: ldc.i4.s       66
+    IL_0D57: ldc.i4.1       
+    IL_0D58: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0D5D: stloc.s        7
+    IL_0D5F: ldloca.s       7
+    IL_0D61: ldstr          "No ModInitializerAttribute detected. Calling Harmony.PatchAll for "
+    IL_0D66: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0D6B: ldloca.s       7
+    IL_0D6D: ldloc.1        
+    IL_0D6E: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0D73: ldloca.s       7
+    IL_0D75: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0D7A: ldc.i4.2       
+    IL_0D7B: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_0D80: ldarg.0        
+    IL_0D81: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0D86: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::author
+    IL_0D8B: dup            
+    IL_0D8C: brtrue.s       IL_0D94
+    IL_0D8E: pop            
+    IL_0D8F: ldstr          "unknown"
+    IL_0D94: ldstr          "."
+    IL_0D99: ldloc.0        
+    IL_0D9A: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0D9F: call           System.String::Concat
+    IL_0DA4: newobj         HarmonyLib.Harmony::.ctor
+    IL_0DA9: stloc.s        35
+    IL_0DAB: ldloc.s        35
+    IL_0DAD: ldloc.1        
+    IL_0DAE: callvirt       HarmonyLib.Harmony::PatchAll
+    IL_0DB3: leave          IL_0E46
+    IL_0DB8: stloc.s        36
+    IL_0DBA: ldc.i4.s       60
+    IL_0DBC: ldc.i4.2       
+    IL_0DBD: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0DC2: stloc.s        7
+    IL_0DC4: ldloca.s       7
+    IL_0DC6: ldstr          "Exception caught while trying to run PatchAll on assembly "
+    IL_0DCB: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0DD0: ldloca.s       7
+    IL_0DD2: ldloc.1        
+    IL_0DD3: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0DD8: ldloca.s       7
+    IL_0DDA: ldstr          ":
+"
+    IL_0DDF: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0DE4: ldloca.s       7
+    IL_0DE6: ldloc.s        36
+    IL_0DE8: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0DED: ldloca.s       7
+    IL_0DEF: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0DF4: ldc.i4.2       
+    IL_0DF5: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0DFA: ldloca.s       28
+    IL_0DFC: ldc.i4.0       
+    IL_0DFD: call           <typespec>::.ctor
+    IL_0E02: leave.s        IL_0E46
+    IL_0E04: call           MegaCrit.Sts2.Core.TestSupport.TestMode::get_IsOn
+    IL_0E09: brfalse.s      IL_0E46
+    IL_0E0B: ldarg.0        
+    IL_0E0C: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0E11: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::hasDll
+    IL_0E16: brfalse.s      IL_0E46
+    IL_0E18: ldloca.s       28
+    IL_0E1A: call           MegaCrit.Sts2.Core.Modding.ModManager::get_TestInitializers
+    IL_0E1F: ldarg.0        
+    IL_0E20: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0E25: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0E2A: ldloca.s       37
+    IL_0E2C: callvirt       <typespec>::TryGetValue
+    IL_0E31: call           <typespec>::.ctor
+    IL_0E36: ldloca.s       28
+    IL_0E38: call           <typespec>::get_Value
+    IL_0E3D: brfalse.s      IL_0E46
+    IL_0E3F: ldloc.s        37
+    IL_0E41: callvirt       System.Action::Invoke
+    IL_0E46: ldloc.s        28
+    IL_0E48: stloc.s        38
+    IL_0E4A: ldc.i4.0       
+    IL_0E4B: stloc.s        39
+    IL_0E4D: ldloca.s       38
+    IL_0E4F: call           <typespec>::GetValueOrDefault
+    IL_0E54: ldloc.s        39
+    IL_0E56: ceq            
+    IL_0E58: ldloca.s       38
+    IL_0E5A: call           <typespec>::get_HasValue
+    IL_0E5F: and            
+    IL_0E60: brfalse.s      IL_0E92
+    IL_0E62: ldstr          "main_menu_ui"
+    IL_0E67: ldstr          "MOD_ERROR.ASSEMBLY_LOAD"
+    IL_0E6C: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_0E71: stloc.s        40
+    IL_0E73: ldloc.s        40
+    IL_0E75: ldstr          "id"
+    IL_0E7A: ldarg.0        
+    IL_0E7B: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0E80: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0E85: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0E8A: ldloc.2        
+    IL_0E8B: ldloc.s        40
+    IL_0E8D: callvirt       <typespec>::Add
+    IL_0E92: ldc.i4.s       38
+    IL_0E94: ldc.i4.2       
+    IL_0E95: newobj         System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0E9A: stloc.s        7
+    IL_0E9C: ldloca.s       7
+    IL_0E9E: ldstr          "Finished mod initialization for '"
+    IL_0EA3: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0EA8: ldloca.s       7
+    IL_0EAA: ldarg.0        
+    IL_0EAB: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0EB0: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::name
+    IL_0EB5: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0EBA: ldloca.s       7
+    IL_0EBC: ldstr          "' ("
+    IL_0EC1: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0EC6: ldloca.s       7
+    IL_0EC8: ldloc.0        
+    IL_0EC9: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0ECE: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0ED3: ldloca.s       7
+    IL_0ED5: ldstr          ")."
+    IL_0EDA: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0EDF: ldloca.s       7
+    IL_0EE1: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0EE6: ldc.i4.2       
+    IL_0EE7: call           MegaCrit.Sts2.Core.Logging.Log::Info
+    IL_0EEC: ldloc.1        
+    IL_0EED: ldnull         
+    IL_0EEE: call           System.Reflection.Assembly::op_Inequality
+    IL_0EF3: brfalse.s      IL_0F01
+    IL_0EF5: ldarg.0        
+    IL_0EF6: ldfld          MegaCrit.Sts2.Core.Modding.Mod::assemblies
+    IL_0EFB: ldloc.1        
+    IL_0EFC: callvirt       <typespec>::Add
+    IL_0F01: ldarg.0        
+    IL_0F02: ldc.i4.1       
+    IL_0F03: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0F08: ldarg.0        
+    IL_0F09: ldloc.2        
+    IL_0F0A: callvirt       <typespec>::get_Count
+    IL_0F0F: brfalse.s      IL_0F14
+    IL_0F11: ldloc.2        
+    IL_0F12: br.s           IL_0F15
+    IL_0F14: ldnull         
+    IL_0F15: stfld          MegaCrit.Sts2.Core.Modding.Mod::errors
+    IL_0F1A: ldarg.0        
+    IL_0F1B: call           MegaCrit.Sts2.Core.Modding.ModManager::InvokeOnModDetected
+    IL_0F20: leave          IL_0FEA
+    IL_0F25: stloc.s        41
+    IL_0F27: ldloca.s       7
+    IL_0F29: ldc.i4.s       37
+    IL_0F2B: ldc.i4.2       
+    IL_0F2C: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::.ctor
+    IL_0F31: ldloca.s       7
+    IL_0F33: ldstr          "Exception thrown while loading mod "
+    IL_0F38: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0F3D: ldloca.s       7
+    IL_0F3F: ldloc.0        
+    IL_0F40: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0F45: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted
+    IL_0F4A: ldloca.s       7
+    IL_0F4C: ldstr          ": "
+    IL_0F51: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendLiteral
+    IL_0F56: ldloca.s       7
+    IL_0F58: ldloc.s        41
+    IL_0F5A: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::AppendFormatted<...>
+    IL_0F5F: ldloca.s       7
+    IL_0F61: call           System.Runtime.CompilerServices.DefaultInterpolatedStringHandler::ToStringAndClear
+    IL_0F66: ldc.i4.2       
+    IL_0F67: call           MegaCrit.Sts2.Core.Logging.Log::Error
+    IL_0F6C: ldstr          "main_menu_ui"
+    IL_0F71: ldstr          "MOD_ERROR.EXCEPTION"
+    IL_0F76: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_0F7B: stloc.s        42
+    IL_0F7D: ldloc.s        42
+    IL_0F7F: ldstr          "exceptionType"
+    IL_0F84: ldloc.s        41
+    IL_0F86: callvirt       System.Exception::GetType
+    IL_0F8B: callvirt       System.Object::ToString
+    IL_0F90: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0F95: ldloc.s        42
+    IL_0F97: ldstr          "id"
+    IL_0F9C: ldarg.0        
+    IL_0F9D: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0FA2: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0FA7: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0FAC: ldloc.2        
+    IL_0FAD: ldloc.s        42
+    IL_0FAF: callvirt       <typespec>::Add
+    IL_0FB4: ldloc.1        
+    IL_0FB5: ldnull         
+    IL_0FB6: call           System.Reflection.Assembly::op_Inequality
+    IL_0FBB: brfalse.s      IL_0FC9
+    IL_0FBD: ldarg.0        
+    IL_0FBE: ldfld          MegaCrit.Sts2.Core.Modding.Mod::assemblies
+    IL_0FC3: ldloc.1        
+    IL_0FC4: callvirt       <typespec>::Add
+    IL_0FC9: ldarg.0        
+    IL_0FCA: ldc.i4.2       
+    IL_0FCB: stfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0FD0: ldarg.0        
+    IL_0FD1: ldloc.2        
+    IL_0FD2: callvirt       <typespec>::get_Count
+    IL_0FD7: brfalse.s      IL_0FDC
+    IL_0FD9: ldloc.2        
+    IL_0FDA: br.s           IL_0FDD
+    IL_0FDC: ldnull         
+    IL_0FDD: stfld          MegaCrit.Sts2.Core.Modding.Mod::errors
+    IL_0FE2: ldarg.0        
+    IL_0FE3: call           MegaCrit.Sts2.Core.Modding.ModManager::InvokeOnModDetected
+    IL_0FE8: leave.s        IL_0FEA
+    IL_0FEA: ret            
+
+
+===== <>c.<TryLoadMod>b__40_2(t)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 28 8F 15 00 2B 14 FE 03 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: call           System.Reflection.CustomAttributeExtensions::GetCustomAttribute<...>
+    IL_0006: ldnull         
+    IL_0007: cgt.un         
+    IL_0009: ret            
+
+
+===== <>c__DisplayClass40_0.<TryLoadMod>b__0(m)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 7B F2 14 00 04 25 2D 04 26 14 2B 05 7B 15 15 00 04 02 7B 12 6B 00 04 28 97 00 00 0A 2C 0A 03 7B F1 14 00 04 17 FE 01 2A 16 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0006: dup            
+    IL_0007: brtrue.s       IL_000D
+    IL_0009: pop            
+    IL_000A: ldnull         
+    IL_000B: br.s           IL_0012
+    IL_000D: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0012: ldarg.0        
+    IL_0013: ldfld          .<>c__DisplayClass40_0::modId
+    IL_0018: call           System.String::op_Equality
+    IL_001D: brfalse.s      IL_0029
+    IL_001F: ldarg.1        
+    IL_0020: ldfld          MegaCrit.Sts2.Core.Modding.Mod::state
+    IL_0025: ldc.i4.1       
+    IL_0026: ceq            
+    IL_0028: ret            
+    IL_0029: ldc.i4.0       
+    IL_002A: ret            
+
+
+===== <>c__DisplayClass40_1.<TryLoadMod>b__1(m)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 7B F2 14 00 04 25 2D 04 26 14 2B 05 7B 15 15 00 04 02 7B 13 6B 00 04 7B F7 14 00 04 28 97 00 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Modding.Mod::manifest
+    IL_0006: dup            
+    IL_0007: brtrue.s       IL_000D
+    IL_0009: pop            
+    IL_000A: ldnull         
+    IL_000B: br.s           IL_0012
+    IL_000D: ldfld          MegaCrit.Sts2.Core.Modding.ModManifest::id
+    IL_0012: ldarg.0        
+    IL_0013: ldfld          .<>c__DisplayClass40_1::declaredDependency
+    IL_0018: ldfld          MegaCrit.Sts2.Core.Modding.ModDependency::id
+    IL_001D: call           System.String::op_Equality
+    IL_0022: ret            
+
+

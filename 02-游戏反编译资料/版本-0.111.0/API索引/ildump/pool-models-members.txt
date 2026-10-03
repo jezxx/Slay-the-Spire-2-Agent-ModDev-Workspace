@@ -1,0 +1,105 @@
+### MegaCrit.Sts2.Core.Models.PotionPoolModel   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: MegaCrit.Sts2.Core.Models.IPoolModel
+
+  --- fields ---
+    priv System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> _allPotions
+    priv System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Models.ModelId> _allPotionIds
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [abstract,virtual(newslot)] string get_EnergyColorName()
+    pub [OVERRIDE] bool get_ShouldReceiveCombatHooks()
+    pub [virtual(newslot)] Godot.Color get_LabOutlineColor()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> get_AllPotions()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.ModelId> get_AllPotionIds()
+    prot [abstract,virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> GenerateAllPotions()
+    pub [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> GetUnlockedPotions(MegaCrit.Sts2.Core.Unlocks.UnlockState)
+
+  --- properties ---
+    string EnergyColorName { [virtual] get; }
+    bool ShouldReceiveCombatHooks { [OVERRIDE] get; }
+    Godot.Color LabOutlineColor { [virtual] get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> AllPotions { get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.ModelId> AllPotionIds { get; }
+
+  --- nested types --- <>c
+
+### MegaCrit.Sts2.Core.Models.RelicPoolModel   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: MegaCrit.Sts2.Core.Models.IPoolModel
+
+  --- fields ---
+    priv System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> _relics
+    priv System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Models.ModelId> _allRelicIds
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [abstract,virtual(newslot)] string get_EnergyColorName()
+    pub [virtual(newslot)] Godot.Color get_LabOutlineColor()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> get_AllRelics()
+    pub System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Models.ModelId> get_AllRelicIds()
+    prot [abstract,virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> GenerateAllRelics()
+    pub [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> GetUnlockedRelics(MegaCrit.Sts2.Core.Unlocks.UnlockState)
+    pub [OVERRIDE] bool get_ShouldReceiveCombatHooks()
+
+  --- properties ---
+    string EnergyColorName { [virtual] get; }
+    Godot.Color LabOutlineColor { [virtual] get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> AllRelics { get; }
+    System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Models.ModelId> AllRelicIds { get; }
+    bool ShouldReceiveCombatHooks { [OVERRIDE] get; }
+
+  --- nested types --- <>c
+
+### MegaCrit.Sts2.Core.Models.CardPoolModel   [abstract class]
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: MegaCrit.Sts2.Core.Models.IPoolModel
+
+  --- fields ---
+    priv MegaCrit.Sts2.Core.Models.CardModel[] _allCards
+    priv System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Models.ModelId> _allCardIds
+
+  --- ctors ---
+    prot .ctor()
+
+  --- methods ---
+    pub [abstract,virtual(newslot)] string get_Title()
+    pub [abstract,virtual(newslot)] string get_EnergyColorName()
+    pub [abstract,virtual(newslot)] string get_CardFrameMaterialPath()
+    pub string get_FrameMaterialPath()
+    pub Godot.Material get_FrameMaterial()
+    pub [abstract,virtual(newslot)] Godot.Color get_DeckEntryCardColor()
+    pub [virtual(newslot)] Godot.Color get_EnergyOutlineColor()
+    pub string get_EnergyIconPath()
+    pub [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> get_AllCards()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.ModelId> get_AllCardIds()
+    prot [abstract,virtual(newslot)] MegaCrit.Sts2.Core.Models.CardModel[] GenerateAllCards()
+    prot void InvalidateCardCache()
+    prot [OVERRIDE] void DeepCloneFields()
+    pub System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> GetUnlockedCards(MegaCrit.Sts2.Core.Unlocks.UnlockState, MegaCrit.Sts2.Core.Entities.Cards.CardMultiplayerConstraint)
+    prot [virtual(newslot)] System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> FilterThroughEpochs(MegaCrit.Sts2.Core.Unlocks.UnlockState, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel>)
+    pub [abstract,virtual(newslot)] bool get_IsColorless()
+    pub [OVERRIDE] bool get_ShouldReceiveCombatHooks()
+    pub MegaCrit.Sts2.Core.Models.CardPoolModel ToMutable()
+
+  --- properties ---
+    string Title { [virtual] get; }
+    string EnergyColorName { [virtual] get; }
+    string CardFrameMaterialPath { [virtual] get; }
+    string FrameMaterialPath { get; }
+    Godot.Material FrameMaterial { get; }
+    Godot.Color DeckEntryCardColor { [virtual] get; }
+    Godot.Color EnergyOutlineColor { [virtual] get; }
+    string EnergyIconPath { get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> AllCards { [virtual] get; }
+    System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.ModelId> AllCardIds { get; }
+    bool IsColorless { [virtual] get; }
+    bool ShouldReceiveCombatHooks { [OVERRIDE] get; }
+
+  --- nested types --- <>c
+

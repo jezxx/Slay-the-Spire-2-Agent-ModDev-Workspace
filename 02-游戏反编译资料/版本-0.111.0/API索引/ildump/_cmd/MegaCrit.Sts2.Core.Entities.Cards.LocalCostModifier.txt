@@ -1,0 +1,9 @@
+### MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifier
+  get_Amount
+  set_Amount
+  get_Type
+  get_Expiration
+  get_IsReduceOnly
+  .ctor
+  Modify
+  Clone

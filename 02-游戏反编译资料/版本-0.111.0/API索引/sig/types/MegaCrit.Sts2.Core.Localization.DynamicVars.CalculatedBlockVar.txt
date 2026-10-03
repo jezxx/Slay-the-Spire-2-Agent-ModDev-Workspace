@@ -1,0 +1,9 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedBlockVar
+    base: MegaCrit.Sts2.Core.Localization.DynamicVars.CalculatedVar
+
+    field  public static string defaultName
+    field  internal readonly MegaCrit.Sts2.Core.ValueProps.ValueProp <Props>k__BackingField
+    prop   MegaCrit.Sts2.Core.ValueProps.ValueProp Props { public get; }
+    method public MegaCrit.Sts2.Core.ValueProps.ValueProp get_Props()
+    method public void .ctor(MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public void UpdateCardPreview(MegaCrit.Sts2.Core.Models.CardModel card, MegaCrit.Sts2.Core.Entities.Cards.CardPreviewMode previewMode, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, bool runGlobalHooks)

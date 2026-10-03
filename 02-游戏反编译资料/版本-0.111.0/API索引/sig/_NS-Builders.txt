@@ -1,0 +1,2 @@
+MegaCrit.Sts2.Core.Commands.Builders.AttackCommand  [type] : System.Object
+MegaCrit.Sts2.Core.Commands.Builders.AttackContext  [type] : System.Object

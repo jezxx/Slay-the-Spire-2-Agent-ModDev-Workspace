@@ -1,0 +1,47 @@
+===== MegaCrit.Sts2.Core.Models.AncientEventModel.get_DialogueSet()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B A6 08 00 04 2D 22 02 02 6F FD 17 00 06 7D A6 08 00 04 02 7B A6 08 00 04 02 28 BC 16 00 06 6F 72 1A 00 06 6F D1 52 00 06 02 7B A6 08 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Models.AncientEventModel::_dialogueSet
+    IL_0006: brtrue.s       IL_002A
+    IL_0008: ldarg.0        
+    IL_0009: ldarg.0        
+    IL_000A: callvirt       MegaCrit.Sts2.Core.Models.AncientEventModel::DefineDialogues
+    IL_000F: stfld          MegaCrit.Sts2.Core.Models.AncientEventModel::_dialogueSet
+    IL_0014: ldarg.0        
+    IL_0015: ldfld          MegaCrit.Sts2.Core.Models.AncientEventModel::_dialogueSet
+    IL_001A: ldarg.0        
+    IL_001B: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_0020: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0025: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::PopulateLocKeys
+    IL_002A: ldarg.0        
+    IL_002B: ldfld          MegaCrit.Sts2.Core.Models.AncientEventModel::_dialogueSet
+    IL_0030: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.AncientEventModel.DefineDialogues()  [attrs=0x5C4] =====
+  <no body / abstract>
+
+===== MegaCrit.Sts2.Core.Models.AncientEventModel.CharKey()  [attrs=0x94] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 8B 07 00 2B 8C 1E 00 00 1B 6F BC 16 00 06 6F 72 1A 00 06 2A
+  -- decoded --
+    IL_0000: call           MegaCrit.Sts2.Core.Models.ModelDb::Character<...>
+    IL_0005: box            <typespec>
+    IL_000A: callvirt       MegaCrit.Sts2.Core.Models.AbstractModel::get_Id
+    IL_000F: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0014: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.AncientEventModel.get_AnyCharacterDialogueBlacklist()  [attrs=0x9C6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 8C 07 00 2B 2A
+  -- decoded --
+    IL_0000: call           System.Array::Empty<...>
+    IL_0005: ret            
+
+

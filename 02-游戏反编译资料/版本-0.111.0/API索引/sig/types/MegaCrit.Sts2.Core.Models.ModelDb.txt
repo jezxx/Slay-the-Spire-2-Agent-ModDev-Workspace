@@ -1,0 +1,131 @@
+### public class MegaCrit.Sts2.Core.Models.ModelDb
+    base: System.Object
+
+    field  internal static int _initialCapacity
+    field  internal static readonly System.Collections.Generic.Dictionary`2<MegaCrit.Sts2.Core.Models.ModelId, MegaCrit.Sts2.Core.Models.AbstractModel> _contentById
+    field  internal static System.Type[] _allAbstractModelSubtypes
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> _allCards
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> _allCardPools
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> _allCharacterCardPools
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EventModel> _allSharedEvents
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EventModel> _allEvents
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EncounterModel> _allEncounters
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EncounterModel> _eventEncounters
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> _allPotions
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> _allPotionPools
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> _allCharacterPotionPools
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> _allCharacterRelicPools
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> _allSharedPotionPools
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> _allPowers
+    field  internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> _allRelics
+    field  internal static System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ActModel> _acts
+    field  internal static System.Collections.Generic.List`1<System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.ActModel>> _actsByIndex
+    field  internal static System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.BadgeModel> _badges
+    field  internal static System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.AchievementModel> _achievements
+    prop   System.Type[] AllAbstractModelSubtypes { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> All { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AfflictionModel> DebugAfflictions { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EnchantmentModel> DebugEnchantments { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> AllCards { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> AllCardPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> AllSharedCardPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> AllCharacterCardPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CharacterModel> AllCharacters { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EventModel> AllSharedEvents { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AncientEventModel> AllAncients { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AncientEventModel> AllSharedAncients { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EventModel> AllEvents { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.MonsterModel> Monsters { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EncounterModel> AllEncounters { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EncounterModel> EventEncounters { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> AllPotions { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> AllPotionPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> AllCharacterPotionPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> AllCharacterRelicPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> AllSharedPotionPools { internal get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> AllPowers { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> AllRelics { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> AllRelicPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> CharacterRelicPools { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> AllSharedRelicPools { internal get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.OrbModel> Orbs { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.ActModel> Acts { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ActModel>> ActsByIndex { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.BadgeModel> BadgeModels { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.AchievementModel> Achievements { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ModifierModel> GoodModifiers { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ModifierModel> BadModifiers { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<System.Collections.Generic.IReadOnlySet`1<MegaCrit.Sts2.Core.Models.ModifierModel>> MutuallyExclusiveModifiers { public get; }
+    method public static System.Type[] get_AllAbstractModelSubtypes()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> get_All()
+    method public static void Init(System.Type[] injectedModelTypes)
+    method public static void Inject(System.Type type)
+    method public static void Remove(System.Type type)
+    method public static void ResetForTest()
+    method public static void InitIds()
+    method public static void Preload()
+    method public static MegaCrit.Sts2.Core.Models.ModelId GetId<T>()
+    method public static MegaCrit.Sts2.Core.Models.ModelId GetId(System.Type type)
+    method public static System.Type GetCategoryType(System.Type type)
+    method public static string GetCategory(System.Type type)
+    method public static string GetEntry(System.Type type)
+    method public static T GetByIdOrNull<T>(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public static T GetById<T>(MegaCrit.Sts2.Core.Models.ModelId id)
+    method public static bool Contains(System.Type type)
+    method internal static T Get<T>()
+    method internal static MegaCrit.Sts2.Core.Models.AbstractModel Get(System.Type type)
+    method public static T Affliction<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AfflictionModel> get_DebugAfflictions()
+    method public static T Enchantment<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EnchantmentModel> get_DebugEnchantments()
+    method public static T Card<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> get_AllCards()
+    method public static T CardPool<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> get_AllCardPools()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> get_AllSharedCardPools()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardPoolModel> get_AllCharacterCardPools()
+    method public static T Character<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CharacterModel> get_AllCharacters()
+    method public static T Event<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EventModel> get_AllSharedEvents()
+    method public static T AncientEvent<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AncientEventModel> get_AllAncients()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AncientEventModel> get_AllSharedAncients()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EventModel> get_AllEvents()
+    method public static T Monster<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.MonsterModel> get_Monsters()
+    method public static T Encounter<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EncounterModel> get_AllEncounters()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.EncounterModel> get_EventEncounters()
+    method public static T Potion<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionModel> get_AllPotions()
+    method public static T PotionPool<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> get_AllPotionPools()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> get_AllCharacterPotionPools()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> get_AllCharacterRelicPools()
+    method internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PotionPoolModel> get_AllSharedPotionPools()
+    method public static T Power<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.PowerModel> get_AllPowers()
+    method public static MegaCrit.Sts2.Core.Models.PowerModel DebugPower(System.Type type)
+    method public static T Relic<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel> get_AllRelics()
+    method public static T RelicPool<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> get_AllRelicPools()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> get_CharacterRelicPools()
+    method internal static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicPoolModel> get_AllSharedRelicPools()
+    method public static T Orb<T>()
+    method public static MegaCrit.Sts2.Core.Models.OrbModel DebugOrb(System.Type type)
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.OrbModel> get_Orbs()
+    method public static T Act<T>()
+    method public static System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.ActModel> get_Acts()
+    method public static System.Collections.Generic.IReadOnlyList`1<System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ActModel>> get_ActsByIndex()
+    method public static T Singleton<T>()
+    method public static T Badge<T>()
+    method public static System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.BadgeModel> get_BadgeModels()
+    method public static T Achievement<T>()
+    method public static System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.AchievementModel> get_Achievements()
+    method public static T Modifier<T>()
+    method public static System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ModifierModel> get_GoodModifiers()
+    method public static System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ModifierModel> get_BadModifiers()
+    method public static System.Collections.Generic.IReadOnlyList`1<System.Collections.Generic.IReadOnlySet`1<MegaCrit.Sts2.Core.Models.ModifierModel>> get_MutuallyExclusiveModifiers()
+    method internal static void .cctor()

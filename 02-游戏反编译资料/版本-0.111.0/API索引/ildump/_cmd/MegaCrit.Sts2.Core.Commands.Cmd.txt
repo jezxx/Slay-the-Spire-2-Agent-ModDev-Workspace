@@ -1,0 +1,14 @@
+### MegaCrit.Sts2.Core.Commands.Cmd
+  Wait
+  Wait
+  WaitInternal
+  CustomScaledWait
+### <CustomScaledWait>d__3
+  MoveNext
+  SetStateMachine
+### <Wait>d__1
+  MoveNext
+  SetStateMachine
+### <WaitInternal>d__2
+  MoveNext
+  SetStateMachine

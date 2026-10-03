@@ -1,0 +1,20 @@
+; __MODID__ 的资源打包工程（Godot 4.5.1 Mono）
+;
+; 作用：把 <Proj>\__MODID__\ 目录导出成 __MODID__.pck，
+;       pck 内路径为 res://__MODID__/...，正好符合游戏加载器
+;       ModManager.GetModdedLocTables 拼的 res://{manifest.id}/localization/{lang}/{file}。
+;
+; 重要：不要在这里加 C# 脚本，也不要让 Godot 去构建 C#。
+;       C# 一律由 <Proj>\__MODID__.csproj 编译；
+;       Scripts\ 下放了 .gdignore，Godot 就不会扫描它。
+
+config_version=5
+
+[application]
+
+config/name="__MODID__"
+config/features=PackedStringArray("4.5", "Forward Plus")
+
+[rendering]
+
+renderer/rendering_method="mobile"

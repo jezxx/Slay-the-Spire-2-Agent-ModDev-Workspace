@@ -1,0 +1,491 @@
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_Pets()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3A 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_pets
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_TurnNumber()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3E 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<TurnNumber>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.set_TurnNumber(value)  [attrs=0x881] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 03 7D 3E 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldarg.1        
+    IL_0002: stfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<TurnNumber>k__BackingField
+    IL_0007: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_Phase()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3F 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_phase
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.set_Phase(value)  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 02 7B 3F 18 00 04 2E 17 02 03 7D 3F 18 00 04 02 7B 40 18 00 04 25 2D 02 26 2A 6F AB 02 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: ldarg.0        
+    IL_0002: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_phase
+    IL_0007: beq.s          IL_0020
+    IL_0009: ldarg.0        
+    IL_000A: ldarg.1        
+    IL_000B: stfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_phase
+    IL_0010: ldarg.0        
+    IL_0011: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::PlayerTurnPhaseChanged
+    IL_0016: dup            
+    IL_0017: brtrue.s       IL_001B
+    IL_0019: pop            
+    IL_001A: ret            
+    IL_001B: callvirt       System.Action::Invoke
+    IL_0020: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.add_PlayerTurnPhaseChanged(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 40 18 00 04 0A 06 0B 07 03 28 18 0D 00 0A 74 9D 00 00 01 0C 02 7C 40 18 00 04 08 07 28 99 04 00 2B 0A 06 07 33 DF 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::PlayerTurnPhaseChanged
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: stloc.1        
+    IL_0009: ldloc.1        
+    IL_000A: ldarg.1        
+    IL_000B: call           System.Delegate::Combine
+    IL_0010: castclass      System.Action
+    IL_0015: stloc.2        
+    IL_0016: ldarg.0        
+    IL_0017: ldflda         MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::PlayerTurnPhaseChanged
+    IL_001C: ldloc.2        
+    IL_001D: ldloc.1        
+    IL_001E: call           System.Threading.Interlocked::CompareExchange<...>
+    IL_0023: stloc.0        
+    IL_0024: ldloc.0        
+    IL_0025: ldloc.1        
+    IL_0026: bne.un.s       IL_0007
+    IL_0028: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.remove_PlayerTurnPhaseChanged(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 40 18 00 04 0A 06 0B 07 03 28 1A 0D 00 0A 74 9D 00 00 01 0C 02 7C 40 18 00 04 08 07 28 99 04 00 2B 0A 06 07 33 DF 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::PlayerTurnPhaseChanged
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: stloc.1        
+    IL_0009: ldloc.1        
+    IL_000A: ldarg.1        
+    IL_000B: call           System.Delegate::Remove
+    IL_0010: castclass      System.Action
+    IL_0015: stloc.2        
+    IL_0016: ldarg.0        
+    IL_0017: ldflda         MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::PlayerTurnPhaseChanged
+    IL_001C: ldloc.2        
+    IL_001D: ldloc.1        
+    IL_001E: call           System.Threading.Interlocked::CompareExchange<...>
+    IL_0023: stloc.0        
+    IL_0024: ldloc.0        
+    IL_0025: ldloc.1        
+    IL_0026: bne.un.s       IL_0007
+    IL_0028: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.add_EnergyChanged(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 41 18 00 04 0A 06 0B 07 03 28 18 0D 00 0A 74 3A 00 00 1B 0C 02 7C 41 18 00 04 08 07 28 87 07 00 2B 0A 06 07 33 DF 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::EnergyChanged
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: stloc.1        
+    IL_0009: ldloc.1        
+    IL_000A: ldarg.1        
+    IL_000B: call           System.Delegate::Combine
+    IL_0010: castclass      <typespec>
+    IL_0015: stloc.2        
+    IL_0016: ldarg.0        
+    IL_0017: ldflda         MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::EnergyChanged
+    IL_001C: ldloc.2        
+    IL_001D: ldloc.1        
+    IL_001E: call           System.Threading.Interlocked::CompareExchange<...>
+    IL_0023: stloc.0        
+    IL_0024: ldloc.0        
+    IL_0025: ldloc.1        
+    IL_0026: bne.un.s       IL_0007
+    IL_0028: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.remove_EnergyChanged(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 41 18 00 04 0A 06 0B 07 03 28 1A 0D 00 0A 74 3A 00 00 1B 0C 02 7C 41 18 00 04 08 07 28 87 07 00 2B 0A 06 07 33 DF 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::EnergyChanged
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: stloc.1        
+    IL_0009: ldloc.1        
+    IL_000A: ldarg.1        
+    IL_000B: call           System.Delegate::Remove
+    IL_0010: castclass      <typespec>
+    IL_0015: stloc.2        
+    IL_0016: ldarg.0        
+    IL_0017: ldflda         MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::EnergyChanged
+    IL_001C: ldloc.2        
+    IL_001D: ldloc.1        
+    IL_001E: call           System.Threading.Interlocked::CompareExchange<...>
+    IL_0023: stloc.0        
+    IL_0024: ldloc.0        
+    IL_0025: ldloc.1        
+    IL_0026: bne.un.s       IL_0007
+    IL_0028: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.add_StarsChanged(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 42 18 00 04 0A 06 0B 07 03 28 18 0D 00 0A 74 3A 00 00 1B 0C 02 7C 42 18 00 04 08 07 28 87 07 00 2B 0A 06 07 33 DF 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::StarsChanged
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: stloc.1        
+    IL_0009: ldloc.1        
+    IL_000A: ldarg.1        
+    IL_000B: call           System.Delegate::Combine
+    IL_0010: castclass      <typespec>
+    IL_0015: stloc.2        
+    IL_0016: ldarg.0        
+    IL_0017: ldflda         MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::StarsChanged
+    IL_001C: ldloc.2        
+    IL_001D: ldloc.1        
+    IL_001E: call           System.Threading.Interlocked::CompareExchange<...>
+    IL_0023: stloc.0        
+    IL_0024: ldloc.0        
+    IL_0025: ldloc.1        
+    IL_0026: bne.un.s       IL_0007
+    IL_0028: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.remove_StarsChanged(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 42 18 00 04 0A 06 0B 07 03 28 1A 0D 00 0A 74 3A 00 00 1B 0C 02 7C 42 18 00 04 08 07 28 87 07 00 2B 0A 06 07 33 DF 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::StarsChanged
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: stloc.1        
+    IL_0009: ldloc.1        
+    IL_000A: ldarg.1        
+    IL_000B: call           System.Delegate::Remove
+    IL_0010: castclass      <typespec>
+    IL_0015: stloc.2        
+    IL_0016: ldarg.0        
+    IL_0017: ldflda         MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::StarsChanged
+    IL_001C: ldloc.2        
+    IL_001D: ldloc.1        
+    IL_001E: call           System.Threading.Interlocked::CompareExchange<...>
+    IL_0023: stloc.0        
+    IL_0024: ldloc.0        
+    IL_0025: ldloc.1        
+    IL_0026: bne.un.s       IL_0007
+    IL_0028: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_Hand()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 43 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<Hand>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_DrawPile()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 44 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<DrawPile>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_DiscardPile()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 45 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<DiscardPile>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_ExhaustPile()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 46 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<ExhaustPile>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_PlayPile()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 47 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<PlayPile>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_AllPiles()  [attrs=0x886] =====
+  maxStack=5 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3B 18 00 04 2D 39 02 1B 8D 08 0A 00 02 25 16 02 28 BA 50 00 06 A2 25 17 02 28 BB 50 00 06 A2 25 18 02 28 BC 50 00 06 A2 25 19 02 28 BD 50 00 06 A2 25 1A 02 28 BE 50 00 06 A2 7D 3B 18 00 04 02 7B 3B 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_piles
+    IL_0006: brtrue.s       IL_0041
+    IL_0008: ldarg.0        
+    IL_0009: ldc.i4.5       
+    IL_000A: newarr         MegaCrit.Sts2.Core.Entities.Cards.CardPile
+    IL_000F: dup            
+    IL_0010: ldc.i4.0       
+    IL_0011: ldarg.0        
+    IL_0012: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_Hand
+    IL_0017: stelem.ref     
+    IL_0018: dup            
+    IL_0019: ldc.i4.1       
+    IL_001A: ldarg.0        
+    IL_001B: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_DrawPile
+    IL_0020: stelem.ref     
+    IL_0021: dup            
+    IL_0022: ldc.i4.2       
+    IL_0023: ldarg.0        
+    IL_0024: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_DiscardPile
+    IL_0029: stelem.ref     
+    IL_002A: dup            
+    IL_002B: ldc.i4.3       
+    IL_002C: ldarg.0        
+    IL_002D: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_ExhaustPile
+    IL_0032: stelem.ref     
+    IL_0033: dup            
+    IL_0034: ldc.i4.4       
+    IL_0035: ldarg.0        
+    IL_0036: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_PlayPile
+    IL_003B: stelem.ref     
+    IL_003C: stfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_piles
+    IL_0041: ldarg.0        
+    IL_0042: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_piles
+    IL_0047: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_AllCards()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 BF 50 00 06 7E A3 6F 00 04 25 2D 17 26 7E A2 6F 00 04 FE 06 64 B0 00 06 73 E3 19 00 0A 25 80 A3 6F 00 04 28 91 16 00 2B 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_AllPiles
+    IL_0006: ldsfld         .<>c::<>9__42_0
+    IL_000B: dup            
+    IL_000C: brtrue.s       IL_0025
+    IL_000E: pop            
+    IL_000F: ldsfld         .<>c::<>9
+    IL_0014: ldftn          .<>c::<get_AllCards>b__42_0
+    IL_001A: newobj         <typespec>::.ctor
+    IL_001F: dup            
+    IL_0020: stsfld         .<>c::<>9__42_0
+    IL_0025: call           System.Linq.Enumerable::SelectMany<...>
+    IL_002A: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_Energy()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3C 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_energy
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.set_Energy(value)  [attrs=0x886] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3C 18 00 04 03 33 01 2A 02 7B 3C 18 00 04 0A 02 03 7D 3C 18 00 04 02 7B 41 18 00 04 25 2D 02 26 2A 06 02 7B 3C 18 00 04 6F 32 15 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_energy
+    IL_0006: ldarg.1        
+    IL_0007: bne.un.s       IL_000A
+    IL_0009: ret            
+    IL_000A: ldarg.0        
+    IL_000B: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_energy
+    IL_0010: stloc.0        
+    IL_0011: ldarg.0        
+    IL_0012: ldarg.1        
+    IL_0013: stfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_energy
+    IL_0018: ldarg.0        
+    IL_0019: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::EnergyChanged
+    IL_001E: dup            
+    IL_001F: brtrue.s       IL_0023
+    IL_0021: pop            
+    IL_0022: ret            
+    IL_0023: ldloc.0        
+    IL_0024: ldarg.0        
+    IL_0025: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_energy
+    IL_002A: callvirt       <typespec>::Invoke
+    IL_002F: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_MaxEnergy()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 39 18 00 04 6F 59 50 00 06 6F B8 51 00 06 02 7B 39 18 00 04 02 7B 39 18 00 04 6F 7A 50 00 06 28 6B 11 00 0A 28 D0 4C 00 06 28 14 15 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_player
+    IL_0006: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_000B: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_CombatState
+    IL_0010: ldarg.0        
+    IL_0011: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_player
+    IL_0016: ldarg.0        
+    IL_0017: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_player
+    IL_001C: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_MaxEnergy
+    IL_0021: call           System.Decimal::op_Implicit
+    IL_0026: call           MegaCrit.Sts2.Core.Hooks.Hook::ModifyMaxEnergy
+    IL_002B: call           System.Decimal::op_Explicit
+    IL_0030: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_Stars()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3D 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_stars
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.set_Stars(value)  [attrs=0x886] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 3D 18 00 04 03 33 01 2A 02 7B 3D 18 00 04 0A 02 03 7D 3D 18 00 04 28 7B 56 00 06 6F 9F 56 00 06 02 7B 39 18 00 04 6F 59 50 00 06 6F B8 51 00 06 02 7B 3D 18 00 04 06 59 02 7B 39 18 00 04 6F DF 57 00 06 02 7B 42 18 00 04 25 2D 02 26 2A 06 02 7B 3D 18 00 04 6F 32 15 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_stars
+    IL_0006: ldarg.1        
+    IL_0007: bne.un.s       IL_000A
+    IL_0009: ret            
+    IL_000A: ldarg.0        
+    IL_000B: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_stars
+    IL_0010: stloc.0        
+    IL_0011: ldarg.0        
+    IL_0012: ldarg.1        
+    IL_0013: stfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_stars
+    IL_0018: call           MegaCrit.Sts2.Core.Combat.CombatManager::get_Instance
+    IL_001D: callvirt       MegaCrit.Sts2.Core.Combat.CombatManager::get_History
+    IL_0022: ldarg.0        
+    IL_0023: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_player
+    IL_0028: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_002D: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_CombatState
+    IL_0032: ldarg.0        
+    IL_0033: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_stars
+    IL_0038: ldloc.0        
+    IL_0039: sub            
+    IL_003A: ldarg.0        
+    IL_003B: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_player
+    IL_0040: callvirt       MegaCrit.Sts2.Core.Combat.History.CombatHistory::StarsModified
+    IL_0045: ldarg.0        
+    IL_0046: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::StarsChanged
+    IL_004B: dup            
+    IL_004C: brtrue.s       IL_0050
+    IL_004E: pop            
+    IL_004F: ret            
+    IL_0050: ldloc.0        
+    IL_0051: ldarg.0        
+    IL_0052: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::_stars
+    IL_0057: callvirt       <typespec>::Invoke
+    IL_005C: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState.get_OrbQueue()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 48 18 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::<OrbQueue>k__BackingField
+    IL_0006: ret            
+
+
+===== <>c.<get_AllCards>b__42_0(, p)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 6F 4C 52 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardPile::get_Cards
+    IL_0006: ret            
+
+
+===== <>c.<HasCardsToPlay>b__68_0(c)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 6F E9 18 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.CardModel::CanPlay
+    IL_0006: ret            
+
+
+===== <>c__65`1.<GetPet>b__65_0(p)  [attrs=0x83] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 6F B4 51 00 06 75 1F 00 00 1B 14 FE 03 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Monster
+    IL_0006: isinst         <typespec>
+    IL_000B: ldnull         
+    IL_000C: cgt.un         
+    IL_000E: ret            
+
+

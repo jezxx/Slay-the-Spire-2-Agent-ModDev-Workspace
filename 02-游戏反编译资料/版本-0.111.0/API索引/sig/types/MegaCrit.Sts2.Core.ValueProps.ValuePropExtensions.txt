@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.ValueProps.ValuePropExtensions
+    base: System.Object
+
+    method public static bool IsPoweredAttack(MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public static bool IsPoweredCardOrMonsterMoveBlock(MegaCrit.Sts2.Core.ValueProps.ValueProp props)
+    method public static bool IsCardOrMonsterMove(MegaCrit.Sts2.Core.ValueProps.ValueProp props)

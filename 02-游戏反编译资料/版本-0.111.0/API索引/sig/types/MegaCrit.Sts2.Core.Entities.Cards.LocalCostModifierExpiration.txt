@@ -1,0 +1,6 @@
+### public enum MegaCrit.Sts2.Core.Entities.Cards.LocalCostModifierExpiration
+    base: System.Enum
+
+    enum EndOfCombat = 0
+    enum EndOfTurn = 2
+    enum WhenPlayed = 4

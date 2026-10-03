@@ -1,0 +1,60 @@
+### MegaCrit.Sts2.Core.Entities.Relics.RelicRarity   [sealed class]
+  base: System.Enum
+  interfaces: 
+
+  --- literal fields (enum values) ---
+    None = 0
+    Starter = 1
+    Common = 2
+    Uncommon = 3
+    Rare = 4
+    Shop = 5
+    Event = 6
+    Ancient = 7
+
+  --- fields ---
+    pub int value__
+
+
+### MegaCrit.Sts2.Core.Runs.RelicGrabBag   [class]
+  base: System.Object
+  interfaces: 
+
+  --- fields ---
+    priv static readonly System.Collections.Generic.HashSet`1<MegaCrit.Sts2.Core.Entities.Relics.RelicRarity> _rarities
+    priv readonly System.Collections.Generic.Dictionary`2<MegaCrit.Sts2.Core.Entities.Relics.RelicRarity, System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel>> _deques
+    priv readonly System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel> _mpFallbackDequeue
+    priv readonly bool _refreshAllowed
+    priv System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel> _originalRelics
+
+  --- ctors ---
+    pub .ctor()
+    pub .ctor(bool)
+    priv .cctor()
+
+  --- methods ---
+    pub bool get_IsPopulated()
+    pub bool HasAvailableRelics(MegaCrit.Sts2.Core.Runs.IRunState)
+    pub void Populate(MegaCrit.Sts2.Core.Entities.Players.Player, MegaCrit.Sts2.Core.Random.Rng)
+    pub void Populate(System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.RelicModel>, MegaCrit.Sts2.Core.Random.Rng)
+    pub MegaCrit.Sts2.Core.Models.RelicModel PullFromFront(MegaCrit.Sts2.Core.Entities.Relics.RelicRarity, MegaCrit.Sts2.Core.Runs.IRunState)
+    pub MegaCrit.Sts2.Core.Models.RelicModel PullFromFront(MegaCrit.Sts2.Core.Entities.Relics.RelicRarity, System.Func`2<MegaCrit.Sts2.Core.Models.RelicModel, bool>, MegaCrit.Sts2.Core.Runs.IRunState)
+    pub MegaCrit.Sts2.Core.Models.RelicModel PullFromBack(MegaCrit.Sts2.Core.Entities.Relics.RelicRarity, System.Func`2<MegaCrit.Sts2.Core.Models.RelicModel, bool>, MegaCrit.Sts2.Core.Runs.IRunState)
+    pub void Remove()
+    pub void Remove(MegaCrit.Sts2.Core.Models.RelicModel)
+    pub void MoveToFallback(MegaCrit.Sts2.Core.Models.RelicModel)
+    priv System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel> GetAvailableDeque(MegaCrit.Sts2.Core.Entities.Relics.RelicRarity, MegaCrit.Sts2.Core.Runs.IRunState, System.Func`2<MegaCrit.Sts2.Core.Models.RelicModel, bool>)
+    priv bool DequeHasAnyRelics(System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel>, System.Func`2<MegaCrit.Sts2.Core.Models.RelicModel, bool>)
+    priv void RemoveDisallowedRelicsFromDeques(MegaCrit.Sts2.Core.Runs.IRunState)
+    pub MegaCrit.Sts2.Core.Saves.Runs.SerializableRelicGrabBag ToSerializable()
+    pub [static] MegaCrit.Sts2.Core.Runs.RelicGrabBag FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableRelicGrabBag)
+    pub void LoadFromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableRelicGrabBag)
+    priv System.Collections.Generic.List`1<MegaCrit.Sts2.Core.Models.RelicModel> GetDeque(MegaCrit.Sts2.Core.Entities.Relics.RelicRarity)
+    priv void RefreshRarity(MegaCrit.Sts2.Core.Entities.Relics.RelicRarity)
+    pub bool Contains(MegaCrit.Sts2.Core.Models.RelicModel)
+
+  --- properties ---
+    bool IsPopulated { get; }
+
+  --- nested types --- <>c, <>c__DisplayClass16_0, <>c__DisplayClass5_0
+

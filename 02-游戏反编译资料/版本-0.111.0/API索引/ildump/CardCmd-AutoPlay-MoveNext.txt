@@ -1,0 +1,557 @@
+===== <AutoPlay>d__0.MoveNext()  [attrs=0x1E1] =====
+  maxStack=6 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B CF 71 00 04 0A 06 45 07 00 00 00 E2 00 00 00 7B 01 00 00 AC 02 00 00 94 03 00 00 BF 04 00 00 5E 05 00 00 2B 06 00 00 02 73 1D B2 00 06 7D D4 71 00 04 02 7B D4 71 00 04 02 7B D1 71 00 04 7D B6 71 00 04 28 7B 56 00 06 6F AB 56 00 06 2C 05 DD 52 06 00 00 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 59 50 00 06 6F C5 51 00 06 2C 05 DD 31 06 00 00 02 02 7B D4 71 00 04 7B B6 71 00 04 6F BD 18 00 06 25 2D 1B 26 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 59 50 00 06 6F B8 51 00 06 7D D8 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 6F 7D 18 00 06 1A 6F 33 15 00 0A 2C 70 02 7B D2 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 28 6E 55 00 06 6F AB 24 00 0A 0D 12 03 28 AC 24 00 0A 2D 3F 02 16 25 0A 7D CF 71 00 04 02 09 7D DA 71 00 04 02 7C D0 71 00 04 12 03 02 28 E7 32 00 2B DD C5 05 00 00 02 7B DA 71 00 04 0D 02 7C DA 71 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D CF 71 00 04 12 03 28 AE 24 00 0A DD 75 05 00 00 02 7B D8 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 02 7C D9 71 00 04 02 7B D3 71 00 04 28 F6 4C 00 06 3A D6 00 00 00 02 7B D2 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 28 6E 55 00 06 6F AB 24 00 0A 13 05 12 05 28 AC 24 00 0A 2D 41 02 17 25 0A 7D CF 71 00 04 02 11 05 7D DA 71 00 04 02 7C D0 71 00 04 12 05 02 28 E7 32 00 2B DD 2C 05 00 00 02 7B DA 71 00 04 13 05 02 7C DA 71 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D CF 71 00 04 12 05 28 AE 24 00 0A 1A 02 7B D9 71 00 04 28 A6 52 00 06 13 04 11 04 2C 51 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 59 50 00 06 6F F8 51 00 06 25 2D 03 26 2B 31 11 04 6F C9 4A 00 06 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 59 50 00 06 22 00 00 80 3F 6C 73 19 1D 00 0A 28 E5 63 00 06 28 37 4D 00 06 DD 78 04 00 00 02 7B D4 71 00 04 7B B6 71 00 04 6F 7A 18 00 06 18 40 B8 00 00 00 02 7B D5 71 00 04 2D 35 02 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 61 50 00 06 6F F6 0A 00 06 6F 7D 0C 00 06 02 7B D8 71 00 04 6F 96 57 00 06 6F BB 09 00 2B 7D D5 71 00 04 02 7B D5 71 00 04 2D 73 02 7B D2 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 28 6E 55 00 06 6F AB 24 00 0A 13 06 12 06 28 AC 24 00 0A 2D 41 02 18 25 0A 7D CF 71 00 04 02 11 06 7D DA 71 00 04 02 7C D0 71 00 04 12 06 02 28 E7 32 00 2B DD FB 03 00 00 02 7B DA 71 00 04 13 06 02 7C DA 71 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D CF 71 00 04 12 06 28 AE 24 00 0A DD AA 03 00 00 02 7B D4 71 00 04 7B B6 71 00 04 6F 7A 18 00 06 1C 40 D2 00 00 00 02 7B D8 71 00 04 6F 77 57 00 06 02 7B D4 71 00 04 FE 06 1E B2 00 06 73 13 0F 00 0A 28 BA 09 00 2B 13 07 02 7B D5 71 00 04 2D 2C 02 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 61 50 00 06 6F F6 0A 00 06 6F 7D 0C 00 06 11 07 6F BB 09 00 2B 7D D5 71 00 04 02 7B D5 71 00 04 2D 73 02 7B D2 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 28 6E 55 00 06 6F AB 24 00 0A 13 08 12 08 28 AC 24 00 0A 2D 41 02 19 25 0A 7D CF 71 00 04 02 11 08 7D DA 71 00 04 02 7C D0 71 00 04 12 08 02 28 E7 32 00 2B DD 13 03 00 00 02 7B DA 71 00 04 13 08 02 7C DA 71 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D CF 71 00 04 12 08 28 AE 24 00 0A DD C2 02 00 00 02 7B D4 71 00 04 7B B6 71 00 04 6F 64 18 00 06 6F 65 50 00 06 0B 02 7B D4 71 00 04 7B B6 71 00 04 6F 6A 18 00 06 6F 18 52 00 06 2C 23 02 7B D6 71 00 04 2D 1B 02 7B D4 71 00 04 7B B6 71 00 04 6F 6A 18 00 06 07 6F C1 50 00 06 6F 1F 52 00 06 02 7B D6 71 00 04 2D 50 02 7B D4 71 00 04 7B B6 71 00 04 6F 76 18 00 06 2C 18 02 7B D4 71 00 04 7B B6 71 00 04 07 6F C4 50 00 06 6F 78 18 00 06 2B 26 02 7B D4 71 00 04 7B B6 71 00 04 16 02 7B D4 71 00 04 7B B6 71 00 04 6F DA 18 00 06 28 F9 0C 00 0A 6F 78 18 00 06 02 7B D4 71 00 04 7B B6 71 00 04 6F 66 18 00 06 2D 6D 02 7B D4 71 00 04 7B B6 71 00 04 1B 17 14 16 28 94 55 00 06 6F 3F 25 00 0A 13 09 12 09 28 40 25 00 0A 2D 41 02 1A 25 0A 7D CF 71 00 04 02 11 09 7D DB 71 00 04 02 7C D0 71 00 04 12 09 02 28 E8 32 00 2B DD E8 01 00 00 02 7B DB 71 00 04 13 09 02 7C DB 71 00 04 FE 15 23 0C 00 1B 02 15 25 0A 7D CF 71 00 04 12 09 28 41 25 00 0A 26 02 7B D7 71 00 04 2D 1C 02 7B D4 71 00 04 7B B6 71 00 04 02 7B D5 71 00 04 6F E3 18 00 06 28 87 4D 00 06 26 02 7B D8 71 00 04 02 7B D4 71 00 04 7B B6 71 00 04 02 7B D5 71 00 04 02 7B D3 71 00 04 28 73 4C 00 06 6F AB 24 00 0A 13 0A 12 0A 28 AC 24 00 0A 2D 41 02 1B 25 0A 7D CF 71 00 04 02 11 0A 7D DA 71 00 04 02 7C D0 71 00 04 12 0A 02 28 E7 32 00 2B DD 49 01 00 00 02 7B DA 71 00 04 13 0A 02 7C DA 71 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D CF 71 00 04 12 0A 28 AE 24 00 0A 12 0B FE 15 1E 0A 00 02 12 0B 16 28 89 52 00 06 12 0B 02 7B D4 71 00 04 7B B6 71 00 04 6F 6A 18 00 06 6F 20 52 00 06 28 8B 52 00 06 12 0B 16 28 8D 52 00 06 12 0B 16 02 7B D4 71 00 04 7B B6 71 00 04 6F DA 18 00 06 28 F9 0C 00 0A 28 8F 52 00 06 11 0B 0C 02 7B D4 71 00 04 7B B6 71 00 04 02 7B D2 71 00 04 02 7B D5 71 00 04 17 08 02 7B D7 71 00 04 6F F1 18 00 06 6F AB 24 00 0A 13 0C 12 0C 28 AC 24 00 0A 2D 3E 02 1C 25 0A 7D CF 71 00 04 02 11 0C 7D DA 71 00 04 02 7C D0 71 00 04 12 0C 02 28 E7 32 00 2B DE 7C 02 7B DA 71 00 04 13 0C 02 7C DA 71 00 04 FE 15 4C 00 00 01 02 15 25 0A 7D CF 71 00 04 12 0C 28 AE 24 00 0A DE 2E 13 0D 02 1F FE 7D CF 71 00 04 02 14 7D D4 71 00 04 02 14 7D D8 71 00 04 02 14 7D D9 71 00 04 02 7C D0 71 00 04 11 0D 28 B1 24 00 0A DE 28 02 1F FE 7D CF 71 00 04 02 14 7D D4 71 00 04 02 14 7D D8 71 00 04 02 14 7D D9 71 00 04 02 7C D0 71 00 04 28 B2 24 00 0A 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          .<AutoPlay>d__0::<>1__state
+    IL_0006: stloc.0        
+    IL_0007: ldloc.0        
+    IL_0008: switch         (7) -> 226, 379, 684, 916, 1215, 1374, 1579
+    IL_0029: ldarg.0        
+    IL_002A: newobj         .<>c__DisplayClass0_0::.ctor
+    IL_002F: stfld          .<AutoPlay>d__0::<>8__1
+    IL_0034: ldarg.0        
+    IL_0035: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_003A: ldarg.0        
+    IL_003B: ldfld          .<AutoPlay>d__0::card
+    IL_0040: stfld          .<>c__DisplayClass0_0::card
+    IL_0045: call           MegaCrit.Sts2.Core.Combat.CombatManager::get_Instance
+    IL_004A: callvirt       MegaCrit.Sts2.Core.Combat.CombatManager::get_IsOverOrEnding
+    IL_004F: brfalse.s      IL_0056
+    IL_0051: leave          IL_06A8
+    IL_0056: ldarg.0        
+    IL_0057: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_005C: ldfld          .<>c__DisplayClass0_0::card
+    IL_0061: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_0066: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_006B: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_IsDead
+    IL_0070: brfalse.s      IL_0077
+    IL_0072: leave          IL_06A8
+    IL_0077: ldarg.0        
+    IL_0078: ldarg.0        
+    IL_0079: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_007E: ldfld          .<>c__DisplayClass0_0::card
+    IL_0083: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_CombatState
+    IL_0088: dup            
+    IL_0089: brtrue.s       IL_00A6
+    IL_008B: pop            
+    IL_008C: ldarg.0        
+    IL_008D: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0092: ldfld          .<>c__DisplayClass0_0::card
+    IL_0097: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_009C: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_00A1: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_CombatState
+    IL_00A6: stfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_00AB: ldarg.0        
+    IL_00AC: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_00B1: ldfld          .<>c__DisplayClass0_0::card
+    IL_00B6: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Keywords
+    IL_00BB: ldc.i4.4       
+    IL_00BC: callvirt       <typespec>::Contains
+    IL_00C1: brfalse.s      IL_0133
+    IL_00C3: ldarg.0        
+    IL_00C4: ldfld          .<AutoPlay>d__0::choiceContext
+    IL_00C9: ldarg.0        
+    IL_00CA: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_00CF: ldfld          .<>c__DisplayClass0_0::card
+    IL_00D4: call           MegaCrit.Sts2.Core.Commands.CardCmd::MoveToResultPileWithoutPlaying
+    IL_00D9: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_00DE: stloc.3        
+    IL_00DF: ldloca.s       3
+    IL_00E1: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_00E6: brtrue.s       IL_0127
+    IL_00E8: ldarg.0        
+    IL_00E9: ldc.i4.0       
+    IL_00EA: dup            
+    IL_00EB: stloc.0        
+    IL_00EC: stfld          .<AutoPlay>d__0::<>1__state
+    IL_00F1: ldarg.0        
+    IL_00F2: ldloc.3        
+    IL_00F3: stfld          .<AutoPlay>d__0::<>u__1
+    IL_00F8: ldarg.0        
+    IL_00F9: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_00FE: ldloca.s       3
+    IL_0100: ldarg.0        
+    IL_0101: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_0106: leave          IL_06D0
+    IL_010B: ldarg.0        
+    IL_010C: ldfld          .<AutoPlay>d__0::<>u__1
+    IL_0111: stloc.3        
+    IL_0112: ldarg.0        
+    IL_0113: ldflda         .<AutoPlay>d__0::<>u__1
+    IL_0118: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_011E: ldarg.0        
+    IL_011F: ldc.i4.m1      
+    IL_0120: dup            
+    IL_0121: stloc.0        
+    IL_0122: stfld          .<AutoPlay>d__0::<>1__state
+    IL_0127: ldloca.s       3
+    IL_0129: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_012E: leave          IL_06A8
+    IL_0133: ldarg.0        
+    IL_0134: ldfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_0139: ldarg.0        
+    IL_013A: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_013F: ldfld          .<>c__DisplayClass0_0::card
+    IL_0144: ldarg.0        
+    IL_0145: ldflda         .<AutoPlay>d__0::<preventer>5__3
+    IL_014A: ldarg.0        
+    IL_014B: ldfld          .<AutoPlay>d__0::type
+    IL_0150: call           MegaCrit.Sts2.Core.Hooks.Hook::ShouldPlay
+    IL_0155: brtrue         IL_0230
+    IL_015A: ldarg.0        
+    IL_015B: ldfld          .<AutoPlay>d__0::choiceContext
+    IL_0160: ldarg.0        
+    IL_0161: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0166: ldfld          .<>c__DisplayClass0_0::card
+    IL_016B: call           MegaCrit.Sts2.Core.Commands.CardCmd::MoveToResultPileWithoutPlaying
+    IL_0170: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_0175: stloc.s        5
+    IL_0177: ldloca.s       5
+    IL_0179: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_017E: brtrue.s       IL_01C1
+    IL_0180: ldarg.0        
+    IL_0181: ldc.i4.1       
+    IL_0182: dup            
+    IL_0183: stloc.0        
+    IL_0184: stfld          .<AutoPlay>d__0::<>1__state
+    IL_0189: ldarg.0        
+    IL_018A: ldloc.s        5
+    IL_018C: stfld          .<AutoPlay>d__0::<>u__1
+    IL_0191: ldarg.0        
+    IL_0192: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_0197: ldloca.s       5
+    IL_0199: ldarg.0        
+    IL_019A: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_019F: leave          IL_06D0
+    IL_01A4: ldarg.0        
+    IL_01A5: ldfld          .<AutoPlay>d__0::<>u__1
+    IL_01AA: stloc.s        5
+    IL_01AC: ldarg.0        
+    IL_01AD: ldflda         .<AutoPlay>d__0::<>u__1
+    IL_01B2: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_01B8: ldarg.0        
+    IL_01B9: ldc.i4.m1      
+    IL_01BA: dup            
+    IL_01BB: stloc.0        
+    IL_01BC: stfld          .<AutoPlay>d__0::<>1__state
+    IL_01C1: ldloca.s       5
+    IL_01C3: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_01C8: ldc.i4.4       
+    IL_01C9: ldarg.0        
+    IL_01CA: ldfld          .<AutoPlay>d__0::<preventer>5__3
+    IL_01CF: call           MegaCrit.Sts2.Core.Entities.Cards.UnplayableReasonExtensions::GetPlayerDialogueLine
+    IL_01D4: stloc.s        4
+    IL_01D6: ldloc.s        4
+    IL_01D8: brfalse.s      IL_022B
+    IL_01DA: ldarg.0        
+    IL_01DB: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_01E0: ldfld          .<>c__DisplayClass0_0::card
+    IL_01E5: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_01EA: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_01EF: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::GetVfxContainer
+    IL_01F4: dup            
+    IL_01F5: brtrue.s       IL_01FA
+    IL_01F7: pop            
+    IL_01F8: br.s           IL_022B
+    IL_01FA: ldloc.s        4
+    IL_01FC: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0201: ldarg.0        
+    IL_0202: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0207: ldfld          .<>c__DisplayClass0_0::card
+    IL_020C: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_0211: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Creature
+    IL_0216: ldc.r4         1
+    IL_021B: conv.r8        
+    IL_021C: newobj         <typespec>::.ctor
+    IL_0221: call           MegaCrit.Sts2.Core.Nodes.Vfx.NThoughtBubbleVfx::Create
+    IL_0226: call           MegaCrit.Sts2.Core.Helpers.GodotTreeExtensions::AddChildSafely
+    IL_022B: leave          IL_06A8
+    IL_0230: ldarg.0        
+    IL_0231: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0236: ldfld          .<>c__DisplayClass0_0::card
+    IL_023B: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_TargetType
+    IL_0240: ldc.i4.2       
+    IL_0241: bne.un         IL_02FE
+    IL_0246: ldarg.0        
+    IL_0247: ldfld          .<AutoPlay>d__0::target
+    IL_024C: brtrue.s       IL_0283
+    IL_024E: ldarg.0        
+    IL_024F: ldarg.0        
+    IL_0250: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0255: ldfld          .<>c__DisplayClass0_0::card
+    IL_025A: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_025F: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_RunState
+    IL_0264: callvirt       MegaCrit.Sts2.Core.Runs.IRunState::get_Rng
+    IL_0269: callvirt       MegaCrit.Sts2.Core.Runs.RunRngSet::get_CombatTargets
+    IL_026E: ldarg.0        
+    IL_026F: ldfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_0274: callvirt       MegaCrit.Sts2.Core.Combat.ICombatState::get_HittableEnemies
+    IL_0279: callvirt       MegaCrit.Sts2.Core.Random.Rng::NextItem<...>
+    IL_027E: stfld          .<AutoPlay>d__0::target
+    IL_0283: ldarg.0        
+    IL_0284: ldfld          .<AutoPlay>d__0::target
+    IL_0289: brtrue.s       IL_02FE
+    IL_028B: ldarg.0        
+    IL_028C: ldfld          .<AutoPlay>d__0::choiceContext
+    IL_0291: ldarg.0        
+    IL_0292: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0297: ldfld          .<>c__DisplayClass0_0::card
+    IL_029C: call           MegaCrit.Sts2.Core.Commands.CardCmd::MoveToResultPileWithoutPlaying
+    IL_02A1: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_02A6: stloc.s        6
+    IL_02A8: ldloca.s       6
+    IL_02AA: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_02AF: brtrue.s       IL_02F2
+    IL_02B1: ldarg.0        
+    IL_02B2: ldc.i4.2       
+    IL_02B3: dup            
+    IL_02B4: stloc.0        
+    IL_02B5: stfld          .<AutoPlay>d__0::<>1__state
+    IL_02BA: ldarg.0        
+    IL_02BB: ldloc.s        6
+    IL_02BD: stfld          .<AutoPlay>d__0::<>u__1
+    IL_02C2: ldarg.0        
+    IL_02C3: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_02C8: ldloca.s       6
+    IL_02CA: ldarg.0        
+    IL_02CB: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_02D0: leave          IL_06D0
+    IL_02D5: ldarg.0        
+    IL_02D6: ldfld          .<AutoPlay>d__0::<>u__1
+    IL_02DB: stloc.s        6
+    IL_02DD: ldarg.0        
+    IL_02DE: ldflda         .<AutoPlay>d__0::<>u__1
+    IL_02E3: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_02E9: ldarg.0        
+    IL_02EA: ldc.i4.m1      
+    IL_02EB: dup            
+    IL_02EC: stloc.0        
+    IL_02ED: stfld          .<AutoPlay>d__0::<>1__state
+    IL_02F2: ldloca.s       6
+    IL_02F4: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_02F9: leave          IL_06A8
+    IL_02FE: ldarg.0        
+    IL_02FF: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0304: ldfld          .<>c__DisplayClass0_0::card
+    IL_0309: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_TargetType
+    IL_030E: ldc.i4.6       
+    IL_030F: bne.un         IL_03E6
+    IL_0314: ldarg.0        
+    IL_0315: ldfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_031A: callvirt       MegaCrit.Sts2.Core.Combat.ICombatState::get_Allies
+    IL_031F: ldarg.0        
+    IL_0320: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0325: ldftn          .<>c__DisplayClass0_0::<AutoPlay>b__0
+    IL_032B: newobj         <typespec>::.ctor
+    IL_0330: call           System.Linq.Enumerable::Where<...>
+    IL_0335: stloc.s        7
+    IL_0337: ldarg.0        
+    IL_0338: ldfld          .<AutoPlay>d__0::target
+    IL_033D: brtrue.s       IL_036B
+    IL_033F: ldarg.0        
+    IL_0340: ldarg.0        
+    IL_0341: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0346: ldfld          .<>c__DisplayClass0_0::card
+    IL_034B: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_0350: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_RunState
+    IL_0355: callvirt       MegaCrit.Sts2.Core.Runs.IRunState::get_Rng
+    IL_035A: callvirt       MegaCrit.Sts2.Core.Runs.RunRngSet::get_CombatTargets
+    IL_035F: ldloc.s        7
+    IL_0361: callvirt       MegaCrit.Sts2.Core.Random.Rng::NextItem<...>
+    IL_0366: stfld          .<AutoPlay>d__0::target
+    IL_036B: ldarg.0        
+    IL_036C: ldfld          .<AutoPlay>d__0::target
+    IL_0371: brtrue.s       IL_03E6
+    IL_0373: ldarg.0        
+    IL_0374: ldfld          .<AutoPlay>d__0::choiceContext
+    IL_0379: ldarg.0        
+    IL_037A: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_037F: ldfld          .<>c__DisplayClass0_0::card
+    IL_0384: call           MegaCrit.Sts2.Core.Commands.CardCmd::MoveToResultPileWithoutPlaying
+    IL_0389: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_038E: stloc.s        8
+    IL_0390: ldloca.s       8
+    IL_0392: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_0397: brtrue.s       IL_03DA
+    IL_0399: ldarg.0        
+    IL_039A: ldc.i4.3       
+    IL_039B: dup            
+    IL_039C: stloc.0        
+    IL_039D: stfld          .<AutoPlay>d__0::<>1__state
+    IL_03A2: ldarg.0        
+    IL_03A3: ldloc.s        8
+    IL_03A5: stfld          .<AutoPlay>d__0::<>u__1
+    IL_03AA: ldarg.0        
+    IL_03AB: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_03B0: ldloca.s       8
+    IL_03B2: ldarg.0        
+    IL_03B3: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_03B8: leave          IL_06D0
+    IL_03BD: ldarg.0        
+    IL_03BE: ldfld          .<AutoPlay>d__0::<>u__1
+    IL_03C3: stloc.s        8
+    IL_03C5: ldarg.0        
+    IL_03C6: ldflda         .<AutoPlay>d__0::<>u__1
+    IL_03CB: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_03D1: ldarg.0        
+    IL_03D2: ldc.i4.m1      
+    IL_03D3: dup            
+    IL_03D4: stloc.0        
+    IL_03D5: stfld          .<AutoPlay>d__0::<>1__state
+    IL_03DA: ldloca.s       8
+    IL_03DC: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_03E1: leave          IL_06A8
+    IL_03E6: ldarg.0        
+    IL_03E7: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_03EC: ldfld          .<>c__DisplayClass0_0::card
+    IL_03F1: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Owner
+    IL_03F6: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_PlayerCombatState
+    IL_03FB: stloc.1        
+    IL_03FC: ldarg.0        
+    IL_03FD: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0402: ldfld          .<>c__DisplayClass0_0::card
+    IL_0407: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_EnergyCost
+    IL_040C: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost::get_CostsX
+    IL_0411: brfalse.s      IL_0436
+    IL_0413: ldarg.0        
+    IL_0414: ldfld          .<AutoPlay>d__0::skipXCapture
+    IL_0419: brtrue.s       IL_0436
+    IL_041B: ldarg.0        
+    IL_041C: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0421: ldfld          .<>c__DisplayClass0_0::card
+    IL_0426: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_EnergyCost
+    IL_042B: ldloc.1        
+    IL_042C: callvirt       MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_Energy
+    IL_0431: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost::set_CapturedXValue
+    IL_0436: ldarg.0        
+    IL_0437: ldfld          .<AutoPlay>d__0::skipXCapture
+    IL_043C: brtrue.s       IL_048E
+    IL_043E: ldarg.0        
+    IL_043F: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0444: ldfld          .<>c__DisplayClass0_0::card
+    IL_0449: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_HasStarCostX
+    IL_044E: brfalse.s      IL_0468
+    IL_0450: ldarg.0        
+    IL_0451: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0456: ldfld          .<>c__DisplayClass0_0::card
+    IL_045B: ldloc.1        
+    IL_045C: callvirt       MegaCrit.Sts2.Core.Entities.Players.PlayerCombatState::get_Stars
+    IL_0461: callvirt       MegaCrit.Sts2.Core.Models.CardModel::set_LastStarsSpent
+    IL_0466: br.s           IL_048E
+    IL_0468: ldarg.0        
+    IL_0469: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_046E: ldfld          .<>c__DisplayClass0_0::card
+    IL_0473: ldc.i4.0       
+    IL_0474: ldarg.0        
+    IL_0475: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_047A: ldfld          .<>c__DisplayClass0_0::card
+    IL_047F: callvirt       MegaCrit.Sts2.Core.Models.CardModel::GetStarCostWithModifiers
+    IL_0484: call           System.Math::Max
+    IL_0489: callvirt       MegaCrit.Sts2.Core.Models.CardModel::set_LastStarsSpent
+    IL_048E: ldarg.0        
+    IL_048F: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0494: ldfld          .<>c__DisplayClass0_0::card
+    IL_0499: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_Pile
+    IL_049E: brtrue.s       IL_050D
+    IL_04A0: ldarg.0        
+    IL_04A1: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_04A6: ldfld          .<>c__DisplayClass0_0::card
+    IL_04AB: ldc.i4.5       
+    IL_04AC: ldc.i4.1       
+    IL_04AD: ldnull         
+    IL_04AE: ldc.i4.0       
+    IL_04AF: call           MegaCrit.Sts2.Core.Commands.CardPileCmd::Add
+    IL_04B4: callvirt       <typespec>::GetAwaiter
+    IL_04B9: stloc.s        9
+    IL_04BB: ldloca.s       9
+    IL_04BD: call           <typespec>::get_IsCompleted
+    IL_04C2: brtrue.s       IL_0505
+    IL_04C4: ldarg.0        
+    IL_04C5: ldc.i4.4       
+    IL_04C6: dup            
+    IL_04C7: stloc.0        
+    IL_04C8: stfld          .<AutoPlay>d__0::<>1__state
+    IL_04CD: ldarg.0        
+    IL_04CE: ldloc.s        9
+    IL_04D0: stfld          .<AutoPlay>d__0::<>u__2
+    IL_04D5: ldarg.0        
+    IL_04D6: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_04DB: ldloca.s       9
+    IL_04DD: ldarg.0        
+    IL_04DE: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_04E3: leave          IL_06D0
+    IL_04E8: ldarg.0        
+    IL_04E9: ldfld          .<AutoPlay>d__0::<>u__2
+    IL_04EE: stloc.s        9
+    IL_04F0: ldarg.0        
+    IL_04F1: ldflda         .<AutoPlay>d__0::<>u__2
+    IL_04F6: initobj        <typespec>
+    IL_04FC: ldarg.0        
+    IL_04FD: ldc.i4.m1      
+    IL_04FE: dup            
+    IL_04FF: stloc.0        
+    IL_0500: stfld          .<AutoPlay>d__0::<>1__state
+    IL_0505: ldloca.s       9
+    IL_0507: call           <typespec>::GetResult
+    IL_050C: pop            
+    IL_050D: ldarg.0        
+    IL_050E: ldfld          .<AutoPlay>d__0::skipCardPileVisuals
+    IL_0513: brtrue.s       IL_0531
+    IL_0515: ldarg.0        
+    IL_0516: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_051B: ldfld          .<>c__DisplayClass0_0::card
+    IL_0520: ldarg.0        
+    IL_0521: ldfld          .<AutoPlay>d__0::target
+    IL_0526: callvirt       MegaCrit.Sts2.Core.Models.CardModel::OnEnqueuePlayVfx
+    IL_052B: call           MegaCrit.Sts2.Core.Helpers.TaskHelper::RunSafely
+    IL_0530: pop            
+    IL_0531: ldarg.0        
+    IL_0532: ldfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_0537: ldarg.0        
+    IL_0538: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_053D: ldfld          .<>c__DisplayClass0_0::card
+    IL_0542: ldarg.0        
+    IL_0543: ldfld          .<AutoPlay>d__0::target
+    IL_0548: ldarg.0        
+    IL_0549: ldfld          .<AutoPlay>d__0::type
+    IL_054E: call           MegaCrit.Sts2.Core.Hooks.Hook::BeforeCardAutoPlayed
+    IL_0553: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_0558: stloc.s        10
+    IL_055A: ldloca.s       10
+    IL_055C: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_0561: brtrue.s       IL_05A4
+    IL_0563: ldarg.0        
+    IL_0564: ldc.i4.5       
+    IL_0565: dup            
+    IL_0566: stloc.0        
+    IL_0567: stfld          .<AutoPlay>d__0::<>1__state
+    IL_056C: ldarg.0        
+    IL_056D: ldloc.s        10
+    IL_056F: stfld          .<AutoPlay>d__0::<>u__1
+    IL_0574: ldarg.0        
+    IL_0575: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_057A: ldloca.s       10
+    IL_057C: ldarg.0        
+    IL_057D: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_0582: leave          IL_06D0
+    IL_0587: ldarg.0        
+    IL_0588: ldfld          .<AutoPlay>d__0::<>u__1
+    IL_058D: stloc.s        10
+    IL_058F: ldarg.0        
+    IL_0590: ldflda         .<AutoPlay>d__0::<>u__1
+    IL_0595: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_059B: ldarg.0        
+    IL_059C: ldc.i4.m1      
+    IL_059D: dup            
+    IL_059E: stloc.0        
+    IL_059F: stfld          .<AutoPlay>d__0::<>1__state
+    IL_05A4: ldloca.s       10
+    IL_05A6: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_05AB: ldloca.s       11
+    IL_05AD: initobj        MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo
+    IL_05B3: ldloca.s       11
+    IL_05B5: ldc.i4.0       
+    IL_05B6: call           MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo::set_EnergySpent
+    IL_05BB: ldloca.s       11
+    IL_05BD: ldarg.0        
+    IL_05BE: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_05C3: ldfld          .<>c__DisplayClass0_0::card
+    IL_05C8: callvirt       MegaCrit.Sts2.Core.Models.CardModel::get_EnergyCost
+    IL_05CD: callvirt       MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost::GetAmountToSpend
+    IL_05D2: call           MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo::set_EnergyValue
+    IL_05D7: ldloca.s       11
+    IL_05D9: ldc.i4.0       
+    IL_05DA: call           MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo::set_StarsSpent
+    IL_05DF: ldloca.s       11
+    IL_05E1: ldc.i4.0       
+    IL_05E2: ldarg.0        
+    IL_05E3: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_05E8: ldfld          .<>c__DisplayClass0_0::card
+    IL_05ED: callvirt       MegaCrit.Sts2.Core.Models.CardModel::GetStarCostWithModifiers
+    IL_05F2: call           System.Math::Max
+    IL_05F7: call           MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo::set_StarValue
+    IL_05FC: ldloc.s        11
+    IL_05FE: stloc.2        
+    IL_05FF: ldarg.0        
+    IL_0600: ldfld          .<AutoPlay>d__0::<>8__1
+    IL_0605: ldfld          .<>c__DisplayClass0_0::card
+    IL_060A: ldarg.0        
+    IL_060B: ldfld          .<AutoPlay>d__0::choiceContext
+    IL_0610: ldarg.0        
+    IL_0611: ldfld          .<AutoPlay>d__0::target
+    IL_0616: ldc.i4.1       
+    IL_0617: ldloc.2        
+    IL_0618: ldarg.0        
+    IL_0619: ldfld          .<AutoPlay>d__0::skipCardPileVisuals
+    IL_061E: callvirt       MegaCrit.Sts2.Core.Models.CardModel::OnPlayWrapper
+    IL_0623: callvirt       System.Threading.Tasks.Task::GetAwaiter
+    IL_0628: stloc.s        12
+    IL_062A: ldloca.s       12
+    IL_062C: call           System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted
+    IL_0631: brtrue.s       IL_0671
+    IL_0633: ldarg.0        
+    IL_0634: ldc.i4.6       
+    IL_0635: dup            
+    IL_0636: stloc.0        
+    IL_0637: stfld          .<AutoPlay>d__0::<>1__state
+    IL_063C: ldarg.0        
+    IL_063D: ldloc.s        12
+    IL_063F: stfld          .<AutoPlay>d__0::<>u__1
+    IL_0644: ldarg.0        
+    IL_0645: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_064A: ldloca.s       12
+    IL_064C: ldarg.0        
+    IL_064D: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<...>
+    IL_0652: leave.s        IL_06D0
+    IL_0654: ldarg.0        
+    IL_0655: ldfld          .<AutoPlay>d__0::<>u__1
+    IL_065A: stloc.s        12
+    IL_065C: ldarg.0        
+    IL_065D: ldflda         .<AutoPlay>d__0::<>u__1
+    IL_0662: initobj        System.Runtime.CompilerServices.TaskAwaiter
+    IL_0668: ldarg.0        
+    IL_0669: ldc.i4.m1      
+    IL_066A: dup            
+    IL_066B: stloc.0        
+    IL_066C: stfld          .<AutoPlay>d__0::<>1__state
+    IL_0671: ldloca.s       12
+    IL_0673: call           System.Runtime.CompilerServices.TaskAwaiter::GetResult
+    IL_0678: leave.s        IL_06A8
+    IL_067A: stloc.s        13
+    IL_067C: ldarg.0        
+    IL_067D: ldc.i4.s       -2
+    IL_067F: stfld          .<AutoPlay>d__0::<>1__state
+    IL_0684: ldarg.0        
+    IL_0685: ldnull         
+    IL_0686: stfld          .<AutoPlay>d__0::<>8__1
+    IL_068B: ldarg.0        
+    IL_068C: ldnull         
+    IL_068D: stfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_0692: ldarg.0        
+    IL_0693: ldnull         
+    IL_0694: stfld          .<AutoPlay>d__0::<preventer>5__3
+    IL_0699: ldarg.0        
+    IL_069A: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_069F: ldloc.s        13
+    IL_06A1: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException
+    IL_06A6: leave.s        IL_06D0
+    IL_06A8: ldarg.0        
+    IL_06A9: ldc.i4.s       -2
+    IL_06AB: stfld          .<AutoPlay>d__0::<>1__state
+    IL_06B0: ldarg.0        
+    IL_06B1: ldnull         
+    IL_06B2: stfld          .<AutoPlay>d__0::<>8__1
+    IL_06B7: ldarg.0        
+    IL_06B8: ldnull         
+    IL_06B9: stfld          .<AutoPlay>d__0::<combatState>5__2
+    IL_06BE: ldarg.0        
+    IL_06BF: ldnull         
+    IL_06C0: stfld          .<AutoPlay>d__0::<preventer>5__3
+    IL_06C5: ldarg.0        
+    IL_06C6: ldflda         .<AutoPlay>d__0::<>t__builder
+    IL_06CB: call           System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult
+    IL_06D0: ret            
+
+

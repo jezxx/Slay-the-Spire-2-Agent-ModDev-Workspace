@@ -1,0 +1,6 @@
+### public class MegaCrit.Sts2.Core.Localization.DynamicVars.HpLossVar
+    base: MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar
+
+    field  public static string defaultName
+    method public void .ctor(System.Decimal hpLoss)
+    method public void .ctor(string name, System.Decimal hpLoss)

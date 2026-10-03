@@ -1,0 +1,374 @@
+### MegaCrit.Sts2.Core.Models.CardModel
+  base: MegaCrit.Sts2.Core.Models.AbstractModel
+  interfaces: IComparable`1
+  isAbstract=True isSealed=False isEnum=False
+  --- ctors ---
+    prot .ctor(System.Int32 canonicalEnergyCost, MegaCrit.Sts2.Core.Entities.Cards.CardType type, MegaCrit.Sts2.Core.Entities.Cards.CardRarity rarity, MegaCrit.Sts2.Core.Entities.Cards.TargetType targetType, System.Boolean shouldShowInCardLibrary)
+  --- methods ---
+    priv System.Boolean <UpgradeStarCostBy>b__301_0(MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost c)
+    priv System.Boolean <get_Pile>b__107_0(MegaCrit.Sts2.Core.Entities.Cards.CardPile p)
+    priv System.Boolean <get_Pool>b__99_0(MegaCrit.Sts2.Core.Models.CardPoolModel pool)
+    prot virtual System.Void AddExtraArgsToDescription(MegaCrit.Sts2.Core.Localization.LocString description)
+    pub System.Void AddKeyword(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    priv System.Void AddTemporaryStarCost(MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost cost)
+    pub System.Void AfflictInternal(MegaCrit.Sts2.Core.Models.AfflictionModel affliction, System.Decimal amount)
+    prot virtual System.Void AfterCloned()
+    pub virtual System.Void AfterCreated()
+    prot virtual System.Void AfterDeserialized()
+    prot virtual System.Void AfterDowngraded()
+    pub System.Void AfterForged()
+    pub virtual System.Void AfterTransformedFrom()
+    pub virtual System.Void AfterTransformedTo()
+    pub System.Boolean CanPlay()
+    pub System.Boolean CanPlay(MegaCrit.Sts2.Core.Entities.Cards.UnplayableReason& reason, MegaCrit.Sts2.Core.Models.AbstractModel& preventer)
+    pub System.Boolean CanPlayTargeting(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.Void ClearAfflictionInternal()
+    pub System.Void ClearEnchantmentInternal()
+    pub virtual System.Int32 CompareTo(MegaCrit.Sts2.Core.Models.AbstractModel other)
+    pub System.Boolean CostsEnergyOrStars(System.Boolean includeGlobalModifiers)
+    pub MegaCrit.Sts2.Core.Models.CardModel CreateClone()
+    pub MegaCrit.Sts2.Core.Models.CardModel CreateCloneForPlayer(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    pub MegaCrit.Sts2.Core.Models.CardModel CreateDupe(MegaCrit.Sts2.Core.Entities.Players.Player newOwner)
+    pub Godot.Control CreateOverlay()
+    prot virtual System.Void DeepCloneFields()
+    pub System.Void DowngradeInternal()
+    pub System.Void EnchantInternal(MegaCrit.Sts2.Core.Models.EnchantmentModel enchantment, System.Decimal amount)
+    pub System.Void EndOfTurnCleanup()
+    priv System.Void EnqueueManualPlay(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.Void FinalizeUpgradeInternal()
+    pub static MegaCrit.Sts2.Core.Models.CardModel FromSerializable(MegaCrit.Sts2.Core.Saves.Runs.SerializableCard save)
+    prot System.Threading.Tasks.Task`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] GeneratePlayCount(MegaCrit.Sts2.Core.Combat.ICombatState combatState, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.String GetDescriptionForPile(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    priv System.String GetDescriptionForPile(MegaCrit.Sts2.Core.Entities.Cards.PileType pileType, MegaCrit.Sts2.Core.Models.CardModel+DescriptionPreviewType previewType, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.String GetDescriptionForUpgradePreview()
+    pub System.Int32 GetEnchantedReplayCount()
+    pub System.Collections.Generic.IReadOnlySet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] GetKeywordsWithSources(MegaCrit.Sts2.Core.Entities.Cards.KeywordSources sources)
+    prot virtual MegaCrit.Sts2.Core.Entities.Cards.CardLocation GetResultLocationForCardPlay()
+    pub System.Int32 GetStarCostThisCombat()
+    pub System.Int32 GetStarCostWithModifiers()
+    pub System.Void GiveSingleTurnRetain()
+    pub System.Void GiveSingleTurnSly()
+    pub System.Void GiveToAnotherPlayer(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    pub System.Void InvokeDrawn()
+    pub System.Void InvokeEnergyCostChanged()
+    pub System.Boolean IsValidTarget(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    prot System.Void MockSetEnergyCost(MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost cost)
+    pub System.Threading.Tasks.Task MoveToResultPileWithoutPlaying(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    prot System.Void NeverEverCallThisOutsideOfTests_ClearOwner()
+    pub virtual System.Threading.Tasks.Task OnEnqueuePlayVfx(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    prot virtual System.Threading.Tasks.Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Cards.CardPlay cardPlay)
+    pub System.Threading.Tasks.Task OnPlayWrapper(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, System.Boolean isAutoPlay, MegaCrit.Sts2.Core.Entities.Cards.ResourceInfo resources, System.Boolean skipCardPileVisuals)
+    prot virtual System.Threading.Tasks.Task OnTurnEndInHand(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    pub System.Threading.Tasks.Task OnTurnEndInHandWrapper(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext)
+    prot virtual System.Void OnUpgrade()
+    priv System.Threading.Tasks.Task PlayPowerCardFlyVfx()
+    pub System.Void RemoveFromCurrentPile(System.Boolean silent)
+    pub System.Void RemoveFromState()
+    pub System.Void RemoveKeyword(MegaCrit.Sts2.Core.Entities.Cards.CardKeyword keyword)
+    pub System.Int32 ResolveEnergyXValue()
+    pub System.Int32 ResolveStarXValue()
+    pub System.Void SetStarCostThisCombat(System.Int32 cost)
+    pub System.Void SetStarCostThisTurn(System.Int32 cost)
+    pub System.Void SetStarCostUntilPlayed(System.Int32 cost)
+    pub System.Void SetToFreeThisCombat()
+    pub System.Void SetToFreeThisTurn()
+    priv System.Threading.Tasks.Task SpendEnergy(System.Int32 amount)
+    pub System.Threading.Tasks.Task`1[[System.ValueTuple`2[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] SpendResources()
+    priv System.Threading.Tasks.Task SpendStars(System.Int32 amount)
+    pub MegaCrit.Sts2.Core.Models.CardModel ToMutable()
+    pub MegaCrit.Sts2.Core.Saves.Runs.SerializableCard ToSerializable()
+    pub System.Boolean TryManualPlay(MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    pub System.Void UpdateDynamicVarPreview(MegaCrit.Sts2.Core.Entities.Cards.CardPreviewMode previewMode, MegaCrit.Sts2.Core.Entities.Creatures.Creature target, MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet dynamicVarSet)
+    pub System.Void UpgradeInternal()
+    prot System.Void UpgradeStarCostBy(System.Int32 addend)
+    pub System.Void add_AfflictionChanged(System.Action value)
+    pub System.Void add_Drawn(System.Action value)
+    pub System.Void add_EnchantmentChanged(System.Action value)
+    pub System.Void add_EnergyCostChanged(System.Action value)
+    pub System.Void add_Forged(System.Action value)
+    pub System.Void add_KeywordsChanged(System.Action value)
+    pub System.Void add_Played(System.Action value)
+    pub System.Void add_ReplayCountChanged(System.Action value)
+    pub System.Void add_StarCostChanged(System.Action value)
+    pub System.Void add_Upgraded(System.Action value)
+    pub MegaCrit.Sts2.Core.Models.AfflictionModel get_Affliction()
+    pub virtual System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_AllPortraitPaths()
+    pub Godot.Texture2D get_AncientBorder()
+    priv static System.String get_AncientBorderPath()
+    pub Godot.Texture2D get_AncientTextBg()
+    priv System.String get_AncientTextBgPath()
+    pub Godot.Material get_BannerMaterial()
+    priv System.String get_BannerMaterialPath()
+    pub Godot.Texture2D get_BannerTexture()
+    priv System.String get_BannerTexturePath()
+    pub System.Int32 get_BaseReplayCount()
+    pub System.Int32 get_BaseStarCost()
+    pub virtual System.String get_BetaPortraitPath()
+    priv System.String get_BetaPortraitPngPath()
+    pub virtual System.Boolean get_CanBeGeneratedByModifiers()
+    pub virtual System.Boolean get_CanBeGeneratedInCombat()
+    prot virtual System.Int32 get_CanonicalEnergyCost()
+    pub MegaCrit.Sts2.Core.Models.CardModel get_CanonicalInstance()
+    pub virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CanonicalKeywords()
+    pub virtual System.Int32 get_CanonicalStarCost()
+    prot virtual System.Collections.Generic.HashSet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardTag, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CanonicalTags()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_CanonicalVars()
+    pub MegaCrit.Sts2.Core.Runs.ICardScope get_CardScope()
+    pub MegaCrit.Sts2.Core.Models.CardModel get_CloneOf()
+    pub MegaCrit.Sts2.Core.Combat.ICombatState get_CombatState()
+    pub System.Int32 get_CurrentPlayIndex()
+    pub virtual System.Int32 get_CurrentStarCost()
+    pub MegaCrit.Sts2.Core.Entities.Creatures.Creature get_CurrentTarget()
+    pub System.Int32 get_CurrentUpgradeLevel()
+    pub MegaCrit.Sts2.Core.Models.CardModel get_DeckVersion()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    pub MegaCrit.Sts2.Core.Models.CardModel get_DupeOf()
+    pub MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet get_DynamicVars()
+    pub MegaCrit.Sts2.Core.Models.EnchantmentModel get_Enchantment()
+    pub MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost get_EnergyCost()
+    prot MegaCrit.Sts2.Core.HoverTips.IHoverTip get_EnergyHoverTip()
+    pub Godot.Texture2D get_EnergyIcon()
+    priv System.String get_EnergyIconPath()
+    pub System.Boolean get_ExhaustOnNextPlay()
+    prot virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_ExtraHoverTips()
+    prot virtual System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_ExtraRunAssetPaths()
+    pub System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_FloorAddedToDeck()
+    pub Godot.Texture2D get_Frame()
+    pub Godot.Material get_FrameMaterial()
+    priv System.String get_FramePath()
+    pub virtual System.Boolean get_GainsBlock()
+    pub System.Boolean get_HasBeenRemovedFromState()
+    pub System.Boolean get_HasBetaPortrait()
+    pub virtual System.Boolean get_HasBuiltInOverlay()
+    prot virtual System.Boolean get_HasEnergyCostX()
+    pub System.Boolean get_HasPortrait()
+    priv System.Boolean get_HasSingleTurnRetain()
+    priv System.Boolean get_HasSingleTurnSly()
+    pub virtual System.Boolean get_HasStarCostX()
+    pub virtual System.Boolean get_HasTurnEndInHandEffect()
+    pub System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_HoverTips()
+    pub virtual System.Boolean get_IsBasicStrikeOrDefend()
+    pub System.Boolean get_IsClone()
+    pub System.Boolean get_IsDupe()
+    pub System.Boolean get_IsEnchantmentPreview()
+    pub System.Boolean get_IsInCombat()
+    prot virtual System.Boolean get_IsPlayable()
+    pub System.Boolean get_IsRemovable()
+    pub System.Boolean get_IsSlyThisTurn()
+    pub System.Boolean get_IsTransformable()
+    pub System.Boolean get_IsUpgradable()
+    pub System.Boolean get_IsUpgraded()
+    pub System.Collections.Generic.IReadOnlySet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Keywords()
+    pub System.Int32 get_LastStarsSpent()
+    priv System.Collections.Generic.HashSet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_LocalKeywords()
+    pub virtual System.Int32 get_MaxUpgradeLevel()
+    pub static System.String get_MissingPortraitPath()
+    pub virtual MegaCrit.Sts2.Core.Entities.Cards.CardMultiplayerConstraint get_MultiplayerConstraint()
+    pub virtual MegaCrit.Sts2.Core.Entities.Cards.OrbEvokeType get_OrbEvokeType()
+    pub System.String get_OverlayPath()
+    pub MegaCrit.Sts2.Core.Entities.Players.Player get_Owner()
+    pub MegaCrit.Sts2.Core.Entities.Cards.CardPile get_Pile()
+    pub virtual MegaCrit.Sts2.Core.Models.CardPoolModel get_Pool()
+    pub Godot.Texture2D get_Portrait()
+    pub Godot.Texture2D get_PortraitBorder()
+    priv System.String get_PortraitBorderPath()
+    pub virtual System.String get_PortraitPath()
+    prot virtual System.String get_PortraitPngPath()
+    pub virtual MegaCrit.Sts2.Core.Entities.Cards.CardRarity get_Rarity()
+    pub System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] get_RunAssetPaths()
+    pub MegaCrit.Sts2.Core.Runs.IRunState get_RunState()
+    prot MegaCrit.Sts2.Core.Localization.LocString get_SelectionScreenPrompt()
+    pub System.Boolean get_ShouldGlowGold()
+    prot virtual System.Boolean get_ShouldGlowGoldInternal()
+    pub System.Boolean get_ShouldGlowRed()
+    prot virtual System.Boolean get_ShouldGlowRedInternal()
+    pub virtual System.Boolean get_ShouldReceiveCombatHooks()
+    pub System.Boolean get_ShouldRetainThisTurn()
+    pub System.Boolean get_ShouldShowInCardLibrary()
+    pub virtual System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Cards.CardTag, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] get_Tags()
+    pub virtual MegaCrit.Sts2.Core.Entities.Cards.TargetType get_TargetType()
+    pub MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost get_TemporaryStarCost()
+    pub virtual System.String get_Title()
+    pub MegaCrit.Sts2.Core.Localization.LocString get_TitleLocString()
+    pub virtual MegaCrit.Sts2.Core.Entities.Cards.CardType get_Type()
+    pub MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType get_UpgradePreviewType()
+    pub virtual MegaCrit.Sts2.Core.Models.CardPoolModel get_VisualCardPool()
+    pub System.Boolean get_WasStarCostJustUpgraded()
+    pub System.Void remove_AfflictionChanged(System.Action value)
+    pub System.Void remove_Drawn(System.Action value)
+    pub System.Void remove_EnchantmentChanged(System.Action value)
+    pub System.Void remove_EnergyCostChanged(System.Action value)
+    pub System.Void remove_Forged(System.Action value)
+    pub System.Void remove_KeywordsChanged(System.Action value)
+    pub System.Void remove_Played(System.Action value)
+    pub System.Void remove_ReplayCountChanged(System.Action value)
+    pub System.Void remove_StarCostChanged(System.Action value)
+    pub System.Void remove_Upgraded(System.Action value)
+    priv System.Void set_Affliction(MegaCrit.Sts2.Core.Models.AfflictionModel value)
+    pub System.Void set_BaseReplayCount(System.Int32 value)
+    priv System.Void set_BaseStarCost(System.Int32 value)
+    priv System.Void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.CardModel value)
+    priv System.Void set_CurrentPlayIndex(System.Int32 value)
+    priv System.Void set_CurrentTarget(MegaCrit.Sts2.Core.Entities.Creatures.Creature value)
+    priv System.Void set_CurrentUpgradeLevel(System.Int32 value)
+    pub System.Void set_DeckVersion(MegaCrit.Sts2.Core.Models.CardModel value)
+    priv System.Void set_Enchantment(MegaCrit.Sts2.Core.Models.EnchantmentModel value)
+    pub System.Void set_ExhaustOnNextPlay(System.Boolean value)
+    pub System.Void set_FloorAddedToDeck(System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] value)
+    pub System.Void set_HasBeenRemovedFromState(System.Boolean value)
+    priv System.Void set_HasSingleTurnRetain(System.Boolean value)
+    priv System.Void set_HasSingleTurnSly(System.Boolean value)
+    priv System.Void set_IsDupe(System.Boolean value)
+    pub System.Void set_IsEnchantmentPreview(System.Boolean value)
+    pub System.Void set_LastStarsSpent(System.Int32 value)
+    pub System.Void set_Owner(MegaCrit.Sts2.Core.Entities.Players.Player value)
+    pub System.Void set_UpgradePreviewType(MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType value)
+  --- properties ---
+    MegaCrit.Sts2.Core.Localization.LocString TitleLocString { get; }
+    System.String Title { get; }
+    MegaCrit.Sts2.Core.Localization.LocString Description { get; }
+    MegaCrit.Sts2.Core.Localization.LocString SelectionScreenPrompt { get; }
+    System.String PortraitPath { get; }
+    System.String BetaPortraitPath { get; }
+    System.String MissingPortraitPath { get; }
+    System.String PortraitPngPath { get; }
+    System.String BetaPortraitPngPath { get; }
+    System.Boolean HasPortrait { get; }
+    System.Boolean HasBetaPortrait { get; }
+    Godot.Texture2D Portrait { get; }
+    System.String FramePath { get; }
+    Godot.Texture2D Frame { get; }
+    System.String PortraitBorderPath { get; }
+    System.String AncientBorderPath { get; }
+    System.String AncientTextBgPath { get; }
+    Godot.Texture2D AncientTextBg { get; }
+    Godot.Texture2D AncientBorder { get; }
+    Godot.Texture2D PortraitBorder { get; }
+    System.String EnergyIconPath { get; }
+    Godot.Texture2D EnergyIcon { get; }
+    MegaCrit.Sts2.Core.HoverTips.IHoverTip EnergyHoverTip { get; }
+    System.String BannerTexturePath { get; }
+    Godot.Texture2D BannerTexture { get; }
+    System.String BannerMaterialPath { get; }
+    Godot.Material BannerMaterial { get; }
+    Godot.Material FrameMaterial { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.CardType Type { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.CardRarity Rarity { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.CardMultiplayerConstraint MultiplayerConstraint { get; }
+    MegaCrit.Sts2.Core.Models.CardPoolModel Pool { get; }
+    MegaCrit.Sts2.Core.Models.CardPoolModel VisualCardPool { get; }
+    MegaCrit.Sts2.Core.Entities.Players.Player Owner { get; set; }
+    MegaCrit.Sts2.Core.Entities.Cards.CardPile Pile { get; }
+    System.Int32 CanonicalEnergyCost { get; }
+    System.Boolean HasEnergyCostX { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost EnergyCost { get; }
+    System.Int32 BaseReplayCount { get; set; }
+    System.Int32 CanonicalStarCost { get; }
+    System.Int32 BaseStarCost { get; set; }
+    System.Boolean WasStarCostJustUpgraded { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost TemporaryStarCost { get; }
+    System.Int32 CurrentStarCost { get; }
+    System.Boolean HasStarCostX { get; }
+    System.Int32 LastStarsSpent { get; set; }
+    MegaCrit.Sts2.Core.Entities.Cards.TargetType TargetType { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CanonicalKeywords { get; }
+    System.Collections.Generic.HashSet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] LocalKeywords { get; }
+    System.Collections.Generic.IReadOnlySet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Keywords { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Entities.Cards.CardTag, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] Tags { get; }
+    System.Collections.Generic.HashSet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardTag, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CanonicalTags { get; }
+    MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet DynamicVars { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVar, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] CanonicalVars { get; }
+    System.Boolean ExhaustOnNextPlay { get; set; }
+    System.Boolean HasSingleTurnRetain { get; set; }
+    System.Boolean ShouldRetainThisTurn { get; }
+    System.Boolean HasSingleTurnSly { get; set; }
+    System.Boolean IsSlyThisTurn { get; }
+    MegaCrit.Sts2.Core.Models.EnchantmentModel Enchantment { get; set; }
+    MegaCrit.Sts2.Core.Models.AfflictionModel Affliction { get; set; }
+    System.Boolean CanBeGeneratedInCombat { get; }
+    System.Boolean CanBeGeneratedByModifiers { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.OrbEvokeType OrbEvokeType { get; }
+    System.Boolean GainsBlock { get; }
+    System.Boolean IsBasicStrikeOrDefend { get; }
+    MegaCrit.Sts2.Core.Models.CardModel CloneOf { get; }
+    System.Boolean IsClone { get; }
+    MegaCrit.Sts2.Core.Models.CardModel DupeOf { get; }
+    System.Boolean IsDupe { get; set; }
+    System.Boolean IsRemovable { get; }
+    System.Boolean IsTransformable { get; }
+    System.Boolean IsInCombat { get; }
+    System.Int32 CurrentUpgradeLevel { get; set; }
+    System.Int32 MaxUpgradeLevel { get; }
+    System.Boolean IsUpgraded { get; }
+    System.Boolean IsUpgradable { get; }
+    MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType UpgradePreviewType { get; set; }
+    System.Boolean IsPlayable { get; }
+    System.Boolean ShouldShowInCardLibrary { get; }
+    System.Boolean ShouldGlowGold { get; }
+    System.Boolean ShouldGlowRed { get; }
+    System.Boolean ShouldGlowGoldInternal { get; }
+    System.Boolean ShouldGlowRedInternal { get; }
+    System.Boolean IsEnchantmentPreview { get; set; }
+    System.Boolean HasBuiltInOverlay { get; }
+    System.String OverlayPath { get; }
+    System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] FloorAddedToDeck { get; set; }
+    MegaCrit.Sts2.Core.Entities.Creatures.Creature CurrentTarget { get; set; }
+    System.Int32 CurrentPlayIndex { get; set; }
+    MegaCrit.Sts2.Core.Models.CardModel DeckVersion { get; set; }
+    System.Boolean HasBeenRemovedFromState { get; set; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] ExtraHoverTips { get; }
+    System.Collections.Generic.IEnumerable`1[[MegaCrit.Sts2.Core.HoverTips.IHoverTip, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] HoverTips { get; }
+    MegaCrit.Sts2.Core.Models.CardModel CanonicalInstance { get; set; }
+    MegaCrit.Sts2.Core.Runs.IRunState RunState { get; }
+    MegaCrit.Sts2.Core.Combat.ICombatState CombatState { get; }
+    MegaCrit.Sts2.Core.Runs.ICardScope CardScope { get; }
+    System.Boolean HasTurnEndInHandEffect { get; }
+    System.Boolean ShouldReceiveCombatHooks { get; }
+    System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] AllPortraitPaths { get; }
+    System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] RunAssetPaths { get; }
+    System.Collections.Generic.IEnumerable`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] ExtraRunAssetPaths { get; }
+  --- fields ---
+    priv System.Action AfflictionChanged
+    priv System.Action EnchantmentChanged
+    priv System.Action EnergyCostChanged
+    priv System.Action KeywordsChanged
+    priv System.Action ReplayCountChanged
+    priv System.Action Played
+    priv System.Action Drawn
+    priv System.Action StarCostChanged
+    priv System.Action Upgraded
+    priv System.Action Forged
+    priv MegaCrit.Sts2.Core.Localization.LocString _titleLocString
+    priv MegaCrit.Sts2.Core.Entities.Cards.CardType <Type>k__BackingField
+    priv MegaCrit.Sts2.Core.Entities.Cards.CardRarity <Rarity>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.CardPoolModel _pool
+    priv MegaCrit.Sts2.Core.Entities.Players.Player _owner
+    priv System.Int32 <CanonicalEnergyCost>k__BackingField
+    priv MegaCrit.Sts2.Core.Entities.Cards.CardEnergyCost _energyCost
+    priv System.Int32 _baseReplayCount
+    priv System.Boolean _starCostSet
+    priv System.Int32 _baseStarCost
+    priv System.Boolean _wasStarCostJustUpgraded
+    priv System.Collections.Generic.List`1[[MegaCrit.Sts2.Core.Entities.Cards.TemporaryCardCost, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _temporaryStarCosts
+    priv System.Int32 _lastStarsSpent
+    priv MegaCrit.Sts2.Core.Entities.Cards.TargetType <TargetType>k__BackingField
+    priv System.Collections.Generic.HashSet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardKeyword, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _keywords
+    priv System.Collections.Generic.HashSet`1[[MegaCrit.Sts2.Core.Entities.Cards.CardTag, sts2, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]] _tags
+    priv MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet _dynamicVars
+    priv System.Boolean _exhaustOnNextPlay
+    priv System.Boolean _hasSingleTurnRetain
+    priv System.Boolean _hasSingleTurnSly
+    priv MegaCrit.Sts2.Core.Models.EnchantmentModel <Enchantment>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.AfflictionModel <Affliction>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.CardModel _cloneOf
+    priv System.Boolean _isDupe
+    priv System.Int32 _currentUpgradeLevel
+    priv MegaCrit.Sts2.Core.Entities.Cards.CardUpgradePreviewType _upgradePreviewType
+    priv System.Boolean <ShouldShowInCardLibrary>k__BackingField
+    priv System.Boolean _isEnchantmentPreview
+    priv System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] _floorAddedToDeck
+    priv MegaCrit.Sts2.Core.Entities.Creatures.Creature _currentTarget
+    priv System.Int32 _currentPlayIndex
+    priv MegaCrit.Sts2.Core.Models.CardModel _deckVersion
+    priv System.Boolean <HasBeenRemovedFromState>k__BackingField
+    priv MegaCrit.Sts2.Core.Models.CardModel _canonicalInstance

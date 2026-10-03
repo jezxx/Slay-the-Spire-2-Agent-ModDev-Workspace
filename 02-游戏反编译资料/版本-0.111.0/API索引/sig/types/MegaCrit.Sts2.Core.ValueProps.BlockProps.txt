@@ -1,0 +1,7 @@
+### public class MegaCrit.Sts2.Core.ValueProps.BlockProps
+    base: System.Object
+
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp card
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp cardUnpowered
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp monsterMove
+    field  public static MegaCrit.Sts2.Core.ValueProps.ValueProp nonCardUnpowered

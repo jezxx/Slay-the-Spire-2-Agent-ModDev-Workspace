@@ -1,0 +1,46 @@
+{
+  "generated_date": "2026-10-03",
+  "package_version": "0.1.0-content-alpha",
+  "items": [
+    {
+      "id": "community-tutorials",
+      "path": "01-官方与社区教程/SlayTheSpire2ModdingTutorials",
+      "type": "tutorial-source",
+      "version": "c3eeb78bba4b13b125e90e8f3bdbfd8dabd1cb5f",
+      "source": "https://github.com/GlitchedReme/SlayTheSpire2ModdingTutorials.git",
+      "redistribution_status": "review-required"
+    },
+    {
+      "id": "sts2-decompiled-0.111.0",
+      "path": "02-游戏反编译资料/版本-0.111.0/反编译源码",
+      "type": "decompiled-game-source",
+      "version": "0.111.0",
+      "source": "workspace/tools/sts2-src",
+      "redistribution_status": "review-required"
+    },
+    {
+      "id": "sts2-api-index-0.111.0",
+      "path": "02-游戏反编译资料/版本-0.111.0/API索引",
+      "type": "api-index",
+      "version": "0.111.0",
+      "source": "workspace/Sts2ModDev/api",
+      "redistribution_status": "review-required"
+    },
+    {
+      "id": "native-mod-template",
+      "path": "05-模板/原生模组模板",
+      "type": "template",
+      "version": "workspace-current",
+      "source": "workspace/Sts2ModDev/template",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "query-tools-source",
+      "path": "04-工具/查询工具源码",
+      "type": "tool-source",
+      "version": "workspace-current",
+      "source": "workspace/Sts2ModDev/tools",
+      "redistribution_status": "project-maintained"
+    }
+  ]
+}

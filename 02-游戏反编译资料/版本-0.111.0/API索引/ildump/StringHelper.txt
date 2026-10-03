@@ -1,0 +1,26 @@
+===== MegaCrit.Sts2.Core.Helpers.StringHelper.Slugify(txt)  [attrs=0x96] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 74 4D 00 06 02 6F 9C 19 00 0A 72 7F 26 03 70 6F 9D 19 00 0A 0A 28 76 4D 00 06 06 6F 31 02 00 0A 72 07 01 00 70 6F 9D 19 00 0A 0B 28 77 4D 00 06 07 72 05 01 00 70 6F 9D 19 00 0A 0C 08 2A
+  -- decoded --
+    IL_0000: call           MegaCrit.Sts2.Core.Helpers.StringHelper::CamelCaseRegex
+    IL_0005: ldarg.0        
+    IL_0006: callvirt       System.String::Trim
+    IL_000B: ldstr          "$1_$2"
+    IL_0010: callvirt       System.Text.RegularExpressions.Regex::Replace
+    IL_0015: stloc.0        
+    IL_0016: call           MegaCrit.Sts2.Core.Helpers.StringHelper::WhitespaceRegex
+    IL_001B: ldloc.0        
+    IL_001C: callvirt       System.String::ToUpperInvariant
+    IL_0021: ldstr          "_"
+    IL_0026: callvirt       System.Text.RegularExpressions.Regex::Replace
+    IL_002B: stloc.1        
+    IL_002C: call           MegaCrit.Sts2.Core.Helpers.StringHelper::SpecialCharRegex
+    IL_0031: ldloc.1        
+    IL_0032: ldstr          ""
+    IL_0037: callvirt       System.Text.RegularExpressions.Regex::Replace
+    IL_003C: stloc.2        
+    IL_003D: ldloc.2        
+    IL_003E: ret            
+
+

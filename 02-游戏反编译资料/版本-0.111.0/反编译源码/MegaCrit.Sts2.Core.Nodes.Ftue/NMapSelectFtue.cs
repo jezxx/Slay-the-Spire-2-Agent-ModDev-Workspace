@@ -1,0 +1,348 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using Godot;
+using Godot.Bridge;
+using Godot.NativeInterop;
+using MegaCrit.Sts2.Core.Assets;
+using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using MegaCrit.Sts2.addons.mega_text;
+
+namespace MegaCrit.Sts2.Core.Nodes.Ftue;
+
+/// <summary>
+/// Ftue which appears when a player opens the map for the first time.
+/// Automatically appears after the start of act animation.
+/// </summary>
+[ScriptPath("res://src/Core/Nodes/Ftue/NMapSelectFtue.cs")]
+public class NMapSelectFtue : NFtue
+{
+	/// <summary>
+	/// Cached StringNames for the methods contained in this class, for fast lookup.
+	/// </summary>
+	public new class MethodName : NFtue.MethodName
+	{
+		/// <summary>
+		/// Cached name for the '_Ready' method.
+		/// </summary>
+		public new static readonly StringName _Ready = "_Ready";
+
+		/// <summary>
+		/// Cached name for the 'Create' method.
+		/// </summary>
+		public static readonly StringName Create = "Create";
+
+		/// <summary>
+		/// Cached name for the 'CloseFtue' method.
+		/// </summary>
+		public new static readonly StringName CloseFtue = "CloseFtue";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the properties and fields contained in this class, for fast lookup.
+	/// </summary>
+	public new class PropertyName : NFtue.PropertyName
+	{
+		/// <summary>
+		/// Cached name for the '_confirmButton' field.
+		/// </summary>
+		public static readonly StringName _confirmButton = "_confirmButton";
+
+		/// <summary>
+		/// Cached name for the '_header' field.
+		/// </summary>
+		public static readonly StringName _header = "_header";
+
+		/// <summary>
+		/// Cached name for the '_description' field.
+		/// </summary>
+		public static readonly StringName _description = "_description";
+
+		/// <summary>
+		/// Cached name for the '_ftuePosition' field.
+		/// </summary>
+		public static readonly StringName _ftuePosition = "_ftuePosition";
+
+		/// <summary>
+		/// Cached name for the '_firstNode' field.
+		/// </summary>
+		public static readonly StringName _firstNode = "_firstNode";
+
+		/// <summary>
+		/// Cached name for the '_defaultZIndex' field.
+		/// </summary>
+		public static readonly StringName _defaultZIndex = "_defaultZIndex";
+	}
+
+	/// <summary>
+	/// Cached StringNames for the signals contained in this class, for fast lookup.
+	/// </summary>
+	public new class SignalName : NFtue.SignalName
+	{
+	}
+
+	public const string id = "map_select_ftue";
+
+	private static readonly string _scenePath = SceneHelper.GetScenePath("ftue/map_select_ftue");
+
+	private NButton _confirmButton;
+
+	private MegaLabel _header;
+
+	private MegaRichTextLabel _description;
+
+	private Vector2 _ftuePosition;
+
+	private Control _firstNode;
+
+	private int _defaultZIndex;
+
+	public override void _Ready()
+	{
+		_header = GetNode<MegaLabel>("%Header");
+		_header.SetTextAutoSize(new LocString("ftues", "MAP_SELECT_TITLE").GetFormattedText());
+		_description = GetNode<MegaRichTextLabel>("%Description");
+		_description.Text = new LocString("ftues", "MAP_SELECT_DESCRIPTION").GetFormattedText();
+		_confirmButton = GetNode<NButton>("%FtueConfirmButton");
+		_confirmButton.Connect(NClickableControl.SignalName.Released, Callable.From((Action<NButton>)CloseFtue));
+		GetNode<Control>("%Positioner").GlobalPosition = _ftuePosition;
+		_defaultZIndex = _firstNode.ZIndex;
+		_firstNode.ZIndex++;
+	}
+
+	public static NMapSelectFtue Create(Control roomNode)
+	{
+		NMapSelectFtue nMapSelectFtue = PreloadManager.Cache.GetScene(_scenePath).Instantiate<NMapSelectFtue>(PackedScene.GenEditState.Disabled);
+		nMapSelectFtue._ftuePosition = roomNode.GlobalPosition + roomNode.Size * 0.5f;
+		nMapSelectFtue._firstNode = roomNode;
+		return nMapSelectFtue;
+	}
+
+	private void CloseFtue(NButton _)
+	{
+		_firstNode.ZIndex = _defaultZIndex;
+		CloseFtue();
+	}
+
+	public async Task WaitForPlayerToConfirm()
+	{
+		await _confirmButton.AwaitSignal<NClickableControl>(NClickableControl.SignalName.Released, this);
+	}
+
+	/// <summary>
+	/// Get the method information for all the methods declared in this class.
+	/// This method is used by Godot to register the available methods in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<MethodInfo> GetGodotMethodList()
+	{
+		List<MethodInfo> list = new List<MethodInfo>(3);
+		list.Add(new MethodInfo(MethodName._Ready, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, null, null));
+		list.Add(new MethodInfo(MethodName.Create, new PropertyInfo(Variant.Type.Object, "", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false), MethodFlags.Normal | MethodFlags.Static, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "roomNode", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		list.Add(new MethodInfo(MethodName.CloseFtue, new PropertyInfo(Variant.Type.Nil, "", PropertyHint.None, "", PropertyUsageFlags.Default, exported: false), MethodFlags.Normal, new List<PropertyInfo>
+		{
+			new PropertyInfo(Variant.Type.Object, "_", PropertyHint.None, "", PropertyUsageFlags.Default, new StringName("Control"), exported: false)
+		}, null));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool InvokeGodotClassMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName._Ready && args.Count == 0)
+		{
+			_Ready();
+			ret = default(godot_variant);
+			return true;
+		}
+		if (method == MethodName.Create && args.Count == 1)
+		{
+			NMapSelectFtue from = Create(VariantUtils.ConvertTo<Control>(in args[0]));
+			ret = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		if (method == MethodName.CloseFtue && args.Count == 1)
+		{
+			CloseFtue(VariantUtils.ConvertTo<NButton>(in args[0]));
+			ret = default(godot_variant);
+			return true;
+		}
+		return base.InvokeGodotClassMethod(in method, args, out ret);
+	}
+
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal static bool InvokeGodotClassStaticMethod(in godot_string_name method, NativeVariantPtrArgs args, out godot_variant ret)
+	{
+		if (method == MethodName.Create && args.Count == 1)
+		{
+			NMapSelectFtue from = Create(VariantUtils.ConvertTo<Control>(in args[0]));
+			ret = VariantUtils.CreateFrom(in from);
+			return true;
+		}
+		ret = default(godot_variant);
+		return false;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool HasGodotClassMethod(in godot_string_name method)
+	{
+		if (method == MethodName._Ready)
+		{
+			return true;
+		}
+		if (method == MethodName.Create)
+		{
+			return true;
+		}
+		if (method == MethodName.CloseFtue)
+		{
+			return true;
+		}
+		return base.HasGodotClassMethod(in method);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool SetGodotClassPropertyValue(in godot_string_name name, in godot_variant value)
+	{
+		if (name == PropertyName._confirmButton)
+		{
+			_confirmButton = VariantUtils.ConvertTo<NButton>(in value);
+			return true;
+		}
+		if (name == PropertyName._header)
+		{
+			_header = VariantUtils.ConvertTo<MegaLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._description)
+		{
+			_description = VariantUtils.ConvertTo<MegaRichTextLabel>(in value);
+			return true;
+		}
+		if (name == PropertyName._ftuePosition)
+		{
+			_ftuePosition = VariantUtils.ConvertTo<Vector2>(in value);
+			return true;
+		}
+		if (name == PropertyName._firstNode)
+		{
+			_firstNode = VariantUtils.ConvertTo<Control>(in value);
+			return true;
+		}
+		if (name == PropertyName._defaultZIndex)
+		{
+			_defaultZIndex = VariantUtils.ConvertTo<int>(in value);
+			return true;
+		}
+		return base.SetGodotClassPropertyValue(in name, in value);
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override bool GetGodotClassPropertyValue(in godot_string_name name, out godot_variant value)
+	{
+		if (name == PropertyName._confirmButton)
+		{
+			value = VariantUtils.CreateFrom(in _confirmButton);
+			return true;
+		}
+		if (name == PropertyName._header)
+		{
+			value = VariantUtils.CreateFrom(in _header);
+			return true;
+		}
+		if (name == PropertyName._description)
+		{
+			value = VariantUtils.CreateFrom(in _description);
+			return true;
+		}
+		if (name == PropertyName._ftuePosition)
+		{
+			value = VariantUtils.CreateFrom(in _ftuePosition);
+			return true;
+		}
+		if (name == PropertyName._firstNode)
+		{
+			value = VariantUtils.CreateFrom(in _firstNode);
+			return true;
+		}
+		if (name == PropertyName._defaultZIndex)
+		{
+			value = VariantUtils.CreateFrom(in _defaultZIndex);
+			return true;
+		}
+		return base.GetGodotClassPropertyValue(in name, out value);
+	}
+
+	/// <summary>
+	/// Get the property information for all the properties declared in this class.
+	/// This method is used by Godot to register the available properties in the editor.
+	/// Do not call this method.
+	/// </summary>
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	internal new static List<PropertyInfo> GetGodotPropertyList()
+	{
+		List<PropertyInfo> list = new List<PropertyInfo>();
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._confirmButton, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._header, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._description, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Vector2, PropertyName._ftuePosition, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Object, PropertyName._firstNode, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		list.Add(new PropertyInfo(Variant.Type.Int, PropertyName._defaultZIndex, PropertyHint.None, "", PropertyUsageFlags.ScriptVariable, exported: false));
+		return list;
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void SaveGodotObjectData(GodotSerializationInfo info)
+	{
+		base.SaveGodotObjectData(info);
+		info.AddProperty(PropertyName._confirmButton, Variant.From(in _confirmButton));
+		info.AddProperty(PropertyName._header, Variant.From(in _header));
+		info.AddProperty(PropertyName._description, Variant.From(in _description));
+		info.AddProperty(PropertyName._ftuePosition, Variant.From(in _ftuePosition));
+		info.AddProperty(PropertyName._firstNode, Variant.From(in _firstNode));
+		info.AddProperty(PropertyName._defaultZIndex, Variant.From(in _defaultZIndex));
+	}
+
+	/// <inheritdoc />
+	[EditorBrowsable(EditorBrowsableState.Never)]
+	protected override void RestoreGodotObjectData(GodotSerializationInfo info)
+	{
+		base.RestoreGodotObjectData(info);
+		if (info.TryGetProperty(PropertyName._confirmButton, out var value))
+		{
+			_confirmButton = value.As<NButton>();
+		}
+		if (info.TryGetProperty(PropertyName._header, out var value2))
+		{
+			_header = value2.As<MegaLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._description, out var value3))
+		{
+			_description = value3.As<MegaRichTextLabel>();
+		}
+		if (info.TryGetProperty(PropertyName._ftuePosition, out var value4))
+		{
+			_ftuePosition = value4.As<Vector2>();
+		}
+		if (info.TryGetProperty(PropertyName._firstNode, out var value5))
+		{
+			_firstNode = value5.As<Control>();
+		}
+		if (info.TryGetProperty(PropertyName._defaultZIndex, out var value6))
+		{
+			_defaultZIndex = value6.As<int>();
+		}
+	}
+}

@@ -1,0 +1,63 @@
+### public class MegaCrit.Sts2.Core.Models.AfflictionModel
+    base: MegaCrit.Sts2.Core.Models.AbstractModel
+
+    field  public static string locTable
+    field  internal System.Action`2<int, int> AmountChanged
+    field  internal MegaCrit.Sts2.Core.Models.CardModel _card
+    field  internal int _amount
+    field  internal MegaCrit.Sts2.Core.Models.AfflictionModel _canonicalInstance
+    prop   MegaCrit.Sts2.Core.Localization.LocString Title { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString Description { internal get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString ExtraCardText { internal get; }
+    prop   bool HasExtraCardText { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicDescription { public get; }
+    prop   MegaCrit.Sts2.Core.Localization.LocString DynamicExtraCardText { public get; }
+    prop   string OverlayPath { public get; }
+    prop   bool HasOverlay { public get; }
+    prop   MegaCrit.Sts2.Core.Models.CardModel Card { public get; public set; }
+    prop   bool HasCard { public get; }
+    prop   int Amount { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Combat.ICombatState CombatState { public get; }
+    prop   bool CanAfflictUnplayableCards { public get; }
+    prop   bool IsStackable { public get; }
+    prop   MegaCrit.Sts2.Core.Models.AfflictionModel CanonicalInstance { public get; internal set; }
+    prop   bool ShouldReceiveCombatHooks { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    prop   MegaCrit.Sts2.Core.HoverTips.HoverTip HoverTip { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> HoverTips { public get; }
+    method public void add_AmountChanged(System.Action`2<int, int> value)
+    method public void remove_AmountChanged(System.Action`2<int, int> value)
+    method public MegaCrit.Sts2.Core.Localization.LocString get_Title()
+    method internal MegaCrit.Sts2.Core.Localization.LocString get_Description()
+    method internal MegaCrit.Sts2.Core.Localization.LocString get_ExtraCardText()
+    method public bool get_HasExtraCardText()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicDescription()
+    method public MegaCrit.Sts2.Core.Localization.LocString get_DynamicExtraCardText()
+    method public string get_OverlayPath()
+    method public Godot.Control CreateOverlay()
+    method public bool get_HasOverlay()
+    method public MegaCrit.Sts2.Core.Models.CardModel get_Card()
+    method public void set_Card(MegaCrit.Sts2.Core.Models.CardModel value)
+    method public bool get_HasCard()
+    method public int get_Amount()
+    method public void set_Amount(int value)
+    method public MegaCrit.Sts2.Core.Combat.ICombatState get_CombatState()
+    method public bool CanAfflictCardType(MegaCrit.Sts2.Core.Entities.Cards.CardType cardType)
+    method public bool get_CanAfflictUnplayableCards()
+    method public bool get_IsStackable()
+    method public bool CanAfflict(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public void AfterApplied()
+    method public void BeforeRemoved()
+    method public System.Threading.Tasks.Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, MegaCrit.Sts2.Core.Entities.Creatures.Creature target)
+    method public MegaCrit.Sts2.Core.Models.AfflictionModel get_CanonicalInstance()
+    method internal void set_CanonicalInstance(MegaCrit.Sts2.Core.Models.AfflictionModel value)
+    method public MegaCrit.Sts2.Core.Models.AfflictionModel ToMutable()
+    method public void AfterCloned()
+    method public bool get_ShouldReceiveCombatHooks()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public MegaCrit.Sts2.Core.HoverTips.HoverTip get_HoverTip()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_HoverTips()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.CardModel> PickRandomTargets(MegaCrit.Sts2.Core.Runs.RunRngSet rngSet, System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.CardModel> cards, int count)
+    method public void ClearInternal()
+    method public void .ctor()
+    event  System.Action`2<int, int> AmountChanged

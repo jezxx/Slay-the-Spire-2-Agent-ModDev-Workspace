@@ -1,0 +1,236 @@
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_DumbHoverTip()  [attrs=0x886] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 12 00 FE 15 3C 04 00 1B 06 28 88 1B 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldloca.s       0
+    IL_0003: initobj        <typespec>
+    IL_0009: ldloc.0        
+    IL_000A: call           MegaCrit.Sts2.Core.Models.PowerModel::GetDumbHoverTip
+    IL_000F: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.GetDumbHoverTip(amountOverride)  [attrs=0x86] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 4A 1B 00 06 0A 02 06 03 28 8B 1B 00 06 02 06 6F C9 4A 00 06 16 73 3E 4C 00 06 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_Description
+    IL_0006: stloc.0        
+    IL_0007: ldarg.0        
+    IL_0008: ldloc.0        
+    IL_0009: ldarg.1        
+    IL_000A: call           MegaCrit.Sts2.Core.Models.PowerModel::AddDumbVariablesToDescription
+    IL_000F: ldarg.0        
+    IL_0010: ldloc.0        
+    IL_0011: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0016: ldc.i4.0       
+    IL_0017: newobj         MegaCrit.Sts2.Core.HoverTips.HoverTip::.ctor
+    IL_001C: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_ExtraHoverTips()  [attrs=0x9C4] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  28 A6 05 00 2B 2A
+  -- decoded --
+    IL_0000: call           System.Array::Empty<...>
+    IL_0005: ret            
+
+
+===== MegaCrit.Sts2.Core.Models.PowerModel.get_HoverTips()  [attrs=0x886] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 DA 15 00 0A 0A 02 28 5C 1B 00 06 2D 02 06 2A 73 58 0D 00 0A 0B 02 28 4C 1B 00 06 2C 08 02 28 BD 16 00 06 2B 01 16 0C 08 39 E2 01 00 00 02 28 4B 1B 00 06 0D 02 28 7D 1B 00 06 2C 1C 02 28 7D 1B 00 06 28 66 55 00 06 2D 0F 02 28 4E 1B 00 06 2C 07 02 28 4D 1B 00 06 0D 09 72 C2 46 00 70 02 28 65 1B 00 06 28 6B 11 00 0A 6F D0 4A 00 06 09 72 BD AC 01 70 02 28 7A 1B 00 06 6F BD 51 00 06 6F D1 4A 00 06 09 72 0B 77 01 70 02 28 7A 1B 00 06 6F B8 51 00 06 6F 7B 57 00 06 6F 12 0F 00 0A 17 FE 02 6F D1 4A 00 06 09 72 CF AC 01 70 02 28 7A 1B 00 06 6F B8 51 00 06 6F 7B 57 00 06 6F 12 0F 00 0A 28 6B 11 00 0A 6F D0 4A 00 06 09 72 E7 AC 01 70 02 28 7A 1B 00 06 6F BD 51 00 06 2D 12 02 28 7A 1B 00 06 6F B4 51 00 06 6F 9A 1A 00 06 2B 15 02 28 7A 1B 00 06 6F B5 51 00 06 6F 58 50 00 06 6F 1D 19 00 06 6F D4 4A 00 06 02 28 7D 1B 00 06 2C 6F 02 28 7D 1B 00 06 6F B4 51 00 06 2C 19 02 28 7D 1B 00 06 6F B4 51 00 06 6F 9A 1A 00 06 6F C9 4A 00 06 13 04 2B 3C 02 28 7D 1B 00 06 6F B5 51 00 06 2C 28 28 DF 0B 00 06 6F F2 0B 00 06 6F 75 14 00 06 02 28 7D 1B 00 06 6F B5 51 00 06 6F 5A 50 00 06 28 1D 10 00 06 13 04 2B 07 72 05 01 00 70 13 04 09 72 FB AC 01 70 11 04 6F D2 4A 00 06 02 28 7F 1B 00 06 2C 59 02 28 7F 1B 00 06 6F BC 51 00 06 2C 1D 09 72 13 AD 01 70 02 28 7F 1B 00 06 6F B4 51 00 06 6F 9A 1A 00 06 6F D4 4A 00 06 2B 2F 09 72 13 AD 01 70 28 DF 0B 00 06 6F F2 0B 00 06 6F 75 14 00 06 02 28 7F 1B 00 06 6F B5 51 00 06 6F 5A 50 00 06 28 1D 10 00 06 6F D2 4A 00 06 02 09 12 05 FE 15 3C 04 00 1B 11 05 28 8B 1B 00 06 02 28 81 1B 00 06 09 6F E1 4B 00 06 07 09 6F C9 4A 00 06 6F 40 0D 00 0A 26 2B 28 02 6F 4A 1B 00 06 13 06 02 11 06 12 05 FE 15 3C 04 00 1B 11 05 28 8B 1B 00 06 07 11 06 6F C9 4A 00 06 6F 40 0D 00 0A 26 06 02 07 6F 8C 00 00 0A 08 73 3E 4C 00 06 8C 4E 09 00 02 6F 77 11 00 0A 06 02 6F 89 1B 00 06 6F 36 15 00 0A 06 2A
+  -- decoded --
+    IL_0000: newobj         <typespec>::.ctor
+    IL_0005: stloc.0        
+    IL_0006: ldarg.0        
+    IL_0007: call           MegaCrit.Sts2.Core.Models.PowerModel::get_IsVisible
+    IL_000C: brtrue.s       IL_0010
+    IL_000E: ldloc.0        
+    IL_000F: ret            
+    IL_0010: newobj         System.Text.StringBuilder::.ctor
+    IL_0015: stloc.1        
+    IL_0016: ldarg.0        
+    IL_0017: call           MegaCrit.Sts2.Core.Models.PowerModel::get_HasSmartDescription
+    IL_001C: brfalse.s      IL_0026
+    IL_001E: ldarg.0        
+    IL_001F: call           MegaCrit.Sts2.Core.Models.AbstractModel::get_IsMutable
+    IL_0024: br.s           IL_0027
+    IL_0026: ldc.i4.0       
+    IL_0027: stloc.2        
+    IL_0028: ldloc.2        
+    IL_0029: brfalse        IL_0210
+    IL_002E: ldarg.0        
+    IL_002F: call           MegaCrit.Sts2.Core.Models.PowerModel::get_SmartDescription
+    IL_0034: stloc.3        
+    IL_0035: ldarg.0        
+    IL_0036: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_003B: brfalse.s      IL_0059
+    IL_003D: ldarg.0        
+    IL_003E: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_0043: call           MegaCrit.Sts2.Core.Context.LocalContext::IsMe
+    IL_0048: brtrue.s       IL_0059
+    IL_004A: ldarg.0        
+    IL_004B: call           MegaCrit.Sts2.Core.Models.PowerModel::get_HasRemoteDescription
+    IL_0050: brfalse.s      IL_0059
+    IL_0052: ldarg.0        
+    IL_0053: call           MegaCrit.Sts2.Core.Models.PowerModel::get_RemoteDescription
+    IL_0058: stloc.3        
+    IL_0059: ldloc.3        
+    IL_005A: ldstr          "Amount"
+    IL_005F: ldarg.0        
+    IL_0060: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Amount
+    IL_0065: call           System.Decimal::op_Implicit
+    IL_006A: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_006F: ldloc.3        
+    IL_0070: ldstr          "OnPlayer"
+    IL_0075: ldarg.0        
+    IL_0076: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_007B: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_IsPlayer
+    IL_0080: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0085: ldloc.3        
+    IL_0086: ldstr          "IsMultiplayer"
+    IL_008B: ldarg.0        
+    IL_008C: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_0091: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_CombatState
+    IL_0096: callvirt       MegaCrit.Sts2.Core.Combat.ICombatState::get_Players
+    IL_009B: callvirt       <typespec>::get_Count
+    IL_00A0: ldc.i4.1       
+    IL_00A1: cgt            
+    IL_00A3: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_00A8: ldloc.3        
+    IL_00A9: ldstr          "PlayerCount"
+    IL_00AE: ldarg.0        
+    IL_00AF: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_00B4: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_CombatState
+    IL_00B9: callvirt       MegaCrit.Sts2.Core.Combat.ICombatState::get_Players
+    IL_00BE: callvirt       <typespec>::get_Count
+    IL_00C3: call           System.Decimal::op_Implicit
+    IL_00C8: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_00CD: ldloc.3        
+    IL_00CE: ldstr          "OwnerName"
+    IL_00D3: ldarg.0        
+    IL_00D4: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_00D9: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_IsPlayer
+    IL_00DE: brtrue.s       IL_00F2
+    IL_00E0: ldarg.0        
+    IL_00E1: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_00E6: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Monster
+    IL_00EB: callvirt       MegaCrit.Sts2.Core.Models.MonsterModel::get_Title
+    IL_00F0: br.s           IL_0107
+    IL_00F2: ldarg.0        
+    IL_00F3: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Owner
+    IL_00F8: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Player
+    IL_00FD: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_Character
+    IL_0102: callvirt       MegaCrit.Sts2.Core.Models.CharacterModel::get_Title
+    IL_0107: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_010C: ldarg.0        
+    IL_010D: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_0112: brfalse.s      IL_0183
+    IL_0114: ldarg.0        
+    IL_0115: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_011A: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Monster
+    IL_011F: brfalse.s      IL_013A
+    IL_0121: ldarg.0        
+    IL_0122: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_0127: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Monster
+    IL_012C: callvirt       MegaCrit.Sts2.Core.Models.MonsterModel::get_Title
+    IL_0131: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0136: stloc.s        4
+    IL_0138: br.s           IL_0176
+    IL_013A: ldarg.0        
+    IL_013B: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_0140: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Player
+    IL_0145: brfalse.s      IL_016F
+    IL_0147: call           MegaCrit.Sts2.Core.Runs.RunManager::get_Instance
+    IL_014C: callvirt       MegaCrit.Sts2.Core.Runs.RunManager::get_NetService
+    IL_0151: callvirt       MegaCrit.Sts2.Core.Multiplayer.Game.INetGameService::get_Platform
+    IL_0156: ldarg.0        
+    IL_0157: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Applier
+    IL_015C: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Player
+    IL_0161: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_NetId
+    IL_0166: call           MegaCrit.Sts2.Core.Platform.PlatformUtil::GetPlayerName
+    IL_016B: stloc.s        4
+    IL_016D: br.s           IL_0176
+    IL_016F: ldstr          ""
+    IL_0174: stloc.s        4
+    IL_0176: ldloc.3        
+    IL_0177: ldstr          "ApplierName"
+    IL_017C: ldloc.s        4
+    IL_017E: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_0183: ldarg.0        
+    IL_0184: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Target
+    IL_0189: brfalse.s      IL_01E4
+    IL_018B: ldarg.0        
+    IL_018C: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Target
+    IL_0191: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_IsMonster
+    IL_0196: brfalse.s      IL_01B5
+    IL_0198: ldloc.3        
+    IL_0199: ldstr          "TargetName"
+    IL_019E: ldarg.0        
+    IL_019F: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Target
+    IL_01A4: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Monster
+    IL_01A9: callvirt       MegaCrit.Sts2.Core.Models.MonsterModel::get_Title
+    IL_01AE: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_01B3: br.s           IL_01E4
+    IL_01B5: ldloc.3        
+    IL_01B6: ldstr          "TargetName"
+    IL_01BB: call           MegaCrit.Sts2.Core.Runs.RunManager::get_Instance
+    IL_01C0: callvirt       MegaCrit.Sts2.Core.Runs.RunManager::get_NetService
+    IL_01C5: callvirt       MegaCrit.Sts2.Core.Multiplayer.Game.INetGameService::get_Platform
+    IL_01CA: ldarg.0        
+    IL_01CB: call           MegaCrit.Sts2.Core.Models.PowerModel::get_Target
+    IL_01D0: callvirt       MegaCrit.Sts2.Core.Entities.Creatures.Creature::get_Player
+    IL_01D5: callvirt       MegaCrit.Sts2.Core.Entities.Players.Player::get_NetId
+    IL_01DA: call           MegaCrit.Sts2.Core.Platform.PlatformUtil::GetPlayerName
+    IL_01DF: callvirt       MegaCrit.Sts2.Core.Localization.LocString::Add
+    IL_01E4: ldarg.0        
+    IL_01E5: ldloc.3        
+    IL_01E6: ldloca.s       5
+    IL_01E8: initobj        <typespec>
+    IL_01EE: ldloc.s        5
+    IL_01F0: call           MegaCrit.Sts2.Core.Models.PowerModel::AddDumbVariablesToDescription
+    IL_01F5: ldarg.0        
+    IL_01F6: call           MegaCrit.Sts2.Core.Models.PowerModel::get_DynamicVars
+    IL_01FB: ldloc.3        
+    IL_01FC: callvirt       MegaCrit.Sts2.Core.Localization.DynamicVars.DynamicVarSet::AddTo
+    IL_0201: ldloc.1        
+    IL_0202: ldloc.3        
+    IL_0203: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0208: callvirt       System.Text.StringBuilder::Append
+    IL_020D: pop            
+    IL_020E: br.s           IL_0238
+    IL_0210: ldarg.0        
+    IL_0211: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_Description
+    IL_0216: stloc.s        6
+    IL_0218: ldarg.0        
+    IL_0219: ldloc.s        6
+    IL_021B: ldloca.s       5
+    IL_021D: initobj        <typespec>
+    IL_0223: ldloc.s        5
+    IL_0225: call           MegaCrit.Sts2.Core.Models.PowerModel::AddDumbVariablesToDescription
+    IL_022A: ldloc.1        
+    IL_022B: ldloc.s        6
+    IL_022D: callvirt       MegaCrit.Sts2.Core.Localization.LocString::GetFormattedText
+    IL_0232: callvirt       System.Text.StringBuilder::Append
+    IL_0237: pop            
+    IL_0238: ldloc.0        
+    IL_0239: ldarg.0        
+    IL_023A: ldloc.1        
+    IL_023B: callvirt       System.Object::ToString
+    IL_0240: ldloc.2        
+    IL_0241: newobj         MegaCrit.Sts2.Core.HoverTips.HoverTip::.ctor
+    IL_0246: box            MegaCrit.Sts2.Core.HoverTips.HoverTip
+    IL_024B: callvirt       <typespec>::Add
+    IL_0250: ldloc.0        
+    IL_0251: ldarg.0        
+    IL_0252: callvirt       MegaCrit.Sts2.Core.Models.PowerModel::get_ExtraHoverTips
+    IL_0257: callvirt       <typespec>::AddRange
+    IL_025C: ldloc.0        
+    IL_025D: ret            
+
+

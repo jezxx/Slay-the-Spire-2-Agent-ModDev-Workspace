@@ -1,0 +1,58 @@
+### public interface MegaCrit.Sts2.Core.Combat.ICombatState
+
+    prop   MegaCrit.Sts2.Core.Runs.IRunState RunState { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Allies { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Enemies { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> Creatures { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> PlayerCreatures { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Players.Player> Players { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ModifierModel> Modifiers { public get; }
+    prop   MegaCrit.Sts2.Core.Models.Singleton.MultiplayerScalingModel MultiplayerScalingModel { public get; }
+    prop   int RoundNumber { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Combat.CombatSide CurrentSide { public get; public set; }
+    prop   MegaCrit.Sts2.Core.Models.EncounterModel Encounter { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> EscapedCreatures { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> CreaturesOnCurrentSide { public get; }
+    prop   System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> HittableEnemies { public get; }
+    method public MegaCrit.Sts2.Core.Runs.IRunState get_RunState()
+    method public void add_CreaturesChanged(System.Action`1<MegaCrit.Sts2.Core.Combat.ICombatState> value)
+    method public void remove_CreaturesChanged(System.Action`1<MegaCrit.Sts2.Core.Combat.ICombatState> value)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_Allies()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_Enemies()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_Creatures()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_PlayerCreatures()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Players.Player> get_Players()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Models.ModifierModel> get_Modifiers()
+    method public MegaCrit.Sts2.Core.Models.Singleton.MultiplayerScalingModel get_MultiplayerScalingModel()
+    method public int get_RoundNumber()
+    method public void set_RoundNumber(int value)
+    method public MegaCrit.Sts2.Core.Combat.CombatSide get_CurrentSide()
+    method public void set_CurrentSide(MegaCrit.Sts2.Core.Combat.CombatSide value)
+    method public MegaCrit.Sts2.Core.Models.EncounterModel get_Encounter()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_EscapedCreatures()
+    method public T CreateCard<T>(MegaCrit.Sts2.Core.Entities.Players.Player owner)
+    method public MegaCrit.Sts2.Core.Models.CardModel CreateCard(MegaCrit.Sts2.Core.Models.CardModel canonicalCard, MegaCrit.Sts2.Core.Entities.Players.Player owner)
+    method public MegaCrit.Sts2.Core.Models.CardModel CloneCard(MegaCrit.Sts2.Core.Models.CardModel mutableCard)
+    method public void AddCard(MegaCrit.Sts2.Core.Models.CardModel card, MegaCrit.Sts2.Core.Entities.Players.Player owner)
+    method public void RemoveCard(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public bool ContainsCard(MegaCrit.Sts2.Core.Models.CardModel card)
+    method public void AddPlayer(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature CreateCreature(MegaCrit.Sts2.Core.Models.MonsterModel monster, MegaCrit.Sts2.Core.Combat.CombatSide side, string slot)
+    method public void CreatureEscaped(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature)
+    method public void RemoveCreature(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature, bool unattach)
+    method public bool ContainsCreature(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature)
+    method public bool ContainsMonster<T>()
+    method public MegaCrit.Sts2.Core.Entities.Creatures.Creature GetCreature(System.Nullable`1<uint> combatId)
+    method public System.Threading.Tasks.Task`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> GetCreatureAsync(System.Nullable`1<uint> combatId, double timeoutSec)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> GetCreaturesOnSide(MegaCrit.Sts2.Core.Combat.CombatSide side)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_CreaturesOnCurrentSide()
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> GetOpponentsOf(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> GetTeammatesOf(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature)
+    method public System.Collections.Generic.IReadOnlyList`1<MegaCrit.Sts2.Core.Entities.Creatures.Creature> get_HittableEnemies()
+    method public MegaCrit.Sts2.Core.Entities.Players.Player GetPlayer(ulong playerId)
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.Models.AbstractModel> IterateHookListeners()
+    method public void SortEnemiesBySlotName()
+    method public void SetEnemyIndex(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature, int index)
+    method public void AddCreature(MegaCrit.Sts2.Core.Entities.Creatures.Creature creature)
+    method public bool IsLiveCombat()
+    event  System.Action`1<MegaCrit.Sts2.Core.Combat.ICombatState> CreaturesChanged

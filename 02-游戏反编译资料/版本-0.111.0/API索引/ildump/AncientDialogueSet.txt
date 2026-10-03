@@ -1,0 +1,318 @@
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet.GetAllDialogues()  [attrs=0x86] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  1F FE 73 E6 B0 00 06 25 02 7D 52 70 00 04 2A
+  -- decoded --
+    IL_0000: ldc.i4.s       -2
+    IL_0002: newobj         .<GetAllDialogues>d__12::.ctor
+    IL_0007: dup            
+    IL_0008: ldarg.0        
+    IL_0009: stfld          .<GetAllDialogues>d__12::<>4__this
+    IL_000E: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet.GetValidDialogues(characterId, charVisits, totalVisits, allowAnyCharacterDialogues)  [attrs=0x86] =====
+  maxStack=3 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 E3 B0 00 06 0A 06 04 7D 4E 70 00 04 05 2D 14 02 28 C9 52 00 06 2C 0C 02 28 C9 52 00 06 73 10 1B 00 0A 2A 14 0B 02 28 CB 52 00 06 03 6F 72 1A 00 06 12 02 6F 11 1B 00 0A 2C 28 08 0B 07 06 FE 06 E4 B0 00 06 73 12 1B 00 0A 28 48 17 00 2B 28 7B 0F 00 2B 13 04 11 04 6F 13 1B 00 0A 16 31 03 11 04 2A 0E 04 2C 2B 02 28 CD 52 00 06 06 FE 06 E5 B0 00 06 73 12 1B 00 0A 28 48 17 00 2B 28 7B 0F 00 2B 13 05 11 05 6F 13 1B 00 0A 16 31 03 11 05 2A 73 14 1B 00 0A 0D 07 2C 0D 07 09 06 7B 4E 70 00 04 28 D2 52 00 06 0E 04 2C 12 02 28 CD 52 00 06 09 06 7B 4E 70 00 04 28 D2 52 00 06 09 2A
+  -- decoded --
+    IL_0000: newobj         .<>c__DisplayClass13_0::.ctor
+    IL_0005: stloc.0        
+    IL_0006: ldloc.0        
+    IL_0007: ldarg.2        
+    IL_0008: stfld          .<>c__DisplayClass13_0::charVisits
+    IL_000D: ldarg.3        
+    IL_000E: brtrue.s       IL_0024
+    IL_0010: ldarg.0        
+    IL_0011: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_FirstVisitEverDialogue
+    IL_0016: brfalse.s      IL_0024
+    IL_0018: ldarg.0        
+    IL_0019: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_FirstVisitEverDialogue
+    IL_001E: newobj         <typespec>::.ctor
+    IL_0023: ret            
+    IL_0024: ldnull         
+    IL_0025: stloc.1        
+    IL_0026: ldarg.0        
+    IL_0027: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_CharacterDialogues
+    IL_002C: ldarg.1        
+    IL_002D: callvirt       MegaCrit.Sts2.Core.Models.ModelId::get_Entry
+    IL_0032: ldloca.s       2
+    IL_0034: callvirt       <typespec>::TryGetValue
+    IL_0039: brfalse.s      IL_0063
+    IL_003B: ldloc.2        
+    IL_003C: stloc.1        
+    IL_003D: ldloc.1        
+    IL_003E: ldloc.0        
+    IL_003F: ldftn          .<>c__DisplayClass13_0::<GetValidDialogues>b__0
+    IL_0045: newobj         <typespec>::.ctor
+    IL_004A: call           System.Linq.Enumerable::Where<...>
+    IL_004F: call           System.Linq.Enumerable::ToList<...>
+    IL_0054: stloc.s        4
+    IL_0056: ldloc.s        4
+    IL_0058: callvirt       <typespec>::get_Count
+    IL_005D: ldc.i4.0       
+    IL_005E: ble.s          IL_0063
+    IL_0060: ldloc.s        4
+    IL_0062: ret            
+    IL_0063: ldarg.s        4
+    IL_0065: brfalse.s      IL_0092
+    IL_0067: ldarg.0        
+    IL_0068: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_AgnosticDialogues
+    IL_006D: ldloc.0        
+    IL_006E: ldftn          .<>c__DisplayClass13_0::<GetValidDialogues>b__1
+    IL_0074: newobj         <typespec>::.ctor
+    IL_0079: call           System.Linq.Enumerable::Where<...>
+    IL_007E: call           System.Linq.Enumerable::ToList<...>
+    IL_0083: stloc.s        5
+    IL_0085: ldloc.s        5
+    IL_0087: callvirt       <typespec>::get_Count
+    IL_008C: ldc.i4.0       
+    IL_008D: ble.s          IL_0092
+    IL_008F: ldloc.s        5
+    IL_0091: ret            
+    IL_0092: newobj         <typespec>::.ctor
+    IL_0097: stloc.3        
+    IL_0098: ldloc.1        
+    IL_0099: brfalse.s      IL_00A8
+    IL_009B: ldloc.1        
+    IL_009C: ldloc.3        
+    IL_009D: ldloc.0        
+    IL_009E: ldfld          .<>c__DisplayClass13_0::charVisits
+    IL_00A3: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::AddRepeatingDialogues
+    IL_00A8: ldarg.s        4
+    IL_00AA: brfalse.s      IL_00BE
+    IL_00AC: ldarg.0        
+    IL_00AD: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_AgnosticDialogues
+    IL_00B2: ldloc.3        
+    IL_00B3: ldloc.0        
+    IL_00B4: ldfld          .<>c__DisplayClass13_0::charVisits
+    IL_00B9: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::AddRepeatingDialogues
+    IL_00BE: ldloc.3        
+    IL_00BF: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet.PopulateLocKeys(ancientEntry)  [attrs=0x86] =====
+  maxStack=4 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 28 C9 52 00 06 25 2D 03 26 2B 0C 03 72 97 A0 03 70 16 28 BF 52 00 06 02 28 CB 52 00 06 6F 15 1B 00 0A 0A 2B 3F 12 00 28 16 1B 00 0A 0D 12 03 12 04 12 05 28 17 1B 00 0A 11 04 0B 11 05 0C 16 13 06 2B 17 08 11 06 6F 18 1B 00 0A 03 07 11 06 6F BF 52 00 06 11 06 17 58 13 06 11 06 08 6F 19 1B 00 0A 32 DF 12 00 28 1A 1B 00 0A 2D B8 DE 0E 12 00 FE 16 59 09 00 1B 6F 32 00 00 0A DC 16 13 07 2B 20 02 28 CD 52 00 06 11 07 6F 18 1B 00 0A 03 72 B5 A0 03 70 11 07 6F BF 52 00 06 11 07 17 58 13 07 11 07 02 28 CD 52 00 06 6F 19 1B 00 0A 32 D1 02 28 CF 52 00 06 6F 56 00 00 0A 13 08 2B 78 11 08 6F 55 00 00 0A 13 09 16 13 0A 2B 58 11 09 6F B5 52 00 06 11 0A 6F D9 16 00 0A 13 0B 11 0B 6F C1 52 00 06 6F C4 4A 00 06 13 0C 11 0C 16 11 0C 1F 2E 6F 8F 02 00 0A 6F 90 02 00 0A 13 0D 11 0D 72 BD A0 03 70 28 F8 00 00 0A 13 0E 11 0B 72 6A 83 01 70 11 0E 73 C2 4A 00 06 6F C4 52 00 06 11 0A 17 58 13 0A 11 0A 11 09 6F B5 52 00 06 6F D7 16 00 0A 17 59 32 96 11 08 6F 33 00 00 0A 3A 7C FF FF FF DE 0C 11 08 2C 07 11 08 6F 32 00 00 0A DC 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_FirstVisitEverDialogue
+    IL_0006: dup            
+    IL_0007: brtrue.s       IL_000C
+    IL_0009: pop            
+    IL_000A: br.s           IL_0018
+    IL_000C: ldarg.1        
+    IL_000D: ldstr          "firstVisitEver"
+    IL_0012: ldc.i4.0       
+    IL_0013: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::PopulateLines
+    IL_0018: ldarg.0        
+    IL_0019: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_CharacterDialogues
+    IL_001E: callvirt       <typespec>::GetEnumerator
+    IL_0023: stloc.0        
+    IL_0024: br.s           IL_0065
+    IL_0026: ldloca.s       0
+    IL_0028: call           <typespec>::get_Current
+    IL_002D: stloc.3        
+    IL_002E: ldloca.s       3
+    IL_0030: ldloca.s       4
+    IL_0032: ldloca.s       5
+    IL_0034: call           <typespec>::Deconstruct
+    IL_0039: ldloc.s        4
+    IL_003B: stloc.1        
+    IL_003C: ldloc.s        5
+    IL_003E: stloc.2        
+    IL_003F: ldc.i4.0       
+    IL_0040: stloc.s        6
+    IL_0042: br.s           IL_005B
+    IL_0044: ldloc.2        
+    IL_0045: ldloc.s        6
+    IL_0047: callvirt       <typespec>::get_Item
+    IL_004C: ldarg.1        
+    IL_004D: ldloc.1        
+    IL_004E: ldloc.s        6
+    IL_0050: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::PopulateLines
+    IL_0055: ldloc.s        6
+    IL_0057: ldc.i4.1       
+    IL_0058: add            
+    IL_0059: stloc.s        6
+    IL_005B: ldloc.s        6
+    IL_005D: ldloc.2        
+    IL_005E: callvirt       <typespec>::get_Count
+    IL_0063: blt.s          IL_0044
+    IL_0065: ldloca.s       0
+    IL_0067: call           <typespec>::MoveNext
+    IL_006C: brtrue.s       IL_0026
+    IL_006E: leave.s        IL_007E
+    IL_0070: ldloca.s       0
+    IL_0072: constrained.   <typespec>
+    IL_0078: callvirt       System.IDisposable::Dispose
+    IL_007D: endfinally     
+    IL_007E: ldc.i4.0       
+    IL_007F: stloc.s        7
+    IL_0081: br.s           IL_00A3
+    IL_0083: ldarg.0        
+    IL_0084: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_AgnosticDialogues
+    IL_0089: ldloc.s        7
+    IL_008B: callvirt       <typespec>::get_Item
+    IL_0090: ldarg.1        
+    IL_0091: ldstr          "ANY"
+    IL_0096: ldloc.s        7
+    IL_0098: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::PopulateLines
+    IL_009D: ldloc.s        7
+    IL_009F: ldc.i4.1       
+    IL_00A0: add            
+    IL_00A1: stloc.s        7
+    IL_00A3: ldloc.s        7
+    IL_00A5: ldarg.0        
+    IL_00A6: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::get_AgnosticDialogues
+    IL_00AB: callvirt       <typespec>::get_Count
+    IL_00B0: blt.s          IL_0083
+    IL_00B2: ldarg.0        
+    IL_00B3: call           MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::GetAllDialogues
+    IL_00B8: callvirt       <typespec>::GetEnumerator
+    IL_00BD: stloc.s        8
+    IL_00BF: br.s           IL_0139
+    IL_00C1: ldloc.s        8
+    IL_00C3: callvirt       <typespec>::get_Current
+    IL_00C8: stloc.s        9
+    IL_00CA: ldc.i4.0       
+    IL_00CB: stloc.s        10
+    IL_00CD: br.s           IL_0127
+    IL_00CF: ldloc.s        9
+    IL_00D1: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_00D6: ldloc.s        10
+    IL_00D8: callvirt       <typespec>::get_Item
+    IL_00DD: stloc.s        11
+    IL_00DF: ldloc.s        11
+    IL_00E1: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::get_LineText
+    IL_00E6: callvirt       MegaCrit.Sts2.Core.Localization.LocString::get_LocEntryKey
+    IL_00EB: stloc.s        12
+    IL_00ED: ldloc.s        12
+    IL_00EF: ldc.i4.0       
+    IL_00F0: ldloc.s        12
+    IL_00F2: ldc.i4.s       46
+    IL_00F4: callvirt       System.String::LastIndexOf
+    IL_00F9: callvirt       System.String::Substring
+    IL_00FE: stloc.s        13
+    IL_0100: ldloc.s        13
+    IL_0102: ldstr          ".next"
+    IL_0107: call           System.String::Concat
+    IL_010C: stloc.s        14
+    IL_010E: ldloc.s        11
+    IL_0110: ldstr          "ancients"
+    IL_0115: ldloc.s        14
+    IL_0117: newobj         MegaCrit.Sts2.Core.Localization.LocString::.ctor
+    IL_011C: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueLine::set_NextButtonText
+    IL_0121: ldloc.s        10
+    IL_0123: ldc.i4.1       
+    IL_0124: add            
+    IL_0125: stloc.s        10
+    IL_0127: ldloc.s        10
+    IL_0129: ldloc.s        9
+    IL_012B: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_Lines
+    IL_0130: callvirt       <typespec>::get_Count
+    IL_0135: ldc.i4.1       
+    IL_0136: sub            
+    IL_0137: blt.s          IL_00CF
+    IL_0139: ldloc.s        8
+    IL_013B: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_0140: brtrue         IL_00C1
+    IL_0145: leave.s        IL_0153
+    IL_0147: ldloc.s        8
+    IL_0149: brfalse.s      IL_0152
+    IL_014B: ldloc.s        8
+    IL_014D: callvirt       System.IDisposable::Dispose
+    IL_0152: endfinally     
+    IL_0153: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet.AddRepeatingDialogues(source, destination, charVisits)  [attrs=0x91] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 6F 56 00 00 0A 0A 2B 41 06 6F 55 00 00 0A 0B 07 6F B6 52 00 06 2C 32 07 6F B8 52 00 06 0C 12 02 28 16 0D 00 0A 2C 1B 04 07 6F B8 52 00 06 0C 12 02 28 17 0D 00 0A FE 04 12 02 28 16 0D 00 0A 5F 2D 07 03 07 6F 1B 1B 00 0A 06 6F 33 00 00 0A 2D B7 DE 0A 06 2C 06 06 6F 32 00 00 0A DC 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: callvirt       <typespec>::GetEnumerator
+    IL_0006: stloc.0        
+    IL_0007: br.s           IL_004A
+    IL_0009: ldloc.0        
+    IL_000A: callvirt       <typespec>::get_Current
+    IL_000F: stloc.1        
+    IL_0010: ldloc.1        
+    IL_0011: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_IsRepeating
+    IL_0016: brfalse.s      IL_004A
+    IL_0018: ldloc.1        
+    IL_0019: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_VisitIndex
+    IL_001E: stloc.2        
+    IL_001F: ldloca.s       2
+    IL_0021: call           <typespec>::get_HasValue
+    IL_0026: brfalse.s      IL_0043
+    IL_0028: ldarg.2        
+    IL_0029: ldloc.1        
+    IL_002A: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_VisitIndex
+    IL_002F: stloc.2        
+    IL_0030: ldloca.s       2
+    IL_0032: call           <typespec>::GetValueOrDefault
+    IL_0037: clt            
+    IL_0039: ldloca.s       2
+    IL_003B: call           <typespec>::get_HasValue
+    IL_0040: and            
+    IL_0041: brtrue.s       IL_004A
+    IL_0043: ldarg.1        
+    IL_0044: ldloc.1        
+    IL_0045: callvirt       <typespec>::Add
+    IL_004A: ldloc.0        
+    IL_004B: callvirt       System.Collections.IEnumerator::MoveNext
+    IL_0050: brtrue.s       IL_0009
+    IL_0052: leave.s        IL_005E
+    IL_0054: ldloc.0        
+    IL_0055: brfalse.s      IL_005D
+    IL_0057: ldloc.0        
+    IL_0058: callvirt       System.IDisposable::Dispose
+    IL_005D: endfinally     
+    IL_005E: ret            
+
+
+===== <>c__DisplayClass13_0.<GetValidDialogues>b__0(d)  [attrs=0x83] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 6F B8 52 00 06 0A 02 7B 4E 70 00 04 0B 12 00 28 17 0D 00 0A 07 FE 01 12 00 28 16 0D 00 0A 5F 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_VisitIndex
+    IL_0006: stloc.0        
+    IL_0007: ldarg.0        
+    IL_0008: ldfld          .<>c__DisplayClass13_0::charVisits
+    IL_000D: stloc.1        
+    IL_000E: ldloca.s       0
+    IL_0010: call           <typespec>::GetValueOrDefault
+    IL_0015: ldloc.1        
+    IL_0016: ceq            
+    IL_0018: ldloca.s       0
+    IL_001A: call           <typespec>::get_HasValue
+    IL_001F: and            
+    IL_0020: ret            
+
+
+===== <>c__DisplayClass13_0.<GetValidDialogues>b__1(d)  [attrs=0x83] =====
+  maxStack=2 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  03 6F B8 52 00 06 0A 02 7B 4E 70 00 04 0B 12 00 28 17 0D 00 0A 07 FE 01 12 00 28 16 0D 00 0A 5F 2A
+  -- decoded --
+    IL_0000: ldarg.1        
+    IL_0001: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::get_VisitIndex
+    IL_0006: stloc.0        
+    IL_0007: ldarg.0        
+    IL_0008: ldfld          .<>c__DisplayClass13_0::charVisits
+    IL_000D: stloc.1        
+    IL_000E: ldloca.s       0
+    IL_0010: call           <typespec>::GetValueOrDefault
+    IL_0015: ldloc.1        
+    IL_0016: ceq            
+    IL_0018: ldloca.s       0
+    IL_001A: call           <typespec>::get_HasValue
+    IL_001F: and            
+    IL_0020: ret            
+
+

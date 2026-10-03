@@ -1,0 +1,23 @@
+ModelId: MegaCrit.Sts2.Core.Models.ModelId
+  SlugifyCategory("Bash") = "BASH"
+  SlugifyCategory("IroncladCardPool") = "IRONCLAD_CARD_POOL"
+  SlugifyCategory("ColorlessCardPool") = "COLORLESS_CARD_POOL"
+  SlugifyCategory("Strike") = "STRIKE"
+  SlugifyCategory("TestCard") = "TEST_CARD"
+  SlugifyCategory("IroncladStrikeCard") = "IRONCLAD_STRIKE_CARD"
+  SlugifyCategory("Cards") = "CARDS"
+  Bash: category="CARD" entry="BASH"
+  StrikeIronclad: category="CARD" entry="STRIKE_IRONCLAD"
+  ColorlessCardPool: category="CARD_POOL" entry="COLORLESS_CARD_POOL"
+  BurningBlood: category="RELIC" entry="BURNING_BLOOD"
+  StrengthPower: category="POWER" entry="STRENGTH_POWER"
+  ModelId.none = NONE.NONE
+  ModelId("CARD","BASH").ToString() = "CARD.BASH"
+  ModelId("Bash","Bash").ToString() = "Bash.Bash"
+  ModelId("card","bash").ToString() = "card.bash"
+  ModelId("TEST","TEST_CARD").ToString() = "TEST.TEST_CARD"
+  GetModdedLocTables(zhs, cards) = 
+--- SlugifyCategory on a few mod-ish strings ---
+  "Test" -> "TEST"
+  "MyMod" -> "MY_MOD"
+  "STS2TEST" -> "S_T_S2_TE_S_T"

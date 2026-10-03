@@ -1,0 +1,21 @@
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue.get_VisitIndex()  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 7B 0F 1A 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldfld          MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::<VisitIndex>k__BackingField
+    IL_0006: ret            
+
+
+===== MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue.set_VisitIndex(value)  [attrs=0x886] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  02 03 7D 0F 1A 00 04 2A
+  -- decoded --
+    IL_0000: ldarg.0        
+    IL_0001: ldarg.1        
+    IL_0002: stfld          MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::<VisitIndex>k__BackingField
+    IL_0007: ret            
+
+

@@ -1,0 +1,44 @@
+和添加卡牌类似。先新建一个类。
+
+```csharp
+// 注册遗物。如果要写自定义池看添加人物的开头
+[Pool(typeof(SharedRelicPool))]
+public class TestRelic : CustomRelicModel
+{
+    // 稀有度
+    public override RelicRarity Rarity => RelicRarity.Common;
+
+    // 遗物的数值。替换本地化中的{Cards}。
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new CardsVar(1)];
+
+    // 小图标（原版85x85）
+    public override string PackedIconPath => $"res://test/images/relics/{Id.Entry.ToLowerInvariant()}.png";
+    // 轮廓图标（原版85x85）
+    protected override string PackedIconOutlinePath => $"res://test/images/relics/{Id.Entry.ToLowerInvariant()}.png";
+    // 大图标（原版256x256）
+    protected override string BigIconPath => $"res://test/images/relics/{Id.Entry.ToLowerInvariant()}.png";
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        // 这里的DynamicVars.Cards.IntValue为上面设置的CardsVar的数值。
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, player);
+    }
+
+    // 初始遗物的升级可以写这里
+    // public override RelicModel? GetUpgradeReplacement() => ModelDb.Relic<Circlet>();
+}
+```
+
+然后放一张图片`test/images/relics/test_relic.png`。路径不一定是`test`，组织风格自定义，参考上面卡图部分。这里偷懒三张图片用了一样的，可以自己修改。
+
+![示例遗物](../../images/image13.webp)
+
+然后写一个本地化文件，`{modId}/localization/{Language}/relics.json`。
+
+```json
+{
+  "TEST-TEST_RELIC.title": "测试遗物",
+  "TEST-TEST_RELIC.description": "每回合开始时，抽[blue]{Cards}[/blue]张牌。",
+  "TEST-TEST_RELIC.flavor": "觉得很眼熟？"
+}
+```

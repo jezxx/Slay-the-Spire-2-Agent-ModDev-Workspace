@@ -1,0 +1,11 @@
+### public class MegaCrit.Sts2.Core.Models.Powers.EnergyNextTurnPower
+    base: MegaCrit.Sts2.Core.Models.PowerModel
+
+    prop   MegaCrit.Sts2.Core.Entities.Powers.PowerType Type { public get; }
+    prop   MegaCrit.Sts2.Core.Entities.Powers.PowerStackType StackType { public get; }
+    prop   System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> ExtraHoverTips { public get; }
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerType get_Type()
+    method public MegaCrit.Sts2.Core.Entities.Powers.PowerStackType get_StackType()
+    method public System.Collections.Generic.IEnumerable`1<MegaCrit.Sts2.Core.HoverTips.IHoverTip> get_ExtraHoverTips()
+    method public System.Threading.Tasks.Task AfterEnergyReset(MegaCrit.Sts2.Core.Entities.Players.Player player)
+    method public void .ctor()

@@ -1,0 +1,336 @@
+===== MegaCrit.Sts2.Core.Models.Events.Nonupeipe.DefineDialogues()  [attrs=0xC4] =====
+  maxStack=10 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  73 D3 52 00 06 0A 06 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 6F CA 52 00 06 06 73 AA 16 00 0A 0B 28 92 0E 00 2B 0C 07 08 19 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 17 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 93 0E 00 2B 0D 07 09 19 8D 28 0A 00 02 25 16 19 8D 0B 02 00 01 25 16 72 9F 52 02 70 A2 25 17 72 05 01 00 70 A2 25 18 72 47 52 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 FF 52 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 19 8D 0B 02 00 01 25 16 72 55 53 02 70 A2 25 17 72 05 01 00 70 A2 25 18 72 55 53 02 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 94 0E 00 2B 13 04 07 11 04 19 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 18 8D 0B 02 00 01 25 16 72 FF 52 02 70 A2 25 17 72 05 01 00 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 95 0E 00 2B 13 05 07 11 05 19 8D 28 0A 00 02 25 16 18 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 25 17 72 55 53 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 18 8D 0B 02 00 01 25 16 72 9F 52 02 70 A2 25 17 72 05 01 00 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 28 96 0E 00 2B 13 06 07 11 06 19 8D 28 0A 00 02 25 16 18 8D 0B 02 00 01 25 16 72 05 01 00 70 A2 25 17 72 55 53 02 70 A2 73 BE 52 00 06 25 16 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 25 17 73 1D 0D 00 0A 6F B9 52 00 06 A2 25 18 18 8D 0B 02 00 01 25 16 72 9F 52 02 70 A2 25 17 72 05 01 00 70 A2 73 BE 52 00 06 25 1A 73 1D 0D 00 0A 6F B9 52 00 06 A2 73 AB 16 00 0A 6F AC 16 00 0A 07 6F CC 52 00 06 06 18 8D 28 0A 00 02 25 16 17 8D 0B 02 00 01 25 16 72 47 52 02 70 A2 73 BE 52 00 06 A2 25 17 17 8D 0B 02 00 01 25 16 72 55 53 02 70 A2 73 BE 52 00 06 A2 73 AB 16 00 0A 6F CE 52 00 06 06 2A
+  -- decoded --
+    IL_0000: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::.ctor
+    IL_0005: stloc.0        
+    IL_0006: ldloc.0        
+    IL_0007: ldc.i4.1       
+    IL_0008: newarr         System.String
+    IL_000D: dup            
+    IL_000E: ldc.i4.0       
+    IL_000F: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_0014: stelem.ref     
+    IL_0015: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_001A: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::set_FirstVisitEverDialogue
+    IL_001F: ldloc.0        
+    IL_0020: newobj         <typespec>::.ctor
+    IL_0025: stloc.1        
+    IL_0026: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_002B: stloc.2        
+    IL_002C: ldloc.1        
+    IL_002D: ldloc.2        
+    IL_002E: ldc.i4.3       
+    IL_002F: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_0034: dup            
+    IL_0035: ldc.i4.0       
+    IL_0036: ldc.i4.1       
+    IL_0037: newarr         System.String
+    IL_003C: dup            
+    IL_003D: ldc.i4.0       
+    IL_003E: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_0043: stelem.ref     
+    IL_0044: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0049: dup            
+    IL_004A: ldc.i4.0       
+    IL_004B: newobj         <typespec>::.ctor
+    IL_0050: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0055: stelem.ref     
+    IL_0056: dup            
+    IL_0057: ldc.i4.1       
+    IL_0058: ldc.i4.1       
+    IL_0059: newarr         System.String
+    IL_005E: dup            
+    IL_005F: ldc.i4.0       
+    IL_0060: ldstr          ""
+    IL_0065: stelem.ref     
+    IL_0066: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_006B: dup            
+    IL_006C: ldc.i4.1       
+    IL_006D: newobj         <typespec>::.ctor
+    IL_0072: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0077: stelem.ref     
+    IL_0078: dup            
+    IL_0079: ldc.i4.2       
+    IL_007A: ldc.i4.1       
+    IL_007B: newarr         System.String
+    IL_0080: dup            
+    IL_0081: ldc.i4.0       
+    IL_0082: ldstr          ""
+    IL_0087: stelem.ref     
+    IL_0088: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_008D: dup            
+    IL_008E: ldc.i4.4       
+    IL_008F: newobj         <typespec>::.ctor
+    IL_0094: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0099: stelem.ref     
+    IL_009A: newobj         <typespec>::.ctor
+    IL_009F: callvirt       <typespec>::set_Item
+    IL_00A4: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_00A9: stloc.3        
+    IL_00AA: ldloc.1        
+    IL_00AB: ldloc.3        
+    IL_00AC: ldc.i4.3       
+    IL_00AD: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_00B2: dup            
+    IL_00B3: ldc.i4.0       
+    IL_00B4: ldc.i4.3       
+    IL_00B5: newarr         System.String
+    IL_00BA: dup            
+    IL_00BB: ldc.i4.0       
+    IL_00BC: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_grossed_out"
+    IL_00C1: stelem.ref     
+    IL_00C2: dup            
+    IL_00C3: ldc.i4.1       
+    IL_00C4: ldstr          ""
+    IL_00C9: stelem.ref     
+    IL_00CA: dup            
+    IL_00CB: ldc.i4.2       
+    IL_00CC: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_00D1: stelem.ref     
+    IL_00D2: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_00D7: dup            
+    IL_00D8: ldc.i4.0       
+    IL_00D9: newobj         <typespec>::.ctor
+    IL_00DE: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_00E3: stelem.ref     
+    IL_00E4: dup            
+    IL_00E5: ldc.i4.1       
+    IL_00E6: ldc.i4.1       
+    IL_00E7: newarr         System.String
+    IL_00EC: dup            
+    IL_00ED: ldc.i4.0       
+    IL_00EE: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_giggle"
+    IL_00F3: stelem.ref     
+    IL_00F4: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_00F9: dup            
+    IL_00FA: ldc.i4.1       
+    IL_00FB: newobj         <typespec>::.ctor
+    IL_0100: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0105: stelem.ref     
+    IL_0106: dup            
+    IL_0107: ldc.i4.2       
+    IL_0108: ldc.i4.3       
+    IL_0109: newarr         System.String
+    IL_010E: dup            
+    IL_010F: ldc.i4.0       
+    IL_0110: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_eeked"
+    IL_0115: stelem.ref     
+    IL_0116: dup            
+    IL_0117: ldc.i4.1       
+    IL_0118: ldstr          ""
+    IL_011D: stelem.ref     
+    IL_011E: dup            
+    IL_011F: ldc.i4.2       
+    IL_0120: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_eeked"
+    IL_0125: stelem.ref     
+    IL_0126: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_012B: dup            
+    IL_012C: ldc.i4.4       
+    IL_012D: newobj         <typespec>::.ctor
+    IL_0132: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0137: stelem.ref     
+    IL_0138: newobj         <typespec>::.ctor
+    IL_013D: callvirt       <typespec>::set_Item
+    IL_0142: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_0147: stloc.s        4
+    IL_0149: ldloc.1        
+    IL_014A: ldloc.s        4
+    IL_014C: ldc.i4.3       
+    IL_014D: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_0152: dup            
+    IL_0153: ldc.i4.0       
+    IL_0154: ldc.i4.1       
+    IL_0155: newarr         System.String
+    IL_015A: dup            
+    IL_015B: ldc.i4.0       
+    IL_015C: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_0161: stelem.ref     
+    IL_0162: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0167: dup            
+    IL_0168: ldc.i4.0       
+    IL_0169: newobj         <typespec>::.ctor
+    IL_016E: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0173: stelem.ref     
+    IL_0174: dup            
+    IL_0175: ldc.i4.1       
+    IL_0176: ldc.i4.1       
+    IL_0177: newarr         System.String
+    IL_017C: dup            
+    IL_017D: ldc.i4.0       
+    IL_017E: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_0183: stelem.ref     
+    IL_0184: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0189: dup            
+    IL_018A: ldc.i4.1       
+    IL_018B: newobj         <typespec>::.ctor
+    IL_0190: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0195: stelem.ref     
+    IL_0196: dup            
+    IL_0197: ldc.i4.2       
+    IL_0198: ldc.i4.2       
+    IL_0199: newarr         System.String
+    IL_019E: dup            
+    IL_019F: ldc.i4.0       
+    IL_01A0: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_giggle"
+    IL_01A5: stelem.ref     
+    IL_01A6: dup            
+    IL_01A7: ldc.i4.1       
+    IL_01A8: ldstr          ""
+    IL_01AD: stelem.ref     
+    IL_01AE: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_01B3: dup            
+    IL_01B4: ldc.i4.4       
+    IL_01B5: newobj         <typespec>::.ctor
+    IL_01BA: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_01BF: stelem.ref     
+    IL_01C0: newobj         <typespec>::.ctor
+    IL_01C5: callvirt       <typespec>::set_Item
+    IL_01CA: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_01CF: stloc.s        5
+    IL_01D1: ldloc.1        
+    IL_01D2: ldloc.s        5
+    IL_01D4: ldc.i4.3       
+    IL_01D5: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_01DA: dup            
+    IL_01DB: ldc.i4.0       
+    IL_01DC: ldc.i4.2       
+    IL_01DD: newarr         System.String
+    IL_01E2: dup            
+    IL_01E3: ldc.i4.0       
+    IL_01E4: ldstr          ""
+    IL_01E9: stelem.ref     
+    IL_01EA: dup            
+    IL_01EB: ldc.i4.1       
+    IL_01EC: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_eeked"
+    IL_01F1: stelem.ref     
+    IL_01F2: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_01F7: dup            
+    IL_01F8: ldc.i4.0       
+    IL_01F9: newobj         <typespec>::.ctor
+    IL_01FE: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0203: stelem.ref     
+    IL_0204: dup            
+    IL_0205: ldc.i4.1       
+    IL_0206: ldc.i4.1       
+    IL_0207: newarr         System.String
+    IL_020C: dup            
+    IL_020D: ldc.i4.0       
+    IL_020E: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_0213: stelem.ref     
+    IL_0214: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0219: dup            
+    IL_021A: ldc.i4.1       
+    IL_021B: newobj         <typespec>::.ctor
+    IL_0220: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0225: stelem.ref     
+    IL_0226: dup            
+    IL_0227: ldc.i4.2       
+    IL_0228: ldc.i4.2       
+    IL_0229: newarr         System.String
+    IL_022E: dup            
+    IL_022F: ldc.i4.0       
+    IL_0230: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_grossed_out"
+    IL_0235: stelem.ref     
+    IL_0236: dup            
+    IL_0237: ldc.i4.1       
+    IL_0238: ldstr          ""
+    IL_023D: stelem.ref     
+    IL_023E: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0243: dup            
+    IL_0244: ldc.i4.4       
+    IL_0245: newobj         <typespec>::.ctor
+    IL_024A: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_024F: stelem.ref     
+    IL_0250: newobj         <typespec>::.ctor
+    IL_0255: callvirt       <typespec>::set_Item
+    IL_025A: call           MegaCrit.Sts2.Core.Models.AncientEventModel::CharKey<...>
+    IL_025F: stloc.s        6
+    IL_0261: ldloc.1        
+    IL_0262: ldloc.s        6
+    IL_0264: ldc.i4.3       
+    IL_0265: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_026A: dup            
+    IL_026B: ldc.i4.0       
+    IL_026C: ldc.i4.2       
+    IL_026D: newarr         System.String
+    IL_0272: dup            
+    IL_0273: ldc.i4.0       
+    IL_0274: ldstr          ""
+    IL_0279: stelem.ref     
+    IL_027A: dup            
+    IL_027B: ldc.i4.1       
+    IL_027C: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_eeked"
+    IL_0281: stelem.ref     
+    IL_0282: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0287: dup            
+    IL_0288: ldc.i4.0       
+    IL_0289: newobj         <typespec>::.ctor
+    IL_028E: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_0293: stelem.ref     
+    IL_0294: dup            
+    IL_0295: ldc.i4.1       
+    IL_0296: ldc.i4.1       
+    IL_0297: newarr         System.String
+    IL_029C: dup            
+    IL_029D: ldc.i4.0       
+    IL_029E: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_02A3: stelem.ref     
+    IL_02A4: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_02A9: dup            
+    IL_02AA: ldc.i4.1       
+    IL_02AB: newobj         <typespec>::.ctor
+    IL_02B0: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_02B5: stelem.ref     
+    IL_02B6: dup            
+    IL_02B7: ldc.i4.2       
+    IL_02B8: ldc.i4.2       
+    IL_02B9: newarr         System.String
+    IL_02BE: dup            
+    IL_02BF: ldc.i4.0       
+    IL_02C0: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_grossed_out"
+    IL_02C5: stelem.ref     
+    IL_02C6: dup            
+    IL_02C7: ldc.i4.1       
+    IL_02C8: ldstr          ""
+    IL_02CD: stelem.ref     
+    IL_02CE: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_02D3: dup            
+    IL_02D4: ldc.i4.4       
+    IL_02D5: newobj         <typespec>::.ctor
+    IL_02DA: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::set_VisitIndex
+    IL_02DF: stelem.ref     
+    IL_02E0: newobj         <typespec>::.ctor
+    IL_02E5: callvirt       <typespec>::set_Item
+    IL_02EA: ldloc.1        
+    IL_02EB: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::set_CharacterDialogues
+    IL_02F0: ldloc.0        
+    IL_02F1: ldc.i4.2       
+    IL_02F2: newarr         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue
+    IL_02F7: dup            
+    IL_02F8: ldc.i4.0       
+    IL_02F9: ldc.i4.1       
+    IL_02FA: newarr         System.String
+    IL_02FF: dup            
+    IL_0300: ldc.i4.0       
+    IL_0301: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_welcome"
+    IL_0306: stelem.ref     
+    IL_0307: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_030C: stelem.ref     
+    IL_030D: dup            
+    IL_030E: ldc.i4.1       
+    IL_030F: ldc.i4.1       
+    IL_0310: newarr         System.String
+    IL_0315: dup            
+    IL_0316: ldc.i4.0       
+    IL_0317: ldstr          "event:/sfx/npcs/nonupeipe/nonupeipe_eeked"
+    IL_031C: stelem.ref     
+    IL_031D: newobj         MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogue::.ctor
+    IL_0322: stelem.ref     
+    IL_0323: newobj         <typespec>::.ctor
+    IL_0328: callvirt       MegaCrit.Sts2.Core.Entities.Ancients.AncientDialogueSet::set_AgnosticDialogues
+    IL_032D: ldloc.0        
+    IL_032E: ret            
+
+

@@ -1,0 +1,13 @@
+===== MegaCrit.Sts2.Core.Combat.CombatState.IterateHookListeners()  [attrs=0x1E6] =====
+  maxStack=8 locals=System.Reflection.Metadata.StandaloneSignatureHandle
+  -- IL bytes --
+  1F FE 73 F2 B3 00 06 25 02 7D 0C 77 00 04 2A
+  -- decoded --
+    IL_0000: ldc.i4.s       -2
+    IL_0002: newobj         .<IterateHookListeners>d__69::.ctor
+    IL_0007: dup            
+    IL_0008: ldarg.0        
+    IL_0009: stfld          .<IterateHookListeners>d__69::<>4__this
+    IL_000E: ret            
+
+

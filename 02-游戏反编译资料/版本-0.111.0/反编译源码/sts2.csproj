@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>sts2</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>netcoreapp9.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Sts2DataDir Condition="'$(Sts2DataDir)' == ''">$(STS2_DATA_DIR)</Sts2DataDir>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>$(Sts2DataDir)\GodotSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry.Godot">
+      <HintPath>$(Sts2DataDir)\Sentry.Godot.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>$(Sts2DataDir)\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>$(Sts2DataDir)\System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>$(Sts2DataDir)\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>$(Sts2DataDir)\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry">
+      <HintPath>$(Sts2DataDir)\Sentry.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>$(Sts2DataDir)\System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>$(Sts2DataDir)\System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>$(Sts2DataDir)\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>$(Sts2DataDir)\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Steamworks.NET">
+      <HintPath>$(Sts2DataDir)\Steamworks.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>$(Sts2DataDir)\System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Hashing">
+      <HintPath>$(Sts2DataDir)\System.IO.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Loader">
+      <HintPath>$(Sts2DataDir)\System.Runtime.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>$(Sts2DataDir)\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartFormat">
+      <HintPath>$(Sts2DataDir)\SmartFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>$(Sts2DataDir)\System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="Vortice.DXGI">
+      <HintPath>$(Sts2DataDir)\Vortice.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>$(Sts2DataDir)\System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>$(Sts2DataDir)\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>$(Sts2DataDir)\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>$(Sts2DataDir)\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>$(Sts2DataDir)\System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>$(Sts2DataDir)\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>$(Sts2DataDir)\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>$(Sts2DataDir)\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography">
+      <HintPath>$(Sts2DataDir)\System.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpGen.Runtime">
+      <HintPath>$(Sts2DataDir)\SharpGen.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>$(Sts2DataDir)\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>$(Sts2DataDir)\System.Net.Primitives.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
