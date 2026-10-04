@@ -20,6 +20,7 @@ using System.Text.RegularExpressions;
 if (args.Length < 4)
 {
     Console.Error.WriteLine("usage: props|ctorconst|enum <asm> <out> ...");
+    Environment.ExitCode = 2;
     return 2;
 }
 
@@ -141,6 +142,7 @@ else if (mode == "ctorconst")
 else
 {
     Console.Error.WriteLine("unknown mode " + mode);
+    Environment.ExitCode = 2;
     return 2;
 }
 

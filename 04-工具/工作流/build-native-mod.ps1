@@ -2,7 +2,7 @@
 #
 # 用法：
 #   .\build-native-mod.ps1 -ProjectDir <模组目录> -GameDir <游戏目录>
-#   .\build-native-mod.ps1 -ProjectDir <目录> -GameDir <游戏目录> -Deploy false
+#   .\build-native-mod.ps1 -ProjectDir <目录> -GameDir <游戏目录> -NoDeploy
 #
 # 这个脚本只负责原生 C# 模组的 DLL、清单和资源目录。
 # PCK、Godot 导出和第三方框架需要按照对应教程单独处理。
@@ -20,19 +20,19 @@ param(
     [string]$Configuration = 'Release',
     [string]$DotnetExe = 'dotnet',
     [string]$Sts2DataDir,
+    [string]$TempRoot,
     [bool]$Deploy = $true,
+    [switch]$NoDeploy,
     [switch]$Rebuild
 )
 
 $ErrorActionPreference = 'Stop'
+. (Join-Path $PSScriptRoot 'common.ps1')
+Set-PublicDotnetEnvironment $TempRoot
+if ($NoDeploy) { $Deploy = $false }
 
 # NuGet 可能在系统临时目录留下无法访问的 NuGetScratch 锁文件。
-# 使用包内缓存目录可以避免把一次残留锁误判成 SDK、工程或游戏引用错误。
-$packageRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
-$scratchRoot = Join-Path $packageRoot '.build-tmp'
-New-Item -ItemType Directory -Force -Path $scratchRoot | Out-Null
-$env:TEMP = $scratchRoot
-$env:TMP = $scratchRoot
+# Set-PublicDotnetEnvironment 统一处理临时目录、CLI home 和首次运行提示。
 
 function Resolve-ExistingDirectory([string]$Path, [string]$Label) {
     if (-not (Test-Path -LiteralPath $Path -PathType Container)) {
@@ -68,7 +68,7 @@ catch {
 $gameProcess = Get-Process 'SlayTheSpire2' -ErrorAction SilentlyContinue
 if ($Deploy -and $gameProcess) {
     $ids = ($gameProcess | Select-Object -ExpandProperty Id) -join ', '
-    throw "游戏正在运行（PID $ids）。请先关闭游戏，或使用 -Deploy false 只编译。"
+    throw "游戏正在运行（PID $ids）。请先关闭游戏，或使用 -NoDeploy 只编译。"
 }
 
 $buildArgs = @(
@@ -84,14 +84,13 @@ Write-Host "[sts2-workspace] 工程：$($csproj.Name)"
 Write-Host "[sts2-workspace] ModId：$ModId"
 Write-Host "[sts2-workspace] 游戏数据：$Sts2DataDir"
 Write-Host '[sts2-workspace] 编译中……'
-& $DotnetExe @buildArgs
-if ($LASTEXITCODE -ne 0) { throw "编译失败（exit $LASTEXITCODE）" }
+$dotnetExit = Invoke-PublicDotnet $DotnetExe $buildArgs
+if ($dotnetExit -ne 0) { throw "编译失败（exit $dotnetExit）" }
 
 $targetPath = $null
-$propertyOutput = & $DotnetExe msbuild $csproj.FullName '-getProperty:TargetPath' "-p:Configuration=$Configuration" "-p:Sts2Dir=$GameDir" "-p:Sts2DataDir=$Sts2DataDir" 2>$null
-if ($LASTEXITCODE -eq 0) {
-    $targetPath = $propertyOutput | Where-Object { $_ -match '\.(dll|DLL)\s*$' } | Select-Object -Last 1
-    if ($targetPath) { $targetPath = $targetPath.Trim().Trim('"') }
+$binRoot = Join-Path $ProjectDir "bin\$Configuration"
+if (Test-Path -LiteralPath $binRoot -PathType Container) {
+    $targetPath = Get-ChildItem -LiteralPath $binRoot -Filter "$ModId.dll" -Recurse -File | Select-Object -First 1 -ExpandProperty FullName
 }
 if (-not $targetPath -or -not (Test-Path -LiteralPath $targetPath -PathType Leaf)) {
     $targetPath = Join-Path $ProjectDir "bin\$Configuration\net9.0\$ModId.dll"
@@ -110,7 +109,7 @@ if ($newestSource -and $dll.LastWriteTime -lt $newestSource.LastWriteTime) {
 Write-Host "[sts2-workspace] 编译产物：$($dll.FullName)"
 
 if (-not $Deploy) {
-    Write-Host '[sts2-workspace] 已完成编译，按 -Deploy false 未部署。'
+    Write-Host '[sts2-workspace] 已完成编译，按 -NoDeploy 未部署。'
     exit 0
 }
 

@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$GameDir,
     [string]$GodotExe,
     [switch]$RequirePython,
@@ -6,6 +6,28 @@ param(
 )
 
 $ErrorActionPreference = 'Continue'
+. (Join-Path $PSScriptRoot 'common.ps1')
+Set-PublicDotnetEnvironment ([IO.Path]::GetTempPath())
+
+function Invoke-PreflightCommand {
+    param([string]$FilePath, [string[]]$Arguments)
+    $stdoutPath = Join-Path ([IO.Path]::GetTempPath()) ('sts2-preflight-' + [guid]::NewGuid().ToString('N') + '.out')
+    $stderrPath = Join-Path ([IO.Path]::GetTempPath()) ('sts2-preflight-' + [guid]::NewGuid().ToString('N') + '.err')
+    try {
+        $argString = (($Arguments | ForEach-Object {
+            $value = [string]$_
+            if ($value -match '[\s"]') { '"' + $value.Replace('"', '\"') + '"' } else { $value }
+        }) -join ' ')
+        $process = Start-Process -FilePath $FilePath -ArgumentList $argString -Wait -PassThru -NoNewWindow -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
+        return [pscustomobject]@{
+            ExitCode = $process.ExitCode
+            Stdout = if (Test-Path $stdoutPath) { Get-Content -LiteralPath $stdoutPath -Raw } else { '' }
+            Stderr = if (Test-Path $stderrPath) { Get-Content -LiteralPath $stderrPath -Raw } else { '' }
+        }
+    } finally {
+        Remove-Item -LiteralPath $stdoutPath, $stderrPath -Force -ErrorAction SilentlyContinue
+    }
+}
 $failed = $false
 $results = New-Object System.Collections.Generic.List[string]
 
@@ -36,7 +58,8 @@ if ($null -eq $dotnetPath) {
     Add-Result 'MISSING' '找不到 .NET CLI。原生 C# 模组需要与模板匹配的 .NET 9 SDK。'
     $failed = $true
 } else {
-    $dotnetVersion = (& $dotnetPath --version 2>$null | Select-Object -First 1).Trim()
+    $dotnetResult = Invoke-PreflightCommand $dotnetPath @('--version')
+    $dotnetVersion = ($dotnetResult.Stdout | Select-Object -First 1).Trim()
     if ($dotnetVersion -match '^9\.') {
         Add-Result 'OK' ".NET SDK $dotnetVersion 可用。"
     } else {
@@ -59,8 +82,8 @@ if ($null -eq $pythonPath) {
         Add-Result 'OPTIONAL' '未找到 Python 3；当前任务未要求 Python，因此不阻塞原生 C# 路线。'
     }
 } else {
-    $pythonCheck = & $pythonPath @pythonArgs -c 'import numpy, PIL; print("ok")' 2>$null
-    if ($LASTEXITCODE -eq 0) {
+    $pythonResult = Invoke-PreflightCommand $pythonPath (@($pythonArgs) + @('-c', 'import numpy, PIL; print("ok")'))
+    if ($pythonResult.ExitCode -eq 0) {
         Add-Result 'OK' 'Python 3、numpy 和 Pillow 可用。'
     } elseif ($RequirePython) {
         Add-Result 'BLOCKED' '已找到 Python 3，但 numpy 或 Pillow 导入失败；请补齐图片处理依赖。'

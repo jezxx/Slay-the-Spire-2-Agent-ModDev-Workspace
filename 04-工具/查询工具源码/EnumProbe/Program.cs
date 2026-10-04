@@ -6,7 +6,8 @@ using System.Reflection;
 if (args.Length < 1)
 {
     Console.Error.WriteLine("Usage: EnumProbe <game-data-directory>");
-    return 2;
+    Environment.ExitCode = 2;
+    return;
 }
 
 var gameDataDir = Path.GetFullPath(args[0]);

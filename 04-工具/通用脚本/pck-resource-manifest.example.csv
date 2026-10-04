@@ -1,0 +1,4 @@
+kind,res
+scene,res://scenes/example.tscn
+texture,res://images/example.png
+localization,res://localization/zhs/cards.json

@@ -1,0 +1,21 @@
+# Generated build and tool output
+.build-tmp/
+.tools/
+**/bin/
+**/obj/
+**/.godot/
+**/Build/
+**/*.pck
+**/*.dll
+**/*.pdb
+**/*.log
+
+# Local user/project material that should not enter the public package by accident
+09-用户项目区/*
+!09-用户项目区/README.md
+10-用户手动添加素材区/*
+!10-用户手动添加素材区/README.md
+本地覆盖/*
+!本地覆盖/README.md
+待整理经验/*
+!待整理经验/README.md

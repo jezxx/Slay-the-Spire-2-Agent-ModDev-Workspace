@@ -60,7 +60,7 @@
     固定路径（bin\Release\net9.0）去找产物，一旦 MSBuild 的输出目录变了
     （例如 DefaultItemExcludes 包含 bin/obj 时会变到 .godot\mono\temp\bin\...），
     脚本就会找不到新产物、转而复制旧文件 —— 结果是"编译成功但跑的是旧代码"，
-    极难发现。build-mod.ps1 现在直接用 TargetPath，并校验产物比源码新。
+    极难发现。公开构建脚本会在 bin\<Configuration> 下定位同名 DLL，并校验产物比源码新。
   -->
 
 </Project>

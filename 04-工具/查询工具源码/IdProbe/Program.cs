@@ -4,7 +4,8 @@
 if (args.Length < 1)
 {
     Console.Error.WriteLine("Usage: IdProbe <game-data-directory> [output-file]");
-    return 2;
+    Environment.ExitCode = 2;
+    return;
 }
 
 var gameDir = Path.GetFullPath(args[0]);

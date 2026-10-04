@@ -1,5 +1,5 @@
 {
-  "generated_date": "2026-10-03",
+  "generated_date": "2026-10-04",
   "package_version": "0.1.0-content-alpha",
   "items": [
     {
@@ -40,6 +40,54 @@
       "type": "tool-source",
       "version": "workspace-current",
       "source": "workspace/Sts2ModDev/tools",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "public-workflow-scripts",
+      "path": "04-工具/工作流",
+      "type": "workflow-scripts",
+      "version": "workspace-current",
+      "source": "workspace-local",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "public-coverage-rules",
+      "path": "00-开始这里/公共内容覆盖清单.md",
+      "type": "coverage-contract",
+      "version": "workspace-current",
+      "source": "workspace-local",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "public-completion-audit",
+      "path": "00-开始这里/公共工作区完成审计.md",
+      "type": "verification-boundary",
+      "version": "2026-10-04",
+      "source": "workspace-local",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "public-general-experience",
+      "path": "03-模组制作经验",
+      "type": "general-mod-development-experience",
+      "version": "workspace-current",
+      "source": "workspace-local; generalized from private project evidence",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "public-experience-audit",
+      "path": "00-开始这里/公共经验审计与未纳入内容.md",
+      "type": "experience-boundary-audit",
+      "version": "2026-10-04",
+      "source": "workspace-local",
+      "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "public-generic-tool-scripts",
+      "path": "04-工具/通用脚本",
+      "type": "portable-mod-development-tools",
+      "version": "workspace-current",
+      "source": "workspace-local; parameterized from private tool candidates",
       "redistribution_status": "project-maintained"
     }
   ]
