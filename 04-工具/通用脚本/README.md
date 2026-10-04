@@ -11,6 +11,8 @@
 ## 图像与文件
 
 - make-card-375x526.py：固定尺寸卡面处理。使用前按环境预检确认 Python、Pillow 和 numpy。
+- make-relic-outlines.ps1、make-relic-big-icons.ps1：从透明图标生成白色外描边和百科大图黑边。
+- recolor-marker-outline.ps1：按精确 RGB 替换指定描边颜色，保留 alpha 并支持 dry-run。
 - extract-sts1-cards.ps1、extract-sts1-spec.ps1、extract-sts1-upgrade.ps1：从用户指定的塔1 Java 反编译目录提取卡牌字段、升级语句和规格 JSON。
 - gen-card-loc.ps1：把提取结果中的常见占位符转成塔2 本地化字段；项目关键字着色必须显式传入。
 - clean-loc-whitespace.ps1：报告或清理本地化值里的多余空格，默认只报告不改文件。

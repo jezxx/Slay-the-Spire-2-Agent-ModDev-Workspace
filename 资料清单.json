@@ -89,6 +89,14 @@
       "version": "workspace-current",
       "source": "workspace-local; parameterized from private tool candidates",
       "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "private-tool-migration-audit",
+      "path": "04-工具/私人工具迁移审计与使用方法.md",
+      "type": "tool-migration-boundary",
+      "version": "2026-10-04",
+      "source": "workspace-local; generalized from private tool audit",
+      "redistribution_status": "project-maintained"
     }
   ]
 }
