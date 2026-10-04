@@ -78,7 +78,9 @@
 
     .\prepare-workshop-package.ps1 -ProjectDir "<模组目录>" -OutputDir "<暂存目录>" -ModId MyFirstMod
 
-这个脚本只整理已经构建并验证过的清单、DLL、PCK 和必要资源，不上传、不读取账号凭据。最终上传前仍由用户检查版权、说明、预览图和工坊设置。
+这个脚本会生成官方上传器需要的暂存结构：根目录包含 workshop.json、可选的 image.png，实际模组文件放在 content/。可用 -WorkshopJsonPath 和 -PreviewImagePath 传入元数据与预览图。它只整理已经构建并验证过的清单、DLL、PCK 和必要资源，不上传、不读取账号凭据。最终上传前仍由用户检查版权、说明、预览图和工坊设置。
+
+公共工作区本身不能直接作为模组上传；发布资料包与游戏模组的目录边界见 ../00-开始这里/创意工坊发布格式说明.md。
 ## 边界
 
 这两个脚本只覆盖原生 C# 模组。需要 PCK、Godot 导出、第三方框架、Steam Workshop 打包或版本适配时，必须先阅读对应教程和经验文档，不能把本脚本当作万能构建器。

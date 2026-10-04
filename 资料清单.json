@@ -97,6 +97,14 @@
       "version": "2026-10-04",
       "source": "workspace-local; generalized from private tool audit",
       "redistribution_status": "project-maintained"
+    },
+    {
+      "id": "workshop-format-guide",
+      "path": "00-开始这里/创意工坊发布格式说明.md",
+      "type": "workshop-format-boundary",
+      "version": "2026-10-04",
+      "source": "official sts2 mod uploader README checked 2026-10-04",
+      "redistribution_status": "project-maintained"
     }
   ]
 }
