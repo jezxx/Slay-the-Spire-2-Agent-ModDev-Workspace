@@ -1,0 +1,18 @@
+# Generated output
+bin/
+obj/
+Build/
+.godot/
+*.pck
+*.dll
+*.pdb
+*.log
+
+# Local caches and temporary files
+.work/
+.preview/
+.backup/
+*.tmp
+*.bak
+*.orig
+__pycache__/

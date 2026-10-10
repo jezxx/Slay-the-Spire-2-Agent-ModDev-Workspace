@@ -1,6 +1,6 @@
 {
   "package_name": "Slay-the-Spire-2-Agent-ModDev-Workspace",
-  "package_version": "0.1.0-content-alpha",
+  "package_version": "0.1.1-content-alpha",
   "package_status": "content-alpha",
   "target_platform": "Windows",
   "language": "zh-CN",
@@ -11,6 +11,6 @@
   "contains_decompiled_data": true,
   "contains_portable_tools": false,
   "contains_private_project_data": false,
-  "last_inventory_date": "2026-10-04",
-  "notes": "已加入教程、v0.111.0 反编译源码/API、模板、查询工具源码、公开工作流脚本、环境预检、PCK 打包与运行验证入口、版本化 API 导出入口、完整的跨项目模组制作经验专题和临时单文件公共经验交换队列；本机已验证原生模板编译、查询工具全量构建、API 导出烟测和 PCK 工具互验；便携运行时、完整脱敏示例、Godot 实际导出和资料再分发审查仍需按版本继续处理。"
+  "last_inventory_date": "2026-10-11",
+  "notes": "已加入教程、v0.111.0 反编译源码/API、模板、查询工具源码、公开工作流脚本、环境预检、PCK 打包与运行验证入口、版本化 API 导出入口、完整的跨项目模组制作经验专题和临时单文件公共经验交换队列；工作方法已改为快/标准/严格三档，资料与环境检查按任务需要触发，新模组使用独立 Git；本机已验证原生模板编译、查询工具全量构建、API 导出烟测和 PCK 工具互验；便携运行时、完整脱敏示例、Godot 实际导出和资料再分发审查仍需按版本继续处理。"
 }

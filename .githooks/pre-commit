@@ -1,0 +1,6 @@
+#!/bin/sh
+# Public workspace pre-commit hook.
+root=$(git rev-parse --show-toplevel) || exit 0
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$root/08-Agent工作流/tools/check-before-commit.ps1" -RepoRoot "$root"
+exit $?

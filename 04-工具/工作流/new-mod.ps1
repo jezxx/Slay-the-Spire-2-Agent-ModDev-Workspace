@@ -91,11 +91,44 @@ $projectDoc = @(
     "- 模组 ID：$ModId",
     "- 作者：$Author",
     "- 目标游戏版本：$MinGameVersion",
+    '- 项目类型：原生 C# 模组',
     '- 当前阶段：原型',
     '',
     '## 目标',
     '',
     $Description,
+    '',
+    '## 已完成',
+    '',
+    '- 已生成原生模组基础工程',
+    '',
+    '## 正在处理',
+    '',
+    '- 首次编译与运行验证',
+    '',
+    '## 已知问题',
+    '',
+    '- 尚未完成首次实机验证',
+    '',
+    '## 项目专用约定',
+    '',
+    '- 暂无',
+    '',
+    '## 常见指代',
+    '',
+    "- 项目简称：$ModName / $ModId",
+    '- 可复用实现关键词：按后续实际内容补充',
+    '',
+    '## 证据入口',
+    '',
+    '- 源码：Scripts\',
+    "- 本地化与资源：$ModId\",
+    '- 任务、决策与测试记录：按需使用同名目录',
+    '',
+    '## 工具与数据位置',
+    '',
+    '- 构建与部署：工作区 04-工具\工作流\',
+    '- 项目专用工具：尚无',
     '',
     '## 验证记录',
     '',
@@ -105,6 +138,51 @@ $projectDoc = @(
 ) -join [Environment]::NewLine
 Write-Utf8Bom (Join-Path $destination 'PROJECT.md') $projectDoc
 New-Item -ItemType Directory -Force -Path (Join-Path $destination '任务记录'), (Join-Path $destination '决策记录'), (Join-Path $destination '测试记录') | Out-Null
+
+# 用户项目不进入公共工作区仓库；每个模组单独初始化 Git。
+$git = Get-Command git -ErrorAction SilentlyContinue
+if ($git) {
+    & $git.Source -C $destination init --initial-branch=main | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "Git 初始化失败：$destination" }
+
+    $gitName = (& $git.Source -C $destination config user.name 2>$null)
+    $gitEmail = (& $git.Source -C $destination config user.email 2>$null)
+    if (-not $gitName -or -not $gitEmail) {
+        $workspaceGitName = (& $git.Source -C $packageRoot config --local user.name 2>$null)
+        $workspaceGitEmail = (& $git.Source -C $packageRoot config --local user.email 2>$null)
+        if ($workspaceGitName -and $workspaceGitEmail) {
+            & $git.Source -C $destination config --local user.name $workspaceGitName
+            & $git.Source -C $destination config --local user.email $workspaceGitEmail
+            $gitName = $workspaceGitName
+            $gitEmail = $workspaceGitEmail
+        }
+    }
+    if ($gitName -and $gitEmail) {
+        $baselinePaths = @(
+            '.gitignore',
+            'PROJECT.md',
+            'Scripts',
+            "$ModId.csproj",
+            "$ModId.json",
+            $ModId,
+            'export_presets.cfg',
+            'project.godot'
+        )
+        foreach ($baselinePath in $baselinePaths) {
+            & $git.Source -C $destination add -- $baselinePath
+            if ($LASTEXITCODE -ne 0) { throw "Git 基线暂存失败：$baselinePath" }
+        }
+        & $git.Source -C $destination commit -m '项目：建立初始模组基线' | Out-Null
+        if ($LASTEXITCODE -ne 0) { throw 'Git 基线提交失败。' }
+        Write-Host '[sts2-workspace] 已建立独立 Git 和初始基线提交。' -ForegroundColor Green
+    }
+    else {
+        Write-Warning '已初始化独立 Git，但未检测到 user.name / user.email，因此没有创建基线提交。请先配置 Git 身份，再提交初始基线。'
+    }
+}
+else {
+    Write-Warning '未找到 git 命令，项目已创建但没有版本历史。正式修改前请安装 Git 并建立项目基线。'
+}
 
 Write-Host "[sts2-workspace] 已创建模组工程：$destination" -ForegroundColor Green
 Write-Host '下一步：'
